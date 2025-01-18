@@ -1,21 +1,11 @@
-# Zeus/Jupiter Pro Forms
-This project contains the forms from Jupiter Pro by Geeksoft, which seems to have been an unfinished update of Zeus Pro written in Visual Basic .NET Framework.
-The forms were converted by first copying the form controls to forms in a C# .NET Framework WinForms project, then copying the designer code into this C# .NET 8 WinForms project.
-Was just curious if this was possible, now not sure what to do with it so use as you please.
-Below if other related info and links.
+# Ares Pro
 
-## Jupiter vs. Zeus
-The only difference I have spotted is the Gimmick editor, it has been updated to allow a variable number of locations and weapons. Zeus has a fixed 10 of each.
+![Ares Pro Splash](AresPro.WinFormsUi/Resources/splash.png)
 
-## Zeus Pro Crashes
-Comments in an AMA I found from the creator of Zeus Pro shows it does not work anymore. It seems to crash when trying to open files on Windows 10, but works fine in Linux when run using Bottles.
+This project aims to create a clone of Geeksoft's Zeus Pro wrestling simulator.
 
-## G-fed Source
-Also came across source for G-Fed which is in Pearl,not dug into it yet but may be useful to see how Geeksoft did their match simulations.
+Feel free to contribute to this project or fork it and go in your own direction. This is a low priority project for me, pretty much just something to do when I need a break but still want to tinker with something.
 
-## Links
-Used the following links/software at your own risk, I did not write, compile, examine or scan anything below.
-- [Jupiter Pro Source ZIP](https://web.archive.org/web/20141017233206/http://geeksoft.net/files/jupiter_pro/jupiter_pro_0_0_0_source.zip)
-- [Zeus Pro Installer](https://web.archive.org/web/20160324174615/http://www.geeksoft.net/downloads/ZeusProInstall.exe)
-- [G-Fed Source ZIP](https://web.archive.org/web/20160324173601/http://www.geeksoft.net/downloads/gfedsource1_2.zip)
-- [Brian Brinegar Reddit AMA](https://www.reddit.com/r/efeds/comments/mvn4tp/ama_20_years_ago_i_created_the_zeus_pro_wrestling/)
+## Naming
+
+Zeus was the king of the gods in Greek mythology, with Jupiter being the Roman equivalent. Ares was the son of Zeus, and it happened to be easy to modify the original splash image to say Ares. So that's what I'm going with.
