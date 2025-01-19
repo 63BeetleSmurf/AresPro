@@ -28,79 +28,92 @@ partial class TitleHistoryForm
     /// </summary>
     private void InitializeComponent()
     {
-        this.btnClose = new System.Windows.Forms.Button();
-        this.btnDelete = new System.Windows.Forms.Button();
-        this.btnReset = new System.Windows.Forms.Button();
-        this.btnHTML = new System.Windows.Forms.Button();
-        this.lstTitleHistory = new System.Windows.Forms.ListBox();
-        this.SuspendLayout();
+        CloseButton = new Button();
+        DeleteButton = new Button();
+        ResetButton = new Button();
+        HTMLExportButton = new Button();
+        TitleHistoryListBox = new ListBox();
+        SuspendLayout();
         // 
-        // btnClose
+        // CloseButton
         // 
-        this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-        this.btnClose.Location = new System.Drawing.Point(543, 323);
-        this.btnClose.Name = "btnClose";
-        this.btnClose.Size = new System.Drawing.Size(75, 23);
-        this.btnClose.TabIndex = 9;
-        this.btnClose.Text = "&Close";
-        this.btnClose.UseVisualStyleBackColor = true;
+        CloseButton.DialogResult = DialogResult.Cancel;
+        CloseButton.Location = new Point(365, 217);
+        CloseButton.Margin = new Padding(4, 3, 4, 3);
+        CloseButton.Name = "CloseButton";
+        CloseButton.Size = new Size(88, 27);
+        CloseButton.TabIndex = 4;
+        CloseButton.Text = "&Close";
+        CloseButton.UseVisualStyleBackColor = true;
         // 
-        // btnDelete
+        // DeleteButton
         // 
-        this.btnDelete.Location = new System.Drawing.Point(462, 323);
-        this.btnDelete.Name = "btnDelete";
-        this.btnDelete.Size = new System.Drawing.Size(75, 23);
-        this.btnDelete.TabIndex = 8;
-        this.btnDelete.Text = "&Delete";
-        this.btnDelete.UseVisualStyleBackColor = true;
+        DeleteButton.Location = new Point(269, 217);
+        DeleteButton.Margin = new Padding(4, 3, 4, 3);
+        DeleteButton.Name = "DeleteButton";
+        DeleteButton.Size = new Size(88, 27);
+        DeleteButton.TabIndex = 3;
+        DeleteButton.Text = "&Delete";
+        DeleteButton.UseVisualStyleBackColor = true;
         // 
-        // btnReset
+        // ResetButton
         // 
-        this.btnReset.Location = new System.Drawing.Point(381, 323);
-        this.btnReset.Name = "btnReset";
-        this.btnReset.Size = new System.Drawing.Size(75, 23);
-        this.btnReset.TabIndex = 7;
-        this.btnReset.Text = "&Reset";
-        this.btnReset.UseVisualStyleBackColor = true;
+        ResetButton.Location = new Point(173, 217);
+        ResetButton.Margin = new Padding(4, 3, 4, 3);
+        ResetButton.Name = "ResetButton";
+        ResetButton.Size = new Size(88, 27);
+        ResetButton.TabIndex = 2;
+        ResetButton.Text = "&Reset";
+        ResetButton.UseVisualStyleBackColor = true;
         // 
-        // btnHTML
+        // HTMLExportButton
         // 
-        this.btnHTML.Location = new System.Drawing.Point(183, 323);
-        this.btnHTML.Name = "btnHTML";
-        this.btnHTML.Size = new System.Drawing.Size(75, 23);
-        this.btnHTML.TabIndex = 6;
-        this.btnHTML.Text = "&HTML";
-        this.btnHTML.UseVisualStyleBackColor = true;
+        HTMLExportButton.Location = new Point(13, 217);
+        HTMLExportButton.Margin = new Padding(4, 3, 4, 3);
+        HTMLExportButton.Name = "HTMLExportButton";
+        HTMLExportButton.Size = new Size(88, 27);
+        HTMLExportButton.TabIndex = 1;
+        HTMLExportButton.Text = "&HTML";
+        HTMLExportButton.UseVisualStyleBackColor = true;
         // 
-        // lstTitleHistory
+        // TitleHistoryListBox
         // 
-        this.lstTitleHistory.FormattingEnabled = true;
-        this.lstTitleHistory.Location = new System.Drawing.Point(183, 105);
-        this.lstTitleHistory.Name = "lstTitleHistory";
-        this.lstTitleHistory.Size = new System.Drawing.Size(435, 212);
-        this.lstTitleHistory.TabIndex = 5;
+        TitleHistoryListBox.FormattingEnabled = true;
+        TitleHistoryListBox.ItemHeight = 15;
+        TitleHistoryListBox.Location = new Point(13, 12);
+        TitleHistoryListBox.Margin = new Padding(4, 3, 4, 3);
+        TitleHistoryListBox.Name = "TitleHistoryListBox";
+        TitleHistoryListBox.Size = new Size(440, 199);
+        TitleHistoryListBox.TabIndex = 0;
         // 
         // TitleHistoryForm
         // 
-        this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(800, 450);
-        this.Controls.Add(this.btnClose);
-        this.Controls.Add(this.btnDelete);
-        this.Controls.Add(this.btnReset);
-        this.Controls.Add(this.btnHTML);
-        this.Controls.Add(this.lstTitleHistory);
-        this.Name = "TitleHistoryForm";
-        this.Text = "TitleHistoryForm";
-        this.ResumeLayout(false);
-
+        AcceptButton = CloseButton;
+        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleMode = AutoScaleMode.Font;
+        CancelButton = CloseButton;
+        ClientSize = new Size(466, 256);
+        Controls.Add(CloseButton);
+        Controls.Add(DeleteButton);
+        Controls.Add(ResetButton);
+        Controls.Add(HTMLExportButton);
+        Controls.Add(TitleHistoryListBox);
+        FormBorderStyle = FormBorderStyle.FixedDialog;
+        Margin = new Padding(4, 3, 4, 3);
+        MaximizeBox = false;
+        MinimizeBox = false;
+        Name = "TitleHistoryForm";
+        ShowIcon = false;
+        ShowInTaskbar = false;
+        Text = "Title History";
+        ResumeLayout(false);
     }
 
     #endregion
 
-    internal System.Windows.Forms.Button btnClose;
-    internal System.Windows.Forms.Button btnDelete;
-    internal System.Windows.Forms.Button btnReset;
-    internal System.Windows.Forms.Button btnHTML;
-    internal System.Windows.Forms.ListBox lstTitleHistory;
+    internal System.Windows.Forms.Button CloseButton;
+    internal System.Windows.Forms.Button DeleteButton;
+    internal System.Windows.Forms.Button ResetButton;
+    internal System.Windows.Forms.Button HTMLExportButton;
+    internal System.Windows.Forms.ListBox TitleHistoryListBox;
 }
