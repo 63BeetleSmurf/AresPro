@@ -28,275 +28,315 @@ partial class MoveEditorForm
     /// </summary>
     private void InitializeComponent()
     {
-        this.btnOk = new System.Windows.Forms.Button();
-        this.chkRECStandingAfter = new System.Windows.Forms.CheckBox();
-        this.chkRECStandingBefore = new System.Windows.Forms.CheckBox();
-        this.chkATTStandingAfter = new System.Windows.Forms.CheckBox();
-        this.chkATTStandingBefore = new System.Windows.Forms.CheckBox();
-        this.grpPositions = new System.Windows.Forms.GroupBox();
-        this.txtText3 = new System.Windows.Forms.TextBox();
-        this.txtText2 = new System.Windows.Forms.TextBox();
-        this.txtText1 = new System.Windows.Forms.TextBox();
-        this.btnCancel = new System.Windows.Forms.Button();
-        this.grpTexts = new System.Windows.Forms.GroupBox();
-        this.chkHighRisk = new System.Windows.Forms.CheckBox();
-        this.chkIllegal = new System.Windows.Forms.CheckBox();
-        this.chkLift = new System.Windows.Forms.CheckBox();
-        this.cboType = new System.Windows.Forms.ComboBox();
-        this.txtName = new System.Windows.Forms.TextBox();
-        this.trkDamage = new System.Windows.Forms.TrackBar();
-        this.lblType = new System.Windows.Forms.Label();
-        this.lblName = new System.Windows.Forms.Label();
-        this.lblDamage = new System.Windows.Forms.Label();
-        this.grpPositions.SuspendLayout();
-        this.grpTexts.SuspendLayout();
-        ((System.ComponentModel.ISupportInitialize)(this.trkDamage)).BeginInit();
-        this.SuspendLayout();
+        OkButton = new Button();
+        RecStandingAfterCheckBox = new CheckBox();
+        RecStandingBeforeCheckBox = new CheckBox();
+        AttStandingAfterCheckBox = new CheckBox();
+        AttStandingBeforeCheckBox = new CheckBox();
+        grpPositions = new GroupBox();
+        Text3TextBox = new TextBox();
+        Text2TextBox = new TextBox();
+        Text1TextBox = new TextBox();
+        CancelButton = new Button();
+        grpTexts = new GroupBox();
+        HighRiskCheckBox = new CheckBox();
+        IllegalCheckBox = new CheckBox();
+        LiftCheckBox = new CheckBox();
+        TypeComboBox = new ComboBox();
+        NameTextBox = new TextBox();
+        lblType = new Label();
+        lblName = new Label();
+        lblDamage = new Label();
+        DamageDecreaseButton = new Button();
+        DamageIncreaseButton = new Button();
+        DamageProgressBar = new ProgressBar();
+        grpPositions.SuspendLayout();
+        grpTexts.SuspendLayout();
+        SuspendLayout();
         // 
-        // btnOk
+        // OkButton
         // 
-        this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-        this.btnOk.Location = new System.Drawing.Point(504, 316);
-        this.btnOk.Name = "btnOk";
-        this.btnOk.Size = new System.Drawing.Size(54, 23);
-        this.btnOk.TabIndex = 24;
-        this.btnOk.Text = "&Ok";
-        this.btnOk.UseVisualStyleBackColor = true;
+        OkButton.DialogResult = DialogResult.OK;
+        OkButton.Location = new Point(359, 231);
+        OkButton.Margin = new Padding(4, 3, 4, 3);
+        OkButton.Name = "OkButton";
+        OkButton.Size = new Size(63, 27);
+        OkButton.TabIndex = 15;
+        OkButton.Text = "&Ok";
+        OkButton.UseVisualStyleBackColor = true;
         // 
-        // chkRECStandingAfter
+        // RecStandingAfterCheckBox
         // 
-        this.chkRECStandingAfter.AutoSize = true;
-        this.chkRECStandingAfter.Location = new System.Drawing.Point(157, 42);
-        this.chkRECStandingAfter.Name = "chkRECStandingAfter";
-        this.chkRECStandingAfter.Size = new System.Drawing.Size(139, 17);
-        this.chkRECStandingAfter.TabIndex = 3;
-        this.chkRECStandingAfter.Text = "Reciever Standing After";
-        this.chkRECStandingAfter.UseVisualStyleBackColor = true;
+        RecStandingAfterCheckBox.AutoSize = true;
+        RecStandingAfterCheckBox.Location = new Point(173, 47);
+        RecStandingAfterCheckBox.Margin = new Padding(4, 3, 4, 3);
+        RecStandingAfterCheckBox.Name = "RecStandingAfterCheckBox";
+        RecStandingAfterCheckBox.Size = new Size(149, 19);
+        RecStandingAfterCheckBox.TabIndex = 14;
+        RecStandingAfterCheckBox.Text = "Reciever Standing After";
+        RecStandingAfterCheckBox.UseVisualStyleBackColor = true;
         // 
-        // chkRECStandingBefore
+        // RecStandingBeforeCheckBox
         // 
-        this.chkRECStandingBefore.AutoSize = true;
-        this.chkRECStandingBefore.Location = new System.Drawing.Point(157, 19);
-        this.chkRECStandingBefore.Name = "chkRECStandingBefore";
-        this.chkRECStandingBefore.Size = new System.Drawing.Size(148, 17);
-        this.chkRECStandingBefore.TabIndex = 2;
-        this.chkRECStandingBefore.Text = "Reciever Standing Before";
-        this.chkRECStandingBefore.UseVisualStyleBackColor = true;
+        RecStandingBeforeCheckBox.AutoSize = true;
+        RecStandingBeforeCheckBox.Location = new Point(173, 22);
+        RecStandingBeforeCheckBox.Margin = new Padding(4, 3, 4, 3);
+        RecStandingBeforeCheckBox.Name = "RecStandingBeforeCheckBox";
+        RecStandingBeforeCheckBox.Size = new Size(157, 19);
+        RecStandingBeforeCheckBox.TabIndex = 13;
+        RecStandingBeforeCheckBox.Text = "Reciever Standing Before";
+        RecStandingBeforeCheckBox.UseVisualStyleBackColor = true;
         // 
-        // chkATTStandingAfter
+        // AttStandingAfterCheckBox
         // 
-        this.chkATTStandingAfter.AutoSize = true;
-        this.chkATTStandingAfter.Location = new System.Drawing.Point(6, 42);
-        this.chkATTStandingAfter.Name = "chkATTStandingAfter";
-        this.chkATTStandingAfter.Size = new System.Drawing.Size(136, 17);
-        this.chkATTStandingAfter.TabIndex = 1;
-        this.chkATTStandingAfter.Text = "Attacker Standing After";
-        this.chkATTStandingAfter.UseVisualStyleBackColor = true;
+        AttStandingAfterCheckBox.AutoSize = true;
+        AttStandingAfterCheckBox.Location = new Point(8, 47);
+        AttStandingAfterCheckBox.Margin = new Padding(4, 3, 4, 3);
+        AttStandingAfterCheckBox.Name = "AttStandingAfterCheckBox";
+        AttStandingAfterCheckBox.Size = new Size(149, 19);
+        AttStandingAfterCheckBox.TabIndex = 12;
+        AttStandingAfterCheckBox.Text = "Attacker Standing After";
+        AttStandingAfterCheckBox.UseVisualStyleBackColor = true;
         // 
-        // chkATTStandingBefore
+        // AttStandingBeforeCheckBox
         // 
-        this.chkATTStandingBefore.AutoSize = true;
-        this.chkATTStandingBefore.Location = new System.Drawing.Point(6, 19);
-        this.chkATTStandingBefore.Name = "chkATTStandingBefore";
-        this.chkATTStandingBefore.Size = new System.Drawing.Size(145, 17);
-        this.chkATTStandingBefore.TabIndex = 0;
-        this.chkATTStandingBefore.Text = "Attacker Standing Before";
-        this.chkATTStandingBefore.UseVisualStyleBackColor = true;
+        AttStandingBeforeCheckBox.AutoSize = true;
+        AttStandingBeforeCheckBox.Location = new Point(8, 22);
+        AttStandingBeforeCheckBox.Margin = new Padding(4, 3, 4, 3);
+        AttStandingBeforeCheckBox.Name = "AttStandingBeforeCheckBox";
+        AttStandingBeforeCheckBox.Size = new Size(157, 19);
+        AttStandingBeforeCheckBox.TabIndex = 11;
+        AttStandingBeforeCheckBox.Text = "Attacker Standing Before";
+        AttStandingBeforeCheckBox.UseVisualStyleBackColor = true;
         // 
         // grpPositions
         // 
-        this.grpPositions.Controls.Add(this.chkRECStandingAfter);
-        this.grpPositions.Controls.Add(this.chkRECStandingBefore);
-        this.grpPositions.Controls.Add(this.chkATTStandingAfter);
-        this.grpPositions.Controls.Add(this.chkATTStandingBefore);
-        this.grpPositions.Location = new System.Drawing.Point(186, 268);
-        this.grpPositions.Name = "grpPositions";
-        this.grpPositions.Size = new System.Drawing.Size(311, 71);
-        this.grpPositions.TabIndex = 23;
-        this.grpPositions.TabStop = false;
-        this.grpPositions.Text = "Positions";
+        grpPositions.Controls.Add(RecStandingAfterCheckBox);
+        grpPositions.Controls.Add(RecStandingBeforeCheckBox);
+        grpPositions.Controls.Add(AttStandingAfterCheckBox);
+        grpPositions.Controls.Add(AttStandingBeforeCheckBox);
+        grpPositions.Location = new Point(13, 186);
+        grpPositions.Margin = new Padding(4, 3, 4, 3);
+        grpPositions.Name = "grpPositions";
+        grpPositions.Padding = new Padding(4, 3, 4, 3);
+        grpPositions.Size = new Size(338, 72);
+        grpPositions.TabIndex = 23;
+        grpPositions.TabStop = false;
+        grpPositions.Text = "Positions";
         // 
-        // txtText3
+        // Text3TextBox
         // 
-        this.txtText3.Location = new System.Drawing.Point(6, 71);
-        this.txtText3.Name = "txtText3";
-        this.txtText3.Size = new System.Drawing.Size(420, 20);
-        this.txtText3.TabIndex = 2;
+        Text3TextBox.Location = new Point(8, 81);
+        Text3TextBox.Margin = new Padding(4, 3, 4, 3);
+        Text3TextBox.Name = "Text3TextBox";
+        Text3TextBox.Size = new Size(464, 23);
+        Text3TextBox.TabIndex = 10;
         // 
-        // txtText2
+        // Text2TextBox
         // 
-        this.txtText2.Location = new System.Drawing.Point(6, 45);
-        this.txtText2.Name = "txtText2";
-        this.txtText2.Size = new System.Drawing.Size(420, 20);
-        this.txtText2.TabIndex = 1;
+        Text2TextBox.Location = new Point(8, 52);
+        Text2TextBox.Margin = new Padding(4, 3, 4, 3);
+        Text2TextBox.Name = "Text2TextBox";
+        Text2TextBox.Size = new Size(464, 23);
+        Text2TextBox.TabIndex = 9;
         // 
-        // txtText1
+        // Text1TextBox
         // 
-        this.txtText1.Location = new System.Drawing.Point(6, 19);
-        this.txtText1.Name = "txtText1";
-        this.txtText1.Size = new System.Drawing.Size(420, 20);
-        this.txtText1.TabIndex = 0;
+        Text1TextBox.Location = new Point(8, 22);
+        Text1TextBox.Margin = new Padding(4, 3, 4, 3);
+        Text1TextBox.Name = "Text1TextBox";
+        Text1TextBox.Size = new Size(464, 23);
+        Text1TextBox.TabIndex = 8;
         // 
-        // btnCancel
+        // CancelButton
         // 
-        this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-        this.btnCancel.Location = new System.Drawing.Point(564, 316);
-        this.btnCancel.Name = "btnCancel";
-        this.btnCancel.Size = new System.Drawing.Size(54, 23);
-        this.btnCancel.TabIndex = 25;
-        this.btnCancel.Text = "&Cancel";
-        this.btnCancel.UseVisualStyleBackColor = true;
+        CancelButton.DialogResult = DialogResult.Cancel;
+        CancelButton.Location = new Point(430, 231);
+        CancelButton.Margin = new Padding(4, 3, 4, 3);
+        CancelButton.Name = "CancelButton";
+        CancelButton.Size = new Size(63, 27);
+        CancelButton.TabIndex = 16;
+        CancelButton.Text = "&Cancel";
+        CancelButton.UseVisualStyleBackColor = true;
         // 
         // grpTexts
         // 
-        this.grpTexts.Controls.Add(this.txtText3);
-        this.grpTexts.Controls.Add(this.txtText2);
-        this.grpTexts.Controls.Add(this.txtText1);
-        this.grpTexts.Location = new System.Drawing.Point(186, 165);
-        this.grpTexts.Name = "grpTexts";
-        this.grpTexts.Size = new System.Drawing.Size(432, 97);
-        this.grpTexts.TabIndex = 22;
-        this.grpTexts.TabStop = false;
-        this.grpTexts.Text = "Texts for the move";
+        grpTexts.Controls.Add(Text3TextBox);
+        grpTexts.Controls.Add(Text2TextBox);
+        grpTexts.Controls.Add(Text1TextBox);
+        grpTexts.Location = new Point(13, 70);
+        grpTexts.Margin = new Padding(4, 3, 4, 3);
+        grpTexts.Name = "grpTexts";
+        grpTexts.Padding = new Padding(4, 3, 4, 3);
+        grpTexts.Size = new Size(480, 110);
+        grpTexts.TabIndex = 22;
+        grpTexts.TabStop = false;
+        grpTexts.Text = "Texts for the move";
         // 
-        // chkHighRisk
+        // HighRiskCheckBox
         // 
-        this.chkHighRisk.AutoSize = true;
-        this.chkHighRisk.Location = new System.Drawing.Point(508, 140);
-        this.chkHighRisk.Name = "chkHighRisk";
-        this.chkHighRisk.Size = new System.Drawing.Size(72, 17);
-        this.chkHighRisk.TabIndex = 21;
-        this.chkHighRisk.Text = "High Risk";
-        this.chkHighRisk.UseVisualStyleBackColor = true;
+        HighRiskCheckBox.AutoSize = true;
+        HighRiskCheckBox.Location = new Point(382, 43);
+        HighRiskCheckBox.Margin = new Padding(4, 3, 4, 3);
+        HighRiskCheckBox.Name = "HighRiskCheckBox";
+        HighRiskCheckBox.Size = new Size(76, 19);
+        HighRiskCheckBox.TabIndex = 7;
+        HighRiskCheckBox.Text = "High Risk";
+        HighRiskCheckBox.UseVisualStyleBackColor = true;
         // 
-        // chkIllegal
+        // IllegalCheckBox
         // 
-        this.chkIllegal.AutoSize = true;
-        this.chkIllegal.Location = new System.Drawing.Point(449, 140);
-        this.chkIllegal.Name = "chkIllegal";
-        this.chkIllegal.Size = new System.Drawing.Size(53, 17);
-        this.chkIllegal.TabIndex = 20;
-        this.chkIllegal.Text = "Illegal";
-        this.chkIllegal.UseVisualStyleBackColor = true;
+        IllegalCheckBox.AutoSize = true;
+        IllegalCheckBox.Location = new Point(317, 43);
+        IllegalCheckBox.Margin = new Padding(4, 3, 4, 3);
+        IllegalCheckBox.Name = "IllegalCheckBox";
+        IllegalCheckBox.Size = new Size(57, 19);
+        IllegalCheckBox.TabIndex = 6;
+        IllegalCheckBox.Text = "Illegal";
+        IllegalCheckBox.UseVisualStyleBackColor = true;
         // 
-        // chkLift
+        // LiftCheckBox
         // 
-        this.chkLift.AutoSize = true;
-        this.chkLift.Location = new System.Drawing.Point(403, 140);
-        this.chkLift.Name = "chkLift";
-        this.chkLift.Size = new System.Drawing.Size(40, 17);
-        this.chkLift.TabIndex = 19;
-        this.chkLift.Text = "Lift";
-        this.chkLift.UseVisualStyleBackColor = true;
+        LiftCheckBox.AutoSize = true;
+        LiftCheckBox.Location = new Point(266, 43);
+        LiftCheckBox.Margin = new Padding(4, 3, 4, 3);
+        LiftCheckBox.Name = "LiftCheckBox";
+        LiftCheckBox.Size = new Size(43, 19);
+        LiftCheckBox.TabIndex = 5;
+        LiftCheckBox.Text = "Lift";
+        LiftCheckBox.UseVisualStyleBackColor = true;
         // 
-        // cboType
+        // TypeComboBox
         // 
-        this.cboType.FormattingEnabled = true;
-        this.cboType.Items.AddRange(new object[] {
-        "Match Prepare",
-        "Without Advantage",
-        "With Advantage",
-        "Cover (Pin)",
-        "Knock Out Finisher",
-        "Submission Finisher"});
-        this.cboType.Location = new System.Drawing.Point(220, 138);
-        this.cboType.Name = "cboType";
-        this.cboType.Size = new System.Drawing.Size(177, 21);
-        this.cboType.TabIndex = 18;
+        TypeComboBox.FormattingEnabled = true;
+        TypeComboBox.Items.AddRange(new object[] { "Match Prepare", "Without Advantage", "With Advantage", "Cover (Pin)", "Knock Out Finisher", "Submission Finisher" });
+        TypeComboBox.Location = new Point(52, 41);
+        TypeComboBox.Margin = new Padding(4, 3, 4, 3);
+        TypeComboBox.Name = "TypeComboBox";
+        TypeComboBox.Size = new Size(206, 23);
+        TypeComboBox.TabIndex = 4;
         // 
-        // txtName
+        // NameTextBox
         // 
-        this.txtName.Location = new System.Drawing.Point(403, 112);
-        this.txtName.Name = "txtName";
-        this.txtName.Size = new System.Drawing.Size(215, 20);
-        this.txtName.TabIndex = 16;
-        // 
-        // trkDamage
-        // 
-        this.trkDamage.AutoSize = false;
-        this.trkDamage.Location = new System.Drawing.Point(236, 112);
-        this.trkDamage.Name = "trkDamage";
-        this.trkDamage.Size = new System.Drawing.Size(120, 20);
-        this.trkDamage.TabIndex = 14;
-        this.trkDamage.TickStyle = System.Windows.Forms.TickStyle.None;
+        NameTextBox.Location = new Point(258, 12);
+        NameTextBox.Margin = new Padding(4, 3, 4, 3);
+        NameTextBox.Name = "NameTextBox";
+        NameTextBox.Size = new Size(235, 23);
+        NameTextBox.TabIndex = 0;
         // 
         // lblType
         // 
-        this.lblType.AutoSize = true;
-        this.lblType.Location = new System.Drawing.Point(183, 141);
-        this.lblType.Name = "lblType";
-        this.lblType.Size = new System.Drawing.Size(31, 13);
-        this.lblType.TabIndex = 17;
-        this.lblType.Text = "Type";
+        lblType.AutoSize = true;
+        lblType.Location = new Point(13, 44);
+        lblType.Margin = new Padding(4, 0, 4, 0);
+        lblType.Name = "lblType";
+        lblType.Size = new Size(31, 15);
+        lblType.TabIndex = 17;
+        lblType.Text = "Type";
         // 
         // lblName
         // 
-        this.lblName.AutoSize = true;
-        this.lblName.Location = new System.Drawing.Point(362, 115);
-        this.lblName.Name = "lblName";
-        this.lblName.Size = new System.Drawing.Size(35, 13);
-        this.lblName.TabIndex = 15;
-        this.lblName.Text = "Name";
+        lblName.AutoSize = true;
+        lblName.Location = new Point(211, 15);
+        lblName.Margin = new Padding(4, 0, 4, 0);
+        lblName.Name = "lblName";
+        lblName.Size = new Size(39, 15);
+        lblName.TabIndex = 15;
+        lblName.Text = "Name";
         // 
         // lblDamage
         // 
-        this.lblDamage.AutoSize = true;
-        this.lblDamage.Location = new System.Drawing.Point(183, 115);
-        this.lblDamage.Name = "lblDamage";
-        this.lblDamage.Size = new System.Drawing.Size(47, 13);
-        this.lblDamage.TabIndex = 13;
-        this.lblDamage.Text = "Damage";
+        lblDamage.AutoSize = true;
+        lblDamage.Location = new Point(13, 15);
+        lblDamage.Margin = new Padding(4, 0, 4, 0);
+        lblDamage.Name = "lblDamage";
+        lblDamage.Size = new Size(51, 15);
+        lblDamage.TabIndex = 13;
+        lblDamage.Text = "Damage";
+        // 
+        // DamageDecreaseButton
+        // 
+        DamageDecreaseButton.Location = new Point(71, 15);
+        DamageDecreaseButton.Name = "DamageDecreaseButton";
+        DamageDecreaseButton.Size = new Size(15, 15);
+        DamageDecreaseButton.TabIndex = 1;
+        DamageDecreaseButton.UseVisualStyleBackColor = true;
+        // 
+        // DamageIncreaseButton
+        // 
+        DamageIncreaseButton.Location = new Point(189, 15);
+        DamageIncreaseButton.Name = "DamageIncreaseButton";
+        DamageIncreaseButton.Size = new Size(15, 15);
+        DamageIncreaseButton.TabIndex = 3;
+        DamageIncreaseButton.UseVisualStyleBackColor = true;
+        // 
+        // DamageProgressBar
+        // 
+        DamageProgressBar.Location = new Point(92, 15);
+        DamageProgressBar.Name = "DamageProgressBar";
+        DamageProgressBar.Size = new Size(91, 15);
+        DamageProgressBar.TabIndex = 2;
         // 
         // MoveEditorForm
         // 
-        this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(800, 450);
-        this.Controls.Add(this.btnOk);
-        this.Controls.Add(this.grpPositions);
-        this.Controls.Add(this.btnCancel);
-        this.Controls.Add(this.grpTexts);
-        this.Controls.Add(this.chkHighRisk);
-        this.Controls.Add(this.chkIllegal);
-        this.Controls.Add(this.chkLift);
-        this.Controls.Add(this.cboType);
-        this.Controls.Add(this.txtName);
-        this.Controls.Add(this.trkDamage);
-        this.Controls.Add(this.lblType);
-        this.Controls.Add(this.lblName);
-        this.Controls.Add(this.lblDamage);
-        this.Name = "MoveEditorForm";
-        this.Text = "MoveEditorForm";
-        this.grpPositions.ResumeLayout(false);
-        this.grpPositions.PerformLayout();
-        this.grpTexts.ResumeLayout(false);
-        this.grpTexts.PerformLayout();
-        ((System.ComponentModel.ISupportInitialize)(this.trkDamage)).EndInit();
-        this.ResumeLayout(false);
-        this.PerformLayout();
-
+        AcceptButton = OkButton;
+        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleMode = AutoScaleMode.Font;
+        CancelButton = CancelButton;
+        ClientSize = new Size(506, 270);
+        Controls.Add(DamageDecreaseButton);
+        Controls.Add(DamageIncreaseButton);
+        Controls.Add(DamageProgressBar);
+        Controls.Add(OkButton);
+        Controls.Add(grpPositions);
+        Controls.Add(CancelButton);
+        Controls.Add(grpTexts);
+        Controls.Add(HighRiskCheckBox);
+        Controls.Add(IllegalCheckBox);
+        Controls.Add(LiftCheckBox);
+        Controls.Add(TypeComboBox);
+        Controls.Add(NameTextBox);
+        Controls.Add(lblType);
+        Controls.Add(lblName);
+        Controls.Add(lblDamage);
+        FormBorderStyle = FormBorderStyle.FixedDialog;
+        Margin = new Padding(4, 3, 4, 3);
+        MaximizeBox = false;
+        MinimizeBox = false;
+        Name = "MoveEditorForm";
+        ShowIcon = false;
+        ShowInTaskbar = false;
+        Text = "Move Editor";
+        grpPositions.ResumeLayout(false);
+        grpPositions.PerformLayout();
+        grpTexts.ResumeLayout(false);
+        grpTexts.PerformLayout();
+        ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
 
-    internal System.Windows.Forms.Button btnOk;
-    internal System.Windows.Forms.CheckBox chkRECStandingAfter;
-    internal System.Windows.Forms.CheckBox chkRECStandingBefore;
-    internal System.Windows.Forms.CheckBox chkATTStandingAfter;
-    internal System.Windows.Forms.CheckBox chkATTStandingBefore;
+    internal System.Windows.Forms.Button OkButton;
+    internal System.Windows.Forms.CheckBox RecStandingAfterCheckBox;
+    internal System.Windows.Forms.CheckBox RecStandingBeforeCheckBox;
+    internal System.Windows.Forms.CheckBox AttStandingAfterCheckBox;
+    internal System.Windows.Forms.CheckBox AttStandingBeforeCheckBox;
     internal System.Windows.Forms.GroupBox grpPositions;
-    internal System.Windows.Forms.TextBox txtText3;
-    internal System.Windows.Forms.TextBox txtText2;
-    internal System.Windows.Forms.TextBox txtText1;
-    internal System.Windows.Forms.Button btnCancel;
+    internal System.Windows.Forms.TextBox Text3TextBox;
+    internal System.Windows.Forms.TextBox Text2TextBox;
+    internal System.Windows.Forms.TextBox Text1TextBox;
+    internal System.Windows.Forms.Button CancelButton;
     internal System.Windows.Forms.GroupBox grpTexts;
-    internal System.Windows.Forms.CheckBox chkHighRisk;
-    internal System.Windows.Forms.CheckBox chkIllegal;
-    internal System.Windows.Forms.CheckBox chkLift;
-    internal System.Windows.Forms.ComboBox cboType;
-    internal System.Windows.Forms.TextBox txtName;
-    internal System.Windows.Forms.TrackBar trkDamage;
+    internal System.Windows.Forms.CheckBox HighRiskCheckBox;
+    internal System.Windows.Forms.CheckBox IllegalCheckBox;
+    internal System.Windows.Forms.CheckBox LiftCheckBox;
+    internal System.Windows.Forms.ComboBox TypeComboBox;
+    internal System.Windows.Forms.TextBox NameTextBox;
     internal System.Windows.Forms.Label lblType;
     internal System.Windows.Forms.Label lblName;
     internal System.Windows.Forms.Label lblDamage;
+    private Button DamageDecreaseButton;
+    private Button DamageIncreaseButton;
+    private ProgressBar DamageProgressBar;
 }
