@@ -28,210 +28,235 @@ partial class FedOptionsForm
     /// </summary>
     private void InitializeComponent()
     {
-        this.OkCommand = new System.Windows.Forms.Button();
-        this.CancelCommand = new System.Windows.Forms.Button();
-        this.lblBackgroundColor = new System.Windows.Forms.Label();
-        this.BackgroundColorField = new System.Windows.Forms.TextBox();
-        this.lblFontColor = new System.Windows.Forms.Label();
-        this.FontColorField = new System.Windows.Forms.TextBox();
-        this.lblStatMax = new System.Windows.Forms.Label();
-        this.StatMaxField = new System.Windows.Forms.TextBox();
-        this.MatchHeadingCheckBox = new System.Windows.Forms.CheckBox();
-        this.OnlyEndingsCheckBox = new System.Windows.Forms.CheckBox();
-        this.BlockFormatMovesCheckBox = new System.Windows.Forms.CheckBox();
-        this.CommentaryCheckBox = new System.Windows.Forms.CheckBox();
-        this.lblWebsite = new System.Windows.Forms.Label();
-        this.WebsiteField = new System.Windows.Forms.TextBox();
-        this.lblOwner = new System.Windows.Forms.Label();
-        this.OwnerField = new System.Windows.Forms.TextBox();
-        this.lblName = new System.Windows.Forms.Label();
-        this.NameField = new System.Windows.Forms.TextBox();
-        this.SuspendLayout();
+        OkCommand = new Button();
+        CancelCommand = new Button();
+        lblBackgroundColor = new Label();
+        BackgroundColorTextBox = new TextBox();
+        lblFontColor = new Label();
+        FontColorTextBox = new TextBox();
+        lblStatMax = new Label();
+        StatMaxTextBox = new TextBox();
+        IncludeMatchHeadingCheckBox = new CheckBox();
+        ShowOnlyEndingsCheckBox = new CheckBox();
+        MovesInBlockFormatCheckBox = new CheckBox();
+        IncludeCommentaryCheckBox = new CheckBox();
+        lblWebsite = new Label();
+        WebsiteTextBox = new TextBox();
+        lblOwner = new Label();
+        OwnerTextBox = new TextBox();
+        lblName = new Label();
+        NameTextBox = new TextBox();
+        SuspendLayout();
         // 
         // OkCommand
         // 
-        this.OkCommand.DialogResult = System.Windows.Forms.DialogResult.OK;
-        this.OkCommand.Location = new System.Drawing.Point(471, 289);
-        this.OkCommand.Name = "OkCommand";
-        this.OkCommand.Size = new System.Drawing.Size(75, 23);
-        this.OkCommand.TabIndex = 35;
-        this.OkCommand.Text = "&Ok";
-        this.OkCommand.UseVisualStyleBackColor = true;
+        OkCommand.DialogResult = DialogResult.OK;
+        OkCommand.Location = new Point(272, 178);
+        OkCommand.Margin = new Padding(4, 3, 4, 3);
+        OkCommand.Name = "OkCommand";
+        OkCommand.Size = new Size(78, 27);
+        OkCommand.TabIndex = 11;
+        OkCommand.Text = "&Ok";
+        OkCommand.UseVisualStyleBackColor = true;
         // 
         // CancelCommand
         // 
-        this.CancelCommand.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-        this.CancelCommand.Location = new System.Drawing.Point(390, 289);
-        this.CancelCommand.Name = "CancelCommand";
-        this.CancelCommand.Size = new System.Drawing.Size(75, 23);
-        this.CancelCommand.TabIndex = 34;
-        this.CancelCommand.Text = "&Cancel";
-        this.CancelCommand.UseVisualStyleBackColor = true;
+        CancelCommand.DialogResult = DialogResult.Cancel;
+        CancelCommand.Location = new Point(186, 178);
+        CancelCommand.Margin = new Padding(4, 3, 4, 3);
+        CancelCommand.Name = "CancelCommand";
+        CancelCommand.Size = new Size(78, 27);
+        CancelCommand.TabIndex = 10;
+        CancelCommand.Text = "&Cancel";
+        CancelCommand.UseVisualStyleBackColor = true;
         // 
         // lblBackgroundColor
         // 
-        this.lblBackgroundColor.AutoSize = true;
-        this.lblBackgroundColor.Location = new System.Drawing.Point(254, 292);
-        this.lblBackgroundColor.Name = "lblBackgroundColor";
-        this.lblBackgroundColor.Size = new System.Drawing.Size(49, 13);
-        this.lblBackgroundColor.TabIndex = 32;
-        this.lblBackgroundColor.Text = "BG Color";
+        lblBackgroundColor.AutoSize = true;
+        lblBackgroundColor.Location = new Point(13, 181);
+        lblBackgroundColor.Margin = new Padding(4, 0, 4, 0);
+        lblBackgroundColor.Name = "lblBackgroundColor";
+        lblBackgroundColor.Size = new Size(72, 15);
+        lblBackgroundColor.TabIndex = 32;
+        lblBackgroundColor.Text = "BGCOLOR =";
         // 
-        // BackgroundColorField
+        // BackgroundColorTextBox
         // 
-        this.BackgroundColorField.Location = new System.Drawing.Point(309, 289);
-        this.BackgroundColorField.Name = "BackgroundColorField";
-        this.BackgroundColorField.Size = new System.Drawing.Size(72, 20);
-        this.BackgroundColorField.TabIndex = 33;
+        BackgroundColorTextBox.Location = new Point(93, 178);
+        BackgroundColorTextBox.Margin = new Padding(4, 3, 4, 3);
+        BackgroundColorTextBox.Name = "BackgroundColorTextBox";
+        BackgroundColorTextBox.Size = new Size(83, 23);
+        BackgroundColorTextBox.TabIndex = 9;
         // 
         // lblFontColor
         // 
-        this.lblFontColor.AutoSize = true;
-        this.lblFontColor.Location = new System.Drawing.Point(393, 266);
-        this.lblFontColor.Name = "lblFontColor";
-        this.lblFontColor.Size = new System.Drawing.Size(55, 13);
-        this.lblFontColor.TabIndex = 30;
-        this.lblFontColor.Text = "Font Color";
+        lblFontColor.AutoSize = true;
+        lblFontColor.Location = new Point(184, 152);
+        lblFontColor.Margin = new Padding(4, 0, 4, 0);
+        lblFontColor.Name = "lblFontColor";
+        lblFontColor.Size = new Size(74, 15);
+        lblFontColor.TabIndex = 30;
+        lblFontColor.Text = "Font Color =";
         // 
-        // FontColorField
+        // FontColorTextBox
         // 
-        this.FontColorField.Location = new System.Drawing.Point(454, 263);
-        this.FontColorField.Name = "FontColorField";
-        this.FontColorField.Size = new System.Drawing.Size(72, 20);
-        this.FontColorField.TabIndex = 31;
+        FontColorTextBox.Location = new Point(266, 149);
+        FontColorTextBox.Margin = new Padding(4, 3, 4, 3);
+        FontColorTextBox.Name = "FontColorTextBox";
+        FontColorTextBox.Size = new Size(83, 23);
+        FontColorTextBox.TabIndex = 8;
         // 
         // lblStatMax
         // 
-        this.lblStatMax.AutoSize = true;
-        this.lblStatMax.Location = new System.Drawing.Point(254, 266);
-        this.lblStatMax.Name = "lblStatMax";
-        this.lblStatMax.Size = new System.Drawing.Size(49, 13);
-        this.lblStatMax.TabIndex = 28;
-        this.lblStatMax.Text = "Stat Max";
+        lblStatMax.AutoSize = true;
+        lblStatMax.Location = new Point(13, 152);
+        lblStatMax.Margin = new Padding(4, 0, 4, 0);
+        lblStatMax.Name = "lblStatMax";
+        lblStatMax.Size = new Size(68, 15);
+        lblStatMax.TabIndex = 28;
+        lblStatMax.Text = "STATMAX =";
         // 
-        // StatMaxField
+        // StatMaxTextBox
         // 
-        this.StatMaxField.Location = new System.Drawing.Point(309, 263);
-        this.StatMaxField.Name = "StatMaxField";
-        this.StatMaxField.Size = new System.Drawing.Size(72, 20);
-        this.StatMaxField.TabIndex = 29;
+        StatMaxTextBox.Location = new Point(93, 149);
+        StatMaxTextBox.Margin = new Padding(4, 3, 4, 3);
+        StatMaxTextBox.Name = "StatMaxTextBox";
+        StatMaxTextBox.Size = new Size(83, 23);
+        StatMaxTextBox.TabIndex = 7;
         // 
-        // MatchHeadingCheckBox
+        // IncludeMatchHeadingCheckBox
         // 
-        this.MatchHeadingCheckBox.AutoSize = true;
-        this.MatchHeadingCheckBox.Location = new System.Drawing.Point(396, 240);
-        this.MatchHeadingCheckBox.Name = "MatchHeadingCheckBox";
-        this.MatchHeadingCheckBox.Size = new System.Drawing.Size(134, 17);
-        this.MatchHeadingCheckBox.TabIndex = 27;
-        this.MatchHeadingCheckBox.Text = "Include match heading";
-        this.MatchHeadingCheckBox.UseVisualStyleBackColor = true;
+        IncludeMatchHeadingCheckBox.AutoSize = true;
+        IncludeMatchHeadingCheckBox.Location = new Point(178, 124);
+        IncludeMatchHeadingCheckBox.Margin = new Padding(4, 3, 4, 3);
+        IncludeMatchHeadingCheckBox.Name = "IncludeMatchHeadingCheckBox";
+        IncludeMatchHeadingCheckBox.Size = new Size(148, 19);
+        IncludeMatchHeadingCheckBox.TabIndex = 6;
+        IncludeMatchHeadingCheckBox.Text = "Include match heading";
+        IncludeMatchHeadingCheckBox.UseVisualStyleBackColor = true;
         // 
-        // OnlyEndingsCheckBox
+        // ShowOnlyEndingsCheckBox
         // 
-        this.OnlyEndingsCheckBox.AutoSize = true;
-        this.OnlyEndingsCheckBox.Location = new System.Drawing.Point(257, 240);
-        this.OnlyEndingsCheckBox.Name = "OnlyEndingsCheckBox";
-        this.OnlyEndingsCheckBox.Size = new System.Drawing.Size(115, 17);
-        this.OnlyEndingsCheckBox.TabIndex = 26;
-        this.OnlyEndingsCheckBox.Text = "Show only endings";
-        this.OnlyEndingsCheckBox.UseVisualStyleBackColor = true;
+        ShowOnlyEndingsCheckBox.AutoSize = true;
+        ShowOnlyEndingsCheckBox.Location = new Point(34, 124);
+        ShowOnlyEndingsCheckBox.Margin = new Padding(4, 3, 4, 3);
+        ShowOnlyEndingsCheckBox.Name = "ShowOnlyEndingsCheckBox";
+        ShowOnlyEndingsCheckBox.Size = new Size(126, 19);
+        ShowOnlyEndingsCheckBox.TabIndex = 5;
+        ShowOnlyEndingsCheckBox.Text = "Show only endings";
+        ShowOnlyEndingsCheckBox.UseVisualStyleBackColor = true;
         // 
-        // BlockFormatMovesCheckBox
+        // MovesInBlockFormatCheckBox
         // 
-        this.BlockFormatMovesCheckBox.AutoSize = true;
-        this.BlockFormatMovesCheckBox.Location = new System.Drawing.Point(396, 217);
-        this.BlockFormatMovesCheckBox.Name = "BlockFormatMovesCheckBox";
-        this.BlockFormatMovesCheckBox.Size = new System.Drawing.Size(130, 17);
-        this.BlockFormatMovesCheckBox.TabIndex = 25;
-        this.BlockFormatMovesCheckBox.Text = "Moves in block format";
-        this.BlockFormatMovesCheckBox.UseVisualStyleBackColor = true;
+        MovesInBlockFormatCheckBox.AutoSize = true;
+        MovesInBlockFormatCheckBox.Location = new Point(178, 99);
+        MovesInBlockFormatCheckBox.Margin = new Padding(4, 3, 4, 3);
+        MovesInBlockFormatCheckBox.Name = "MovesInBlockFormatCheckBox";
+        MovesInBlockFormatCheckBox.Size = new Size(145, 19);
+        MovesInBlockFormatCheckBox.TabIndex = 4;
+        MovesInBlockFormatCheckBox.Text = "Moves in block format";
+        MovesInBlockFormatCheckBox.UseVisualStyleBackColor = true;
         // 
-        // CommentaryCheckBox
+        // IncludeCommentaryCheckBox
         // 
-        this.CommentaryCheckBox.AutoSize = true;
-        this.CommentaryCheckBox.Location = new System.Drawing.Point(257, 217);
-        this.CommentaryCheckBox.Name = "CommentaryCheckBox";
-        this.CommentaryCheckBox.Size = new System.Drawing.Size(121, 17);
-        this.CommentaryCheckBox.TabIndex = 24;
-        this.CommentaryCheckBox.Text = "Include commentary";
-        this.CommentaryCheckBox.UseVisualStyleBackColor = true;
+        IncludeCommentaryCheckBox.AutoSize = true;
+        IncludeCommentaryCheckBox.Location = new Point(34, 99);
+        IncludeCommentaryCheckBox.Margin = new Padding(4, 3, 4, 3);
+        IncludeCommentaryCheckBox.Name = "IncludeCommentaryCheckBox";
+        IncludeCommentaryCheckBox.Size = new Size(136, 19);
+        IncludeCommentaryCheckBox.TabIndex = 3;
+        IncludeCommentaryCheckBox.Text = "Include commentary";
+        IncludeCommentaryCheckBox.UseVisualStyleBackColor = true;
         // 
         // lblWebsite
         // 
-        this.lblWebsite.AutoSize = true;
-        this.lblWebsite.Location = new System.Drawing.Point(254, 194);
-        this.lblWebsite.Name = "lblWebsite";
-        this.lblWebsite.Size = new System.Drawing.Size(46, 13);
-        this.lblWebsite.TabIndex = 22;
-        this.lblWebsite.Text = "Website";
+        lblWebsite.AutoSize = true;
+        lblWebsite.Location = new Point(13, 73);
+        lblWebsite.Margin = new Padding(4, 0, 4, 0);
+        lblWebsite.Name = "lblWebsite";
+        lblWebsite.Size = new Size(49, 15);
+        lblWebsite.TabIndex = 22;
+        lblWebsite.Text = "Website";
         // 
-        // WebsiteField
+        // WebsiteTextBox
         // 
-        this.WebsiteField.Location = new System.Drawing.Point(316, 191);
-        this.WebsiteField.Name = "WebsiteField";
-        this.WebsiteField.Size = new System.Drawing.Size(230, 20);
-        this.WebsiteField.TabIndex = 23;
+        WebsiteTextBox.Location = new Point(82, 70);
+        WebsiteTextBox.Margin = new Padding(4, 3, 4, 3);
+        WebsiteTextBox.Name = "WebsiteTextBox";
+        WebsiteTextBox.Size = new Size(268, 23);
+        WebsiteTextBox.TabIndex = 2;
         // 
         // lblOwner
         // 
-        this.lblOwner.AutoSize = true;
-        this.lblOwner.Location = new System.Drawing.Point(254, 168);
-        this.lblOwner.Name = "lblOwner";
-        this.lblOwner.Size = new System.Drawing.Size(38, 13);
-        this.lblOwner.TabIndex = 20;
-        this.lblOwner.Text = "Owner";
+        lblOwner.AutoSize = true;
+        lblOwner.Location = new Point(13, 44);
+        lblOwner.Margin = new Padding(4, 0, 4, 0);
+        lblOwner.Name = "lblOwner";
+        lblOwner.Size = new Size(42, 15);
+        lblOwner.TabIndex = 20;
+        lblOwner.Text = "Owner";
         // 
-        // OwnerField
+        // OwnerTextBox
         // 
-        this.OwnerField.Location = new System.Drawing.Point(316, 165);
-        this.OwnerField.Name = "OwnerField";
-        this.OwnerField.Size = new System.Drawing.Size(230, 20);
-        this.OwnerField.TabIndex = 21;
+        OwnerTextBox.Location = new Point(82, 41);
+        OwnerTextBox.Margin = new Padding(4, 3, 4, 3);
+        OwnerTextBox.Name = "OwnerTextBox";
+        OwnerTextBox.Size = new Size(268, 23);
+        OwnerTextBox.TabIndex = 1;
         // 
         // lblName
         // 
-        this.lblName.AutoSize = true;
-        this.lblName.Location = new System.Drawing.Point(254, 142);
-        this.lblName.Name = "lblName";
-        this.lblName.Size = new System.Drawing.Size(56, 13);
-        this.lblName.TabIndex = 18;
-        this.lblName.Text = "Fed Name";
+        lblName.AutoSize = true;
+        lblName.Location = new Point(13, 15);
+        lblName.Margin = new Padding(4, 0, 4, 0);
+        lblName.Name = "lblName";
+        lblName.Size = new Size(61, 15);
+        lblName.TabIndex = 18;
+        lblName.Text = "Fed Name";
         // 
-        // NameField
+        // NameTextBox
         // 
-        this.NameField.Location = new System.Drawing.Point(316, 139);
-        this.NameField.Name = "NameField";
-        this.NameField.Size = new System.Drawing.Size(230, 20);
-        this.NameField.TabIndex = 19;
+        NameTextBox.Location = new Point(82, 12);
+        NameTextBox.Margin = new Padding(4, 3, 4, 3);
+        NameTextBox.Name = "NameTextBox";
+        NameTextBox.Size = new Size(268, 23);
+        NameTextBox.TabIndex = 0;
         // 
         // FedOptionsForm
         // 
-        this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(800, 450);
-        this.Controls.Add(this.OkCommand);
-        this.Controls.Add(this.CancelCommand);
-        this.Controls.Add(this.lblBackgroundColor);
-        this.Controls.Add(this.BackgroundColorField);
-        this.Controls.Add(this.lblFontColor);
-        this.Controls.Add(this.FontColorField);
-        this.Controls.Add(this.lblStatMax);
-        this.Controls.Add(this.StatMaxField);
-        this.Controls.Add(this.MatchHeadingCheckBox);
-        this.Controls.Add(this.OnlyEndingsCheckBox);
-        this.Controls.Add(this.BlockFormatMovesCheckBox);
-        this.Controls.Add(this.CommentaryCheckBox);
-        this.Controls.Add(this.lblWebsite);
-        this.Controls.Add(this.WebsiteField);
-        this.Controls.Add(this.lblOwner);
-        this.Controls.Add(this.OwnerField);
-        this.Controls.Add(this.lblName);
-        this.Controls.Add(this.NameField);
-        this.Name = "FedOptionsForm";
-        this.Text = "FedOptionsForm";
-        this.ResumeLayout(false);
-        this.PerformLayout();
-
+        AcceptButton = OkCommand;
+        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleMode = AutoScaleMode.Font;
+        CancelButton = CancelCommand;
+        ClientSize = new Size(363, 217);
+        Controls.Add(OkCommand);
+        Controls.Add(CancelCommand);
+        Controls.Add(lblBackgroundColor);
+        Controls.Add(BackgroundColorTextBox);
+        Controls.Add(lblFontColor);
+        Controls.Add(FontColorTextBox);
+        Controls.Add(lblStatMax);
+        Controls.Add(StatMaxTextBox);
+        Controls.Add(IncludeMatchHeadingCheckBox);
+        Controls.Add(ShowOnlyEndingsCheckBox);
+        Controls.Add(MovesInBlockFormatCheckBox);
+        Controls.Add(IncludeCommentaryCheckBox);
+        Controls.Add(lblWebsite);
+        Controls.Add(WebsiteTextBox);
+        Controls.Add(lblOwner);
+        Controls.Add(OwnerTextBox);
+        Controls.Add(lblName);
+        Controls.Add(NameTextBox);
+        FormBorderStyle = FormBorderStyle.FixedDialog;
+        Margin = new Padding(4, 3, 4, 3);
+        MaximizeBox = false;
+        MinimizeBox = false;
+        Name = "FedOptionsForm";
+        ShowIcon = false;
+        ShowInTaskbar = false;
+        Text = "Federation Options";
+        ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
@@ -239,19 +264,19 @@ partial class FedOptionsForm
     internal System.Windows.Forms.Button OkCommand;
     internal System.Windows.Forms.Button CancelCommand;
     internal System.Windows.Forms.Label lblBackgroundColor;
-    internal System.Windows.Forms.TextBox BackgroundColorField;
+    internal System.Windows.Forms.TextBox BackgroundColorTextBox;
     internal System.Windows.Forms.Label lblFontColor;
-    internal System.Windows.Forms.TextBox FontColorField;
+    internal System.Windows.Forms.TextBox FontColorTextBox;
     internal System.Windows.Forms.Label lblStatMax;
-    internal System.Windows.Forms.TextBox StatMaxField;
-    internal System.Windows.Forms.CheckBox MatchHeadingCheckBox;
-    internal System.Windows.Forms.CheckBox OnlyEndingsCheckBox;
-    internal System.Windows.Forms.CheckBox BlockFormatMovesCheckBox;
-    internal System.Windows.Forms.CheckBox CommentaryCheckBox;
+    internal System.Windows.Forms.TextBox StatMaxTextBox;
+    internal System.Windows.Forms.CheckBox IncludeMatchHeadingCheckBox;
+    internal System.Windows.Forms.CheckBox ShowOnlyEndingsCheckBox;
+    internal System.Windows.Forms.CheckBox MovesInBlockFormatCheckBox;
+    internal System.Windows.Forms.CheckBox IncludeCommentaryCheckBox;
     internal System.Windows.Forms.Label lblWebsite;
-    internal System.Windows.Forms.TextBox WebsiteField;
+    internal System.Windows.Forms.TextBox WebsiteTextBox;
     internal System.Windows.Forms.Label lblOwner;
-    internal System.Windows.Forms.TextBox OwnerField;
+    internal System.Windows.Forms.TextBox OwnerTextBox;
     internal System.Windows.Forms.Label lblName;
-    internal System.Windows.Forms.TextBox NameField;
+    internal System.Windows.Forms.TextBox NameTextBox;
 }
