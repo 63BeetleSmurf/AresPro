@@ -82,6 +82,7 @@ partial class MainForm
         // btnBookEvent
         // 
         btnBookEvent.DisplayStyle = ToolStripItemDisplayStyle.Image;
+        btnBookEvent.Image = Properties.Resources.ring;
         btnBookEvent.ImageScaling = ToolStripItemImageScaling.None;
         btnBookEvent.ImageTransparentColor = Color.Magenta;
         btnBookEvent.Name = "btnBookEvent";
@@ -143,6 +144,7 @@ partial class MainForm
         // btnOpenFed
         // 
         btnOpenFed.DisplayStyle = ToolStripItemDisplayStyle.Image;
+        btnOpenFed.Image = Properties.Resources.open;
         btnOpenFed.ImageScaling = ToolStripItemImageScaling.None;
         btnOpenFed.ImageTransparentColor = Color.Magenta;
         btnOpenFed.Name = "btnOpenFed";
@@ -152,6 +154,7 @@ partial class MainForm
         // btnSaveFed
         // 
         btnSaveFed.DisplayStyle = ToolStripItemDisplayStyle.Image;
+        btnSaveFed.Image = Properties.Resources.save;
         btnSaveFed.ImageScaling = ToolStripItemImageScaling.None;
         btnSaveFed.ImageTransparentColor = Color.Magenta;
         btnSaveFed.Name = "btnSaveFed";
@@ -166,6 +169,7 @@ partial class MainForm
         // btnNewWrestler
         // 
         btnNewWrestler.DisplayStyle = ToolStripItemDisplayStyle.Image;
+        btnNewWrestler.Image = Properties.Resources.wrestler;
         btnNewWrestler.ImageScaling = ToolStripItemImageScaling.None;
         btnNewWrestler.ImageTransparentColor = Color.Magenta;
         btnNewWrestler.Name = "btnNewWrestler";
@@ -175,6 +179,7 @@ partial class MainForm
         // btnNewTeam
         // 
         btnNewTeam.DisplayStyle = ToolStripItemDisplayStyle.Image;
+        btnNewTeam.Image = Properties.Resources.tag_team;
         btnNewTeam.ImageScaling = ToolStripItemImageScaling.None;
         btnNewTeam.ImageTransparentColor = Color.Magenta;
         btnNewTeam.Name = "btnNewTeam";
@@ -184,6 +189,7 @@ partial class MainForm
         // btnNewTitle
         // 
         btnNewTitle.DisplayStyle = ToolStripItemDisplayStyle.Image;
+        btnNewTitle.Image = Properties.Resources.title_belt;
         btnNewTitle.ImageScaling = ToolStripItemImageScaling.None;
         btnNewTitle.ImageTransparentColor = Color.Magenta;
         btnNewTitle.Name = "btnNewTitle";
@@ -193,6 +199,7 @@ partial class MainForm
         // btnNewCommentator
         // 
         btnNewCommentator.DisplayStyle = ToolStripItemDisplayStyle.Image;
+        btnNewCommentator.Image = Properties.Resources.commentator;
         btnNewCommentator.ImageScaling = ToolStripItemImageScaling.None;
         btnNewCommentator.ImageTransparentColor = Color.Magenta;
         btnNewCommentator.Name = "btnNewCommentator";
@@ -202,6 +209,7 @@ partial class MainForm
         // btnNewReferee
         // 
         btnNewReferee.DisplayStyle = ToolStripItemDisplayStyle.Image;
+        btnNewReferee.Image = Properties.Resources.referee;
         btnNewReferee.ImageScaling = ToolStripItemImageScaling.None;
         btnNewReferee.ImageTransparentColor = Color.Magenta;
         btnNewReferee.Name = "btnNewReferee";
@@ -216,6 +224,7 @@ partial class MainForm
         // btnEditSelection
         // 
         btnEditSelection.DisplayStyle = ToolStripItemDisplayStyle.Image;
+        btnEditSelection.Image = Properties.Resources.edit;
         btnEditSelection.ImageScaling = ToolStripItemImageScaling.None;
         btnEditSelection.ImageTransparentColor = Color.Magenta;
         btnEditSelection.Name = "btnEditSelection";
@@ -225,6 +234,7 @@ partial class MainForm
         // btnDeleteSelection
         // 
         btnDeleteSelection.DisplayStyle = ToolStripItemDisplayStyle.Image;
+        btnDeleteSelection.Image = Properties.Resources.delete;
         btnDeleteSelection.ImageScaling = ToolStripItemImageScaling.None;
         btnDeleteSelection.ImageTransparentColor = Color.Magenta;
         btnDeleteSelection.Name = "btnDeleteSelection";
