@@ -28,122 +28,135 @@ partial class CommentatorEditorForm
     /// </summary>
     private void InitializeComponent()
     {
-        this.grpFile = new System.Windows.Forms.GroupBox();
-        this.btnFileBrowse = new System.Windows.Forms.Button();
-        this.txtFile = new System.Windows.Forms.TextBox();
-        this.btnCancel = new System.Windows.Forms.Button();
-        this.btnOk = new System.Windows.Forms.Button();
-        this.cboAffliliation = new System.Windows.Forms.ComboBox();
-        this.txtName = new System.Windows.Forms.TextBox();
-        this.lblName = new System.Windows.Forms.Label();
-        this.grpFile.SuspendLayout();
-        this.SuspendLayout();
+        grpFile = new GroupBox();
+        ChangeFileButton = new Button();
+        FileTextBox = new TextBox();
+        CancelButton = new Button();
+        OkButton = new Button();
+        AffliliationComboBox = new ComboBox();
+        NameTextBox = new TextBox();
+        lblName = new Label();
+        grpFile.SuspendLayout();
+        SuspendLayout();
         // 
         // grpFile
         // 
-        this.grpFile.Controls.Add(this.btnFileBrowse);
-        this.grpFile.Controls.Add(this.txtFile);
-        this.grpFile.Location = new System.Drawing.Point(268, 200);
-        this.grpFile.Name = "grpFile";
-        this.grpFile.Size = new System.Drawing.Size(268, 48);
-        this.grpFile.TabIndex = 8;
-        this.grpFile.TabStop = false;
-        this.grpFile.Text = "Commentary File";
+        grpFile.Controls.Add(ChangeFileButton);
+        grpFile.Controls.Add(FileTextBox);
+        grpFile.Location = new Point(13, 41);
+        grpFile.Margin = new Padding(4, 3, 4, 3);
+        grpFile.Name = "grpFile";
+        grpFile.Padding = new Padding(4, 3, 4, 3);
+        grpFile.Size = new Size(313, 55);
+        grpFile.TabIndex = 8;
+        grpFile.TabStop = false;
+        grpFile.Text = "Commentary File";
         // 
-        // btnFileBrowse
+        // ChangeFileButton
         // 
-        this.btnFileBrowse.Location = new System.Drawing.Point(187, 19);
-        this.btnFileBrowse.Name = "btnFileBrowse";
-        this.btnFileBrowse.Size = new System.Drawing.Size(75, 23);
-        this.btnFileBrowse.TabIndex = 1;
-        this.btnFileBrowse.Text = "C&hange";
-        this.btnFileBrowse.UseVisualStyleBackColor = true;
+        ChangeFileButton.Location = new Point(218, 22);
+        ChangeFileButton.Margin = new Padding(4, 3, 4, 3);
+        ChangeFileButton.Name = "ChangeFileButton";
+        ChangeFileButton.Size = new Size(88, 27);
+        ChangeFileButton.TabIndex = 1;
+        ChangeFileButton.Text = "C&hange";
+        ChangeFileButton.UseVisualStyleBackColor = true;
         // 
-        // txtFile
+        // FileTextBox
         // 
-        this.txtFile.Location = new System.Drawing.Point(6, 21);
-        this.txtFile.Name = "txtFile";
-        this.txtFile.ReadOnly = true;
-        this.txtFile.Size = new System.Drawing.Size(175, 20);
-        this.txtFile.TabIndex = 0;
+        FileTextBox.Location = new Point(7, 24);
+        FileTextBox.Margin = new Padding(4, 3, 4, 3);
+        FileTextBox.Name = "FileTextBox";
+        FileTextBox.ReadOnly = true;
+        FileTextBox.Size = new Size(204, 23);
+        FileTextBox.TabIndex = 0;
         // 
-        // btnCancel
+        // CancelButton
         // 
-        this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-        this.btnCancel.Location = new System.Drawing.Point(478, 254);
-        this.btnCancel.Name = "btnCancel";
-        this.btnCancel.Size = new System.Drawing.Size(58, 23);
-        this.btnCancel.TabIndex = 11;
-        this.btnCancel.Text = "&Cancel";
-        this.btnCancel.UseVisualStyleBackColor = true;
+        CancelButton.DialogResult = DialogResult.Cancel;
+        CancelButton.Location = new Point(258, 102);
+        CancelButton.Margin = new Padding(4, 3, 4, 3);
+        CancelButton.Name = "CancelButton";
+        CancelButton.Size = new Size(68, 27);
+        CancelButton.TabIndex = 11;
+        CancelButton.Text = "&Cancel";
+        CancelButton.UseVisualStyleBackColor = true;
         // 
-        // btnOk
+        // OkButton
         // 
-        this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-        this.btnOk.Location = new System.Drawing.Point(414, 254);
-        this.btnOk.Name = "btnOk";
-        this.btnOk.Size = new System.Drawing.Size(58, 23);
-        this.btnOk.TabIndex = 10;
-        this.btnOk.Text = "&Ok";
-        this.btnOk.UseVisualStyleBackColor = true;
+        OkButton.DialogResult = DialogResult.OK;
+        OkButton.Location = new Point(182, 102);
+        OkButton.Margin = new Padding(4, 3, 4, 3);
+        OkButton.Name = "OkButton";
+        OkButton.Size = new Size(68, 27);
+        OkButton.TabIndex = 10;
+        OkButton.Text = "&Ok";
+        OkButton.UseVisualStyleBackColor = true;
         // 
-        // cboAffliliation
+        // AffliliationComboBox
         // 
-        this.cboAffliliation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-        this.cboAffliliation.FormattingEnabled = true;
-        this.cboAffliliation.Items.AddRange(new object[] {
-        "Face",
-        "Neutral",
-        "Heel"});
-        this.cboAffliliation.Location = new System.Drawing.Point(268, 254);
-        this.cboAffliliation.Name = "cboAffliliation";
-        this.cboAffliliation.Size = new System.Drawing.Size(140, 21);
-        this.cboAffliliation.TabIndex = 9;
+        AffliliationComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+        AffliliationComboBox.FormattingEnabled = true;
+        AffliliationComboBox.Items.AddRange(new object[] { "Face", "Neutral", "Heel" });
+        AffliliationComboBox.Location = new Point(13, 102);
+        AffliliationComboBox.Margin = new Padding(4, 3, 4, 3);
+        AffliliationComboBox.Name = "AffliliationComboBox";
+        AffliliationComboBox.Size = new Size(161, 23);
+        AffliliationComboBox.TabIndex = 9;
         // 
-        // txtName
+        // NameTextBox
         // 
-        this.txtName.Location = new System.Drawing.Point(306, 174);
-        this.txtName.Name = "txtName";
-        this.txtName.Size = new System.Drawing.Size(230, 20);
-        this.txtName.TabIndex = 7;
+        NameTextBox.Location = new Point(60, 12);
+        NameTextBox.Margin = new Padding(4, 3, 4, 3);
+        NameTextBox.Name = "NameTextBox";
+        NameTextBox.Size = new Size(266, 23);
+        NameTextBox.TabIndex = 7;
         // 
         // lblName
         // 
-        this.lblName.AutoSize = true;
-        this.lblName.Location = new System.Drawing.Point(265, 177);
-        this.lblName.Name = "lblName";
-        this.lblName.Size = new System.Drawing.Size(35, 13);
-        this.lblName.TabIndex = 6;
-        this.lblName.Text = "Name";
+        lblName.AutoSize = true;
+        lblName.Location = new Point(13, 15);
+        lblName.Margin = new Padding(4, 0, 4, 0);
+        lblName.Name = "lblName";
+        lblName.Size = new Size(39, 15);
+        lblName.TabIndex = 6;
+        lblName.Text = "Name";
         // 
         // CommentatorEditorForm
         // 
-        this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(800, 450);
-        this.Controls.Add(this.grpFile);
-        this.Controls.Add(this.btnCancel);
-        this.Controls.Add(this.btnOk);
-        this.Controls.Add(this.cboAffliliation);
-        this.Controls.Add(this.txtName);
-        this.Controls.Add(this.lblName);
-        this.Name = "CommentatorEditorForm";
-        this.Text = "CommentatorEditorForm";
-        this.grpFile.ResumeLayout(false);
-        this.grpFile.PerformLayout();
-        this.ResumeLayout(false);
-        this.PerformLayout();
-
+        AcceptButton = OkButton;
+        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleMode = AutoScaleMode.Font;
+        CancelButton = CancelButton;
+        ClientSize = new Size(339, 141);
+        Controls.Add(grpFile);
+        Controls.Add(CancelButton);
+        Controls.Add(OkButton);
+        Controls.Add(AffliliationComboBox);
+        Controls.Add(NameTextBox);
+        Controls.Add(lblName);
+        FormBorderStyle = FormBorderStyle.FixedDialog;
+        Margin = new Padding(4, 3, 4, 3);
+        MaximizeBox = false;
+        MinimizeBox = false;
+        Name = "CommentatorEditorForm";
+        ShowIcon = false;
+        ShowInTaskbar = false;
+        Text = "Commentator Editor";
+        grpFile.ResumeLayout(false);
+        grpFile.PerformLayout();
+        ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
 
     internal System.Windows.Forms.GroupBox grpFile;
-    internal System.Windows.Forms.Button btnFileBrowse;
-    internal System.Windows.Forms.TextBox txtFile;
-    internal System.Windows.Forms.Button btnCancel;
-    internal System.Windows.Forms.Button btnOk;
-    internal System.Windows.Forms.ComboBox cboAffliliation;
-    internal System.Windows.Forms.TextBox txtName;
+    internal System.Windows.Forms.Button ChangeFileButton;
+    internal System.Windows.Forms.TextBox FileTextBox;
+    internal System.Windows.Forms.Button CancelButton;
+    internal System.Windows.Forms.Button OkButton;
+    internal System.Windows.Forms.ComboBox AffliliationComboBox;
+    internal System.Windows.Forms.TextBox NameTextBox;
     internal System.Windows.Forms.Label lblName;
 }
