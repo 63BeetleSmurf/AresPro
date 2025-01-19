@@ -28,7 +28,6 @@ partial class MainForm
     /// </summary>
     private void InitializeComponent()
     {
-        btnBookEvent = new ToolStripButton();
         mnuBookEventItem = new ToolStripMenuItem();
         mnuTitleHistoryItem = new ToolStripMenuItem();
         mnuRankItem = new ToolStripMenuItem();
@@ -36,21 +35,7 @@ partial class MainForm
         mnuHelpItem = new ToolStripMenuItem();
         ToolStripMenuItem4 = new ToolStripSeparator();
         mnuAboutItem = new ToolStripMenuItem();
-        ToolStrip = new ToolStrip();
-        btnOpenFed = new ToolStripButton();
-        btnSaveFed = new ToolStripButton();
-        ToolStripSeparator2 = new ToolStripSeparator();
-        btnNewWrestler = new ToolStripButton();
-        btnNewTeam = new ToolStripButton();
-        btnNewTitle = new ToolStripButton();
-        btnNewCommentator = new ToolStripButton();
-        btnNewReferee = new ToolStripButton();
-        ToolStripSeparator3 = new ToolStripSeparator();
-        btnEditSelection = new ToolStripButton();
-        btnDeleteSelection = new ToolStripButton();
-        ToolStripSeparator4 = new ToolStripSeparator();
         ToolStripMenuItem3 = new ToolStripSeparator();
-        tvwRoster = new TreeView();
         mnuDeleteSelectionItem = new ToolStripMenuItem();
         MenuStrip = new MenuStrip();
         mnuFileMenu = new ToolStripMenuItem();
@@ -75,37 +60,46 @@ partial class MainForm
         mnuNewCommentatorItem = new ToolStripMenuItem();
         mnuNewRefereeItem = new ToolStripMenuItem();
         mnuEditSelectionItem = new ToolStripMenuItem();
-        ToolStrip.SuspendLayout();
+        toolStripContainer1 = new ToolStripContainer();
+        tvwRoster = new TreeView();
+        ToolStrip = new ToolStrip();
+        btnOpenFed = new ToolStripButton();
+        btnSaveFed = new ToolStripButton();
+        ToolStripSeparator2 = new ToolStripSeparator();
+        btnNewWrestler = new ToolStripButton();
+        btnNewTeam = new ToolStripButton();
+        btnNewTitle = new ToolStripButton();
+        btnNewCommentator = new ToolStripButton();
+        btnNewReferee = new ToolStripButton();
+        ToolStripSeparator3 = new ToolStripSeparator();
+        btnEditSelection = new ToolStripButton();
+        btnDeleteSelection = new ToolStripButton();
+        ToolStripSeparator4 = new ToolStripSeparator();
+        btnBookEvent = new ToolStripButton();
         MenuStrip.SuspendLayout();
+        toolStripContainer1.ContentPanel.SuspendLayout();
+        toolStripContainer1.TopToolStripPanel.SuspendLayout();
+        toolStripContainer1.SuspendLayout();
+        ToolStrip.SuspendLayout();
         SuspendLayout();
-        // 
-        // btnBookEvent
-        // 
-        btnBookEvent.DisplayStyle = ToolStripItemDisplayStyle.Image;
-        btnBookEvent.Image = Properties.Resources.ring;
-        btnBookEvent.ImageScaling = ToolStripItemImageScaling.None;
-        btnBookEvent.ImageTransparentColor = Color.Magenta;
-        btnBookEvent.Name = "btnBookEvent";
-        btnBookEvent.Size = new Size(23, 22);
-        btnBookEvent.ToolTipText = "Book Event";
         // 
         // mnuBookEventItem
         // 
         mnuBookEventItem.Name = "mnuBookEventItem";
         mnuBookEventItem.ShortcutKeys = Keys.Control | Keys.E;
-        mnuBookEventItem.Size = new Size(180, 22);
+        mnuBookEventItem.Size = new Size(176, 22);
         mnuBookEventItem.Text = "&Book Event";
         // 
         // mnuTitleHistoryItem
         // 
         mnuTitleHistoryItem.Name = "mnuTitleHistoryItem";
-        mnuTitleHistoryItem.Size = new Size(180, 22);
+        mnuTitleHistoryItem.Size = new Size(176, 22);
         mnuTitleHistoryItem.Text = "&Title History";
         // 
         // mnuRankItem
         // 
         mnuRankItem.Name = "mnuRankItem";
-        mnuRankItem.Size = new Size(180, 22);
+        mnuRankItem.Size = new Size(176, 22);
         mnuRankItem.Text = "&Rank";
         // 
         // mnuHelpMenu
@@ -118,7 +112,7 @@ partial class MainForm
         // mnuHelpItem
         // 
         mnuHelpItem.Name = "mnuHelpItem";
-        mnuHelpItem.Size = new Size(180, 22);
+        mnuHelpItem.Size = new Size(107, 22);
         mnuHelpItem.Text = "Help";
         // 
         // ToolStripMenuItem4
@@ -132,13 +126,203 @@ partial class MainForm
         mnuAboutItem.Size = new Size(107, 22);
         mnuAboutItem.Text = "&About";
         // 
+        // ToolStripMenuItem3
+        // 
+        ToolStripMenuItem3.Name = "ToolStripMenuItem3";
+        ToolStripMenuItem3.Size = new Size(173, 6);
+        // 
+        // mnuDeleteSelectionItem
+        // 
+        mnuDeleteSelectionItem.Name = "mnuDeleteSelectionItem";
+        mnuDeleteSelectionItem.Size = new Size(176, 22);
+        mnuDeleteSelectionItem.Text = "Delete Selection";
+        // 
+        // MenuStrip
+        // 
+        MenuStrip.Items.AddRange(new ToolStripItem[] { mnuFileMenu, mnuResourcesMenu, mnuFedMenu, mnuHelpMenu });
+        MenuStrip.Location = new Point(0, 0);
+        MenuStrip.Name = "MenuStrip";
+        MenuStrip.Padding = new Padding(7, 2, 0, 2);
+        MenuStrip.Size = new Size(933, 24);
+        MenuStrip.TabIndex = 3;
+        MenuStrip.Text = "MenuStrip";
+        // 
+        // mnuFileMenu
+        // 
+        mnuFileMenu.DropDownItems.AddRange(new ToolStripItem[] { mnuNewItem, ToolStripMenuItem1, mnuOpenItem, mnuSaveItem, mnuSaveAsItem, ToolStripMenuItem2, mnuExitItem });
+        mnuFileMenu.Name = "mnuFileMenu";
+        mnuFileMenu.Size = new Size(37, 20);
+        mnuFileMenu.Text = "&File";
+        // 
+        // mnuNewItem
+        // 
+        mnuNewItem.Name = "mnuNewItem";
+        mnuNewItem.ShortcutKeys = Keys.Control | Keys.N;
+        mnuNewItem.Size = new Size(146, 22);
+        mnuNewItem.Text = "&New";
+        // 
+        // ToolStripMenuItem1
+        // 
+        ToolStripMenuItem1.Name = "ToolStripMenuItem1";
+        ToolStripMenuItem1.Size = new Size(143, 6);
+        // 
+        // mnuOpenItem
+        // 
+        mnuOpenItem.Name = "mnuOpenItem";
+        mnuOpenItem.ShortcutKeys = Keys.Control | Keys.O;
+        mnuOpenItem.Size = new Size(146, 22);
+        mnuOpenItem.Text = "&Open";
+        // 
+        // mnuSaveItem
+        // 
+        mnuSaveItem.Name = "mnuSaveItem";
+        mnuSaveItem.ShortcutKeys = Keys.Control | Keys.S;
+        mnuSaveItem.Size = new Size(146, 22);
+        mnuSaveItem.Text = "&Save";
+        // 
+        // mnuSaveAsItem
+        // 
+        mnuSaveAsItem.Name = "mnuSaveAsItem";
+        mnuSaveAsItem.Size = new Size(146, 22);
+        mnuSaveAsItem.Text = "Save &As";
+        // 
+        // ToolStripMenuItem2
+        // 
+        ToolStripMenuItem2.Name = "ToolStripMenuItem2";
+        ToolStripMenuItem2.Size = new Size(143, 6);
+        // 
+        // mnuExitItem
+        // 
+        mnuExitItem.Name = "mnuExitItem";
+        mnuExitItem.Size = new Size(146, 22);
+        mnuExitItem.Text = "&Exit";
+        // 
+        // mnuResourcesMenu
+        // 
+        mnuResourcesMenu.DropDownItems.AddRange(new ToolStripItem[] { mnuCommentaryItem, mnuMovesItem, mnuGimmicksItem, mnuCommercialsItem, mnuImportWrestlerItem });
+        mnuResourcesMenu.Name = "mnuResourcesMenu";
+        mnuResourcesMenu.Size = new Size(72, 20);
+        mnuResourcesMenu.Text = "&Resources";
+        // 
+        // mnuCommentaryItem
+        // 
+        mnuCommentaryItem.Name = "mnuCommentaryItem";
+        mnuCommentaryItem.Size = new Size(169, 22);
+        mnuCommentaryItem.Text = "&Commentary";
+        // 
+        // mnuMovesItem
+        // 
+        mnuMovesItem.Name = "mnuMovesItem";
+        mnuMovesItem.ShortcutKeys = Keys.Control | Keys.M;
+        mnuMovesItem.Size = new Size(169, 22);
+        mnuMovesItem.Text = "&Moves";
+        // 
+        // mnuGimmicksItem
+        // 
+        mnuGimmicksItem.Name = "mnuGimmicksItem";
+        mnuGimmicksItem.ShortcutKeys = Keys.Control | Keys.G;
+        mnuGimmicksItem.Size = new Size(169, 22);
+        mnuGimmicksItem.Text = "&Gimmicks";
+        // 
+        // mnuCommercialsItem
+        // 
+        mnuCommercialsItem.Name = "mnuCommercialsItem";
+        mnuCommercialsItem.Size = new Size(169, 22);
+        mnuCommercialsItem.Text = "Co&mmercials";
+        // 
+        // mnuImportWrestlerItem
+        // 
+        mnuImportWrestlerItem.Name = "mnuImportWrestlerItem";
+        mnuImportWrestlerItem.Size = new Size(169, 22);
+        mnuImportWrestlerItem.Text = "&Import Wrestler";
+        // 
+        // mnuFedMenu
+        // 
+        mnuFedMenu.DropDownItems.AddRange(new ToolStripItem[] { mnuFedOptionsItem, mnuNewWrestlerItem, mnuNewTagTeamItem, mnuNewTitleItem, mnuNewCommentatorItem, mnuNewRefereeItem, mnuEditSelectionItem, mnuDeleteSelectionItem, ToolStripMenuItem3, mnuBookEventItem, mnuTitleHistoryItem, mnuRankItem });
+        mnuFedMenu.Name = "mnuFedMenu";
+        mnuFedMenu.Size = new Size(38, 20);
+        mnuFedMenu.Text = "F&ed";
+        // 
+        // mnuFedOptionsItem
+        // 
+        mnuFedOptionsItem.Name = "mnuFedOptionsItem";
+        mnuFedOptionsItem.Size = new Size(176, 22);
+        mnuFedOptionsItem.Text = "&Fed Options";
+        // 
+        // mnuNewWrestlerItem
+        // 
+        mnuNewWrestlerItem.Name = "mnuNewWrestlerItem";
+        mnuNewWrestlerItem.Size = new Size(176, 22);
+        mnuNewWrestlerItem.Text = "New Wrestler";
+        // 
+        // mnuNewTagTeamItem
+        // 
+        mnuNewTagTeamItem.Name = "mnuNewTagTeamItem";
+        mnuNewTagTeamItem.Size = new Size(176, 22);
+        mnuNewTagTeamItem.Text = "New Tag Team";
+        // 
+        // mnuNewTitleItem
+        // 
+        mnuNewTitleItem.Name = "mnuNewTitleItem";
+        mnuNewTitleItem.Size = new Size(176, 22);
+        mnuNewTitleItem.Text = "New Title";
+        // 
+        // mnuNewCommentatorItem
+        // 
+        mnuNewCommentatorItem.Name = "mnuNewCommentatorItem";
+        mnuNewCommentatorItem.Size = new Size(176, 22);
+        mnuNewCommentatorItem.Text = "New Commentator";
+        // 
+        // mnuNewRefereeItem
+        // 
+        mnuNewRefereeItem.Name = "mnuNewRefereeItem";
+        mnuNewRefereeItem.Size = new Size(176, 22);
+        mnuNewRefereeItem.Text = "New Referee";
+        // 
+        // mnuEditSelectionItem
+        // 
+        mnuEditSelectionItem.Name = "mnuEditSelectionItem";
+        mnuEditSelectionItem.Size = new Size(176, 22);
+        mnuEditSelectionItem.Text = "Edit Selection";
+        // 
+        // toolStripContainer1
+        // 
+        // 
+        // toolStripContainer1.ContentPanel
+        // 
+        toolStripContainer1.ContentPanel.Controls.Add(tvwRoster);
+        toolStripContainer1.ContentPanel.Size = new Size(933, 470);
+        toolStripContainer1.Dock = DockStyle.Fill;
+        toolStripContainer1.Location = new Point(0, 24);
+        toolStripContainer1.Name = "toolStripContainer1";
+        toolStripContainer1.Size = new Size(933, 495);
+        toolStripContainer1.TabIndex = 6;
+        toolStripContainer1.Text = "toolStripContainer1";
+        // 
+        // toolStripContainer1.TopToolStripPanel
+        // 
+        toolStripContainer1.TopToolStripPanel.Controls.Add(ToolStrip);
+        // 
+        // tvwRoster
+        // 
+        tvwRoster.Dock = DockStyle.Fill;
+        tvwRoster.Location = new Point(0, 0);
+        tvwRoster.Margin = new Padding(4, 3, 4, 3);
+        tvwRoster.Name = "tvwRoster";
+        tvwRoster.ShowLines = false;
+        tvwRoster.ShowPlusMinus = false;
+        tvwRoster.ShowRootLines = false;
+        tvwRoster.Size = new Size(933, 470);
+        tvwRoster.TabIndex = 6;
+        // 
         // ToolStrip
         // 
+        ToolStrip.Dock = DockStyle.None;
         ToolStrip.Items.AddRange(new ToolStripItem[] { btnOpenFed, btnSaveFed, ToolStripSeparator2, btnNewWrestler, btnNewTeam, btnNewTitle, btnNewCommentator, btnNewReferee, ToolStripSeparator3, btnEditSelection, btnDeleteSelection, ToolStripSeparator4, btnBookEvent });
-        ToolStrip.Location = new Point(0, 24);
+        ToolStrip.Location = new Point(3, 0);
         ToolStrip.Name = "ToolStrip";
-        ToolStrip.Size = new Size(933, 25);
-        ToolStrip.TabIndex = 4;
+        ToolStrip.Size = new Size(260, 25);
+        ToolStrip.TabIndex = 5;
         ToolStrip.Text = "ToolStrip";
         // 
         // btnOpenFed
@@ -246,199 +430,40 @@ partial class MainForm
         ToolStripSeparator4.Name = "ToolStripSeparator4";
         ToolStripSeparator4.Size = new Size(6, 25);
         // 
-        // ToolStripMenuItem3
+        // btnBookEvent
         // 
-        ToolStripMenuItem3.Name = "ToolStripMenuItem3";
-        ToolStripMenuItem3.Size = new Size(173, 6);
-        // 
-        // tvwRoster
-        // 
-        tvwRoster.Dock = DockStyle.Fill;
-        tvwRoster.Location = new Point(0, 24);
-        tvwRoster.Margin = new Padding(4, 3, 4, 3);
-        tvwRoster.Name = "tvwRoster";
-        tvwRoster.ShowLines = false;
-        tvwRoster.ShowPlusMinus = false;
-        tvwRoster.ShowRootLines = false;
-        tvwRoster.Size = new Size(933, 495);
-        tvwRoster.TabIndex = 5;
-        // 
-        // mnuDeleteSelectionItem
-        // 
-        mnuDeleteSelectionItem.Name = "mnuDeleteSelectionItem";
-        mnuDeleteSelectionItem.Size = new Size(176, 22);
-        mnuDeleteSelectionItem.Text = "Delete Selection";
-        // 
-        // MenuStrip
-        // 
-        MenuStrip.Items.AddRange(new ToolStripItem[] { mnuFileMenu, mnuResourcesMenu, mnuFedMenu, mnuHelpMenu });
-        MenuStrip.Location = new Point(0, 0);
-        MenuStrip.Name = "MenuStrip";
-        MenuStrip.Padding = new Padding(7, 2, 0, 2);
-        MenuStrip.Size = new Size(933, 24);
-        MenuStrip.TabIndex = 3;
-        MenuStrip.Text = "MenuStrip";
-        // 
-        // mnuFileMenu
-        // 
-        mnuFileMenu.DropDownItems.AddRange(new ToolStripItem[] { mnuNewItem, ToolStripMenuItem1, mnuOpenItem, mnuSaveItem, mnuSaveAsItem, ToolStripMenuItem2, mnuExitItem });
-        mnuFileMenu.Name = "mnuFileMenu";
-        mnuFileMenu.Size = new Size(37, 20);
-        mnuFileMenu.Text = "&File";
-        // 
-        // mnuNewItem
-        // 
-        mnuNewItem.Name = "mnuNewItem";
-        mnuNewItem.ShortcutKeys = Keys.Control | Keys.N;
-        mnuNewItem.Size = new Size(146, 22);
-        mnuNewItem.Text = "&New";
-        // 
-        // ToolStripMenuItem1
-        // 
-        ToolStripMenuItem1.Name = "ToolStripMenuItem1";
-        ToolStripMenuItem1.Size = new Size(143, 6);
-        // 
-        // mnuOpenItem
-        // 
-        mnuOpenItem.Name = "mnuOpenItem";
-        mnuOpenItem.ShortcutKeys = Keys.Control | Keys.O;
-        mnuOpenItem.Size = new Size(146, 22);
-        mnuOpenItem.Text = "&Open";
-        // 
-        // mnuSaveItem
-        // 
-        mnuSaveItem.Name = "mnuSaveItem";
-        mnuSaveItem.ShortcutKeys = Keys.Control | Keys.S;
-        mnuSaveItem.Size = new Size(146, 22);
-        mnuSaveItem.Text = "&Save";
-        // 
-        // mnuSaveAsItem
-        // 
-        mnuSaveAsItem.Name = "mnuSaveAsItem";
-        mnuSaveAsItem.Size = new Size(146, 22);
-        mnuSaveAsItem.Text = "Save &As";
-        // 
-        // ToolStripMenuItem2
-        // 
-        ToolStripMenuItem2.Name = "ToolStripMenuItem2";
-        ToolStripMenuItem2.Size = new Size(143, 6);
-        // 
-        // mnuExitItem
-        // 
-        mnuExitItem.Name = "mnuExitItem";
-        mnuExitItem.Size = new Size(146, 22);
-        mnuExitItem.Text = "&Exit";
-        // 
-        // mnuResourcesMenu
-        // 
-        mnuResourcesMenu.DropDownItems.AddRange(new ToolStripItem[] { mnuCommentaryItem, mnuMovesItem, mnuGimmicksItem, mnuCommercialsItem, mnuImportWrestlerItem });
-        mnuResourcesMenu.Name = "mnuResourcesMenu";
-        mnuResourcesMenu.Size = new Size(72, 20);
-        mnuResourcesMenu.Text = "&Resources";
-        // 
-        // mnuCommentaryItem
-        // 
-        mnuCommentaryItem.Name = "mnuCommentaryItem";
-        mnuCommentaryItem.Size = new Size(169, 22);
-        mnuCommentaryItem.Text = "&Commentary";
-        // 
-        // mnuMovesItem
-        // 
-        mnuMovesItem.Name = "mnuMovesItem";
-        mnuMovesItem.ShortcutKeys = Keys.Control | Keys.M;
-        mnuMovesItem.Size = new Size(169, 22);
-        mnuMovesItem.Text = "&Moves";
-        // 
-        // mnuGimmicksItem
-        // 
-        mnuGimmicksItem.Name = "mnuGimmicksItem";
-        mnuGimmicksItem.ShortcutKeys = Keys.Control | Keys.G;
-        mnuGimmicksItem.Size = new Size(169, 22);
-        mnuGimmicksItem.Text = "&Gimmicks";
-        // 
-        // mnuCommercialsItem
-        // 
-        mnuCommercialsItem.Name = "mnuCommercialsItem";
-        mnuCommercialsItem.Size = new Size(180, 22);
-        mnuCommercialsItem.Text = "Co&mmercials";
-        // 
-        // mnuImportWrestlerItem
-        // 
-        mnuImportWrestlerItem.Name = "mnuImportWrestlerItem";
-        mnuImportWrestlerItem.Size = new Size(169, 22);
-        mnuImportWrestlerItem.Text = "&Import Wrestler";
-        // 
-        // mnuFedMenu
-        // 
-        mnuFedMenu.DropDownItems.AddRange(new ToolStripItem[] { mnuFedOptionsItem, mnuNewWrestlerItem, mnuNewTagTeamItem, mnuNewTitleItem, mnuNewCommentatorItem, mnuNewRefereeItem, mnuEditSelectionItem, mnuDeleteSelectionItem, ToolStripMenuItem3, mnuBookEventItem, mnuTitleHistoryItem, mnuRankItem });
-        mnuFedMenu.Name = "mnuFedMenu";
-        mnuFedMenu.Size = new Size(38, 20);
-        mnuFedMenu.Text = "F&ed";
-        // 
-        // mnuFedOptionsItem
-        // 
-        mnuFedOptionsItem.Name = "mnuFedOptionsItem";
-        mnuFedOptionsItem.Size = new Size(176, 22);
-        mnuFedOptionsItem.Text = "&Fed Options";
-        // 
-        // mnuNewWrestlerItem
-        // 
-        mnuNewWrestlerItem.Name = "mnuNewWrestlerItem";
-        mnuNewWrestlerItem.Size = new Size(176, 22);
-        mnuNewWrestlerItem.Text = "New Wrestler";
-        // 
-        // mnuNewTagTeamItem
-        // 
-        mnuNewTagTeamItem.Name = "mnuNewTagTeamItem";
-        mnuNewTagTeamItem.Size = new Size(176, 22);
-        mnuNewTagTeamItem.Text = "New Tag Team";
-        // 
-        // mnuNewTitleItem
-        // 
-        mnuNewTitleItem.Name = "mnuNewTitleItem";
-        mnuNewTitleItem.Size = new Size(176, 22);
-        mnuNewTitleItem.Text = "New Title";
-        // 
-        // mnuNewCommentatorItem
-        // 
-        mnuNewCommentatorItem.Name = "mnuNewCommentatorItem";
-        mnuNewCommentatorItem.Size = new Size(176, 22);
-        mnuNewCommentatorItem.Text = "New Commentator";
-        // 
-        // mnuNewRefereeItem
-        // 
-        mnuNewRefereeItem.Name = "mnuNewRefereeItem";
-        mnuNewRefereeItem.Size = new Size(176, 22);
-        mnuNewRefereeItem.Text = "New Referee";
-        // 
-        // mnuEditSelectionItem
-        // 
-        mnuEditSelectionItem.Name = "mnuEditSelectionItem";
-        mnuEditSelectionItem.Size = new Size(176, 22);
-        mnuEditSelectionItem.Text = "Edit Selection";
+        btnBookEvent.DisplayStyle = ToolStripItemDisplayStyle.Image;
+        btnBookEvent.Image = Properties.Resources.ring;
+        btnBookEvent.ImageScaling = ToolStripItemImageScaling.None;
+        btnBookEvent.ImageTransparentColor = Color.Magenta;
+        btnBookEvent.Name = "btnBookEvent";
+        btnBookEvent.Size = new Size(23, 22);
+        btnBookEvent.ToolTipText = "Book Event";
         // 
         // MainForm
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(933, 519);
-        Controls.Add(ToolStrip);
-        Controls.Add(tvwRoster);
+        Controls.Add(toolStripContainer1);
         Controls.Add(MenuStrip);
         Margin = new Padding(4, 3, 4, 3);
         Name = "MainForm";
         Text = "MainForm";
-        ToolStrip.ResumeLayout(false);
-        ToolStrip.PerformLayout();
         MenuStrip.ResumeLayout(false);
         MenuStrip.PerformLayout();
+        toolStripContainer1.ContentPanel.ResumeLayout(false);
+        toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
+        toolStripContainer1.TopToolStripPanel.PerformLayout();
+        toolStripContainer1.ResumeLayout(false);
+        toolStripContainer1.PerformLayout();
+        ToolStrip.ResumeLayout(false);
+        ToolStrip.PerformLayout();
         ResumeLayout(false);
         PerformLayout();
     }
 
     #endregion
-
-    internal System.Windows.Forms.ToolStripButton btnBookEvent;
     internal System.Windows.Forms.ToolStripMenuItem mnuBookEventItem;
     internal System.Windows.Forms.ToolStripMenuItem mnuTitleHistoryItem;
     internal System.Windows.Forms.ToolStripMenuItem mnuRankItem;
@@ -446,21 +471,7 @@ partial class MainForm
     internal System.Windows.Forms.ToolStripMenuItem mnuHelpItem;
     internal System.Windows.Forms.ToolStripSeparator ToolStripMenuItem4;
     internal System.Windows.Forms.ToolStripMenuItem mnuAboutItem;
-    internal System.Windows.Forms.ToolStrip ToolStrip;
-    internal System.Windows.Forms.ToolStripButton btnOpenFed;
-    internal System.Windows.Forms.ToolStripButton btnSaveFed;
-    internal System.Windows.Forms.ToolStripSeparator ToolStripSeparator2;
-    internal System.Windows.Forms.ToolStripButton btnNewWrestler;
-    internal System.Windows.Forms.ToolStripButton btnNewTeam;
-    internal System.Windows.Forms.ToolStripButton btnNewTitle;
-    internal System.Windows.Forms.ToolStripButton btnNewCommentator;
-    internal System.Windows.Forms.ToolStripButton btnNewReferee;
-    internal System.Windows.Forms.ToolStripSeparator ToolStripSeparator3;
-    internal System.Windows.Forms.ToolStripButton btnEditSelection;
-    internal System.Windows.Forms.ToolStripButton btnDeleteSelection;
-    internal System.Windows.Forms.ToolStripSeparator ToolStripSeparator4;
     internal System.Windows.Forms.ToolStripSeparator ToolStripMenuItem3;
-    internal System.Windows.Forms.TreeView tvwRoster;
     internal System.Windows.Forms.ToolStripMenuItem mnuDeleteSelectionItem;
     internal System.Windows.Forms.MenuStrip MenuStrip;
     internal System.Windows.Forms.ToolStripMenuItem mnuFileMenu;
@@ -485,4 +496,20 @@ partial class MainForm
     internal System.Windows.Forms.ToolStripMenuItem mnuNewCommentatorItem;
     internal System.Windows.Forms.ToolStripMenuItem mnuNewRefereeItem;
     internal System.Windows.Forms.ToolStripMenuItem mnuEditSelectionItem;
+    private ToolStripContainer toolStripContainer1;
+    internal TreeView tvwRoster;
+    internal ToolStrip ToolStrip;
+    internal ToolStripButton btnOpenFed;
+    internal ToolStripButton btnSaveFed;
+    internal ToolStripSeparator ToolStripSeparator2;
+    internal ToolStripButton btnNewWrestler;
+    internal ToolStripButton btnNewTeam;
+    internal ToolStripButton btnNewTitle;
+    internal ToolStripButton btnNewCommentator;
+    internal ToolStripButton btnNewReferee;
+    internal ToolStripSeparator ToolStripSeparator3;
+    internal ToolStripButton btnEditSelection;
+    internal ToolStripButton btnDeleteSelection;
+    internal ToolStripSeparator ToolStripSeparator4;
+    internal ToolStripButton btnBookEvent;
 }
