@@ -28,574 +28,696 @@ partial class WrestlerEditorForm
     /// </summary>
     private void InitializeComponent()
     {
-        this.txtHeight = new System.Windows.Forms.TextBox();
-        this.grpStats = new System.Windows.Forms.GroupBox();
-        this.txtLoses = new System.Windows.Forms.TextBox();
-        this.txtWeight = new System.Windows.Forms.TextBox();
-        this.lblLoses = new System.Windows.Forms.Label();
-        this.txtWins = new System.Windows.Forms.TextBox();
-        this.lblWins = new System.Windows.Forms.Label();
-        this.lblHeight = new System.Windows.Forms.Label();
-        this.lblWeight = new System.Windows.Forms.Label();
-        this.trkStrength = new System.Windows.Forms.TrackBar();
-        this.trkCharisma = new System.Windows.Forms.TrackBar();
-        this.lblStrength = new System.Windows.Forms.Label();
-        this.trkVitality = new System.Windows.Forms.TrackBar();
-        this.lblSpeed = new System.Windows.Forms.Label();
-        this.trkSpeed = new System.Windows.Forms.TrackBar();
-        this.lblVitality = new System.Windows.Forms.Label();
-        this.lblCharisma = new System.Windows.Forms.Label();
-        this.btnMoveAdd = new System.Windows.Forms.Button();
-        this.btnMoveRemove = new System.Windows.Forms.Button();
-        this.btnMoveEdit = new System.Windows.Forms.Button();
-        this.lstMoves = new System.Windows.Forms.ListBox();
-        this.grpMoves = new System.Windows.Forms.GroupBox();
-        this.btnCancel = new System.Windows.Forms.Button();
-        this.btnOk = new System.Windows.Forms.Button();
-        this.btnExport = new System.Windows.Forms.Button();
-        this.btnExportHTML = new System.Windows.Forms.Button();
-        this.grpTitles = new System.Windows.Forms.GroupBox();
-        this.lstTitles = new System.Windows.Forms.ListBox();
-        this.btnTitleRemove = new System.Windows.Forms.Button();
-        this.btnTitleAdd = new System.Windows.Forms.Button();
-        this.chkEscortInterferes = new System.Windows.Forms.CheckBox();
-        this.txtPush = new System.Windows.Forms.TextBox();
-        this.lblPush = new System.Windows.Forms.Label();
-        this.cboEscort = new System.Windows.Forms.ComboBox();
-        this.lblEscort = new System.Windows.Forms.Label();
-        this.txtRingIntro = new System.Windows.Forms.TextBox();
-        this.lblRingIntro = new System.Windows.Forms.Label();
-        this.txtStable = new System.Windows.Forms.TextBox();
-        this.lblStable = new System.Windows.Forms.Label();
-        this.cboAffliliation = new System.Windows.Forms.ComboBox();
-        this.lblAffliliation = new System.Windows.Forms.Label();
-        this.txtHometown = new System.Windows.Forms.TextBox();
-        this.lblHometown = new System.Windows.Forms.Label();
-        this.txtNames = new System.Windows.Forms.TextBox();
-        this.lblNames = new System.Windows.Forms.Label();
-        this.grpStats.SuspendLayout();
-        ((System.ComponentModel.ISupportInitialize)(this.trkStrength)).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)(this.trkCharisma)).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)(this.trkVitality)).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)(this.trkSpeed)).BeginInit();
-        this.grpMoves.SuspendLayout();
-        this.grpTitles.SuspendLayout();
-        this.SuspendLayout();
+        HeightTextBox = new TextBox();
+        grpStats = new GroupBox();
+        CharismaDecreaseButton = new Button();
+        CharismaIncreaseButton = new Button();
+        CharismaProgressBar = new ProgressBar();
+        VitalityDecreaseButton = new Button();
+        VitalityIncreaseButton = new Button();
+        VitalityProgressBar = new ProgressBar();
+        SpeedDecreaseButton = new Button();
+        SpeedIncreaseButton = new Button();
+        SpeedProgressBar = new ProgressBar();
+        StrengthDecreaseButton = new Button();
+        StrengthIncreaseButton = new Button();
+        LosesTextBox = new TextBox();
+        StrengthProgressBar = new ProgressBar();
+        WeightTextBox = new TextBox();
+        lblLoses = new Label();
+        WinsTextBox = new TextBox();
+        lblWins = new Label();
+        lblHeight = new Label();
+        lblWeight = new Label();
+        lblStrength = new Label();
+        lblSpeed = new Label();
+        lblVitality = new Label();
+        lblCharisma = new Label();
+        AddMoveButton = new Button();
+        RemoveMoveButton = new Button();
+        EditMoveButton = new Button();
+        MovesListBox = new ListBox();
+        grpMoves = new GroupBox();
+        CancelButton = new Button();
+        OkButton = new Button();
+        ExportZimButton = new Button();
+        ExportHTMLButton = new Button();
+        grpTitles = new GroupBox();
+        TitlesListBox = new ListBox();
+        RemoveTitleButton = new Button();
+        AddTitleButton = new Button();
+        EscortInterferesCheckBox = new CheckBox();
+        PushTextBox = new TextBox();
+        lblPush = new Label();
+        EscortComboBox = new ComboBox();
+        lblEscort = new Label();
+        RingIntroTextBox = new TextBox();
+        lblRingIntro = new Label();
+        StableTextBox = new TextBox();
+        lblStable = new Label();
+        AffliliationComboBox = new ComboBox();
+        lblAffliliation = new Label();
+        HometownTextBox = new TextBox();
+        lblHometown = new Label();
+        NamesTextBox = new TextBox();
+        lblNames = new Label();
+        grpStats.SuspendLayout();
+        grpMoves.SuspendLayout();
+        grpTitles.SuspendLayout();
+        SuspendLayout();
         // 
-        // txtHeight
+        // HeightTextBox
         // 
-        this.txtHeight.Location = new System.Drawing.Point(53, 149);
-        this.txtHeight.MaxLength = 5;
-        this.txtHeight.Name = "txtHeight";
-        this.txtHeight.Size = new System.Drawing.Size(41, 20);
-        this.txtHeight.TabIndex = 11;
+        HeightTextBox.Location = new Point(62, 138);
+        HeightTextBox.Margin = new Padding(4, 3, 4, 3);
+        HeightTextBox.MaxLength = 5;
+        HeightTextBox.Name = "HeightTextBox";
+        HeightTextBox.Size = new Size(47, 23);
+        HeightTextBox.TabIndex = 24;
         // 
         // grpStats
         // 
-        this.grpStats.Controls.Add(this.txtHeight);
-        this.grpStats.Controls.Add(this.txtLoses);
-        this.grpStats.Controls.Add(this.txtWeight);
-        this.grpStats.Controls.Add(this.lblLoses);
-        this.grpStats.Controls.Add(this.txtWins);
-        this.grpStats.Controls.Add(this.lblWins);
-        this.grpStats.Controls.Add(this.lblHeight);
-        this.grpStats.Controls.Add(this.lblWeight);
-        this.grpStats.Controls.Add(this.trkStrength);
-        this.grpStats.Controls.Add(this.trkCharisma);
-        this.grpStats.Controls.Add(this.lblStrength);
-        this.grpStats.Controls.Add(this.trkVitality);
-        this.grpStats.Controls.Add(this.lblSpeed);
-        this.grpStats.Controls.Add(this.trkSpeed);
-        this.grpStats.Controls.Add(this.lblVitality);
-        this.grpStats.Controls.Add(this.lblCharisma);
-        this.grpStats.Location = new System.Drawing.Point(176, 72);
-        this.grpStats.Name = "grpStats";
-        this.grpStats.Size = new System.Drawing.Size(188, 175);
-        this.grpStats.TabIndex = 38;
-        this.grpStats.TabStop = false;
-        this.grpStats.Text = "Stats";
+        grpStats.Controls.Add(CharismaDecreaseButton);
+        grpStats.Controls.Add(CharismaIncreaseButton);
+        grpStats.Controls.Add(CharismaProgressBar);
+        grpStats.Controls.Add(VitalityDecreaseButton);
+        grpStats.Controls.Add(VitalityIncreaseButton);
+        grpStats.Controls.Add(VitalityProgressBar);
+        grpStats.Controls.Add(SpeedDecreaseButton);
+        grpStats.Controls.Add(SpeedIncreaseButton);
+        grpStats.Controls.Add(SpeedProgressBar);
+        grpStats.Controls.Add(StrengthDecreaseButton);
+        grpStats.Controls.Add(HeightTextBox);
+        grpStats.Controls.Add(StrengthIncreaseButton);
+        grpStats.Controls.Add(LosesTextBox);
+        grpStats.Controls.Add(StrengthProgressBar);
+        grpStats.Controls.Add(WeightTextBox);
+        grpStats.Controls.Add(lblLoses);
+        grpStats.Controls.Add(WinsTextBox);
+        grpStats.Controls.Add(lblWins);
+        grpStats.Controls.Add(lblHeight);
+        grpStats.Controls.Add(lblWeight);
+        grpStats.Controls.Add(lblStrength);
+        grpStats.Controls.Add(lblSpeed);
+        grpStats.Controls.Add(lblVitality);
+        grpStats.Controls.Add(lblCharisma);
+        grpStats.Location = new Point(13, 12);
+        grpStats.Margin = new Padding(4, 3, 4, 3);
+        grpStats.Name = "grpStats";
+        grpStats.Padding = new Padding(4, 3, 4, 3);
+        grpStats.Size = new Size(213, 167);
+        grpStats.TabIndex = 38;
+        grpStats.TabStop = false;
+        grpStats.Text = "Stats";
         // 
-        // txtLoses
+        // CharismaDecreaseButton
         // 
-        this.txtLoses.Location = new System.Drawing.Point(141, 149);
-        this.txtLoses.MaxLength = 4;
-        this.txtLoses.Name = "txtLoses";
-        this.txtLoses.Size = new System.Drawing.Size(41, 20);
-        this.txtLoses.TabIndex = 15;
+        CharismaDecreaseButton.Location = new Point(72, 88);
+        CharismaDecreaseButton.Name = "CharismaDecreaseButton";
+        CharismaDecreaseButton.Size = new Size(15, 15);
+        CharismaDecreaseButton.TabIndex = 20;
+        CharismaDecreaseButton.UseVisualStyleBackColor = true;
         // 
-        // txtWeight
+        // CharismaIncreaseButton
         // 
-        this.txtWeight.Location = new System.Drawing.Point(53, 123);
-        this.txtWeight.MaxLength = 5;
-        this.txtWeight.Name = "txtWeight";
-        this.txtWeight.Size = new System.Drawing.Size(41, 20);
-        this.txtWeight.TabIndex = 9;
+        CharismaIncreaseButton.Location = new Point(190, 88);
+        CharismaIncreaseButton.Name = "CharismaIncreaseButton";
+        CharismaIncreaseButton.Size = new Size(15, 15);
+        CharismaIncreaseButton.TabIndex = 22;
+        CharismaIncreaseButton.UseVisualStyleBackColor = true;
+        // 
+        // CharismaProgressBar
+        // 
+        CharismaProgressBar.Location = new Point(93, 88);
+        CharismaProgressBar.Name = "CharismaProgressBar";
+        CharismaProgressBar.Size = new Size(91, 15);
+        CharismaProgressBar.TabIndex = 21;
+        // 
+        // VitalityDecreaseButton
+        // 
+        VitalityDecreaseButton.Location = new Point(72, 68);
+        VitalityDecreaseButton.Name = "VitalityDecreaseButton";
+        VitalityDecreaseButton.Size = new Size(15, 15);
+        VitalityDecreaseButton.TabIndex = 17;
+        VitalityDecreaseButton.UseVisualStyleBackColor = true;
+        // 
+        // VitalityIncreaseButton
+        // 
+        VitalityIncreaseButton.Location = new Point(190, 67);
+        VitalityIncreaseButton.Name = "VitalityIncreaseButton";
+        VitalityIncreaseButton.Size = new Size(15, 15);
+        VitalityIncreaseButton.TabIndex = 19;
+        VitalityIncreaseButton.UseVisualStyleBackColor = true;
+        // 
+        // VitalityProgressBar
+        // 
+        VitalityProgressBar.Location = new Point(93, 67);
+        VitalityProgressBar.Name = "VitalityProgressBar";
+        VitalityProgressBar.Size = new Size(91, 15);
+        VitalityProgressBar.TabIndex = 18;
+        // 
+        // SpeedDecreaseButton
+        // 
+        SpeedDecreaseButton.Location = new Point(72, 47);
+        SpeedDecreaseButton.Name = "SpeedDecreaseButton";
+        SpeedDecreaseButton.Size = new Size(15, 15);
+        SpeedDecreaseButton.TabIndex = 14;
+        SpeedDecreaseButton.UseVisualStyleBackColor = true;
+        // 
+        // SpeedIncreaseButton
+        // 
+        SpeedIncreaseButton.Location = new Point(190, 46);
+        SpeedIncreaseButton.Name = "SpeedIncreaseButton";
+        SpeedIncreaseButton.Size = new Size(15, 15);
+        SpeedIncreaseButton.TabIndex = 16;
+        SpeedIncreaseButton.UseVisualStyleBackColor = true;
+        // 
+        // SpeedProgressBar
+        // 
+        SpeedProgressBar.Location = new Point(93, 46);
+        SpeedProgressBar.Name = "SpeedProgressBar";
+        SpeedProgressBar.Size = new Size(91, 15);
+        SpeedProgressBar.TabIndex = 15;
+        // 
+        // StrengthDecreaseButton
+        // 
+        StrengthDecreaseButton.Location = new Point(72, 25);
+        StrengthDecreaseButton.Name = "StrengthDecreaseButton";
+        StrengthDecreaseButton.Size = new Size(15, 15);
+        StrengthDecreaseButton.TabIndex = 11;
+        StrengthDecreaseButton.UseVisualStyleBackColor = true;
+        // 
+        // StrengthIncreaseButton
+        // 
+        StrengthIncreaseButton.Location = new Point(190, 25);
+        StrengthIncreaseButton.Name = "StrengthIncreaseButton";
+        StrengthIncreaseButton.Size = new Size(15, 15);
+        StrengthIncreaseButton.TabIndex = 13;
+        StrengthIncreaseButton.UseVisualStyleBackColor = true;
+        // 
+        // LosesTextBox
+        // 
+        LosesTextBox.Location = new Point(158, 138);
+        LosesTextBox.Margin = new Padding(4, 3, 4, 3);
+        LosesTextBox.MaxLength = 4;
+        LosesTextBox.Name = "LosesTextBox";
+        LosesTextBox.Size = new Size(47, 23);
+        LosesTextBox.TabIndex = 26;
+        // 
+        // StrengthProgressBar
+        // 
+        StrengthProgressBar.Location = new Point(93, 25);
+        StrengthProgressBar.Name = "StrengthProgressBar";
+        StrengthProgressBar.Size = new Size(91, 15);
+        StrengthProgressBar.TabIndex = 12;
+        // 
+        // WeightTextBox
+        // 
+        WeightTextBox.Location = new Point(62, 109);
+        WeightTextBox.Margin = new Padding(4, 3, 4, 3);
+        WeightTextBox.MaxLength = 5;
+        WeightTextBox.Name = "WeightTextBox";
+        WeightTextBox.Size = new Size(47, 23);
+        WeightTextBox.TabIndex = 23;
         // 
         // lblLoses
         // 
-        this.lblLoses.AutoSize = true;
-        this.lblLoses.Location = new System.Drawing.Point(100, 152);
-        this.lblLoses.Name = "lblLoses";
-        this.lblLoses.Size = new System.Drawing.Size(35, 13);
-        this.lblLoses.TabIndex = 14;
-        this.lblLoses.Text = "Loses";
+        lblLoses.AutoSize = true;
+        lblLoses.Location = new Point(114, 141);
+        lblLoses.Margin = new Padding(4, 0, 4, 0);
+        lblLoses.Name = "lblLoses";
+        lblLoses.Size = new Size(36, 15);
+        lblLoses.TabIndex = 14;
+        lblLoses.Text = "Loses";
         // 
-        // txtWins
+        // WinsTextBox
         // 
-        this.txtWins.Location = new System.Drawing.Point(141, 123);
-        this.txtWins.MaxLength = 4;
-        this.txtWins.Name = "txtWins";
-        this.txtWins.Size = new System.Drawing.Size(41, 20);
-        this.txtWins.TabIndex = 13;
+        WinsTextBox.Location = new Point(158, 109);
+        WinsTextBox.Margin = new Padding(4, 3, 4, 3);
+        WinsTextBox.MaxLength = 4;
+        WinsTextBox.Name = "WinsTextBox";
+        WinsTextBox.Size = new Size(47, 23);
+        WinsTextBox.TabIndex = 25;
         // 
         // lblWins
         // 
-        this.lblWins.AutoSize = true;
-        this.lblWins.Location = new System.Drawing.Point(100, 126);
-        this.lblWins.Name = "lblWins";
-        this.lblWins.Size = new System.Drawing.Size(31, 13);
-        this.lblWins.TabIndex = 12;
-        this.lblWins.Text = "Wins";
+        lblWins.AutoSize = true;
+        lblWins.Location = new Point(114, 112);
+        lblWins.Margin = new Padding(4, 0, 4, 0);
+        lblWins.Name = "lblWins";
+        lblWins.Size = new Size(33, 15);
+        lblWins.TabIndex = 12;
+        lblWins.Text = "Wins";
         // 
         // lblHeight
         // 
-        this.lblHeight.AutoSize = true;
-        this.lblHeight.Location = new System.Drawing.Point(6, 152);
-        this.lblHeight.Name = "lblHeight";
-        this.lblHeight.Size = new System.Drawing.Size(38, 13);
-        this.lblHeight.TabIndex = 10;
-        this.lblHeight.Text = "Height";
+        lblHeight.AutoSize = true;
+        lblHeight.Location = new Point(8, 141);
+        lblHeight.Margin = new Padding(4, 0, 4, 0);
+        lblHeight.Name = "lblHeight";
+        lblHeight.Size = new Size(43, 15);
+        lblHeight.TabIndex = 10;
+        lblHeight.Text = "Height";
         // 
         // lblWeight
         // 
-        this.lblWeight.AutoSize = true;
-        this.lblWeight.Location = new System.Drawing.Point(6, 126);
-        this.lblWeight.Name = "lblWeight";
-        this.lblWeight.Size = new System.Drawing.Size(41, 13);
-        this.lblWeight.TabIndex = 8;
-        this.lblWeight.Text = "Weight";
-        // 
-        // trkStrength
-        // 
-        this.trkStrength.AutoSize = false;
-        this.trkStrength.Location = new System.Drawing.Point(62, 19);
-        this.trkStrength.Name = "trkStrength";
-        this.trkStrength.Size = new System.Drawing.Size(120, 20);
-        this.trkStrength.TabIndex = 1;
-        this.trkStrength.TickStyle = System.Windows.Forms.TickStyle.None;
-        // 
-        // trkCharisma
-        // 
-        this.trkCharisma.AutoSize = false;
-        this.trkCharisma.Location = new System.Drawing.Point(62, 97);
-        this.trkCharisma.Name = "trkCharisma";
-        this.trkCharisma.Size = new System.Drawing.Size(120, 20);
-        this.trkCharisma.TabIndex = 7;
-        this.trkCharisma.TickStyle = System.Windows.Forms.TickStyle.None;
+        lblWeight.AutoSize = true;
+        lblWeight.Location = new Point(8, 112);
+        lblWeight.Margin = new Padding(4, 0, 4, 0);
+        lblWeight.Name = "lblWeight";
+        lblWeight.Size = new Size(45, 15);
+        lblWeight.TabIndex = 8;
+        lblWeight.Text = "Weight";
         // 
         // lblStrength
         // 
-        this.lblStrength.AutoSize = true;
-        this.lblStrength.Location = new System.Drawing.Point(6, 22);
-        this.lblStrength.Name = "lblStrength";
-        this.lblStrength.Size = new System.Drawing.Size(47, 13);
-        this.lblStrength.TabIndex = 0;
-        this.lblStrength.Text = "Strength";
-        // 
-        // trkVitality
-        // 
-        this.trkVitality.AutoSize = false;
-        this.trkVitality.Location = new System.Drawing.Point(62, 71);
-        this.trkVitality.Name = "trkVitality";
-        this.trkVitality.Size = new System.Drawing.Size(120, 20);
-        this.trkVitality.TabIndex = 5;
-        this.trkVitality.TickStyle = System.Windows.Forms.TickStyle.None;
+        lblStrength.AutoSize = true;
+        lblStrength.Location = new Point(8, 25);
+        lblStrength.Margin = new Padding(4, 0, 4, 0);
+        lblStrength.Name = "lblStrength";
+        lblStrength.Size = new Size(52, 15);
+        lblStrength.TabIndex = 0;
+        lblStrength.Text = "Strength";
         // 
         // lblSpeed
         // 
-        this.lblSpeed.AutoSize = true;
-        this.lblSpeed.Location = new System.Drawing.Point(6, 48);
-        this.lblSpeed.Name = "lblSpeed";
-        this.lblSpeed.Size = new System.Drawing.Size(38, 13);
-        this.lblSpeed.TabIndex = 2;
-        this.lblSpeed.Text = "Speed";
-        // 
-        // trkSpeed
-        // 
-        this.trkSpeed.AutoSize = false;
-        this.trkSpeed.Location = new System.Drawing.Point(62, 45);
-        this.trkSpeed.Name = "trkSpeed";
-        this.trkSpeed.Size = new System.Drawing.Size(120, 20);
-        this.trkSpeed.TabIndex = 3;
-        this.trkSpeed.TickStyle = System.Windows.Forms.TickStyle.None;
+        lblSpeed.AutoSize = true;
+        lblSpeed.Location = new Point(8, 46);
+        lblSpeed.Margin = new Padding(4, 0, 4, 0);
+        lblSpeed.Name = "lblSpeed";
+        lblSpeed.Size = new Size(39, 15);
+        lblSpeed.TabIndex = 2;
+        lblSpeed.Text = "Speed";
         // 
         // lblVitality
         // 
-        this.lblVitality.AutoSize = true;
-        this.lblVitality.Location = new System.Drawing.Point(6, 74);
-        this.lblVitality.Name = "lblVitality";
-        this.lblVitality.Size = new System.Drawing.Size(37, 13);
-        this.lblVitality.TabIndex = 4;
-        this.lblVitality.Text = "Vitality";
+        lblVitality.AutoSize = true;
+        lblVitality.Location = new Point(8, 68);
+        lblVitality.Margin = new Padding(4, 0, 4, 0);
+        lblVitality.Name = "lblVitality";
+        lblVitality.Size = new Size(43, 15);
+        lblVitality.TabIndex = 4;
+        lblVitality.Text = "Vitality";
         // 
         // lblCharisma
         // 
-        this.lblCharisma.AutoSize = true;
-        this.lblCharisma.Location = new System.Drawing.Point(6, 100);
-        this.lblCharisma.Name = "lblCharisma";
-        this.lblCharisma.Size = new System.Drawing.Size(50, 13);
-        this.lblCharisma.TabIndex = 6;
-        this.lblCharisma.Text = "Charisma";
+        lblCharisma.AutoSize = true;
+        lblCharisma.Location = new Point(8, 88);
+        lblCharisma.Margin = new Padding(4, 0, 4, 0);
+        lblCharisma.Name = "lblCharisma";
+        lblCharisma.Size = new Size(57, 15);
+        lblCharisma.TabIndex = 6;
+        lblCharisma.Text = "Charisma";
         // 
-        // btnMoveAdd
+        // AddMoveButton
         // 
-        this.btnMoveAdd.Location = new System.Drawing.Point(6, 94);
-        this.btnMoveAdd.Name = "btnMoveAdd";
-        this.btnMoveAdd.Size = new System.Drawing.Size(55, 23);
-        this.btnMoveAdd.TabIndex = 1;
-        this.btnMoveAdd.Text = "Add";
-        this.btnMoveAdd.UseVisualStyleBackColor = true;
+        AddMoveButton.Location = new Point(8, 122);
+        AddMoveButton.Margin = new Padding(4, 3, 4, 3);
+        AddMoveButton.Name = "AddMoveButton";
+        AddMoveButton.Size = new Size(60, 27);
+        AddMoveButton.TabIndex = 28;
+        AddMoveButton.Text = "Add";
+        AddMoveButton.UseVisualStyleBackColor = true;
         // 
-        // btnMoveRemove
+        // RemoveMoveButton
         // 
-        this.btnMoveRemove.Location = new System.Drawing.Point(127, 94);
-        this.btnMoveRemove.Name = "btnMoveRemove";
-        this.btnMoveRemove.Size = new System.Drawing.Size(55, 23);
-        this.btnMoveRemove.TabIndex = 3;
-        this.btnMoveRemove.Text = "Remove";
-        this.btnMoveRemove.UseVisualStyleBackColor = true;
+        RemoveMoveButton.Location = new Point(145, 122);
+        RemoveMoveButton.Margin = new Padding(4, 3, 4, 3);
+        RemoveMoveButton.Name = "RemoveMoveButton";
+        RemoveMoveButton.Size = new Size(60, 27);
+        RemoveMoveButton.TabIndex = 30;
+        RemoveMoveButton.Text = "Remove";
+        RemoveMoveButton.UseVisualStyleBackColor = true;
         // 
-        // btnMoveEdit
+        // EditMoveButton
         // 
-        this.btnMoveEdit.Location = new System.Drawing.Point(67, 94);
-        this.btnMoveEdit.Name = "btnMoveEdit";
-        this.btnMoveEdit.Size = new System.Drawing.Size(54, 23);
-        this.btnMoveEdit.TabIndex = 2;
-        this.btnMoveEdit.Text = "Edit";
-        this.btnMoveEdit.UseVisualStyleBackColor = true;
+        EditMoveButton.Location = new Point(76, 122);
+        EditMoveButton.Margin = new Padding(4, 3, 4, 3);
+        EditMoveButton.Name = "EditMoveButton";
+        EditMoveButton.Size = new Size(61, 27);
+        EditMoveButton.TabIndex = 29;
+        EditMoveButton.Text = "Edit";
+        EditMoveButton.UseVisualStyleBackColor = true;
         // 
-        // lstMoves
+        // MovesListBox
         // 
-        this.lstMoves.DisplayMember = "Value";
-        this.lstMoves.FormattingEnabled = true;
-        this.lstMoves.Location = new System.Drawing.Point(6, 19);
-        this.lstMoves.Name = "lstMoves";
-        this.lstMoves.Size = new System.Drawing.Size(176, 69);
-        this.lstMoves.TabIndex = 0;
-        this.lstMoves.ValueMember = "Key";
+        MovesListBox.DisplayMember = "Value";
+        MovesListBox.FormattingEnabled = true;
+        MovesListBox.ItemHeight = 15;
+        MovesListBox.Location = new Point(8, 22);
+        MovesListBox.Margin = new Padding(4, 3, 4, 3);
+        MovesListBox.Name = "MovesListBox";
+        MovesListBox.Size = new Size(197, 94);
+        MovesListBox.TabIndex = 27;
+        MovesListBox.ValueMember = "Key";
         // 
         // grpMoves
         // 
-        this.grpMoves.Controls.Add(this.btnMoveEdit);
-        this.grpMoves.Controls.Add(this.btnMoveRemove);
-        this.grpMoves.Controls.Add(this.btnMoveAdd);
-        this.grpMoves.Controls.Add(this.lstMoves);
-        this.grpMoves.Location = new System.Drawing.Point(176, 253);
-        this.grpMoves.Name = "grpMoves";
-        this.grpMoves.Size = new System.Drawing.Size(188, 123);
-        this.grpMoves.TabIndex = 39;
-        this.grpMoves.TabStop = false;
-        this.grpMoves.Text = "Moves List";
+        grpMoves.Controls.Add(RemoveMoveButton);
+        grpMoves.Controls.Add(MovesListBox);
+        grpMoves.Controls.Add(EditMoveButton);
+        grpMoves.Controls.Add(AddMoveButton);
+        grpMoves.Location = new Point(13, 185);
+        grpMoves.Margin = new Padding(4, 3, 4, 3);
+        grpMoves.Name = "grpMoves";
+        grpMoves.Padding = new Padding(4, 3, 4, 3);
+        grpMoves.Size = new Size(213, 155);
+        grpMoves.TabIndex = 39;
+        grpMoves.TabStop = false;
+        grpMoves.Text = "Moves List";
         // 
-        // btnCancel
+        // CancelButton
         // 
-        this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-        this.btnCancel.Location = new System.Drawing.Point(566, 356);
-        this.btnCancel.Name = "btnCancel";
-        this.btnCancel.Size = new System.Drawing.Size(58, 23);
-        this.btnCancel.TabIndex = 41;
-        this.btnCancel.Text = "&Cancel";
-        this.btnCancel.UseVisualStyleBackColor = true;
+        CancelButton.DialogResult = DialogResult.Cancel;
+        CancelButton.Location = new Point(462, 318);
+        CancelButton.Margin = new Padding(4, 3, 4, 3);
+        CancelButton.Name = "CancelButton";
+        CancelButton.Size = new Size(68, 26);
+        CancelButton.TabIndex = 34;
+        CancelButton.Text = "&Cancel";
+        CancelButton.UseVisualStyleBackColor = true;
         // 
-        // btnOk
+        // OkButton
         // 
-        this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-        this.btnOk.Location = new System.Drawing.Point(502, 356);
-        this.btnOk.Name = "btnOk";
-        this.btnOk.Size = new System.Drawing.Size(58, 23);
-        this.btnOk.TabIndex = 40;
-        this.btnOk.Text = "&Ok";
-        this.btnOk.UseVisualStyleBackColor = true;
+        OkButton.DialogResult = DialogResult.OK;
+        OkButton.Location = new Point(386, 318);
+        OkButton.Margin = new Padding(4, 3, 4, 3);
+        OkButton.Name = "OkButton";
+        OkButton.Size = new Size(68, 26);
+        OkButton.TabIndex = 33;
+        OkButton.Text = "&Ok";
+        OkButton.UseVisualStyleBackColor = true;
         // 
-        // btnExport
+        // ExportZimButton
         // 
-        this.btnExport.Location = new System.Drawing.Point(437, 356);
-        this.btnExport.Name = "btnExport";
-        this.btnExport.Size = new System.Drawing.Size(58, 23);
-        this.btnExport.TabIndex = 43;
-        this.btnExport.Text = "Export";
-        this.btnExport.UseVisualStyleBackColor = true;
+        ExportZimButton.Location = new Point(310, 318);
+        ExportZimButton.Margin = new Padding(4, 3, 4, 3);
+        ExportZimButton.Name = "ExportZimButton";
+        ExportZimButton.Size = new Size(68, 26);
+        ExportZimButton.TabIndex = 32;
+        ExportZimButton.Text = ".ZIM";
+        ExportZimButton.UseVisualStyleBackColor = true;
         // 
-        // btnExportHTML
+        // ExportHTMLButton
         // 
-        this.btnExportHTML.Enabled = false;
-        this.btnExportHTML.Location = new System.Drawing.Point(373, 356);
-        this.btnExportHTML.Name = "btnExportHTML";
-        this.btnExportHTML.Size = new System.Drawing.Size(58, 23);
-        this.btnExportHTML.TabIndex = 42;
-        this.btnExportHTML.Text = "HTML";
-        this.btnExportHTML.UseVisualStyleBackColor = true;
+        ExportHTMLButton.Enabled = false;
+        ExportHTMLButton.Location = new Point(234, 318);
+        ExportHTMLButton.Margin = new Padding(4, 3, 4, 3);
+        ExportHTMLButton.Name = "ExportHTMLButton";
+        ExportHTMLButton.Size = new Size(68, 26);
+        ExportHTMLButton.TabIndex = 31;
+        ExportHTMLButton.Text = ".HTML";
+        ExportHTMLButton.UseVisualStyleBackColor = true;
         // 
         // grpTitles
         // 
-        this.grpTitles.Controls.Add(this.lstTitles);
-        this.grpTitles.Controls.Add(this.btnTitleRemove);
-        this.grpTitles.Controls.Add(this.btnTitleAdd);
-        this.grpTitles.Location = new System.Drawing.Point(373, 256);
-        this.grpTitles.Name = "grpTitles";
-        this.grpTitles.Size = new System.Drawing.Size(251, 94);
-        this.grpTitles.TabIndex = 37;
-        this.grpTitles.TabStop = false;
-        this.grpTitles.Text = "Titles";
+        grpTitles.Controls.Add(TitlesListBox);
+        grpTitles.Controls.Add(RemoveTitleButton);
+        grpTitles.Controls.Add(AddTitleButton);
+        grpTitles.Location = new Point(234, 215);
+        grpTitles.Margin = new Padding(4, 3, 4, 3);
+        grpTitles.Name = "grpTitles";
+        grpTitles.Padding = new Padding(4, 3, 4, 3);
+        grpTitles.Size = new Size(296, 97);
+        grpTitles.TabIndex = 37;
+        grpTitles.TabStop = false;
+        grpTitles.Text = "Titles";
         // 
-        // lstTitles
+        // TitlesListBox
         // 
-        this.lstTitles.DisplayMember = "Value";
-        this.lstTitles.FormattingEnabled = true;
-        this.lstTitles.Location = new System.Drawing.Point(6, 19);
-        this.lstTitles.Name = "lstTitles";
-        this.lstTitles.Size = new System.Drawing.Size(178, 69);
-        this.lstTitles.TabIndex = 0;
-        this.lstTitles.ValueMember = "Key";
+        TitlesListBox.DisplayMember = "Value";
+        TitlesListBox.FormattingEnabled = true;
+        TitlesListBox.ItemHeight = 15;
+        TitlesListBox.Location = new Point(7, 22);
+        TitlesListBox.Margin = new Padding(4, 3, 4, 3);
+        TitlesListBox.Name = "TitlesListBox";
+        TitlesListBox.Size = new Size(210, 64);
+        TitlesListBox.TabIndex = 8;
+        TitlesListBox.ValueMember = "Key";
         // 
-        // btnTitleRemove
+        // RemoveTitleButton
         // 
-        this.btnTitleRemove.Location = new System.Drawing.Point(190, 48);
-        this.btnTitleRemove.Name = "btnTitleRemove";
-        this.btnTitleRemove.Size = new System.Drawing.Size(55, 23);
-        this.btnTitleRemove.TabIndex = 2;
-        this.btnTitleRemove.Text = "Remove";
-        this.btnTitleRemove.UseVisualStyleBackColor = true;
+        RemoveTitleButton.Location = new Point(225, 59);
+        RemoveTitleButton.Margin = new Padding(4, 3, 4, 3);
+        RemoveTitleButton.Name = "RemoveTitleButton";
+        RemoveTitleButton.Size = new Size(63, 27);
+        RemoveTitleButton.TabIndex = 10;
+        RemoveTitleButton.Text = "Remove";
+        RemoveTitleButton.UseVisualStyleBackColor = true;
         // 
-        // btnTitleAdd
+        // AddTitleButton
         // 
-        this.btnTitleAdd.Location = new System.Drawing.Point(190, 19);
-        this.btnTitleAdd.Name = "btnTitleAdd";
-        this.btnTitleAdd.Size = new System.Drawing.Size(55, 23);
-        this.btnTitleAdd.TabIndex = 1;
-        this.btnTitleAdd.Text = "Add";
-        this.btnTitleAdd.UseVisualStyleBackColor = true;
+        AddTitleButton.Location = new Point(225, 26);
+        AddTitleButton.Margin = new Padding(4, 3, 4, 3);
+        AddTitleButton.Name = "AddTitleButton";
+        AddTitleButton.Size = new Size(63, 27);
+        AddTitleButton.TabIndex = 9;
+        AddTitleButton.Text = "Add";
+        AddTitleButton.UseVisualStyleBackColor = true;
         // 
-        // chkEscortInterferes
+        // EscortInterferesCheckBox
         // 
-        this.chkEscortInterferes.AutoSize = true;
-        this.chkEscortInterferes.Location = new System.Drawing.Point(521, 232);
-        this.chkEscortInterferes.Name = "chkEscortInterferes";
-        this.chkEscortInterferes.Size = new System.Drawing.Size(103, 17);
-        this.chkEscortInterferes.TabIndex = 36;
-        this.chkEscortInterferes.Text = "Escort Interferes";
-        this.chkEscortInterferes.UseVisualStyleBackColor = true;
+        EscortInterferesCheckBox.AutoSize = true;
+        EscortInterferesCheckBox.Location = new Point(420, 188);
+        EscortInterferesCheckBox.Margin = new Padding(4, 3, 4, 3);
+        EscortInterferesCheckBox.Name = "EscortInterferesCheckBox";
+        EscortInterferesCheckBox.Size = new Size(110, 19);
+        EscortInterferesCheckBox.TabIndex = 6;
+        EscortInterferesCheckBox.Text = "Escort Interferes";
+        EscortInterferesCheckBox.UseVisualStyleBackColor = true;
         // 
-        // txtPush
+        // PushTextBox
         // 
-        this.txtPush.Location = new System.Drawing.Point(434, 230);
-        this.txtPush.MaxLength = 4;
-        this.txtPush.Name = "txtPush";
-        this.txtPush.Size = new System.Drawing.Size(55, 20);
-        this.txtPush.TabIndex = 35;
+        PushTextBox.Location = new Point(309, 186);
+        PushTextBox.Margin = new Padding(4, 3, 4, 3);
+        PushTextBox.MaxLength = 4;
+        PushTextBox.Name = "PushTextBox";
+        PushTextBox.Size = new Size(63, 23);
+        PushTextBox.TabIndex = 7;
         // 
         // lblPush
         // 
-        this.lblPush.AutoSize = true;
-        this.lblPush.Location = new System.Drawing.Point(370, 233);
-        this.lblPush.Name = "lblPush";
-        this.lblPush.Size = new System.Drawing.Size(31, 13);
-        this.lblPush.TabIndex = 34;
-        this.lblPush.Text = "Push";
+        lblPush.AutoSize = true;
+        lblPush.Location = new Point(234, 189);
+        lblPush.Margin = new Padding(4, 0, 4, 0);
+        lblPush.Name = "lblPush";
+        lblPush.Size = new Size(33, 15);
+        lblPush.TabIndex = 34;
+        lblPush.Text = "Push";
         // 
-        // cboEscort
+        // EscortComboBox
         // 
-        this.cboEscort.DisplayMember = "Value";
-        this.cboEscort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-        this.cboEscort.FormattingEnabled = true;
-        this.cboEscort.Location = new System.Drawing.Point(434, 203);
-        this.cboEscort.Name = "cboEscort";
-        this.cboEscort.Size = new System.Drawing.Size(190, 21);
-        this.cboEscort.TabIndex = 33;
-        this.cboEscort.ValueMember = "Key";
+        EscortComboBox.DisplayMember = "Value";
+        EscortComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+        EscortComboBox.FormattingEnabled = true;
+        EscortComboBox.Location = new Point(309, 157);
+        EscortComboBox.Margin = new Padding(4, 3, 4, 3);
+        EscortComboBox.Name = "EscortComboBox";
+        EscortComboBox.Size = new Size(221, 23);
+        EscortComboBox.TabIndex = 5;
+        EscortComboBox.ValueMember = "Key";
         // 
         // lblEscort
         // 
-        this.lblEscort.AutoSize = true;
-        this.lblEscort.Location = new System.Drawing.Point(370, 206);
-        this.lblEscort.Name = "lblEscort";
-        this.lblEscort.Size = new System.Drawing.Size(37, 13);
-        this.lblEscort.TabIndex = 32;
-        this.lblEscort.Text = "Escort";
+        lblEscort.AutoSize = true;
+        lblEscort.Location = new Point(234, 160);
+        lblEscort.Margin = new Padding(4, 0, 4, 0);
+        lblEscort.Name = "lblEscort";
+        lblEscort.Size = new Size(39, 15);
+        lblEscort.TabIndex = 32;
+        lblEscort.Text = "Escort";
         // 
-        // txtRingIntro
+        // RingIntroTextBox
         // 
-        this.txtRingIntro.Location = new System.Drawing.Point(434, 177);
-        this.txtRingIntro.Name = "txtRingIntro";
-        this.txtRingIntro.Size = new System.Drawing.Size(190, 20);
-        this.txtRingIntro.TabIndex = 31;
+        RingIntroTextBox.Location = new Point(309, 128);
+        RingIntroTextBox.Margin = new Padding(4, 3, 4, 3);
+        RingIntroTextBox.Name = "RingIntroTextBox";
+        RingIntroTextBox.Size = new Size(221, 23);
+        RingIntroTextBox.TabIndex = 4;
         // 
         // lblRingIntro
         // 
-        this.lblRingIntro.AutoSize = true;
-        this.lblRingIntro.Location = new System.Drawing.Point(370, 180);
-        this.lblRingIntro.Name = "lblRingIntro";
-        this.lblRingIntro.Size = new System.Drawing.Size(53, 13);
-        this.lblRingIntro.TabIndex = 30;
-        this.lblRingIntro.Text = "Ring Intro";
+        lblRingIntro.AutoSize = true;
+        lblRingIntro.Location = new Point(234, 131);
+        lblRingIntro.Margin = new Padding(4, 0, 4, 0);
+        lblRingIntro.Name = "lblRingIntro";
+        lblRingIntro.Size = new Size(59, 15);
+        lblRingIntro.TabIndex = 30;
+        lblRingIntro.Text = "Ring Intro";
         // 
-        // txtStable
+        // StableTextBox
         // 
-        this.txtStable.Location = new System.Drawing.Point(434, 151);
-        this.txtStable.Name = "txtStable";
-        this.txtStable.Size = new System.Drawing.Size(190, 20);
-        this.txtStable.TabIndex = 29;
+        StableTextBox.Location = new Point(309, 99);
+        StableTextBox.Margin = new Padding(4, 3, 4, 3);
+        StableTextBox.Name = "StableTextBox";
+        StableTextBox.Size = new Size(221, 23);
+        StableTextBox.TabIndex = 3;
         // 
         // lblStable
         // 
-        this.lblStable.AutoSize = true;
-        this.lblStable.Location = new System.Drawing.Point(370, 154);
-        this.lblStable.Name = "lblStable";
-        this.lblStable.Size = new System.Drawing.Size(37, 13);
-        this.lblStable.TabIndex = 28;
-        this.lblStable.Text = "Stable";
+        lblStable.AutoSize = true;
+        lblStable.Location = new Point(234, 102);
+        lblStable.Margin = new Padding(4, 0, 4, 0);
+        lblStable.Name = "lblStable";
+        lblStable.Size = new Size(39, 15);
+        lblStable.TabIndex = 28;
+        lblStable.Text = "Stable";
         // 
-        // cboAffliliation
+        // AffliliationComboBox
         // 
-        this.cboAffliliation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-        this.cboAffliliation.FormattingEnabled = true;
-        this.cboAffliliation.Items.AddRange(new object[] {
-        "Face",
-        "Neutral",
-        "Heel"});
-        this.cboAffliliation.Location = new System.Drawing.Point(434, 124);
-        this.cboAffliliation.Name = "cboAffliliation";
-        this.cboAffliliation.Size = new System.Drawing.Size(190, 21);
-        this.cboAffliliation.TabIndex = 27;
+        AffliliationComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+        AffliliationComboBox.FormattingEnabled = true;
+        AffliliationComboBox.Items.AddRange(new object[] { "Face", "Neutral", "Heel" });
+        AffliliationComboBox.Location = new Point(309, 70);
+        AffliliationComboBox.Margin = new Padding(4, 3, 4, 3);
+        AffliliationComboBox.Name = "AffliliationComboBox";
+        AffliliationComboBox.Size = new Size(221, 23);
+        AffliliationComboBox.TabIndex = 2;
         // 
         // lblAffliliation
         // 
-        this.lblAffliliation.AutoSize = true;
-        this.lblAffliliation.Location = new System.Drawing.Point(370, 127);
-        this.lblAffliliation.Name = "lblAffliliation";
-        this.lblAffliliation.Size = new System.Drawing.Size(51, 13);
-        this.lblAffliliation.TabIndex = 26;
-        this.lblAffliliation.Text = "Affliliation";
+        lblAffliliation.AutoSize = true;
+        lblAffliliation.Location = new Point(234, 73);
+        lblAffliliation.Margin = new Padding(4, 0, 4, 0);
+        lblAffliliation.Name = "lblAffliliation";
+        lblAffliliation.Size = new Size(62, 15);
+        lblAffliliation.TabIndex = 26;
+        lblAffliliation.Text = "Affliliation";
         // 
-        // txtHometown
+        // HometownTextBox
         // 
-        this.txtHometown.Location = new System.Drawing.Point(434, 98);
-        this.txtHometown.Name = "txtHometown";
-        this.txtHometown.Size = new System.Drawing.Size(190, 20);
-        this.txtHometown.TabIndex = 25;
+        HometownTextBox.Location = new Point(309, 41);
+        HometownTextBox.Margin = new Padding(4, 3, 4, 3);
+        HometownTextBox.Name = "HometownTextBox";
+        HometownTextBox.Size = new Size(221, 23);
+        HometownTextBox.TabIndex = 1;
         // 
         // lblHometown
         // 
-        this.lblHometown.AutoSize = true;
-        this.lblHometown.Location = new System.Drawing.Point(370, 101);
-        this.lblHometown.Name = "lblHometown";
-        this.lblHometown.Size = new System.Drawing.Size(58, 13);
-        this.lblHometown.TabIndex = 24;
-        this.lblHometown.Text = "Hometown";
+        lblHometown.AutoSize = true;
+        lblHometown.Location = new Point(234, 44);
+        lblHometown.Margin = new Padding(4, 0, 4, 0);
+        lblHometown.Name = "lblHometown";
+        lblHometown.Size = new Size(67, 15);
+        lblHometown.TabIndex = 24;
+        lblHometown.Text = "Hometown";
         // 
-        // txtNames
+        // NamesTextBox
         // 
-        this.txtNames.Location = new System.Drawing.Point(434, 72);
-        this.txtNames.Name = "txtNames";
-        this.txtNames.Size = new System.Drawing.Size(190, 20);
-        this.txtNames.TabIndex = 23;
+        NamesTextBox.Location = new Point(309, 12);
+        NamesTextBox.Margin = new Padding(4, 3, 4, 3);
+        NamesTextBox.Name = "NamesTextBox";
+        NamesTextBox.Size = new Size(221, 23);
+        NamesTextBox.TabIndex = 0;
         // 
         // lblNames
         // 
-        this.lblNames.AutoSize = true;
-        this.lblNames.Location = new System.Drawing.Point(370, 75);
-        this.lblNames.Name = "lblNames";
-        this.lblNames.Size = new System.Drawing.Size(40, 13);
-        this.lblNames.TabIndex = 22;
-        this.lblNames.Text = "Names";
+        lblNames.AutoSize = true;
+        lblNames.Location = new Point(234, 15);
+        lblNames.Margin = new Padding(4, 0, 4, 0);
+        lblNames.Name = "lblNames";
+        lblNames.Size = new Size(44, 15);
+        lblNames.TabIndex = 22;
+        lblNames.Text = "Names";
         // 
         // WrestlerEditorForm
         // 
-        this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(800, 450);
-        this.Controls.Add(this.grpStats);
-        this.Controls.Add(this.grpMoves);
-        this.Controls.Add(this.btnCancel);
-        this.Controls.Add(this.btnOk);
-        this.Controls.Add(this.btnExport);
-        this.Controls.Add(this.btnExportHTML);
-        this.Controls.Add(this.grpTitles);
-        this.Controls.Add(this.chkEscortInterferes);
-        this.Controls.Add(this.txtPush);
-        this.Controls.Add(this.lblPush);
-        this.Controls.Add(this.cboEscort);
-        this.Controls.Add(this.lblEscort);
-        this.Controls.Add(this.txtRingIntro);
-        this.Controls.Add(this.lblRingIntro);
-        this.Controls.Add(this.txtStable);
-        this.Controls.Add(this.lblStable);
-        this.Controls.Add(this.cboAffliliation);
-        this.Controls.Add(this.lblAffliliation);
-        this.Controls.Add(this.txtHometown);
-        this.Controls.Add(this.lblHometown);
-        this.Controls.Add(this.txtNames);
-        this.Controls.Add(this.lblNames);
-        this.Name = "WrestlerEditorForm";
-        this.Text = "WrestlerEditorForm";
-        this.grpStats.ResumeLayout(false);
-        this.grpStats.PerformLayout();
-        ((System.ComponentModel.ISupportInitialize)(this.trkStrength)).EndInit();
-        ((System.ComponentModel.ISupportInitialize)(this.trkCharisma)).EndInit();
-        ((System.ComponentModel.ISupportInitialize)(this.trkVitality)).EndInit();
-        ((System.ComponentModel.ISupportInitialize)(this.trkSpeed)).EndInit();
-        this.grpMoves.ResumeLayout(false);
-        this.grpTitles.ResumeLayout(false);
-        this.ResumeLayout(false);
-        this.PerformLayout();
-
+        AcceptButton = OkButton;
+        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleMode = AutoScaleMode.Font;
+        CancelButton = CancelButton;
+        ClientSize = new Size(543, 356);
+        Controls.Add(grpStats);
+        Controls.Add(grpMoves);
+        Controls.Add(CancelButton);
+        Controls.Add(OkButton);
+        Controls.Add(ExportZimButton);
+        Controls.Add(ExportHTMLButton);
+        Controls.Add(grpTitles);
+        Controls.Add(EscortInterferesCheckBox);
+        Controls.Add(PushTextBox);
+        Controls.Add(lblPush);
+        Controls.Add(EscortComboBox);
+        Controls.Add(lblEscort);
+        Controls.Add(RingIntroTextBox);
+        Controls.Add(lblRingIntro);
+        Controls.Add(StableTextBox);
+        Controls.Add(lblStable);
+        Controls.Add(AffliliationComboBox);
+        Controls.Add(lblAffliliation);
+        Controls.Add(HometownTextBox);
+        Controls.Add(lblHometown);
+        Controls.Add(NamesTextBox);
+        Controls.Add(lblNames);
+        FormBorderStyle = FormBorderStyle.FixedDialog;
+        Margin = new Padding(4, 3, 4, 3);
+        MaximizeBox = false;
+        MinimizeBox = false;
+        Name = "WrestlerEditorForm";
+        ShowIcon = false;
+        ShowInTaskbar = false;
+        Text = "Wrestler Information";
+        grpStats.ResumeLayout(false);
+        grpStats.PerformLayout();
+        grpMoves.ResumeLayout(false);
+        grpTitles.ResumeLayout(false);
+        ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
 
-    internal System.Windows.Forms.TextBox txtHeight;
+    internal System.Windows.Forms.TextBox HeightTextBox;
     internal System.Windows.Forms.GroupBox grpStats;
-    internal System.Windows.Forms.TextBox txtLoses;
-    internal System.Windows.Forms.TextBox txtWeight;
+    internal System.Windows.Forms.TextBox LosesTextBox;
+    internal System.Windows.Forms.TextBox WeightTextBox;
     internal System.Windows.Forms.Label lblLoses;
-    internal System.Windows.Forms.TextBox txtWins;
+    internal System.Windows.Forms.TextBox WinsTextBox;
     internal System.Windows.Forms.Label lblWins;
     internal System.Windows.Forms.Label lblHeight;
     internal System.Windows.Forms.Label lblWeight;
-    internal System.Windows.Forms.TrackBar trkStrength;
-    internal System.Windows.Forms.TrackBar trkCharisma;
     internal System.Windows.Forms.Label lblStrength;
-    internal System.Windows.Forms.TrackBar trkVitality;
     internal System.Windows.Forms.Label lblSpeed;
-    internal System.Windows.Forms.TrackBar trkSpeed;
     internal System.Windows.Forms.Label lblVitality;
     internal System.Windows.Forms.Label lblCharisma;
-    internal System.Windows.Forms.Button btnMoveAdd;
-    internal System.Windows.Forms.Button btnMoveRemove;
-    internal System.Windows.Forms.Button btnMoveEdit;
-    internal System.Windows.Forms.ListBox lstMoves;
+    internal System.Windows.Forms.Button AddMoveButton;
+    internal System.Windows.Forms.Button RemoveMoveButton;
+    internal System.Windows.Forms.Button EditMoveButton;
+    internal System.Windows.Forms.ListBox MovesListBox;
     internal System.Windows.Forms.GroupBox grpMoves;
-    internal System.Windows.Forms.Button btnCancel;
-    internal System.Windows.Forms.Button btnOk;
-    internal System.Windows.Forms.Button btnExport;
-    internal System.Windows.Forms.Button btnExportHTML;
+    internal System.Windows.Forms.Button CancelButton;
+    internal System.Windows.Forms.Button OkButton;
+    internal System.Windows.Forms.Button ExportZimButton;
+    internal System.Windows.Forms.Button ExportHTMLButton;
     internal System.Windows.Forms.GroupBox grpTitles;
-    internal System.Windows.Forms.ListBox lstTitles;
-    internal System.Windows.Forms.Button btnTitleRemove;
-    internal System.Windows.Forms.Button btnTitleAdd;
-    internal System.Windows.Forms.CheckBox chkEscortInterferes;
-    internal System.Windows.Forms.TextBox txtPush;
+    internal System.Windows.Forms.ListBox TitlesListBox;
+    internal System.Windows.Forms.Button RemoveTitleButton;
+    internal System.Windows.Forms.Button AddTitleButton;
+    internal System.Windows.Forms.CheckBox EscortInterferesCheckBox;
+    internal System.Windows.Forms.TextBox PushTextBox;
     internal System.Windows.Forms.Label lblPush;
-    internal System.Windows.Forms.ComboBox cboEscort;
+    internal System.Windows.Forms.ComboBox EscortComboBox;
     internal System.Windows.Forms.Label lblEscort;
-    internal System.Windows.Forms.TextBox txtRingIntro;
+    internal System.Windows.Forms.TextBox RingIntroTextBox;
     internal System.Windows.Forms.Label lblRingIntro;
-    internal System.Windows.Forms.TextBox txtStable;
+    internal System.Windows.Forms.TextBox StableTextBox;
     internal System.Windows.Forms.Label lblStable;
-    internal System.Windows.Forms.ComboBox cboAffliliation;
+    internal System.Windows.Forms.ComboBox AffliliationComboBox;
     internal System.Windows.Forms.Label lblAffliliation;
-    internal System.Windows.Forms.TextBox txtHometown;
+    internal System.Windows.Forms.TextBox HometownTextBox;
     internal System.Windows.Forms.Label lblHometown;
-    internal System.Windows.Forms.TextBox txtNames;
+    internal System.Windows.Forms.TextBox NamesTextBox;
     internal System.Windows.Forms.Label lblNames;
+    private Button StrengthDecreaseButton;
+    private Button StrengthIncreaseButton;
+    private ProgressBar StrengthProgressBar;
+    private Button CharismaDecreaseButton;
+    private Button CharismaIncreaseButton;
+    private ProgressBar CharismaProgressBar;
+    private Button VitalityDecreaseButton;
+    private Button VitalityIncreaseButton;
+    private ProgressBar VitalityProgressBar;
+    private Button SpeedDecreaseButton;
+    private Button SpeedIncreaseButton;
+    private ProgressBar SpeedProgressBar;
 }
