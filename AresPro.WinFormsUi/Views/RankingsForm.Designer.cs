@@ -28,115 +28,129 @@ partial class RankingsForm
     /// </summary>
     private void InitializeComponent()
     {
-        this.btnCancel = new System.Windows.Forms.Button();
-        this.btnCreate = new System.Windows.Forms.Button();
-        this.optPush = new System.Windows.Forms.RadioButton();
-        this.optName = new System.Windows.Forms.RadioButton();
-        this.optWinLossRatio = new System.Windows.Forms.RadioButton();
-        this.optLoses = new System.Windows.Forms.RadioButton();
-        this.optWins = new System.Windows.Forms.RadioButton();
-        this.SuspendLayout();
+        CancelButton = new Button();
+        CreateButton = new Button();
+        ByPushRadioButton = new RadioButton();
+        ByNameRadioButton = new RadioButton();
+        ByWinLossRatioRadioButton = new RadioButton();
+        ByLosesRadioButton = new RadioButton();
+        ByWinsRadioButton = new RadioButton();
+        SuspendLayout();
         // 
-        // btnCancel
+        // CancelButton
         // 
-        this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-        this.btnCancel.Location = new System.Drawing.Point(390, 286);
-        this.btnCancel.Name = "btnCancel";
-        this.btnCancel.Size = new System.Drawing.Size(75, 23);
-        this.btnCancel.TabIndex = 13;
-        this.btnCancel.Text = "&Cancel";
-        this.btnCancel.UseVisualStyleBackColor = true;
+        CancelButton.DialogResult = DialogResult.Cancel;
+        CancelButton.Location = new Point(45, 170);
+        CancelButton.Margin = new Padding(4, 3, 4, 3);
+        CancelButton.Name = "CancelButton";
+        CancelButton.Size = new Size(88, 27);
+        CancelButton.TabIndex = 6;
+        CancelButton.Text = "&Cancel";
+        CancelButton.UseVisualStyleBackColor = true;
         // 
-        // btnCreate
+        // CreateButton
         // 
-        this.btnCreate.Location = new System.Drawing.Point(390, 257);
-        this.btnCreate.Name = "btnCreate";
-        this.btnCreate.Size = new System.Drawing.Size(75, 23);
-        this.btnCreate.TabIndex = 12;
-        this.btnCreate.Text = "Create";
-        this.btnCreate.UseVisualStyleBackColor = true;
+        CreateButton.Location = new Point(45, 137);
+        CreateButton.Margin = new Padding(4, 3, 4, 3);
+        CreateButton.Name = "CreateButton";
+        CreateButton.Size = new Size(88, 27);
+        CreateButton.TabIndex = 5;
+        CreateButton.Text = "Create";
+        CreateButton.UseVisualStyleBackColor = true;
         // 
-        // optPush
+        // ByPushRadioButton
         // 
-        this.optPush.AutoSize = true;
-        this.optPush.Location = new System.Drawing.Point(335, 234);
-        this.optPush.Name = "optPush";
-        this.optPush.Size = new System.Drawing.Size(64, 17);
-        this.optPush.TabIndex = 11;
-        this.optPush.TabStop = true;
-        this.optPush.Text = "By Push";
-        this.optPush.UseVisualStyleBackColor = true;
+        ByPushRadioButton.AutoSize = true;
+        ByPushRadioButton.Location = new Point(13, 112);
+        ByPushRadioButton.Margin = new Padding(4, 3, 4, 3);
+        ByPushRadioButton.Name = "ByPushRadioButton";
+        ByPushRadioButton.Size = new Size(67, 19);
+        ByPushRadioButton.TabIndex = 4;
+        ByPushRadioButton.TabStop = true;
+        ByPushRadioButton.Text = "By Push";
+        ByPushRadioButton.UseVisualStyleBackColor = true;
         // 
-        // optName
+        // ByNameRadioButton
         // 
-        this.optName.AutoSize = true;
-        this.optName.Location = new System.Drawing.Point(335, 211);
-        this.optName.Name = "optName";
-        this.optName.Size = new System.Drawing.Size(68, 17);
-        this.optName.TabIndex = 10;
-        this.optName.TabStop = true;
-        this.optName.Text = "By Name";
-        this.optName.UseVisualStyleBackColor = true;
+        ByNameRadioButton.AutoSize = true;
+        ByNameRadioButton.Location = new Point(13, 87);
+        ByNameRadioButton.Margin = new Padding(4, 3, 4, 3);
+        ByNameRadioButton.Name = "ByNameRadioButton";
+        ByNameRadioButton.Size = new Size(73, 19);
+        ByNameRadioButton.TabIndex = 3;
+        ByNameRadioButton.TabStop = true;
+        ByNameRadioButton.Text = "By Name";
+        ByNameRadioButton.UseVisualStyleBackColor = true;
         // 
-        // optWinLossRatio
+        // ByWinLossRatioRadioButton
         // 
-        this.optWinLossRatio.AutoSize = true;
-        this.optWinLossRatio.Location = new System.Drawing.Point(335, 188);
-        this.optWinLossRatio.Name = "optWinLossRatio";
-        this.optWinLossRatio.Size = new System.Drawing.Size(114, 17);
-        this.optWinLossRatio.TabIndex = 9;
-        this.optWinLossRatio.TabStop = true;
-        this.optWinLossRatio.Text = "By Win/Loss Ratio";
-        this.optWinLossRatio.UseVisualStyleBackColor = true;
+        ByWinLossRatioRadioButton.AutoSize = true;
+        ByWinLossRatioRadioButton.Location = new Point(13, 62);
+        ByWinLossRatioRadioButton.Margin = new Padding(4, 3, 4, 3);
+        ByWinLossRatioRadioButton.Name = "ByWinLossRatioRadioButton";
+        ByWinLossRatioRadioButton.Size = new Size(120, 19);
+        ByWinLossRatioRadioButton.TabIndex = 2;
+        ByWinLossRatioRadioButton.TabStop = true;
+        ByWinLossRatioRadioButton.Text = "By Win/Loss Ratio";
+        ByWinLossRatioRadioButton.UseVisualStyleBackColor = true;
         // 
-        // optLoses
+        // ByLosesRadioButton
         // 
-        this.optLoses.AutoSize = true;
-        this.optLoses.Location = new System.Drawing.Point(335, 165);
-        this.optLoses.Name = "optLoses";
-        this.optLoses.Size = new System.Drawing.Size(68, 17);
-        this.optLoses.TabIndex = 8;
-        this.optLoses.TabStop = true;
-        this.optLoses.Text = "By Loses";
-        this.optLoses.UseVisualStyleBackColor = true;
+        ByLosesRadioButton.AutoSize = true;
+        ByLosesRadioButton.Location = new Point(13, 37);
+        ByLosesRadioButton.Margin = new Padding(4, 3, 4, 3);
+        ByLosesRadioButton.Name = "ByLosesRadioButton";
+        ByLosesRadioButton.Size = new Size(70, 19);
+        ByLosesRadioButton.TabIndex = 1;
+        ByLosesRadioButton.TabStop = true;
+        ByLosesRadioButton.Text = "By Loses";
+        ByLosesRadioButton.UseVisualStyleBackColor = true;
         // 
-        // optWins
+        // ByWinsRadioButton
         // 
-        this.optWins.AutoSize = true;
-        this.optWins.Location = new System.Drawing.Point(335, 142);
-        this.optWins.Name = "optWins";
-        this.optWins.Size = new System.Drawing.Size(64, 17);
-        this.optWins.TabIndex = 7;
-        this.optWins.TabStop = true;
-        this.optWins.Text = "By Wins";
-        this.optWins.UseVisualStyleBackColor = true;
+        ByWinsRadioButton.AutoSize = true;
+        ByWinsRadioButton.Location = new Point(13, 12);
+        ByWinsRadioButton.Margin = new Padding(4, 3, 4, 3);
+        ByWinsRadioButton.Name = "ByWinsRadioButton";
+        ByWinsRadioButton.Size = new Size(67, 19);
+        ByWinsRadioButton.TabIndex = 0;
+        ByWinsRadioButton.TabStop = true;
+        ByWinsRadioButton.Text = "By Wins";
+        ByWinsRadioButton.UseVisualStyleBackColor = true;
         // 
         // RankingsForm
         // 
-        this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(800, 450);
-        this.Controls.Add(this.btnCancel);
-        this.Controls.Add(this.btnCreate);
-        this.Controls.Add(this.optPush);
-        this.Controls.Add(this.optName);
-        this.Controls.Add(this.optWinLossRatio);
-        this.Controls.Add(this.optLoses);
-        this.Controls.Add(this.optWins);
-        this.Name = "RankingsForm";
-        this.Text = "RankingsForm";
-        this.ResumeLayout(false);
-        this.PerformLayout();
-
+        AcceptButton = CreateButton;
+        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleMode = AutoScaleMode.Font;
+        CancelButton = CancelButton;
+        ClientSize = new Size(146, 209);
+        Controls.Add(CancelButton);
+        Controls.Add(CreateButton);
+        Controls.Add(ByPushRadioButton);
+        Controls.Add(ByNameRadioButton);
+        Controls.Add(ByWinLossRatioRadioButton);
+        Controls.Add(ByLosesRadioButton);
+        Controls.Add(ByWinsRadioButton);
+        FormBorderStyle = FormBorderStyle.FixedDialog;
+        Margin = new Padding(4, 3, 4, 3);
+        MaximizeBox = false;
+        MinimizeBox = false;
+        Name = "RankingsForm";
+        ShowIcon = false;
+        ShowInTaskbar = false;
+        Text = "Zeus Rankings";
+        ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
 
-    internal System.Windows.Forms.Button btnCancel;
-    internal System.Windows.Forms.Button btnCreate;
-    internal System.Windows.Forms.RadioButton optPush;
-    internal System.Windows.Forms.RadioButton optName;
-    internal System.Windows.Forms.RadioButton optWinLossRatio;
-    internal System.Windows.Forms.RadioButton optLoses;
-    internal System.Windows.Forms.RadioButton optWins;
+    internal System.Windows.Forms.Button CancelButton;
+    internal System.Windows.Forms.Button CreateButton;
+    internal System.Windows.Forms.RadioButton ByPushRadioButton;
+    internal System.Windows.Forms.RadioButton ByNameRadioButton;
+    internal System.Windows.Forms.RadioButton ByWinLossRatioRadioButton;
+    internal System.Windows.Forms.RadioButton ByLosesRadioButton;
+    internal System.Windows.Forms.RadioButton ByWinsRadioButton;
 }
