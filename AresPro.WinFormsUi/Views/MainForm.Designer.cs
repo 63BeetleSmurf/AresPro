@@ -28,55 +28,55 @@ partial class MainForm
     /// </summary>
     private void InitializeComponent()
     {
-        mnuBookEventItem = new ToolStripMenuItem();
-        mnuTitleHistoryItem = new ToolStripMenuItem();
-        mnuRankItem = new ToolStripMenuItem();
-        mnuHelpMenu = new ToolStripMenuItem();
-        mnuHelpItem = new ToolStripMenuItem();
+        BookEventMenuItem = new ToolStripMenuItem();
+        TitleHistoryMenuItem = new ToolStripMenuItem();
+        RankMenuItem = new ToolStripMenuItem();
+        HelpMenuMenuItem = new ToolStripMenuItem();
+        HelpMenuItem = new ToolStripMenuItem();
         ToolStripMenuItem4 = new ToolStripSeparator();
-        mnuAboutItem = new ToolStripMenuItem();
+        AboutMenuItem = new ToolStripMenuItem();
         ToolStripMenuItem3 = new ToolStripSeparator();
-        mnuDeleteSelectionItem = new ToolStripMenuItem();
+        DeleteSelectionMenuItem = new ToolStripMenuItem();
         MenuStrip = new MenuStrip();
-        mnuFileMenu = new ToolStripMenuItem();
-        mnuNewItem = new ToolStripMenuItem();
+        FileMenuMenuItem = new ToolStripMenuItem();
+        NewMenuItem = new ToolStripMenuItem();
         ToolStripMenuItem1 = new ToolStripSeparator();
-        mnuOpenItem = new ToolStripMenuItem();
-        mnuSaveItem = new ToolStripMenuItem();
-        mnuSaveAsItem = new ToolStripMenuItem();
+        OpenMenuItem = new ToolStripMenuItem();
+        SaveMenuItem = new ToolStripMenuItem();
+        SaveAsMenuItem = new ToolStripMenuItem();
         ToolStripMenuItem2 = new ToolStripSeparator();
-        mnuExitItem = new ToolStripMenuItem();
-        mnuResourcesMenu = new ToolStripMenuItem();
-        mnuCommentaryItem = new ToolStripMenuItem();
-        mnuMovesItem = new ToolStripMenuItem();
-        mnuGimmicksItem = new ToolStripMenuItem();
-        mnuCommercialsItem = new ToolStripMenuItem();
-        mnuImportWrestlerItem = new ToolStripMenuItem();
-        mnuFedMenu = new ToolStripMenuItem();
-        mnuFedOptionsItem = new ToolStripMenuItem();
-        mnuNewWrestlerItem = new ToolStripMenuItem();
-        mnuNewTagTeamItem = new ToolStripMenuItem();
-        mnuNewTitleItem = new ToolStripMenuItem();
-        mnuNewCommentatorItem = new ToolStripMenuItem();
-        mnuNewRefereeItem = new ToolStripMenuItem();
-        mnuEditSelectionItem = new ToolStripMenuItem();
+        ExitMenuItem = new ToolStripMenuItem();
+        ResourcesMenuMenuItem = new ToolStripMenuItem();
+        CommentaryMenuItem = new ToolStripMenuItem();
+        MovesMenuItem = new ToolStripMenuItem();
+        GimmicksMenuItem = new ToolStripMenuItem();
+        CommercialsMenuItem = new ToolStripMenuItem();
+        ImportZimFileMenuItem = new ToolStripMenuItem();
+        FedMenuMenuItem = new ToolStripMenuItem();
+        FedOptionsMenuItem = new ToolStripMenuItem();
+        NewWrestlerMenuItem = new ToolStripMenuItem();
+        NewTagTeamMenuItem = new ToolStripMenuItem();
+        NewTitleMenuItem = new ToolStripMenuItem();
+        NewCommentatorMenuItem = new ToolStripMenuItem();
+        NewRefereeMenuItem = new ToolStripMenuItem();
+        EditSelectionMenuItem = new ToolStripMenuItem();
         toolStripContainer1 = new ToolStripContainer();
-        tvwRoster = new TreeView();
+        RosterTreeView = new TreeView();
         ToolStrip = new ToolStrip();
         toolStripSeparator1 = new ToolStripSeparator();
-        btnOpenFed = new ToolStripButton();
-        btnSaveFed = new ToolStripButton();
+        OpenFedToolButton = new ToolStripButton();
+        SaveFedToolButton = new ToolStripButton();
         ToolStripSeparator2 = new ToolStripSeparator();
-        btnNewWrestler = new ToolStripButton();
-        btnNewTeam = new ToolStripButton();
-        btnNewTitle = new ToolStripButton();
-        btnNewCommentator = new ToolStripButton();
-        btnNewReferee = new ToolStripButton();
+        NewWrestlerToolButton = new ToolStripButton();
+        NewTeamToolButton = new ToolStripButton();
+        NewTitleToolButton = new ToolStripButton();
+        NewCommentatorToolButton = new ToolStripButton();
+        NewRefereeToolButton = new ToolStripButton();
         ToolStripSeparator3 = new ToolStripSeparator();
-        btnEditSelection = new ToolStripButton();
-        btnDeleteSelection = new ToolStripButton();
+        EditSelectionToolButton = new ToolStripButton();
+        DeleteSelectionToolButton = new ToolStripButton();
         ToolStripSeparator4 = new ToolStripSeparator();
-        btnBookEvent = new ToolStripButton();
+        BookEventToolButton = new ToolStripButton();
         MenuStrip.SuspendLayout();
         toolStripContainer1.ContentPanel.SuspendLayout();
         toolStripContainer1.TopToolStripPanel.SuspendLayout();
@@ -84,63 +84,63 @@ partial class MainForm
         ToolStrip.SuspendLayout();
         SuspendLayout();
         // 
-        // mnuBookEventItem
+        // BookEventMenuItem
         // 
-        mnuBookEventItem.Name = "mnuBookEventItem";
-        mnuBookEventItem.ShortcutKeys = Keys.Control | Keys.E;
-        mnuBookEventItem.Size = new Size(176, 22);
-        mnuBookEventItem.Text = "&Book Event";
+        BookEventMenuItem.Name = "BookEventMenuItem";
+        BookEventMenuItem.ShortcutKeys = Keys.Control | Keys.E;
+        BookEventMenuItem.Size = new Size(176, 22);
+        BookEventMenuItem.Text = "&Book Event";
         // 
-        // mnuTitleHistoryItem
+        // TitleHistoryMenuItem
         // 
-        mnuTitleHistoryItem.Name = "mnuTitleHistoryItem";
-        mnuTitleHistoryItem.Size = new Size(176, 22);
-        mnuTitleHistoryItem.Text = "&Title History";
+        TitleHistoryMenuItem.Name = "TitleHistoryMenuItem";
+        TitleHistoryMenuItem.Size = new Size(176, 22);
+        TitleHistoryMenuItem.Text = "&Title History";
         // 
-        // mnuRankItem
+        // RankMenuItem
         // 
-        mnuRankItem.Name = "mnuRankItem";
-        mnuRankItem.Size = new Size(176, 22);
-        mnuRankItem.Text = "&Rank";
+        RankMenuItem.Name = "RankMenuItem";
+        RankMenuItem.Size = new Size(176, 22);
+        RankMenuItem.Text = "&Rank";
         // 
-        // mnuHelpMenu
+        // HelpMenuMenuItem
         // 
-        mnuHelpMenu.DropDownItems.AddRange(new ToolStripItem[] { mnuHelpItem, ToolStripMenuItem4, mnuAboutItem });
-        mnuHelpMenu.Name = "mnuHelpMenu";
-        mnuHelpMenu.Size = new Size(44, 20);
-        mnuHelpMenu.Text = "&Help";
+        HelpMenuMenuItem.DropDownItems.AddRange(new ToolStripItem[] { HelpMenuItem, ToolStripMenuItem4, AboutMenuItem });
+        HelpMenuMenuItem.Name = "HelpMenuMenuItem";
+        HelpMenuMenuItem.Size = new Size(44, 20);
+        HelpMenuMenuItem.Text = "&Help";
         // 
-        // mnuHelpItem
+        // HelpMenuItem
         // 
-        mnuHelpItem.Name = "mnuHelpItem";
-        mnuHelpItem.Size = new Size(107, 22);
-        mnuHelpItem.Text = "Help";
+        HelpMenuItem.Name = "HelpMenuItem";
+        HelpMenuItem.Size = new Size(107, 22);
+        HelpMenuItem.Text = "Help";
         // 
         // ToolStripMenuItem4
         // 
         ToolStripMenuItem4.Name = "ToolStripMenuItem4";
         ToolStripMenuItem4.Size = new Size(104, 6);
         // 
-        // mnuAboutItem
+        // AboutMenuItem
         // 
-        mnuAboutItem.Name = "mnuAboutItem";
-        mnuAboutItem.Size = new Size(107, 22);
-        mnuAboutItem.Text = "&About";
+        AboutMenuItem.Name = "AboutMenuItem";
+        AboutMenuItem.Size = new Size(107, 22);
+        AboutMenuItem.Text = "&About";
         // 
         // ToolStripMenuItem3
         // 
         ToolStripMenuItem3.Name = "ToolStripMenuItem3";
         ToolStripMenuItem3.Size = new Size(173, 6);
         // 
-        // mnuDeleteSelectionItem
+        // DeleteSelectionMenuItem
         // 
-        mnuDeleteSelectionItem.Name = "mnuDeleteSelectionItem";
-        mnuDeleteSelectionItem.Size = new Size(176, 22);
-        mnuDeleteSelectionItem.Text = "Delete Selection";
+        DeleteSelectionMenuItem.Name = "DeleteSelectionMenuItem";
+        DeleteSelectionMenuItem.Size = new Size(176, 22);
+        DeleteSelectionMenuItem.Text = "Delete Selection";
         // 
         // MenuStrip
         // 
-        MenuStrip.Items.AddRange(new ToolStripItem[] { mnuFileMenu, mnuResourcesMenu, mnuFedMenu, mnuHelpMenu });
+        MenuStrip.Items.AddRange(new ToolStripItem[] { FileMenuMenuItem, ResourcesMenuMenuItem, FedMenuMenuItem, HelpMenuMenuItem });
         MenuStrip.Location = new Point(0, 0);
         MenuStrip.Name = "MenuStrip";
         MenuStrip.Padding = new Padding(7, 2, 0, 2);
@@ -148,150 +148,150 @@ partial class MainForm
         MenuStrip.TabIndex = 3;
         MenuStrip.Text = "MenuStrip";
         // 
-        // mnuFileMenu
+        // FileMenuMenuItem
         // 
-        mnuFileMenu.DropDownItems.AddRange(new ToolStripItem[] { mnuNewItem, ToolStripMenuItem1, mnuOpenItem, mnuSaveItem, mnuSaveAsItem, ToolStripMenuItem2, mnuExitItem });
-        mnuFileMenu.Name = "mnuFileMenu";
-        mnuFileMenu.Size = new Size(37, 20);
-        mnuFileMenu.Text = "&File";
+        FileMenuMenuItem.DropDownItems.AddRange(new ToolStripItem[] { NewMenuItem, ToolStripMenuItem1, OpenMenuItem, SaveMenuItem, SaveAsMenuItem, ToolStripMenuItem2, ExitMenuItem });
+        FileMenuMenuItem.Name = "FileMenuMenuItem";
+        FileMenuMenuItem.Size = new Size(37, 20);
+        FileMenuMenuItem.Text = "&File";
         // 
-        // mnuNewItem
+        // NewMenuItem
         // 
-        mnuNewItem.Name = "mnuNewItem";
-        mnuNewItem.ShortcutKeys = Keys.Control | Keys.N;
-        mnuNewItem.Size = new Size(146, 22);
-        mnuNewItem.Text = "&New";
+        NewMenuItem.Name = "NewMenuItem";
+        NewMenuItem.ShortcutKeys = Keys.Control | Keys.N;
+        NewMenuItem.Size = new Size(146, 22);
+        NewMenuItem.Text = "&New";
         // 
         // ToolStripMenuItem1
         // 
         ToolStripMenuItem1.Name = "ToolStripMenuItem1";
         ToolStripMenuItem1.Size = new Size(143, 6);
         // 
-        // mnuOpenItem
+        // OpenMenuItem
         // 
-        mnuOpenItem.Name = "mnuOpenItem";
-        mnuOpenItem.ShortcutKeys = Keys.Control | Keys.O;
-        mnuOpenItem.Size = new Size(146, 22);
-        mnuOpenItem.Text = "&Open";
+        OpenMenuItem.Name = "OpenMenuItem";
+        OpenMenuItem.ShortcutKeys = Keys.Control | Keys.O;
+        OpenMenuItem.Size = new Size(146, 22);
+        OpenMenuItem.Text = "&Open";
         // 
-        // mnuSaveItem
+        // SaveMenuItem
         // 
-        mnuSaveItem.Name = "mnuSaveItem";
-        mnuSaveItem.ShortcutKeys = Keys.Control | Keys.S;
-        mnuSaveItem.Size = new Size(146, 22);
-        mnuSaveItem.Text = "&Save";
+        SaveMenuItem.Name = "SaveMenuItem";
+        SaveMenuItem.ShortcutKeys = Keys.Control | Keys.S;
+        SaveMenuItem.Size = new Size(146, 22);
+        SaveMenuItem.Text = "&Save";
         // 
-        // mnuSaveAsItem
+        // SaveAsMenuItem
         // 
-        mnuSaveAsItem.Name = "mnuSaveAsItem";
-        mnuSaveAsItem.Size = new Size(146, 22);
-        mnuSaveAsItem.Text = "Save &As";
+        SaveAsMenuItem.Name = "SaveAsMenuItem";
+        SaveAsMenuItem.Size = new Size(146, 22);
+        SaveAsMenuItem.Text = "Save &As";
         // 
         // ToolStripMenuItem2
         // 
         ToolStripMenuItem2.Name = "ToolStripMenuItem2";
         ToolStripMenuItem2.Size = new Size(143, 6);
         // 
-        // mnuExitItem
+        // ExitMenuItem
         // 
-        mnuExitItem.Name = "mnuExitItem";
-        mnuExitItem.Size = new Size(146, 22);
-        mnuExitItem.Text = "&Exit";
+        ExitMenuItem.Name = "ExitMenuItem";
+        ExitMenuItem.Size = new Size(146, 22);
+        ExitMenuItem.Text = "&Exit";
         // 
-        // mnuResourcesMenu
+        // ResourcesMenuMenuItem
         // 
-        mnuResourcesMenu.DropDownItems.AddRange(new ToolStripItem[] { mnuCommentaryItem, mnuMovesItem, mnuGimmicksItem, mnuCommercialsItem, mnuImportWrestlerItem });
-        mnuResourcesMenu.Name = "mnuResourcesMenu";
-        mnuResourcesMenu.Size = new Size(72, 20);
-        mnuResourcesMenu.Text = "&Resources";
+        ResourcesMenuMenuItem.DropDownItems.AddRange(new ToolStripItem[] { CommentaryMenuItem, MovesMenuItem, GimmicksMenuItem, CommercialsMenuItem, ImportZimFileMenuItem });
+        ResourcesMenuMenuItem.Name = "ResourcesMenuMenuItem";
+        ResourcesMenuMenuItem.Size = new Size(72, 20);
+        ResourcesMenuMenuItem.Text = "&Resources";
         // 
-        // mnuCommentaryItem
+        // CommentaryMenuItem
         // 
-        mnuCommentaryItem.Name = "mnuCommentaryItem";
-        mnuCommentaryItem.Size = new Size(169, 22);
-        mnuCommentaryItem.Text = "&Commentary";
+        CommentaryMenuItem.Name = "CommentaryMenuItem";
+        CommentaryMenuItem.Size = new Size(169, 22);
+        CommentaryMenuItem.Text = "&Commentary";
         // 
-        // mnuMovesItem
+        // MovesMenuItem
         // 
-        mnuMovesItem.Name = "mnuMovesItem";
-        mnuMovesItem.ShortcutKeys = Keys.Control | Keys.M;
-        mnuMovesItem.Size = new Size(169, 22);
-        mnuMovesItem.Text = "&Moves";
+        MovesMenuItem.Name = "MovesMenuItem";
+        MovesMenuItem.ShortcutKeys = Keys.Control | Keys.M;
+        MovesMenuItem.Size = new Size(169, 22);
+        MovesMenuItem.Text = "&Moves";
         // 
-        // mnuGimmicksItem
+        // GimmicksMenuItem
         // 
-        mnuGimmicksItem.Name = "mnuGimmicksItem";
-        mnuGimmicksItem.ShortcutKeys = Keys.Control | Keys.G;
-        mnuGimmicksItem.Size = new Size(169, 22);
-        mnuGimmicksItem.Text = "&Gimmicks";
+        GimmicksMenuItem.Name = "GimmicksMenuItem";
+        GimmicksMenuItem.ShortcutKeys = Keys.Control | Keys.G;
+        GimmicksMenuItem.Size = new Size(169, 22);
+        GimmicksMenuItem.Text = "&Gimmicks";
         // 
-        // mnuCommercialsItem
+        // CommercialsMenuItem
         // 
-        mnuCommercialsItem.Name = "mnuCommercialsItem";
-        mnuCommercialsItem.Size = new Size(169, 22);
-        mnuCommercialsItem.Text = "Co&mmercials";
+        CommercialsMenuItem.Name = "CommercialsMenuItem";
+        CommercialsMenuItem.Size = new Size(169, 22);
+        CommercialsMenuItem.Text = "Co&mmercials";
         // 
-        // mnuImportWrestlerItem
+        // ImportZimFileMenuItem
         // 
-        mnuImportWrestlerItem.Name = "mnuImportWrestlerItem";
-        mnuImportWrestlerItem.Size = new Size(169, 22);
-        mnuImportWrestlerItem.Text = "&Import Wrestler";
+        ImportZimFileMenuItem.Name = "ImportZimFileMenuItem";
+        ImportZimFileMenuItem.Size = new Size(169, 22);
+        ImportZimFileMenuItem.Text = "&Import Wrestler";
         // 
-        // mnuFedMenu
+        // FedMenuMenuItem
         // 
-        mnuFedMenu.DropDownItems.AddRange(new ToolStripItem[] { mnuFedOptionsItem, mnuNewWrestlerItem, mnuNewTagTeamItem, mnuNewTitleItem, mnuNewCommentatorItem, mnuNewRefereeItem, mnuEditSelectionItem, mnuDeleteSelectionItem, ToolStripMenuItem3, mnuBookEventItem, mnuTitleHistoryItem, mnuRankItem });
-        mnuFedMenu.Name = "mnuFedMenu";
-        mnuFedMenu.Size = new Size(38, 20);
-        mnuFedMenu.Text = "F&ed";
+        FedMenuMenuItem.DropDownItems.AddRange(new ToolStripItem[] { FedOptionsMenuItem, NewWrestlerMenuItem, NewTagTeamMenuItem, NewTitleMenuItem, NewCommentatorMenuItem, NewRefereeMenuItem, EditSelectionMenuItem, DeleteSelectionMenuItem, ToolStripMenuItem3, BookEventMenuItem, TitleHistoryMenuItem, RankMenuItem });
+        FedMenuMenuItem.Name = "FedMenuMenuItem";
+        FedMenuMenuItem.Size = new Size(38, 20);
+        FedMenuMenuItem.Text = "F&ed";
         // 
-        // mnuFedOptionsItem
+        // FedOptionsMenuItem
         // 
-        mnuFedOptionsItem.Name = "mnuFedOptionsItem";
-        mnuFedOptionsItem.Size = new Size(176, 22);
-        mnuFedOptionsItem.Text = "&Fed Options";
+        FedOptionsMenuItem.Name = "FedOptionsMenuItem";
+        FedOptionsMenuItem.Size = new Size(176, 22);
+        FedOptionsMenuItem.Text = "&Fed Options";
         // 
-        // mnuNewWrestlerItem
+        // NewWrestlerMenuItem
         // 
-        mnuNewWrestlerItem.Name = "mnuNewWrestlerItem";
-        mnuNewWrestlerItem.Size = new Size(176, 22);
-        mnuNewWrestlerItem.Text = "New Wrestler";
+        NewWrestlerMenuItem.Name = "NewWrestlerMenuItem";
+        NewWrestlerMenuItem.Size = new Size(176, 22);
+        NewWrestlerMenuItem.Text = "New Wrestler";
         // 
-        // mnuNewTagTeamItem
+        // NewTagTeamMenuItem
         // 
-        mnuNewTagTeamItem.Name = "mnuNewTagTeamItem";
-        mnuNewTagTeamItem.Size = new Size(176, 22);
-        mnuNewTagTeamItem.Text = "New Tag Team";
+        NewTagTeamMenuItem.Name = "NewTagTeamMenuItem";
+        NewTagTeamMenuItem.Size = new Size(176, 22);
+        NewTagTeamMenuItem.Text = "New Tag Team";
         // 
-        // mnuNewTitleItem
+        // NewTitleMenuItem
         // 
-        mnuNewTitleItem.Name = "mnuNewTitleItem";
-        mnuNewTitleItem.Size = new Size(176, 22);
-        mnuNewTitleItem.Text = "New Title";
+        NewTitleMenuItem.Name = "NewTitleMenuItem";
+        NewTitleMenuItem.Size = new Size(176, 22);
+        NewTitleMenuItem.Text = "New Title";
         // 
-        // mnuNewCommentatorItem
+        // NewCommentatorMenuItem
         // 
-        mnuNewCommentatorItem.Name = "mnuNewCommentatorItem";
-        mnuNewCommentatorItem.Size = new Size(176, 22);
-        mnuNewCommentatorItem.Text = "New Commentator";
+        NewCommentatorMenuItem.Name = "NewCommentatorMenuItem";
+        NewCommentatorMenuItem.Size = new Size(176, 22);
+        NewCommentatorMenuItem.Text = "New Commentator";
         // 
-        // mnuNewRefereeItem
+        // NewRefereeMenuItem
         // 
-        mnuNewRefereeItem.Name = "mnuNewRefereeItem";
-        mnuNewRefereeItem.Size = new Size(176, 22);
-        mnuNewRefereeItem.Text = "New Referee";
+        NewRefereeMenuItem.Name = "NewRefereeMenuItem";
+        NewRefereeMenuItem.Size = new Size(176, 22);
+        NewRefereeMenuItem.Text = "New Referee";
         // 
-        // mnuEditSelectionItem
+        // EditSelectionMenuItem
         // 
-        mnuEditSelectionItem.Name = "mnuEditSelectionItem";
-        mnuEditSelectionItem.Size = new Size(176, 22);
-        mnuEditSelectionItem.Text = "Edit Selection";
+        EditSelectionMenuItem.Name = "EditSelectionMenuItem";
+        EditSelectionMenuItem.Size = new Size(176, 22);
+        EditSelectionMenuItem.Text = "Edit Selection";
         // 
         // toolStripContainer1
         // 
         // 
         // toolStripContainer1.ContentPanel
         // 
-        toolStripContainer1.ContentPanel.Controls.Add(tvwRoster);
+        toolStripContainer1.ContentPanel.Controls.Add(RosterTreeView);
         toolStripContainer1.ContentPanel.Size = new Size(933, 470);
         toolStripContainer1.Dock = DockStyle.Fill;
         toolStripContainer1.Location = new Point(0, 24);
@@ -305,23 +305,23 @@ partial class MainForm
         toolStripContainer1.TopToolStripPanel.Controls.Add(ToolStrip);
         toolStripContainer1.TopToolStripPanel.RenderMode = ToolStripRenderMode.System;
         // 
-        // tvwRoster
+        // RosterTreeView
         // 
-        tvwRoster.Dock = DockStyle.Fill;
-        tvwRoster.Location = new Point(0, 0);
-        tvwRoster.Margin = new Padding(4, 3, 4, 3);
-        tvwRoster.Name = "tvwRoster";
-        tvwRoster.ShowLines = false;
-        tvwRoster.ShowPlusMinus = false;
-        tvwRoster.ShowRootLines = false;
-        tvwRoster.Size = new Size(933, 470);
-        tvwRoster.TabIndex = 6;
+        RosterTreeView.Dock = DockStyle.Fill;
+        RosterTreeView.Location = new Point(0, 0);
+        RosterTreeView.Margin = new Padding(4, 3, 4, 3);
+        RosterTreeView.Name = "RosterTreeView";
+        RosterTreeView.ShowLines = false;
+        RosterTreeView.ShowPlusMinus = false;
+        RosterTreeView.ShowRootLines = false;
+        RosterTreeView.Size = new Size(933, 470);
+        RosterTreeView.TabIndex = 6;
         // 
         // ToolStrip
         // 
         ToolStrip.Dock = DockStyle.None;
         ToolStrip.GripStyle = ToolStripGripStyle.Hidden;
-        ToolStrip.Items.AddRange(new ToolStripItem[] { toolStripSeparator1, btnOpenFed, btnSaveFed, ToolStripSeparator2, btnNewWrestler, btnNewTeam, btnNewTitle, btnNewCommentator, btnNewReferee, ToolStripSeparator3, btnEditSelection, btnDeleteSelection, ToolStripSeparator4, btnBookEvent });
+        ToolStrip.Items.AddRange(new ToolStripItem[] { toolStripSeparator1, OpenFedToolButton, SaveFedToolButton, ToolStripSeparator2, NewWrestlerToolButton, NewTeamToolButton, NewTitleToolButton, NewCommentatorToolButton, NewRefereeToolButton, ToolStripSeparator3, EditSelectionToolButton, DeleteSelectionToolButton, ToolStripSeparator4, BookEventToolButton });
         ToolStrip.Location = new Point(3, 0);
         ToolStrip.Name = "ToolStrip";
         ToolStrip.RenderMode = ToolStripRenderMode.System;
@@ -334,120 +334,120 @@ partial class MainForm
         toolStripSeparator1.Name = "toolStripSeparator1";
         toolStripSeparator1.Size = new Size(6, 25);
         // 
-        // btnOpenFed
+        // OpenFedToolButton
         // 
-        btnOpenFed.DisplayStyle = ToolStripItemDisplayStyle.Image;
-        btnOpenFed.Image = Properties.Resources.open;
-        btnOpenFed.ImageScaling = ToolStripItemImageScaling.None;
-        btnOpenFed.ImageTransparentColor = Color.Magenta;
-        btnOpenFed.Name = "btnOpenFed";
-        btnOpenFed.Size = new Size(23, 22);
-        btnOpenFed.ToolTipText = "Open Fed";
+        OpenFedToolButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+        OpenFedToolButton.Image = Properties.Resources.open;
+        OpenFedToolButton.ImageScaling = ToolStripItemImageScaling.None;
+        OpenFedToolButton.ImageTransparentColor = Color.Magenta;
+        OpenFedToolButton.Name = "OpenFedToolButton";
+        OpenFedToolButton.Size = new Size(23, 22);
+        OpenFedToolButton.ToolTipText = "Open Fed";
         // 
-        // btnSaveFed
+        // SaveFedToolButton
         // 
-        btnSaveFed.DisplayStyle = ToolStripItemDisplayStyle.Image;
-        btnSaveFed.Image = Properties.Resources.save;
-        btnSaveFed.ImageScaling = ToolStripItemImageScaling.None;
-        btnSaveFed.ImageTransparentColor = Color.Magenta;
-        btnSaveFed.Name = "btnSaveFed";
-        btnSaveFed.Size = new Size(23, 22);
-        btnSaveFed.ToolTipText = "Save Fed";
+        SaveFedToolButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+        SaveFedToolButton.Image = Properties.Resources.save;
+        SaveFedToolButton.ImageScaling = ToolStripItemImageScaling.None;
+        SaveFedToolButton.ImageTransparentColor = Color.Magenta;
+        SaveFedToolButton.Name = "SaveFedToolButton";
+        SaveFedToolButton.Size = new Size(23, 22);
+        SaveFedToolButton.ToolTipText = "Save Fed";
         // 
         // ToolStripSeparator2
         // 
         ToolStripSeparator2.Name = "ToolStripSeparator2";
         ToolStripSeparator2.Size = new Size(6, 25);
         // 
-        // btnNewWrestler
+        // NewWrestlerToolButton
         // 
-        btnNewWrestler.DisplayStyle = ToolStripItemDisplayStyle.Image;
-        btnNewWrestler.Image = Properties.Resources.wrestler;
-        btnNewWrestler.ImageScaling = ToolStripItemImageScaling.None;
-        btnNewWrestler.ImageTransparentColor = Color.Magenta;
-        btnNewWrestler.Name = "btnNewWrestler";
-        btnNewWrestler.Size = new Size(23, 22);
-        btnNewWrestler.ToolTipText = "New Wrestler";
+        NewWrestlerToolButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+        NewWrestlerToolButton.Image = Properties.Resources.wrestler;
+        NewWrestlerToolButton.ImageScaling = ToolStripItemImageScaling.None;
+        NewWrestlerToolButton.ImageTransparentColor = Color.Magenta;
+        NewWrestlerToolButton.Name = "NewWrestlerToolButton";
+        NewWrestlerToolButton.Size = new Size(23, 22);
+        NewWrestlerToolButton.ToolTipText = "New Wrestler";
         // 
-        // btnNewTeam
+        // NewTeamToolButton
         // 
-        btnNewTeam.DisplayStyle = ToolStripItemDisplayStyle.Image;
-        btnNewTeam.Image = Properties.Resources.tag_team;
-        btnNewTeam.ImageScaling = ToolStripItemImageScaling.None;
-        btnNewTeam.ImageTransparentColor = Color.Magenta;
-        btnNewTeam.Name = "btnNewTeam";
-        btnNewTeam.Size = new Size(23, 22);
-        btnNewTeam.ToolTipText = "New Tag Team";
+        NewTeamToolButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+        NewTeamToolButton.Image = Properties.Resources.tag_team;
+        NewTeamToolButton.ImageScaling = ToolStripItemImageScaling.None;
+        NewTeamToolButton.ImageTransparentColor = Color.Magenta;
+        NewTeamToolButton.Name = "NewTeamToolButton";
+        NewTeamToolButton.Size = new Size(23, 22);
+        NewTeamToolButton.ToolTipText = "New Tag Team";
         // 
-        // btnNewTitle
+        // NewTitleToolButton
         // 
-        btnNewTitle.DisplayStyle = ToolStripItemDisplayStyle.Image;
-        btnNewTitle.Image = Properties.Resources.title_belt;
-        btnNewTitle.ImageScaling = ToolStripItemImageScaling.None;
-        btnNewTitle.ImageTransparentColor = Color.Magenta;
-        btnNewTitle.Name = "btnNewTitle";
-        btnNewTitle.Size = new Size(23, 22);
-        btnNewTitle.ToolTipText = "New Title Belt";
+        NewTitleToolButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+        NewTitleToolButton.Image = Properties.Resources.title_belt;
+        NewTitleToolButton.ImageScaling = ToolStripItemImageScaling.None;
+        NewTitleToolButton.ImageTransparentColor = Color.Magenta;
+        NewTitleToolButton.Name = "NewTitleToolButton";
+        NewTitleToolButton.Size = new Size(23, 22);
+        NewTitleToolButton.ToolTipText = "New Title Belt";
         // 
-        // btnNewCommentator
+        // NewCommentatorToolButton
         // 
-        btnNewCommentator.DisplayStyle = ToolStripItemDisplayStyle.Image;
-        btnNewCommentator.Image = Properties.Resources.commentator;
-        btnNewCommentator.ImageScaling = ToolStripItemImageScaling.None;
-        btnNewCommentator.ImageTransparentColor = Color.Magenta;
-        btnNewCommentator.Name = "btnNewCommentator";
-        btnNewCommentator.Size = new Size(23, 22);
-        btnNewCommentator.ToolTipText = "New Commentator";
+        NewCommentatorToolButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+        NewCommentatorToolButton.Image = Properties.Resources.commentator;
+        NewCommentatorToolButton.ImageScaling = ToolStripItemImageScaling.None;
+        NewCommentatorToolButton.ImageTransparentColor = Color.Magenta;
+        NewCommentatorToolButton.Name = "NewCommentatorToolButton";
+        NewCommentatorToolButton.Size = new Size(23, 22);
+        NewCommentatorToolButton.ToolTipText = "New Commentator";
         // 
-        // btnNewReferee
+        // NewRefereeToolButton
         // 
-        btnNewReferee.DisplayStyle = ToolStripItemDisplayStyle.Image;
-        btnNewReferee.Image = Properties.Resources.referee;
-        btnNewReferee.ImageScaling = ToolStripItemImageScaling.None;
-        btnNewReferee.ImageTransparentColor = Color.Magenta;
-        btnNewReferee.Name = "btnNewReferee";
-        btnNewReferee.Size = new Size(23, 22);
-        btnNewReferee.ToolTipText = "New Referee";
+        NewRefereeToolButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+        NewRefereeToolButton.Image = Properties.Resources.referee;
+        NewRefereeToolButton.ImageScaling = ToolStripItemImageScaling.None;
+        NewRefereeToolButton.ImageTransparentColor = Color.Magenta;
+        NewRefereeToolButton.Name = "NewRefereeToolButton";
+        NewRefereeToolButton.Size = new Size(23, 22);
+        NewRefereeToolButton.ToolTipText = "New Referee";
         // 
         // ToolStripSeparator3
         // 
         ToolStripSeparator3.Name = "ToolStripSeparator3";
         ToolStripSeparator3.Size = new Size(6, 25);
         // 
-        // btnEditSelection
+        // EditSelectionToolButton
         // 
-        btnEditSelection.DisplayStyle = ToolStripItemDisplayStyle.Image;
-        btnEditSelection.Image = Properties.Resources.edit;
-        btnEditSelection.ImageScaling = ToolStripItemImageScaling.None;
-        btnEditSelection.ImageTransparentColor = Color.Magenta;
-        btnEditSelection.Name = "btnEditSelection";
-        btnEditSelection.Size = new Size(23, 22);
-        btnEditSelection.ToolTipText = "Edit Selection";
+        EditSelectionToolButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+        EditSelectionToolButton.Image = Properties.Resources.edit;
+        EditSelectionToolButton.ImageScaling = ToolStripItemImageScaling.None;
+        EditSelectionToolButton.ImageTransparentColor = Color.Magenta;
+        EditSelectionToolButton.Name = "EditSelectionToolButton";
+        EditSelectionToolButton.Size = new Size(23, 22);
+        EditSelectionToolButton.ToolTipText = "Edit Selection";
         // 
-        // btnDeleteSelection
+        // DeleteSelectionToolButton
         // 
-        btnDeleteSelection.DisplayStyle = ToolStripItemDisplayStyle.Image;
-        btnDeleteSelection.Image = Properties.Resources.delete;
-        btnDeleteSelection.ImageScaling = ToolStripItemImageScaling.None;
-        btnDeleteSelection.ImageTransparentColor = Color.Magenta;
-        btnDeleteSelection.Name = "btnDeleteSelection";
-        btnDeleteSelection.Size = new Size(23, 22);
-        btnDeleteSelection.ToolTipText = "Delete Selection";
+        DeleteSelectionToolButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+        DeleteSelectionToolButton.Image = Properties.Resources.delete;
+        DeleteSelectionToolButton.ImageScaling = ToolStripItemImageScaling.None;
+        DeleteSelectionToolButton.ImageTransparentColor = Color.Magenta;
+        DeleteSelectionToolButton.Name = "DeleteSelectionToolButton";
+        DeleteSelectionToolButton.Size = new Size(23, 22);
+        DeleteSelectionToolButton.ToolTipText = "Delete Selection";
         // 
         // ToolStripSeparator4
         // 
         ToolStripSeparator4.Name = "ToolStripSeparator4";
         ToolStripSeparator4.Size = new Size(6, 25);
         // 
-        // btnBookEvent
+        // BookEventToolButton
         // 
-        btnBookEvent.DisplayStyle = ToolStripItemDisplayStyle.Image;
-        btnBookEvent.Image = Properties.Resources.ring;
-        btnBookEvent.ImageScaling = ToolStripItemImageScaling.None;
-        btnBookEvent.ImageTransparentColor = Color.Magenta;
-        btnBookEvent.Name = "btnBookEvent";
-        btnBookEvent.Size = new Size(23, 22);
-        btnBookEvent.ToolTipText = "Book Event";
+        BookEventToolButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+        BookEventToolButton.Image = Properties.Resources.ring;
+        BookEventToolButton.ImageScaling = ToolStripItemImageScaling.None;
+        BookEventToolButton.ImageTransparentColor = Color.Magenta;
+        BookEventToolButton.Name = "BookEventToolButton";
+        BookEventToolButton.Size = new Size(23, 22);
+        BookEventToolButton.ToolTipText = "Book Event";
         // 
         // MainForm
         // 
@@ -474,53 +474,53 @@ partial class MainForm
     }
 
     #endregion
-    internal System.Windows.Forms.ToolStripMenuItem mnuBookEventItem;
-    internal System.Windows.Forms.ToolStripMenuItem mnuTitleHistoryItem;
-    internal System.Windows.Forms.ToolStripMenuItem mnuRankItem;
-    internal System.Windows.Forms.ToolStripMenuItem mnuHelpMenu;
-    internal System.Windows.Forms.ToolStripMenuItem mnuHelpItem;
+    internal System.Windows.Forms.ToolStripMenuItem BookEventMenuItem;
+    internal System.Windows.Forms.ToolStripMenuItem TitleHistoryMenuItem;
+    internal System.Windows.Forms.ToolStripMenuItem RankMenuItem;
+    internal System.Windows.Forms.ToolStripMenuItem HelpMenuMenuItem;
+    internal System.Windows.Forms.ToolStripMenuItem HelpMenuItem;
     internal System.Windows.Forms.ToolStripSeparator ToolStripMenuItem4;
-    internal System.Windows.Forms.ToolStripMenuItem mnuAboutItem;
+    internal System.Windows.Forms.ToolStripMenuItem AboutMenuItem;
     internal System.Windows.Forms.ToolStripSeparator ToolStripMenuItem3;
-    internal System.Windows.Forms.ToolStripMenuItem mnuDeleteSelectionItem;
+    internal System.Windows.Forms.ToolStripMenuItem DeleteSelectionMenuItem;
     internal System.Windows.Forms.MenuStrip MenuStrip;
-    internal System.Windows.Forms.ToolStripMenuItem mnuFileMenu;
-    internal System.Windows.Forms.ToolStripMenuItem mnuNewItem;
+    internal System.Windows.Forms.ToolStripMenuItem FileMenuMenuItem;
+    internal System.Windows.Forms.ToolStripMenuItem NewMenuItem;
     internal System.Windows.Forms.ToolStripSeparator ToolStripMenuItem1;
-    internal System.Windows.Forms.ToolStripMenuItem mnuOpenItem;
-    internal System.Windows.Forms.ToolStripMenuItem mnuSaveItem;
-    internal System.Windows.Forms.ToolStripMenuItem mnuSaveAsItem;
+    internal System.Windows.Forms.ToolStripMenuItem OpenMenuItem;
+    internal System.Windows.Forms.ToolStripMenuItem SaveMenuItem;
+    internal System.Windows.Forms.ToolStripMenuItem SaveAsMenuItem;
     internal System.Windows.Forms.ToolStripSeparator ToolStripMenuItem2;
-    internal System.Windows.Forms.ToolStripMenuItem mnuExitItem;
-    internal System.Windows.Forms.ToolStripMenuItem mnuResourcesMenu;
-    internal System.Windows.Forms.ToolStripMenuItem mnuCommentaryItem;
-    internal System.Windows.Forms.ToolStripMenuItem mnuMovesItem;
-    internal System.Windows.Forms.ToolStripMenuItem mnuGimmicksItem;
-    internal System.Windows.Forms.ToolStripMenuItem mnuCommercialsItem;
-    internal System.Windows.Forms.ToolStripMenuItem mnuImportWrestlerItem;
-    internal System.Windows.Forms.ToolStripMenuItem mnuFedMenu;
-    internal System.Windows.Forms.ToolStripMenuItem mnuFedOptionsItem;
-    internal System.Windows.Forms.ToolStripMenuItem mnuNewWrestlerItem;
-    internal System.Windows.Forms.ToolStripMenuItem mnuNewTagTeamItem;
-    internal System.Windows.Forms.ToolStripMenuItem mnuNewTitleItem;
-    internal System.Windows.Forms.ToolStripMenuItem mnuNewCommentatorItem;
-    internal System.Windows.Forms.ToolStripMenuItem mnuNewRefereeItem;
-    internal System.Windows.Forms.ToolStripMenuItem mnuEditSelectionItem;
+    internal System.Windows.Forms.ToolStripMenuItem ExitMenuItem;
+    internal System.Windows.Forms.ToolStripMenuItem ResourcesMenuMenuItem;
+    internal System.Windows.Forms.ToolStripMenuItem CommentaryMenuItem;
+    internal System.Windows.Forms.ToolStripMenuItem MovesMenuItem;
+    internal System.Windows.Forms.ToolStripMenuItem GimmicksMenuItem;
+    internal System.Windows.Forms.ToolStripMenuItem CommercialsMenuItem;
+    internal System.Windows.Forms.ToolStripMenuItem ImportZimFileMenuItem;
+    internal System.Windows.Forms.ToolStripMenuItem FedMenuMenuItem;
+    internal System.Windows.Forms.ToolStripMenuItem FedOptionsMenuItem;
+    internal System.Windows.Forms.ToolStripMenuItem NewWrestlerMenuItem;
+    internal System.Windows.Forms.ToolStripMenuItem NewTagTeamMenuItem;
+    internal System.Windows.Forms.ToolStripMenuItem NewTitleMenuItem;
+    internal System.Windows.Forms.ToolStripMenuItem NewCommentatorMenuItem;
+    internal System.Windows.Forms.ToolStripMenuItem NewRefereeMenuItem;
+    internal System.Windows.Forms.ToolStripMenuItem EditSelectionMenuItem;
     private ToolStripContainer toolStripContainer1;
-    internal TreeView tvwRoster;
+    internal TreeView RosterTreeView;
     internal ToolStrip ToolStrip;
-    internal ToolStripButton btnOpenFed;
-    internal ToolStripButton btnSaveFed;
+    internal ToolStripButton OpenFedToolButton;
+    internal ToolStripButton SaveFedToolButton;
     internal ToolStripSeparator ToolStripSeparator2;
-    internal ToolStripButton btnNewWrestler;
-    internal ToolStripButton btnNewTeam;
-    internal ToolStripButton btnNewTitle;
-    internal ToolStripButton btnNewCommentator;
-    internal ToolStripButton btnNewReferee;
+    internal ToolStripButton NewWrestlerToolButton;
+    internal ToolStripButton NewTeamToolButton;
+    internal ToolStripButton NewTitleToolButton;
+    internal ToolStripButton NewCommentatorToolButton;
+    internal ToolStripButton NewRefereeToolButton;
     internal ToolStripSeparator ToolStripSeparator3;
-    internal ToolStripButton btnEditSelection;
-    internal ToolStripButton btnDeleteSelection;
+    internal ToolStripButton EditSelectionToolButton;
+    internal ToolStripButton DeleteSelectionToolButton;
     internal ToolStripSeparator ToolStripSeparator4;
-    internal ToolStripButton btnBookEvent;
+    internal ToolStripButton BookEventToolButton;
     private ToolStripSeparator toolStripSeparator1;
 }
