@@ -28,111 +28,126 @@ partial class TitleEditorForm
     /// </summary>
     private void InitializeComponent()
     {
-        this.grpType = new System.Windows.Forms.GroupBox();
-        this.optTeamTitle = new System.Windows.Forms.RadioButton();
-        this.optSinglesTitle = new System.Windows.Forms.RadioButton();
-        this.txtName = new System.Windows.Forms.TextBox();
-        this.lblName = new System.Windows.Forms.Label();
-        this.btnCancel = new System.Windows.Forms.Button();
-        this.btnOk = new System.Windows.Forms.Button();
-        this.grpType.SuspendLayout();
-        this.SuspendLayout();
+        grpType = new GroupBox();
+        TeamTitleRadioButton = new RadioButton();
+        SinglesTitleRadioButton = new RadioButton();
+        NameTextBox = new TextBox();
+        lblName = new Label();
+        CancelButton = new Button();
+        OkButton = new Button();
+        grpType.SuspendLayout();
+        SuspendLayout();
         // 
         // grpType
         // 
-        this.grpType.Controls.Add(this.optTeamTitle);
-        this.grpType.Controls.Add(this.optSinglesTitle);
-        this.grpType.Location = new System.Drawing.Point(244, 217);
-        this.grpType.Name = "grpType";
-        this.grpType.Size = new System.Drawing.Size(175, 42);
-        this.grpType.TabIndex = 7;
-        this.grpType.TabStop = false;
-        this.grpType.Text = "Title Type";
+        grpType.Controls.Add(TeamTitleRadioButton);
+        grpType.Controls.Add(SinglesTitleRadioButton);
+        grpType.Location = new Point(13, 41);
+        grpType.Margin = new Padding(4, 3, 4, 3);
+        grpType.Name = "grpType";
+        grpType.Padding = new Padding(4, 3, 4, 3);
+        grpType.Size = new Size(189, 47);
+        grpType.TabIndex = 7;
+        grpType.TabStop = false;
+        grpType.Text = "Title Type";
         // 
-        // optTeamTitle
+        // TeamTitleRadioButton
         // 
-        this.optTeamTitle.AutoSize = true;
-        this.optTeamTitle.Location = new System.Drawing.Point(94, 19);
-        this.optTeamTitle.Name = "optTeamTitle";
-        this.optTeamTitle.Size = new System.Drawing.Size(75, 17);
-        this.optTeamTitle.TabIndex = 1;
-        this.optTeamTitle.TabStop = true;
-        this.optTeamTitle.Text = "Team Title";
-        this.optTeamTitle.UseVisualStyleBackColor = true;
+        TeamTitleRadioButton.AutoSize = true;
+        TeamTitleRadioButton.Location = new Point(103, 22);
+        TeamTitleRadioButton.Margin = new Padding(4, 3, 4, 3);
+        TeamTitleRadioButton.Name = "TeamTitleRadioButton";
+        TeamTitleRadioButton.Size = new Size(78, 19);
+        TeamTitleRadioButton.TabIndex = 1;
+        TeamTitleRadioButton.TabStop = true;
+        TeamTitleRadioButton.Text = "Team Title";
+        TeamTitleRadioButton.UseVisualStyleBackColor = true;
         // 
-        // optSinglesTitle
+        // SinglesTitleRadioButton
         // 
-        this.optSinglesTitle.AutoSize = true;
-        this.optSinglesTitle.Location = new System.Drawing.Point(6, 19);
-        this.optSinglesTitle.Name = "optSinglesTitle";
-        this.optSinglesTitle.Size = new System.Drawing.Size(82, 17);
-        this.optSinglesTitle.TabIndex = 0;
-        this.optSinglesTitle.TabStop = true;
-        this.optSinglesTitle.Text = "Singles Title";
-        this.optSinglesTitle.UseVisualStyleBackColor = true;
+        SinglesTitleRadioButton.AutoSize = true;
+        SinglesTitleRadioButton.Location = new Point(8, 22);
+        SinglesTitleRadioButton.Margin = new Padding(4, 3, 4, 3);
+        SinglesTitleRadioButton.Name = "SinglesTitleRadioButton";
+        SinglesTitleRadioButton.Size = new Size(87, 19);
+        SinglesTitleRadioButton.TabIndex = 0;
+        SinglesTitleRadioButton.TabStop = true;
+        SinglesTitleRadioButton.Text = "Singles Title";
+        SinglesTitleRadioButton.UseVisualStyleBackColor = true;
         // 
-        // txtName
+        // NameTextBox
         // 
-        this.txtName.Location = new System.Drawing.Point(305, 191);
-        this.txtName.Name = "txtName";
-        this.txtName.Size = new System.Drawing.Size(255, 20);
-        this.txtName.TabIndex = 6;
+        NameTextBox.Location = new Point(85, 12);
+        NameTextBox.Margin = new Padding(4, 3, 4, 3);
+        NameTextBox.Name = "NameTextBox";
+        NameTextBox.Size = new Size(283, 23);
+        NameTextBox.TabIndex = 6;
         // 
         // lblName
         // 
-        this.lblName.AutoSize = true;
-        this.lblName.Location = new System.Drawing.Point(241, 194);
-        this.lblName.Name = "lblName";
-        this.lblName.Size = new System.Drawing.Size(58, 13);
-        this.lblName.TabIndex = 5;
-        this.lblName.Text = "Title Name";
+        lblName.AutoSize = true;
+        lblName.Location = new Point(13, 15);
+        lblName.Margin = new Padding(4, 0, 4, 0);
+        lblName.Name = "lblName";
+        lblName.Size = new Size(64, 15);
+        lblName.TabIndex = 5;
+        lblName.Text = "Title Name";
         // 
-        // btnCancel
+        // CancelButton
         // 
-        this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-        this.btnCancel.Location = new System.Drawing.Point(496, 236);
-        this.btnCancel.Name = "btnCancel";
-        this.btnCancel.Size = new System.Drawing.Size(64, 23);
-        this.btnCancel.TabIndex = 9;
-        this.btnCancel.Text = "&Cancel";
-        this.btnCancel.UseVisualStyleBackColor = true;
+        CancelButton.DialogResult = DialogResult.Cancel;
+        CancelButton.Location = new Point(293, 61);
+        CancelButton.Margin = new Padding(4, 3, 4, 3);
+        CancelButton.Name = "CancelButton";
+        CancelButton.Size = new Size(75, 27);
+        CancelButton.TabIndex = 9;
+        CancelButton.Text = "&Cancel";
+        CancelButton.UseVisualStyleBackColor = true;
         // 
-        // btnOk
+        // OkButton
         // 
-        this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-        this.btnOk.Location = new System.Drawing.Point(426, 236);
-        this.btnOk.Name = "btnOk";
-        this.btnOk.Size = new System.Drawing.Size(64, 23);
-        this.btnOk.TabIndex = 8;
-        this.btnOk.Text = "&Ok";
-        this.btnOk.UseVisualStyleBackColor = true;
+        OkButton.DialogResult = DialogResult.OK;
+        OkButton.Location = new Point(210, 61);
+        OkButton.Margin = new Padding(4, 3, 4, 3);
+        OkButton.Name = "OkButton";
+        OkButton.Size = new Size(75, 27);
+        OkButton.TabIndex = 8;
+        OkButton.Text = "&Ok";
+        OkButton.UseVisualStyleBackColor = true;
         // 
         // TitleEditorForm
         // 
-        this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(800, 450);
-        this.Controls.Add(this.grpType);
-        this.Controls.Add(this.txtName);
-        this.Controls.Add(this.lblName);
-        this.Controls.Add(this.btnCancel);
-        this.Controls.Add(this.btnOk);
-        this.Name = "TitleEditorForm";
-        this.Text = "TitleEditorForm";
-        this.grpType.ResumeLayout(false);
-        this.grpType.PerformLayout();
-        this.ResumeLayout(false);
-        this.PerformLayout();
-
+        AcceptButton = OkButton;
+        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleMode = AutoScaleMode.Font;
+        CancelButton = CancelButton;
+        ClientSize = new Size(381, 100);
+        Controls.Add(grpType);
+        Controls.Add(NameTextBox);
+        Controls.Add(lblName);
+        Controls.Add(CancelButton);
+        Controls.Add(OkButton);
+        FormBorderStyle = FormBorderStyle.FixedDialog;
+        Margin = new Padding(4, 3, 4, 3);
+        MaximizeBox = false;
+        MinimizeBox = false;
+        Name = "TitleEditorForm";
+        ShowIcon = false;
+        ShowInTaskbar = false;
+        Text = "Titles";
+        grpType.ResumeLayout(false);
+        grpType.PerformLayout();
+        ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
 
     internal System.Windows.Forms.GroupBox grpType;
-    internal System.Windows.Forms.RadioButton optTeamTitle;
-    internal System.Windows.Forms.RadioButton optSinglesTitle;
-    internal System.Windows.Forms.TextBox txtName;
+    internal System.Windows.Forms.RadioButton TeamTitleRadioButton;
+    internal System.Windows.Forms.RadioButton SinglesTitleRadioButton;
+    internal System.Windows.Forms.TextBox NameTextBox;
     internal System.Windows.Forms.Label lblName;
-    internal System.Windows.Forms.Button btnCancel;
-    internal System.Windows.Forms.Button btnOk;
+    internal System.Windows.Forms.Button CancelButton;
+    internal System.Windows.Forms.Button OkButton;
 }
