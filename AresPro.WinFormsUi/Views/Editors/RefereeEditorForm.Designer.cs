@@ -28,122 +28,137 @@ partial class RefereeEditorForm
     /// </summary>
     private void InitializeComponent()
     {
-        this.lblName = new System.Windows.Forms.Label();
-        this.trkCountSpeed = new System.Windows.Forms.TrackBar();
-        this.grpStringency = new System.Windows.Forms.GroupBox();
-        this.trkStringency = new System.Windows.Forms.TrackBar();
-        this.grpCountSpeed = new System.Windows.Forms.GroupBox();
-        this.txtName = new System.Windows.Forms.TextBox();
-        this.btnCancel = new System.Windows.Forms.Button();
-        this.btnOk = new System.Windows.Forms.Button();
-        ((System.ComponentModel.ISupportInitialize)(this.trkCountSpeed)).BeginInit();
-        this.grpStringency.SuspendLayout();
-        ((System.ComponentModel.ISupportInitialize)(this.trkStringency)).BeginInit();
-        this.grpCountSpeed.SuspendLayout();
-        this.SuspendLayout();
+        lblName = new Label();
+        CountSpeedTrackBar = new TrackBar();
+        grpStringency = new GroupBox();
+        StringencyTrackBar = new TrackBar();
+        grpCountSpeed = new GroupBox();
+        NameTextBox = new TextBox();
+        CancelButton = new Button();
+        OkButton = new Button();
+        ((System.ComponentModel.ISupportInitialize)CountSpeedTrackBar).BeginInit();
+        grpStringency.SuspendLayout();
+        ((System.ComponentModel.ISupportInitialize)StringencyTrackBar).BeginInit();
+        grpCountSpeed.SuspendLayout();
+        SuspendLayout();
         // 
         // lblName
         // 
-        this.lblName.AutoSize = true;
-        this.lblName.Location = new System.Drawing.Point(263, 175);
-        this.lblName.Name = "lblName";
-        this.lblName.Size = new System.Drawing.Size(35, 13);
-        this.lblName.TabIndex = 22;
-        this.lblName.Text = "Name";
+        lblName.AutoSize = true;
+        lblName.Location = new Point(13, 15);
+        lblName.Margin = new Padding(4, 0, 4, 0);
+        lblName.Name = "lblName";
+        lblName.Size = new Size(39, 15);
+        lblName.TabIndex = 22;
+        lblName.Text = "Name";
         // 
-        // trkCountSpeed
+        // CountSpeedTrackBar
         // 
-        this.trkCountSpeed.AutoSize = false;
-        this.trkCountSpeed.Location = new System.Drawing.Point(6, 19);
-        this.trkCountSpeed.Name = "trkCountSpeed";
-        this.trkCountSpeed.Size = new System.Drawing.Size(121, 27);
-        this.trkCountSpeed.TabIndex = 5;
+        CountSpeedTrackBar.AutoSize = false;
+        CountSpeedTrackBar.Location = new Point(7, 22);
+        CountSpeedTrackBar.Margin = new Padding(4, 3, 4, 3);
+        CountSpeedTrackBar.Name = "CountSpeedTrackBar";
+        CountSpeedTrackBar.Size = new Size(141, 31);
+        CountSpeedTrackBar.TabIndex = 1;
         // 
         // grpStringency
         // 
-        this.grpStringency.Controls.Add(this.trkStringency);
-        this.grpStringency.Location = new System.Drawing.Point(405, 198);
-        this.grpStringency.Name = "grpStringency";
-        this.grpStringency.Size = new System.Drawing.Size(133, 52);
-        this.grpStringency.TabIndex = 25;
-        this.grpStringency.TabStop = false;
-        this.grpStringency.Text = "Stringency";
+        grpStringency.Controls.Add(StringencyTrackBar);
+        grpStringency.Location = new Point(176, 41);
+        grpStringency.Margin = new Padding(4, 3, 4, 3);
+        grpStringency.Name = "grpStringency";
+        grpStringency.Padding = new Padding(4, 3, 4, 3);
+        grpStringency.Size = new Size(155, 60);
+        grpStringency.TabIndex = 25;
+        grpStringency.TabStop = false;
+        grpStringency.Text = "Stringency";
         // 
-        // trkStringency
+        // StringencyTrackBar
         // 
-        this.trkStringency.AutoSize = false;
-        this.trkStringency.Location = new System.Drawing.Point(6, 19);
-        this.trkStringency.Name = "trkStringency";
-        this.trkStringency.Size = new System.Drawing.Size(121, 27);
-        this.trkStringency.TabIndex = 5;
+        StringencyTrackBar.AutoSize = false;
+        StringencyTrackBar.Location = new Point(7, 22);
+        StringencyTrackBar.Margin = new Padding(4, 3, 4, 3);
+        StringencyTrackBar.Name = "StringencyTrackBar";
+        StringencyTrackBar.Size = new Size(141, 31);
+        StringencyTrackBar.TabIndex = 2;
         // 
         // grpCountSpeed
         // 
-        this.grpCountSpeed.Controls.Add(this.trkCountSpeed);
-        this.grpCountSpeed.Location = new System.Drawing.Point(266, 198);
-        this.grpCountSpeed.Name = "grpCountSpeed";
-        this.grpCountSpeed.Size = new System.Drawing.Size(133, 52);
-        this.grpCountSpeed.TabIndex = 24;
-        this.grpCountSpeed.TabStop = false;
-        this.grpCountSpeed.Text = "Count Speed";
+        grpCountSpeed.Controls.Add(CountSpeedTrackBar);
+        grpCountSpeed.Location = new Point(13, 41);
+        grpCountSpeed.Margin = new Padding(4, 3, 4, 3);
+        grpCountSpeed.Name = "grpCountSpeed";
+        grpCountSpeed.Padding = new Padding(4, 3, 4, 3);
+        grpCountSpeed.Size = new Size(155, 60);
+        grpCountSpeed.TabIndex = 24;
+        grpCountSpeed.TabStop = false;
+        grpCountSpeed.Text = "Count Speed";
         // 
-        // txtName
+        // NameTextBox
         // 
-        this.txtName.Location = new System.Drawing.Point(304, 172);
-        this.txtName.Name = "txtName";
-        this.txtName.Size = new System.Drawing.Size(234, 20);
-        this.txtName.TabIndex = 23;
+        NameTextBox.Location = new Point(60, 12);
+        NameTextBox.Margin = new Padding(4, 3, 4, 3);
+        NameTextBox.Name = "NameTextBox";
+        NameTextBox.Size = new Size(271, 23);
+        NameTextBox.TabIndex = 0;
         // 
-        // btnCancel
+        // CancelButton
         // 
-        this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-        this.btnCancel.Location = new System.Drawing.Point(466, 256);
-        this.btnCancel.Name = "btnCancel";
-        this.btnCancel.Size = new System.Drawing.Size(72, 23);
-        this.btnCancel.TabIndex = 27;
-        this.btnCancel.Text = "&Cancel";
-        this.btnCancel.UseVisualStyleBackColor = true;
+        CancelButton.DialogResult = DialogResult.Cancel;
+        CancelButton.Location = new Point(247, 107);
+        CancelButton.Margin = new Padding(4, 3, 4, 3);
+        CancelButton.Name = "CancelButton";
+        CancelButton.Size = new Size(84, 27);
+        CancelButton.TabIndex = 4;
+        CancelButton.Text = "&Cancel";
+        CancelButton.UseVisualStyleBackColor = true;
         // 
-        // btnOk
+        // OkButton
         // 
-        this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-        this.btnOk.Location = new System.Drawing.Point(388, 256);
-        this.btnOk.Name = "btnOk";
-        this.btnOk.Size = new System.Drawing.Size(72, 23);
-        this.btnOk.TabIndex = 26;
-        this.btnOk.Text = "&Ok";
-        this.btnOk.UseVisualStyleBackColor = true;
+        OkButton.DialogResult = DialogResult.OK;
+        OkButton.Location = new Point(155, 107);
+        OkButton.Margin = new Padding(4, 3, 4, 3);
+        OkButton.Name = "OkButton";
+        OkButton.Size = new Size(84, 27);
+        OkButton.TabIndex = 3;
+        OkButton.Text = "&Ok";
+        OkButton.UseVisualStyleBackColor = true;
         // 
         // RefereeEditorForm
         // 
-        this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(800, 450);
-        this.Controls.Add(this.lblName);
-        this.Controls.Add(this.grpStringency);
-        this.Controls.Add(this.grpCountSpeed);
-        this.Controls.Add(this.txtName);
-        this.Controls.Add(this.btnCancel);
-        this.Controls.Add(this.btnOk);
-        this.Name = "RefereeEditorForm";
-        this.Text = "RefereeEditorForm";
-        ((System.ComponentModel.ISupportInitialize)(this.trkCountSpeed)).EndInit();
-        this.grpStringency.ResumeLayout(false);
-        ((System.ComponentModel.ISupportInitialize)(this.trkStringency)).EndInit();
-        this.grpCountSpeed.ResumeLayout(false);
-        this.ResumeLayout(false);
-        this.PerformLayout();
-
+        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleMode = AutoScaleMode.Font;
+        ClientSize = new Size(344, 146);
+        Controls.Add(lblName);
+        Controls.Add(grpStringency);
+        Controls.Add(grpCountSpeed);
+        Controls.Add(NameTextBox);
+        Controls.Add(CancelButton);
+        Controls.Add(OkButton);
+        FormBorderStyle = FormBorderStyle.FixedDialog;
+        Margin = new Padding(4, 3, 4, 3);
+        MaximizeBox = false;
+        MinimizeBox = false;
+        Name = "RefereeEditorForm";
+        ShowIcon = false;
+        ShowInTaskbar = false;
+        Text = "Referee Editor";
+        ((System.ComponentModel.ISupportInitialize)CountSpeedTrackBar).EndInit();
+        grpStringency.ResumeLayout(false);
+        ((System.ComponentModel.ISupportInitialize)StringencyTrackBar).EndInit();
+        grpCountSpeed.ResumeLayout(false);
+        ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
 
     internal System.Windows.Forms.Label lblName;
-    internal System.Windows.Forms.TrackBar trkCountSpeed;
+    internal System.Windows.Forms.TrackBar CountSpeedTrackBar;
     internal System.Windows.Forms.GroupBox grpStringency;
-    internal System.Windows.Forms.TrackBar trkStringency;
+    internal System.Windows.Forms.TrackBar StringencyTrackBar;
     internal System.Windows.Forms.GroupBox grpCountSpeed;
-    internal System.Windows.Forms.TextBox txtName;
-    internal System.Windows.Forms.Button btnCancel;
-    internal System.Windows.Forms.Button btnOk;
+    internal System.Windows.Forms.TextBox NameTextBox;
+    internal System.Windows.Forms.Button CancelButton;
+    internal System.Windows.Forms.Button OkButton;
 }
