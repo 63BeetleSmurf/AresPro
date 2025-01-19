@@ -8,5 +8,6 @@ public partial class MainForm : Form
 
         InitializeComponent();
         CenterToScreen();
+        Icon = Properties.Resources.a_pro;
     }
 }

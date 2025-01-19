@@ -459,7 +459,7 @@ partial class MainForm
         Margin = new Padding(4, 3, 4, 3);
         Name = "MainForm";
         StartPosition = FormStartPosition.WindowsDefaultBounds;
-        Text = "MainForm";
+        Text = "Ares Pro";
         MenuStrip.ResumeLayout(false);
         MenuStrip.PerformLayout();
         toolStripContainer1.ContentPanel.ResumeLayout(false);
