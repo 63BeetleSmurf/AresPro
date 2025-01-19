@@ -7,5 +7,6 @@ public partial class MainForm : Form
         new SplashForm().Show();
 
         InitializeComponent();
+        CenterToScreen();
     }
 }

@@ -458,6 +458,7 @@ partial class MainForm
         Controls.Add(MenuStrip);
         Margin = new Padding(4, 3, 4, 3);
         Name = "MainForm";
+        StartPosition = FormStartPosition.WindowsDefaultBounds;
         Text = "MainForm";
         MenuStrip.ResumeLayout(false);
         MenuStrip.PerformLayout();
