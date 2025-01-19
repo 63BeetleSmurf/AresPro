@@ -28,79 +28,90 @@ partial class ObjectListForm
     /// </summary>
     private void InitializeComponent()
     {
-        this.btnOk = new System.Windows.Forms.Button();
-        this.btnButton3 = new System.Windows.Forms.Button();
-        this.btnButton2 = new System.Windows.Forms.Button();
-        this.btnButton1 = new System.Windows.Forms.Button();
-        this.lstObjects = new System.Windows.Forms.ListBox();
-        this.SuspendLayout();
+        OkButton = new Button();
+        Action3Button = new Button();
+        Action2Button = new Button();
+        Action1Button = new Button();
+        ObjectsListBox = new ListBox();
+        SuspendLayout();
         // 
-        // btnOk
+        // OkButton
         // 
-        this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-        this.btnOk.Location = new System.Drawing.Point(458, 328);
-        this.btnOk.Name = "btnOk";
-        this.btnOk.Size = new System.Drawing.Size(60, 23);
-        this.btnOk.TabIndex = 9;
-        this.btnOk.Text = "&Ok";
-        this.btnOk.UseVisualStyleBackColor = true;
+        OkButton.DialogResult = DialogResult.OK;
+        OkButton.Location = new Point(196, 229);
+        OkButton.Margin = new Padding(4, 3, 4, 3);
+        OkButton.Name = "OkButton";
+        OkButton.Size = new Size(70, 27);
+        OkButton.TabIndex = 4;
+        OkButton.Text = "&Ok";
+        OkButton.UseVisualStyleBackColor = true;
         // 
-        // btnButton3
+        // Action3Button
         // 
-        this.btnButton3.Location = new System.Drawing.Point(458, 158);
-        this.btnButton3.Name = "btnButton3";
-        this.btnButton3.Size = new System.Drawing.Size(60, 23);
-        this.btnButton3.TabIndex = 8;
-        this.btnButton3.UseVisualStyleBackColor = true;
+        Action3Button.Location = new Point(196, 78);
+        Action3Button.Margin = new Padding(4, 3, 4, 3);
+        Action3Button.Name = "Action3Button";
+        Action3Button.Size = new Size(70, 27);
+        Action3Button.TabIndex = 3;
+        Action3Button.UseVisualStyleBackColor = true;
         // 
-        // btnButton2
+        // Action2Button
         // 
-        this.btnButton2.Location = new System.Drawing.Point(458, 129);
-        this.btnButton2.Name = "btnButton2";
-        this.btnButton2.Size = new System.Drawing.Size(60, 23);
-        this.btnButton2.TabIndex = 7;
-        this.btnButton2.UseVisualStyleBackColor = true;
+        Action2Button.Location = new Point(196, 45);
+        Action2Button.Margin = new Padding(4, 3, 4, 3);
+        Action2Button.Name = "Action2Button";
+        Action2Button.Size = new Size(70, 27);
+        Action2Button.TabIndex = 2;
+        Action2Button.UseVisualStyleBackColor = true;
         // 
-        // btnButton1
+        // Action1Button
         // 
-        this.btnButton1.Location = new System.Drawing.Point(458, 100);
-        this.btnButton1.Name = "btnButton1";
-        this.btnButton1.Size = new System.Drawing.Size(60, 23);
-        this.btnButton1.TabIndex = 6;
-        this.btnButton1.UseVisualStyleBackColor = true;
+        Action1Button.Location = new Point(196, 12);
+        Action1Button.Margin = new Padding(4, 3, 4, 3);
+        Action1Button.Name = "Action1Button";
+        Action1Button.Size = new Size(70, 27);
+        Action1Button.TabIndex = 1;
+        Action1Button.UseVisualStyleBackColor = true;
         // 
-        // lstObjects
+        // ObjectsListBox
         // 
-        this.lstObjects.DisplayMember = "Value";
-        this.lstObjects.FormattingEnabled = true;
-        this.lstObjects.Location = new System.Drawing.Point(282, 100);
-        this.lstObjects.Name = "lstObjects";
-        this.lstObjects.Size = new System.Drawing.Size(170, 251);
-        this.lstObjects.Sorted = true;
-        this.lstObjects.TabIndex = 5;
-        this.lstObjects.ValueMember = "Key";
+        ObjectsListBox.DisplayMember = "Value";
+        ObjectsListBox.FormattingEnabled = true;
+        ObjectsListBox.ItemHeight = 15;
+        ObjectsListBox.Location = new Point(13, 12);
+        ObjectsListBox.Margin = new Padding(4, 3, 4, 3);
+        ObjectsListBox.Name = "ObjectsListBox";
+        ObjectsListBox.Size = new Size(175, 244);
+        ObjectsListBox.Sorted = true;
+        ObjectsListBox.TabIndex = 0;
+        ObjectsListBox.ValueMember = "Key";
         // 
         // ObjectListForm
         // 
-        this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(800, 450);
-        this.Controls.Add(this.btnOk);
-        this.Controls.Add(this.btnButton3);
-        this.Controls.Add(this.btnButton2);
-        this.Controls.Add(this.btnButton1);
-        this.Controls.Add(this.lstObjects);
-        this.Name = "ObjectListForm";
-        this.Text = "ObjectListForm";
-        this.ResumeLayout(false);
-
+        AcceptButton = OkButton;
+        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleMode = AutoScaleMode.Font;
+        ClientSize = new Size(279, 268);
+        Controls.Add(OkButton);
+        Controls.Add(Action3Button);
+        Controls.Add(Action2Button);
+        Controls.Add(Action1Button);
+        Controls.Add(ObjectsListBox);
+        FormBorderStyle = FormBorderStyle.FixedDialog;
+        Margin = new Padding(4, 3, 4, 3);
+        MaximizeBox = false;
+        MinimizeBox = false;
+        Name = "ObjectListForm";
+        ShowIcon = false;
+        ShowInTaskbar = false;
+        ResumeLayout(false);
     }
 
     #endregion
 
-    internal System.Windows.Forms.Button btnOk;
-    internal System.Windows.Forms.Button btnButton3;
-    internal System.Windows.Forms.Button btnButton2;
-    internal System.Windows.Forms.Button btnButton1;
-    internal System.Windows.Forms.ListBox lstObjects;
+    internal System.Windows.Forms.Button OkButton;
+    internal System.Windows.Forms.Button Action3Button;
+    internal System.Windows.Forms.Button Action2Button;
+    internal System.Windows.Forms.Button Action1Button;
+    internal System.Windows.Forms.ListBox ObjectsListBox;
 }
