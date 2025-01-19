@@ -63,6 +63,7 @@ partial class MainForm
         toolStripContainer1 = new ToolStripContainer();
         tvwRoster = new TreeView();
         ToolStrip = new ToolStrip();
+        toolStripSeparator1 = new ToolStripSeparator();
         btnOpenFed = new ToolStripButton();
         btnSaveFed = new ToolStripButton();
         ToolStripSeparator2 = new ToolStripSeparator();
@@ -302,6 +303,7 @@ partial class MainForm
         // toolStripContainer1.TopToolStripPanel
         // 
         toolStripContainer1.TopToolStripPanel.Controls.Add(ToolStrip);
+        toolStripContainer1.TopToolStripPanel.RenderMode = ToolStripRenderMode.System;
         // 
         // tvwRoster
         // 
@@ -318,12 +320,19 @@ partial class MainForm
         // ToolStrip
         // 
         ToolStrip.Dock = DockStyle.None;
-        ToolStrip.Items.AddRange(new ToolStripItem[] { btnOpenFed, btnSaveFed, ToolStripSeparator2, btnNewWrestler, btnNewTeam, btnNewTitle, btnNewCommentator, btnNewReferee, ToolStripSeparator3, btnEditSelection, btnDeleteSelection, ToolStripSeparator4, btnBookEvent });
+        ToolStrip.GripStyle = ToolStripGripStyle.Hidden;
+        ToolStrip.Items.AddRange(new ToolStripItem[] { toolStripSeparator1, btnOpenFed, btnSaveFed, ToolStripSeparator2, btnNewWrestler, btnNewTeam, btnNewTitle, btnNewCommentator, btnNewReferee, ToolStripSeparator3, btnEditSelection, btnDeleteSelection, ToolStripSeparator4, btnBookEvent });
         ToolStrip.Location = new Point(3, 0);
         ToolStrip.Name = "ToolStrip";
-        ToolStrip.Size = new Size(260, 25);
+        ToolStrip.RenderMode = ToolStripRenderMode.System;
+        ToolStrip.Size = new Size(257, 25);
         ToolStrip.TabIndex = 5;
         ToolStrip.Text = "ToolStrip";
+        // 
+        // toolStripSeparator1
+        // 
+        toolStripSeparator1.Name = "toolStripSeparator1";
+        toolStripSeparator1.Size = new Size(6, 25);
         // 
         // btnOpenFed
         // 
@@ -512,4 +521,5 @@ partial class MainForm
     internal ToolStripButton btnDeleteSelection;
     internal ToolStripSeparator ToolStripSeparator4;
     internal ToolStripButton btnBookEvent;
+    private ToolStripSeparator toolStripSeparator1;
 }
