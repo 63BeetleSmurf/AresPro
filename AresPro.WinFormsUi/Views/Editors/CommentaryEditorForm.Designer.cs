@@ -28,118 +28,106 @@ partial class CommentaryEditorForm
     /// </summary>
     private void InitializeComponent()
     {
-        this.grpUsedWhen = new System.Windows.Forms.GroupBox();
-        this.cboUsedWhen = new System.Windows.Forms.ComboBox();
-        this.btnCancel = new System.Windows.Forms.Button();
-        this.btnOk = new System.Windows.Forms.Button();
-        this.txtEdit = new System.Windows.Forms.TextBox();
-        this.lstTexts = new System.Windows.Forms.ListBox();
-        this.grpUsedWhen.SuspendLayout();
-        this.SuspendLayout();
+        grpUsedWhen = new GroupBox();
+        UsedWhenComboBox = new ComboBox();
+        CancelButton = new Button();
+        SaveButton = new Button();
+        EditTextTextBox = new TextBox();
+        TextsListBox = new ListBox();
+        grpUsedWhen.SuspendLayout();
+        SuspendLayout();
         // 
         // grpUsedWhen
         // 
-        this.grpUsedWhen.Controls.Add(this.cboUsedWhen);
-        this.grpUsedWhen.Location = new System.Drawing.Point(208, 111);
-        this.grpUsedWhen.Name = "grpUsedWhen";
-        this.grpUsedWhen.Size = new System.Drawing.Size(385, 46);
-        this.grpUsedWhen.TabIndex = 5;
-        this.grpUsedWhen.TabStop = false;
-        this.grpUsedWhen.Text = "Used When";
+        grpUsedWhen.Controls.Add(UsedWhenComboBox);
+        grpUsedWhen.Location = new Point(13, 12);
+        grpUsedWhen.Margin = new Padding(4, 3, 4, 3);
+        grpUsedWhen.Name = "grpUsedWhen";
+        grpUsedWhen.Padding = new Padding(4, 3, 4, 3);
+        grpUsedWhen.Size = new Size(449, 53);
+        grpUsedWhen.TabIndex = 5;
+        grpUsedWhen.TabStop = false;
+        grpUsedWhen.Text = "Used When";
         // 
-        // cboUsedWhen
+        // UsedWhenComboBox
         // 
-        this.cboUsedWhen.FormattingEnabled = true;
-        this.cboUsedWhen.Items.AddRange(new object[] {
-        "Match moves where pins count",
-        "Match moves where pins do not count",
-        "Match moves where submissions count",
-        "Match moves where submissions do not count",
-        "Match moves to count-out area",
-        "Match moves to weapons",
-        "Match moves away from weapons",
-        "#ATT# uses a weak pin/submission",
-        "#REC# escapes a pin/submission",
-        "#ATT# almost gets the win",
-        "#ATT# wins the match",
-        "#ATT# uses a strong move",
-        "#ATT# uses a normal move",
-        "#ATT# uses a high risk move",
-        "#ATT# uses an illegal move",
-        "#ATT# uses a weapon",
-        "There is blood in the current location",
-        "The ref is counting them out",
-        "#REC# is being double teamed",
-        "#REC# is eliminated from match",
-        "Question requiring yes answer",
-        "Question requiring no answer",
-        "Yes response",
-        "No response",
-        "Random comment"});
-        this.cboUsedWhen.Location = new System.Drawing.Point(6, 19);
-        this.cboUsedWhen.Name = "cboUsedWhen";
-        this.cboUsedWhen.Size = new System.Drawing.Size(373, 21);
-        this.cboUsedWhen.TabIndex = 0;
+        UsedWhenComboBox.FormattingEnabled = true;
+        UsedWhenComboBox.Items.AddRange(new object[] { "Match moves where pins count", "Match moves where pins do not count", "Match moves where submissions count", "Match moves where submissions do not count", "Match moves to count-out area", "Match moves to weapons", "Match moves away from weapons", "#ATT# uses a weak pin/submission", "#REC# escapes a pin/submission", "#ATT# almost gets the win", "#ATT# wins the match", "#ATT# uses a strong move", "#ATT# uses a normal move", "#ATT# uses a high risk move", "#ATT# uses an illegal move", "#ATT# uses a weapon", "There is blood in the current location", "The ref is counting them out", "#REC# is being double teamed", "#REC# is eliminated from match", "Question requiring yes answer", "Question requiring no answer", "Yes response", "No response", "Random comment" });
+        UsedWhenComboBox.Location = new Point(7, 22);
+        UsedWhenComboBox.Margin = new Padding(4, 3, 4, 3);
+        UsedWhenComboBox.Name = "UsedWhenComboBox";
+        UsedWhenComboBox.Size = new Size(434, 23);
+        UsedWhenComboBox.TabIndex = 0;
         // 
-        // btnCancel
+        // CancelButton
         // 
-        this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-        this.btnCancel.Location = new System.Drawing.Point(521, 316);
-        this.btnCancel.Name = "btnCancel";
-        this.btnCancel.Size = new System.Drawing.Size(72, 23);
-        this.btnCancel.TabIndex = 9;
-        this.btnCancel.Text = "&Cancel";
-        this.btnCancel.UseVisualStyleBackColor = true;
+        CancelButton.DialogResult = DialogResult.Cancel;
+        CancelButton.Location = new Point(378, 245);
+        CancelButton.Margin = new Padding(4, 3, 4, 3);
+        CancelButton.Name = "CancelButton";
+        CancelButton.Size = new Size(84, 27);
+        CancelButton.TabIndex = 4;
+        CancelButton.Text = "&Cancel";
+        CancelButton.UseVisualStyleBackColor = true;
         // 
-        // btnOk
+        // SaveButton
         // 
-        this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-        this.btnOk.Location = new System.Drawing.Point(443, 316);
-        this.btnOk.Name = "btnOk";
-        this.btnOk.Size = new System.Drawing.Size(72, 23);
-        this.btnOk.TabIndex = 8;
-        this.btnOk.Text = "&Ok";
-        this.btnOk.UseVisualStyleBackColor = true;
+        SaveButton.DialogResult = DialogResult.OK;
+        SaveButton.Location = new Point(286, 245);
+        SaveButton.Margin = new Padding(4, 3, 4, 3);
+        SaveButton.Name = "SaveButton";
+        SaveButton.Size = new Size(84, 27);
+        SaveButton.TabIndex = 3;
+        SaveButton.Text = "&Save";
+        SaveButton.UseVisualStyleBackColor = true;
         // 
-        // txtEdit
+        // EditTextTextBox
         // 
-        this.txtEdit.Location = new System.Drawing.Point(208, 290);
-        this.txtEdit.Name = "txtEdit";
-        this.txtEdit.Size = new System.Drawing.Size(385, 20);
-        this.txtEdit.TabIndex = 7;
+        EditTextTextBox.Location = new Point(13, 216);
+        EditTextTextBox.Margin = new Padding(4, 3, 4, 3);
+        EditTextTextBox.Name = "EditTextTextBox";
+        EditTextTextBox.Size = new Size(449, 23);
+        EditTextTextBox.TabIndex = 2;
         // 
-        // lstTexts
+        // TextsListBox
         // 
-        this.lstTexts.FormattingEnabled = true;
-        this.lstTexts.Location = new System.Drawing.Point(208, 163);
-        this.lstTexts.Name = "lstTexts";
-        this.lstTexts.Size = new System.Drawing.Size(385, 121);
-        this.lstTexts.TabIndex = 6;
+        TextsListBox.FormattingEnabled = true;
+        TextsListBox.ItemHeight = 15;
+        TextsListBox.Location = new Point(13, 71);
+        TextsListBox.Margin = new Padding(4, 3, 4, 3);
+        TextsListBox.Name = "TextsListBox";
+        TextsListBox.Size = new Size(449, 139);
+        TextsListBox.TabIndex = 1;
         // 
         // CommentaryEditorForm
         // 
-        this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(800, 450);
-        this.Controls.Add(this.grpUsedWhen);
-        this.Controls.Add(this.btnCancel);
-        this.Controls.Add(this.btnOk);
-        this.Controls.Add(this.txtEdit);
-        this.Controls.Add(this.lstTexts);
-        this.Name = "CommentaryEditorForm";
-        this.Text = "CommentaryEditorForm";
-        this.grpUsedWhen.ResumeLayout(false);
-        this.ResumeLayout(false);
-        this.PerformLayout();
-
+        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleMode = AutoScaleMode.Font;
+        ClientSize = new Size(475, 284);
+        Controls.Add(grpUsedWhen);
+        Controls.Add(CancelButton);
+        Controls.Add(SaveButton);
+        Controls.Add(EditTextTextBox);
+        Controls.Add(TextsListBox);
+        FormBorderStyle = FormBorderStyle.FixedDialog;
+        Margin = new Padding(4, 3, 4, 3);
+        MaximizeBox = false;
+        MinimizeBox = false;
+        Name = "CommentaryEditorForm";
+        ShowIcon = false;
+        ShowInTaskbar = false;
+        Text = "Commentary Editor";
+        grpUsedWhen.ResumeLayout(false);
+        ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
 
     internal System.Windows.Forms.GroupBox grpUsedWhen;
-    internal System.Windows.Forms.ComboBox cboUsedWhen;
-    internal System.Windows.Forms.Button btnCancel;
-    internal System.Windows.Forms.Button btnOk;
-    internal System.Windows.Forms.TextBox txtEdit;
-    internal System.Windows.Forms.ListBox lstTexts;
+    internal System.Windows.Forms.ComboBox UsedWhenComboBox;
+    internal System.Windows.Forms.Button CancelButton;
+    internal System.Windows.Forms.Button SaveButton;
+    internal System.Windows.Forms.TextBox EditTextTextBox;
+    internal System.Windows.Forms.ListBox TextsListBox;
 }
