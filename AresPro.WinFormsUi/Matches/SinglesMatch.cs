@@ -7,6 +7,20 @@ namespace AresPro.WinFormsUi.Matches;
 
 public class SinglesMatch
 {
+    // No idea what these numbers mean, doubt it's a change out of 100 anyway.
+    private const int CallMoveChance = 3;
+    private const int TryPinChance = 3;
+    private const int RECStandChance = 4;
+    private const int AdvantageChance = 2;
+    private const int TrySubChance = 4;
+    private const int CountOutChance = 10; // Used
+    private const int StayOutChance = 5; // Used
+    private const int WeaponChance = 3; // Used
+    private const int RandomChance = 3;
+    private const int DoTagChance = 3;
+    private const int ChangePosChance = 3; // Used
+    private const int StrengthChance = 6;
+
     private readonly string[] _mTypes = ["Normal", "Submission", "Hardcore", "Cage", "Ladder", "Hell in the Cell"]; // Match types
     private readonly string[] _finishes = ["Random", "Pin", "Submission", "Finisher", "DQ", "Count Out", "Double Count Out", "Double DQ"];
 
@@ -108,9 +122,14 @@ public class SinglesMatch
         return score;
     }
 
-    private bool Ch()
+    private bool Ch(int chance)
     {
-        return (_random.Next(2) == 1);
+        if (chance == 0)
+            return false;
+        else if (chance == 100)
+            return true;
+        else
+            return (_random.Next(100) + 1 <= chance);
     }
 
     // MATCH OPTION FUNCTIONS
@@ -207,10 +226,10 @@ public class SinglesMatch
         }
         else // NO ref bump
         {
-            if (Ch()) // leave ring
+            if (Ch(ChangePosChance)) // leave ring
             {
                 LeaveRing(w1, w2);
-                if (Ch() && finish == 6) //count out
+                if (Ch(CountOutChance) && finish == 6) //count out
                 {
                     Ringside(w1, w2);
                     Count(w1, w2, 3, 6);
@@ -220,10 +239,10 @@ public class SinglesMatch
                 }
                 else
                 {
-                    if (Ch()) // w1 gets a weapon
+                    if (Ch(WeaponChance)) // w1 gets a weapon
                     {
                         string weap1 = Weapon(w1, w2);
-                        if (Ch() && finish == 7) // double DQ
+                        if (Ch(StayOutChance) && finish == 7) // double DQ
                         {
                             string weap2 = Weapon(w2, w1);
                             UseWeapon(w1, w2, weap1);
@@ -235,7 +254,7 @@ public class SinglesMatch
                             UseWeapon(w1, w2, weap1);
                             ReturnToRing(w1, null);
                             _match.Add($"{w2.Name} is being counted out.");
-                            if (Ch() && finish == 5) // w2 is counted out
+                            if (Ch(StayOutChance) && finish == 5) // w2 is counted out
                             {
                                 Count(w1, w2, 3, 6);
                                 _match.Add(".....");
@@ -252,10 +271,10 @@ public class SinglesMatch
                     }
                     else // w1 did not get a weapon
                     {
-                        if (Ch()) // w2 grabs a weapon
+                        if (Ch(WeaponChance)) // w2 grabs a weapon
                         {
                             string weap2 = Weapon(w2, w1);
-                            if (Ch() && finish == 4) // W2 is DQd
+                            if (Ch(StayOutChance) && finish == 4) // W2 is DQd
                             {
                                 ReturnToRing(w2, weap2);
                                 return false;
