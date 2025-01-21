@@ -5,6 +5,7 @@ namespace AresPro.WinFormsUi.Models;
 public class WrestlerModel
 {
     public string[] Names { get; set; }
+    public string Name => Names[0];
     public string? Hometown { get; set; }
     public Affiliations Affiliation { get; set; }
     public string? Stable { get; set; }

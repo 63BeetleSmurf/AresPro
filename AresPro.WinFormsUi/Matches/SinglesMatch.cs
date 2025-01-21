@@ -1,5 +1,8 @@
 ﻿using System.Text;
 
+using AresPro.WinFormsUi.Enums;
+using AresPro.WinFormsUi.Models;
+
 namespace AresPro.WinFormsUi.Matches;
 
 public class SinglesMatch
@@ -14,10 +17,10 @@ public class SinglesMatch
     private int _escapeFinish;
 
     public StringBuilder Output = new();
-    public List<Wrestler> Winners { get; } = [];
-    public List<Wrestler> Losers { get; } = [];
+    public List<WrestlerModel> Winners { get; } = [];
+    public List<WrestlerModel> Losers { get; } = [];
 
-    public void SimMatch(Wrestler w1, Wrestler w2, int type, Wrestler? winner, int finish)
+    public void SimMatch(WrestlerModel w1, WrestlerModel w2, int type, WrestlerModel? winner, int finish)
     {
         int w1Score = 0;
         int w2Score = 0;
@@ -25,7 +28,7 @@ public class SinglesMatch
         Output.AppendLine($"{w1.Name} Vs. {w2.Name}");
         Output.AppendLine(_mTypes[type]);
 
-        Wrestler loser;
+        WrestlerModel loser;
         if (winner == w1)
         {
             loser = w2;
@@ -74,24 +77,33 @@ public class SinglesMatch
         }
     }
 
-    private int GetScore(Wrestler w1, Wrestler w2)
+    private int GetScore(WrestlerModel w1, WrestlerModel w2)
     {
         int score = 0;
-        if (w1.Str > w2.Str)
+        if (w1.Strength > w2.Strength)
             score += 2;
-        if (w1.Spe > w2.Spe)
+        if (w1.Speed > w2.Speed)
             score++;
-        if (w1.Vit > w2.Vit)
+        if (w1.Vitality > w2.Vitality)
             score++;
-        if (_random.Next(w1.Cha) > _random.Next(w2.Cha))
+        if (_random.Next(w1.Charisma) > _random.Next(w2.Charisma))
             score += 2;
 
-        if (w1.Style == 0 && w2.Style == 2)
+        // Don't have a Style property
+        //if (w1.Style == 0 && w2.Style == 2)
+        //    score++;
+        //else if (w1.Style == 1 && w2.Style == 0) // CHANGE - Added else
+        //    score++;
+        //else if (w1.Style == 2 && w2.Style == 1) // CHANGE - Added else
+        //    score++;
+
+        // Adding more scoring based on tho Zeus Pro Help stating;
+        // Push: Affects wrestlers ability to win. Of course a 100 lbs weak guy still won't have a chance against a 400 lbs 10' guy with maxed out stats.
+        // Probably need to look at changing Weight and Height to ints or pharsing them someway.
+        if (w1.Push > w2.Push)
             score++;
-        else if (w1.Style == 1 && w2.Style == 0) // CHANGE - Added else
-            score++;
-        else if (w1.Style == 2 && w2.Style == 1) // CHANGE - Added else
-            score++;
+        else
+            score--;
 
         return score;
     }
@@ -102,7 +114,7 @@ public class SinglesMatch
     }
 
     // MATCH OPTION FUNCTIONS
-    private void Match(Wrestler w1, Wrestler w2, int finish)
+    private void Match(WrestlerModel w1, WrestlerModel w2, int finish)
     {
         if (finish == 0)
             finish = _random.Next(5) + 1;
@@ -148,7 +160,7 @@ public class SinglesMatch
         Output.AppendLine("");
     }
 
-    private bool Wrestling(Wrestler w1, Wrestler w2, int finish)
+    private bool Wrestling(WrestlerModel w1, WrestlerModel w2, int finish)
     {
         _match.Add("...");
         if (Ch() && _refBump == 0) // ref bump
@@ -278,8 +290,8 @@ public class SinglesMatch
                     {
                         if (finish != 3)
                             _escapeFinish = 1;
-                        Finisher(w1, w2);
-                        EscapeFinisher(w2, w1);
+                        MoveModel finisherMove = Finisher(w1, w2);
+                        EscapeFinisher(w2, w1, finisherMove);
                         return true;
                     }
                 }
@@ -308,7 +320,7 @@ public class SinglesMatch
         }
     }
 
-    private void RefBump(Wrestler w1, Wrestler w2)
+    private void RefBump(WrestlerModel w1, WrestlerModel w2)
     {
         string[] bumps = [
             "w1 whips w2 into the referee. The referee goes down.",
@@ -324,7 +336,7 @@ public class SinglesMatch
         _match.Add(text);
     }
 
-    private void LeaveRing(Wrestler w1, Wrestler w2)
+    private void LeaveRing(WrestlerModel w1, WrestlerModel w2)
     {
         string[] texts = [
             "w1 takes w2 out to the floor.",
@@ -340,7 +352,7 @@ public class SinglesMatch
         _match.Add(text);
     }
 
-    private void Pin(Wrestler w1, Wrestler w2)
+    private void Pin(WrestlerModel w1, WrestlerModel w2)
     {
         string[] texts = [
             "w1 makes the cover on w2.",
@@ -356,7 +368,7 @@ public class SinglesMatch
         _match.Add(text);
     }
 
-    private void Submission(Wrestler w1, Wrestler w2)
+    private void Submission(WrestlerModel w1, WrestlerModel w2)
     {
         string[] texts = [
             "w1 puts w2 in anklelock submission.",
@@ -372,7 +384,7 @@ public class SinglesMatch
         _match.Add(text);
     }
 
-    private void Count(Wrestler w1, Wrestler w2, int c1, int c2)
+    private void Count(WrestlerModel w1, WrestlerModel w2, int c1, int c2)
     {
         string[] texts = [
             "The referee counts ",
@@ -389,7 +401,7 @@ public class SinglesMatch
         _match.Add(text);
     }
 
-    private void RefUnbump(Wrestler w1, Wrestler w2)
+    private void RefUnbump(WrestlerModel w1, WrestlerModel w2)
     {
         string[] texts = [
             "The referee has regained consisness.",
@@ -405,7 +417,7 @@ public class SinglesMatch
         _match.Add(text);
     }
 
-    private void Ringside(Wrestler w1, Wrestler w2)
+    private void Ringside(WrestlerModel w1, WrestlerModel w2)
     {
         string[] texts = [
             "w1 sends w2 into the steel steps.",
@@ -421,7 +433,7 @@ public class SinglesMatch
         _match.Add(text);
     }
 
-    private string Weapon(Wrestler w1, Wrestler w2)
+    private string Weapon(WrestlerModel w1, WrestlerModel w2)
     {
         string[] weapons = [
             "chair",
@@ -449,7 +461,7 @@ public class SinglesMatch
         return weap;
     }
 
-    private void UseWeapon(Wrestler w1, Wrestler w2, string weap)
+    private void UseWeapon(WrestlerModel w1, WrestlerModel w2, string weap)
     {
         string[] texts = [
             "w1 hits w2 with the weap.",
@@ -466,7 +478,7 @@ public class SinglesMatch
         _match.Add(text);
     }
 
-    private void ReturnToRing(Wrestler w1, string? weap = null)
+    private void ReturnToRing(WrestlerModel w1, string? weap = null)
     {
         string[] texts = [
             "w1 climbs back into the ring.",
@@ -484,39 +496,17 @@ public class SinglesMatch
         _match.Add(text);
     }
 
-    private void Finisher(Wrestler w1, Wrestler w2)
+    private MoveModel Finisher(WrestlerModel w1, WrestlerModel w2)
     {
-        string[] kos = [
-            "w1 executes the fin on w2.",
-            "w2 takes the fin from w1.",
-            "w1 delivers the fin to w2!"
-        ];
-        string[] subs = [
-            "w1 locks the fin on w2.",
-            "w2 is locked in the fin!!",
-            "w1 has w2 in the fin."
-        ];
+        MoveModel finisherMove = GetRandomMove(w1, MoveTypes.SubmissionFinisher, MoveTypes.KnockoutFinisher);
 
-
-        int size;
-        string text;
-        if (w1.mType == 0) // ko
-        {
-            size = kos.Length;
-            text = kos[_random.Next(size)];
-        }
-        else
-        {
-            size = subs.Length;
-            text = subs[_random.Next(size)];
-        }
-
-        text = text.Replace("w1", w1.Name);
-        text = text.Replace("w2", w2.Name);
-        text = text.Replace("fin", w1.Move);
+        string text = GetRandomText(finisherMove.Texts);
+        text = text.Replace("#ATT#", w1.Name);
+        text = text.Replace("#REC#", w2.Name);
+        text = text.Replace("#MOV#", finisherMove.Name);
         _match.Add(text);
 
-        if (w1.mType == 0) // ko
+        if (finisherMove.Type == MoveTypes.KnockoutFinisher)
         {
             Pin(w1, w2);
             Count(w1, w2, 1, 3);
@@ -525,9 +515,11 @@ public class SinglesMatch
         {
             _match.Add($"{w2.Name} taps out.");
         }
+
+        return finisherMove;
     }
 
-    private void EscapeFinisher(Wrestler w1, Wrestler w2)
+    private void EscapeFinisher(WrestlerModel w1, WrestlerModel w2, MoveModel finishingMove)
     {
         string[] texts = [
             "NO!! w1 escapes the fin!!!",
@@ -539,11 +531,11 @@ public class SinglesMatch
 
         text = text.Replace("w1", w1.Name);
         text = text.Replace("w2", w2.Name);
-        text = text.Replace("fin", w2.Move);
+        text = text.Replace("fin", finishingMove.Name);
         _match.Add(text);
     }
 
-    private void Comeback(Wrestler w1)
+    private void Comeback(WrestlerModel w1)
     {
         string[] texts = [
             "w1 has managed to get up.",
@@ -556,5 +548,16 @@ public class SinglesMatch
         string text = texts[_random.Next(size)];
         text = text.Replace("w1", w1.Name);
         _match.Add(text);
+    }
+
+    private MoveModel GetRandomMove(WrestlerModel wrestler, params MoveTypes[] moveTypes)
+    {
+        List<MoveModel> moves = wrestler.Moves.Where(m => moveTypes.Contains(m.Type)).ToList();
+        return moves[moves.Count];
+    }
+
+    private string GetRandomText(string[] texts)
+    {
+        return texts[_random.Next(texts.Length)];
     }
 }
