@@ -5,6 +5,6 @@ namespace AresPro.WinFormsUi.Models;
 public class CommentatorModel
 {
     public string Name { get; set; }
-    public string FilePath { get; set; }
+    public string FileName { get; set; }
     public Affiliations Affiliation { get; set; }
 }

@@ -4,11 +4,11 @@ public class TeamModel
 {
     public string Name { get; set; }
     public string? Finisher { get; set; }
-    public string? Ringintro { get; set; }
-    public List<string> Titles { get; } = [];
+    public string? Introduction { get; set; }
+    public List<string> TitleNames { get; } = [];
     public int Wins { get; set; }
     public int Loses { get; set; }
-    public string? Escort { get; set; }
+    public string? EscortName { get; set; }
     public bool EscortInterferes { get; set; }
-    public List<WrestlerModel> Members { get; } = [];
+    public List<string> MemberNames { get; } = [];
 }

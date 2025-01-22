@@ -3,7 +3,7 @@
 public class FederationModel
 {
     public string Name { get; set; } = "None";
-    public string Owver { get; set; } = "None";
+    public string Owner { get; set; } = "None";
     public string Website { get; set; } = "None";
     public bool IncludeCommentary { get; set; } = true;
     public bool MovesInBlockFormat { get; set; } = true;
@@ -12,9 +12,9 @@ public class FederationModel
     public int StatMax { get; set; } = 10;
     public string BackgroundColor { get; set; } = "white";
     public string FontColor { get; set; } = "black";
-    public List<WrestlerModel> Wrestlers { get; set; } = [];
-    public List<TeamModel> Teams { get; set; } = [];
-    public List<TitleModel> Titles { get; set; } = [];
-    public List<CommentatorModel> Commentators { get; set; } = [];
-    public List<RefereeModel> Referees { get; set; } = [];
+    public Dictionary<string, WrestlerModel> Wrestlers { get; set; } = [];
+    public Dictionary<string, TeamModel> Teams { get; set; } = [];
+    public Dictionary<string, TitleModel> Titles { get; set; } = [];
+    public Dictionary<string, CommentatorModel> Commentators { get; set; } = [];
+    public Dictionary<string, RefereeModel> Referees { get; set; } = [];
 }

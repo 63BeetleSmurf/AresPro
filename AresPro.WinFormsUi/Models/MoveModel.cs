@@ -10,7 +10,7 @@ public class MoveModel
     public bool IsLift { get; set; }
     public bool IsIllegal { get; set; }
     public bool IsHighRisk { get; set; }
-    public string[] Texts { get; set; } = [];
+    public string[] Texts { get; set; } = ["", "", ""];
     public bool AttStandingBefore { get; set; }
     public bool AttStandingAfter { get; set; }
     public bool RecStandingBefore { get; set; }
