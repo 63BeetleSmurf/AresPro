@@ -75,6 +75,14 @@ public partial class MainForm : Form
         }
     }
 
+    private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+        if (!IsSaved && ShowSaveDiscardPrompt() == DialogResult.Cancel)
+            e.Cancel = true;
+        else
+            CloseApplication?.Invoke(this, EventArgs.Empty);
+    }
+
     // Menu
 
     // - File menu
@@ -119,10 +127,7 @@ public partial class MainForm : Form
 
     private void ExitMenuItem_Click(object sender, EventArgs e)
     {
-        if (!IsSaved && ShowSaveDiscardPrompt() == DialogResult.Cancel)
-            return;
-
-        CloseApplication?.Invoke(this, EventArgs.Empty);
+        Close();
     }
 
     // - Resources menu

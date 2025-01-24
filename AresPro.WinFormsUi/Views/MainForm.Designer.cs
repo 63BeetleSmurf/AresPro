@@ -495,6 +495,7 @@ partial class MainForm
         Name = "MainForm";
         StartPosition = FormStartPosition.WindowsDefaultBounds;
         Text = "Ares Pro ";
+        FormClosing += MainForm_FormClosing;
         MenuStrip.ResumeLayout(false);
         MenuStrip.PerformLayout();
         toolStripContainer1.ContentPanel.ResumeLayout(false);
