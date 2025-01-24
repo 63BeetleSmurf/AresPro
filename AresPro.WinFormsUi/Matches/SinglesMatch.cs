@@ -122,7 +122,7 @@ public class SinglesMatch
         return score;
     }
 
-    private bool Ch(int chance)
+    private bool Ch(int chance = 10) // FIX: Should not be optional, just did this to get app to build.
     {
         if (chance == 0)
             return false;
@@ -571,7 +571,7 @@ public class SinglesMatch
 
     private MoveModel GetRandomMove(WrestlerModel wrestler, params MoveTypes[] moveTypes)
     {
-        List<MoveModel> moves = wrestler.Moves.Where(m => moveTypes.Contains(m.Type)).ToList();
+        List<MoveModel> moves = [];// wrestler.Moves.Where(m => moveTypes.Contains(m.Type)).ToList();
         return moves[moves.Count];
     }
 
