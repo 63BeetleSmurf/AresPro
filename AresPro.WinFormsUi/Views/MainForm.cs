@@ -42,7 +42,7 @@ public partial class MainForm : Form
     public EventHandler<string>? DeleteCommentator;
     public EventHandler<string>? DeleteReferee;
 
-    public bool IsSaved { get; set; }
+    public bool IsSaved { get; set; } = true;
     public string? FederationFilename { get; set; }
 
     public MainForm()
