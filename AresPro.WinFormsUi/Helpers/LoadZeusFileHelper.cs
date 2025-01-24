@@ -39,11 +39,11 @@ public static class LoadZeusFileHelper
         int titleCount = int.Parse(settingsData[2]);
         int commentatorCount = int.Parse(settingsData[3]);
         int refereeCount = int.Parse(settingsData[4]);
-        federation.MovesInBlockFormat = bool.Parse(settingsData[5]);
-        federation.IncludeCommentary = bool.Parse(settingsData[6]);
+        federation.MovesInBlockFormat = (settingsData[5] == "1");
+        federation.IncludeCommentary = (settingsData[6] == "1");
         federation.StatMax = int.Parse(settingsData[7]);
-        federation.IncludeMatchHeading = bool.Parse(settingsData[8]);
-        federation.ShowOnlyEndings = bool.Parse(settingsData[9]);
+        federation.IncludeMatchHeading = (settingsData[8] == "1");
+        federation.ShowOnlyEndings = (settingsData[9] == "1");
 
         for (int i = 0; i < wrestlerCount; i++)
         {
@@ -100,7 +100,7 @@ public static class LoadZeusFileHelper
         wrestler.EscortName = wrestlerStringsData[4];
 
         string[] wrestlerSettingsData = ReadLine(reader).Split(' ');
-        wrestler.EscortInterferes = bool.Parse(wrestlerSettingsData[0]);
+        wrestler.EscortInterferes = (wrestlerSettingsData[0] == "1");
         wrestler.Strength = int.Parse(wrestlerSettingsData[1]);
         wrestler.Speed = int.Parse(wrestlerSettingsData[2]);
         wrestler.Vitality = int.Parse(wrestlerSettingsData[3]);
@@ -199,15 +199,15 @@ public static class LoadZeusFileHelper
         move.Texts[2] = ReadLine(reader);
 
         string[] moveSettingsData = ReadLine(reader).Split(' ');
-        move.AttStandingBefore = bool.Parse(moveSettingsData[0]);
-        move.AttStandingAfter = bool.Parse(moveSettingsData[1]);
-        move.RecStandingBefore = bool.Parse(moveSettingsData[2]);
-        move.RecStandingAfter = bool.Parse(moveSettingsData[3]);
-        move.IsLift = bool.Parse(moveSettingsData[4]);
+        move.AttStandingBefore = (moveSettingsData[0] == "1");
+        move.AttStandingAfter = (moveSettingsData[1] == "1");
+        move.RecStandingBefore = (moveSettingsData[2] == "1");
+        move.RecStandingAfter = (moveSettingsData[3] == "1");
+        move.IsLift = (moveSettingsData[4] == "1");
         move.Damage = int.Parse(moveSettingsData[5]);
         move.Type = (MoveTypes)int.Parse(moveSettingsData[6]);
-        move.IsIllegal = bool.Parse(moveSettingsData[7]);
-        move.IsHighRisk = bool.Parse(moveSettingsData[8]);
+        move.IsIllegal = (moveSettingsData[7] == "1");
+        move.IsHighRisk = (moveSettingsData[8] == "1");
 
         return move;
     }
@@ -232,7 +232,7 @@ public static class LoadZeusFileHelper
         string[] teamSettingsData = ReadLine(reader).Split(' ');
         team.Wins = int.Parse(teamSettingsData[0]);
         team.Loses = int.Parse(teamSettingsData[1]);
-        team.EscortInterferes = bool.Parse(teamSettingsData[2]);
+        team.EscortInterferes = (teamSettingsData[2] == "1");
 
         team.MemberNames.AddRange(ReadLine(reader).Split('|'));
 
@@ -317,14 +317,14 @@ public static class LoadZeusFileHelper
         location.Floor = locationData[41];
 
         string[] locationSettingsData = locationData[42].Split(' ');
-        location.PinfallsAtLoc = bool.Parse(locationSettingsData[0]);
-        location.SubmissionsAtLoc = bool.Parse(locationSettingsData[1]);
-        location.AttackerWinsIfHere = bool.Parse(locationSettingsData[2]);
-        location.CanFightHere = bool.Parse(locationSettingsData[3]);
-        location.CountOutAtLoc = bool.Parse(locationSettingsData[4]);
-        location.WeaponsAtLoc = bool.Parse(locationSettingsData[5]);
-        location.CanTagHere = bool.Parse(locationSettingsData[6]);
-        location.DQAtLoc = bool.Parse(locationSettingsData[7]);
+        location.PinfallsAtLoc = (locationSettingsData[0] == "1");
+        location.SubmissionsAtLoc = (locationSettingsData[1] == "1");
+        location.AttackerWinsIfHere = (locationSettingsData[2] == "1");
+        location.CanFightHere = (locationSettingsData[3] == "1");
+        location.CountOutAtLoc = (locationSettingsData[4] == "1");
+        location.WeaponsAtLoc = (locationSettingsData[5] == "1");
+        location.CanTagHere = (locationSettingsData[6] == "1");
+        location.DQAtLoc = (locationSettingsData[7] == "1");
 
         return location;
     }
@@ -356,12 +356,12 @@ public static class LoadZeusFileHelper
         string[] weaponSettingsData = weaponData[1].Split(' ');
         if (int.Parse(weaponSettingsData[2]) < 2) // Zeus 3 version
         {
-            weapon.SwingAtOpponent = bool.Parse(weaponSettingsData[0]);
-            weapon.UsedToChoke = bool.Parse(weaponSettingsData[1]);
-            weapon.UsedAsAWhip = bool.Parse(weaponSettingsData[2]);
-            weapon.ThrownAtOpponent = bool.Parse(weaponSettingsData[3]);
-            weapon.UsedToCutOpponent = bool.Parse(weaponSettingsData[4]);
-            weapon.CausesBleeding = bool.Parse(weaponSettingsData[5]);
+            weapon.SwingAtOpponent = (weaponSettingsData[0] == "1");
+            weapon.UsedToChoke = (weaponSettingsData[1] == "1");
+            weapon.UsedAsAWhip = (weaponSettingsData[2] == "1");
+            weapon.ThrownAtOpponent = (weaponSettingsData[3] == "1");
+            weapon.UsedToCutOpponent = (weaponSettingsData[4] == "1");
+            weapon.CausesBleeding = (weaponSettingsData[5] == "1");
         }
         else // Zeus Pro version
         {
