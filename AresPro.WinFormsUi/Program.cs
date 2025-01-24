@@ -1,18 +1,20 @@
+using AresPro.WinFormsUi.Models;
+using AresPro.WinFormsUi.Presenters;
 using AresPro.WinFormsUi.Views;
 
 namespace AresPro.WinFormsUi;
 
 internal static class Program
 {
-    /// <summary>
-    ///  The main entry point for the application.
-    /// </summary>
     [STAThread]
     static void Main()
     {
-        // To customize application configuration such as set high DPI settings or default font,
-        // see https://aka.ms/applicationconfiguration.
         ApplicationConfiguration.Initialize();
-        Application.Run(new MainForm());
+
+        FederationModel federationModel = new();
+        MainForm mainForm = new();
+        MainFormPresenter mainFormPresenter = new(federationModel, mainForm);
+
+        Application.Run();
     }
 }

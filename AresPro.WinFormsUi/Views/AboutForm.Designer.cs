@@ -78,9 +78,9 @@ partial class AboutForm
         VersionLabel.Location = new Point(7, 43);
         VersionLabel.Margin = new Padding(4, 0, 4, 0);
         VersionLabel.Name = "VersionLabel";
-        VersionLabel.Size = new Size(96, 16);
+        VersionLabel.Size = new Size(64, 16);
         VersionLabel.TabIndex = 1;
-        VersionLabel.Text = "Version 1.0.0";
+        VersionLabel.Text = "Version ";
         // 
         // TitleLabel
         // 

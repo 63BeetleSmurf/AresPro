@@ -1,4 +1,6 @@
-﻿namespace AresPro.WinFormsUi.Views;
+﻿using AresPro.WinFormsUi.Helpers;
+
+namespace AresPro.WinFormsUi.Views;
 
 public partial class AboutForm : Form
 {
@@ -6,6 +8,7 @@ public partial class AboutForm : Form
     {
         InitializeComponent();
         IconPictureBox.Image = Properties.Resources.a_pro.ToBitmap();
+        VersionLabel.Text += VersionHelper.GetVersionString();
     }
 
     private void OkButton_Click(object sender, EventArgs e)

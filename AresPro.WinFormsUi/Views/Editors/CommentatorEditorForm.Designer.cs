@@ -95,6 +95,7 @@ partial class CommentatorEditorForm
         // 
         // AffliliationComboBox
         // 
+        AffliliationComboBox.DisplayMember = "Display";
         AffliliationComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
         AffliliationComboBox.FormattingEnabled = true;
         AffliliationComboBox.Items.AddRange(new object[] { "Face", "Neutral", "Heel" });
@@ -103,6 +104,7 @@ partial class CommentatorEditorForm
         AffliliationComboBox.Name = "AffliliationComboBox";
         AffliliationComboBox.Size = new Size(161, 23);
         AffliliationComboBox.TabIndex = 9;
+        AffliliationComboBox.ValueMember = "Value";
         // 
         // NameTextBox
         // 

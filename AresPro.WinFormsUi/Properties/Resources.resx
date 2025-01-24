@@ -160,4 +160,34 @@
   <data name="a_pro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\a_pro.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="FederationFileDialogFilter" xml:space="preserve">
+    <value>ZEUS Federation files (*.zfd)|*.zfd|All Files (*.*)|*.*</value>
+  </data>
+  <data name="FederationFileExtension" xml:space="preserve">
+    <value>zfd</value>
+  </data>
+  <data name="ImportFileExtension" xml:space="preserve">
+    <value>zim</value>
+  </data>
+  <data name="ImportFileDialogFilter" xml:space="preserve">
+    <value>ZEUS Import File (*.zim)|*.zim|All Files (*.*)|*.*</value>
+  </data>
+  <data name="CommentaryFileDialogFilter" xml:space="preserve">
+    <value>ZEUS Commentary files (*.zcm)|*.zcm|All Files (*.*)|*.*</value>
+  </data>
+  <data name="CommentaryFileExtension" xml:space="preserve">
+    <value>zcm</value>
+  </data>
+  <data name="MovesFileDialogFilter" xml:space="preserve">
+    <value>ZEUS Move Files (*.zms)|*.zms|All Files (*.*)|*.*</value>
+  </data>
+  <data name="MovesFileExtension" xml:space="preserve">
+    <value>zms</value>
+  </data>
+  <data name="GimmickFileDialogFilter" xml:space="preserve">
+    <value>ZEUS Gimmicks (*.z3g)|*.z3g|All Files (*.*)|*.*</value>
+  </data>
+  <data name="GimmickFileExtension" xml:space="preserve">
+    <value>z3g</value>
+  </data>
 </root>

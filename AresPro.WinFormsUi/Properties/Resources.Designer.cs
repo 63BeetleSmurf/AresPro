@@ -71,6 +71,24 @@ namespace AresPro.WinFormsUi.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ZEUS Commentary files (*.zcm)|*.zcm|All Files (*.*)|*.*.
+        /// </summary>
+        internal static string CommentaryFileDialogFilter {
+            get {
+                return ResourceManager.GetString("CommentaryFileDialogFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to zcm.
+        /// </summary>
+        internal static string CommentaryFileExtension {
+            get {
+                return ResourceManager.GetString("CommentaryFileExtension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap commentator {
@@ -97,6 +115,78 @@ namespace AresPro.WinFormsUi.Properties {
             get {
                 object obj = ResourceManager.GetObject("edit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ZEUS Federation files (*.zfd)|*.zfd|All Files (*.*)|*.*.
+        /// </summary>
+        internal static string FederationFileDialogFilter {
+            get {
+                return ResourceManager.GetString("FederationFileDialogFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to zfd.
+        /// </summary>
+        internal static string FederationFileExtension {
+            get {
+                return ResourceManager.GetString("FederationFileExtension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ZEUS Gimmicks (*.z3g)|*.z3g|All Files (*.*)|*.*.
+        /// </summary>
+        internal static string GimmickFileDialogFilter {
+            get {
+                return ResourceManager.GetString("GimmickFileDialogFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to z3g.
+        /// </summary>
+        internal static string GimmickFileExtension {
+            get {
+                return ResourceManager.GetString("GimmickFileExtension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ZEUS Import File (*.zim)|*.zim|All Files (*.*)|*.*.
+        /// </summary>
+        internal static string ImportFileDialogFilter {
+            get {
+                return ResourceManager.GetString("ImportFileDialogFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to zim.
+        /// </summary>
+        internal static string ImportFileExtension {
+            get {
+                return ResourceManager.GetString("ImportFileExtension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ZEUS Move Files (*.zms)|*.zms|All Files (*.*)|*.*.
+        /// </summary>
+        internal static string MovesFileDialogFilter {
+            get {
+                return ResourceManager.GetString("MovesFileDialogFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to zms.
+        /// </summary>
+        internal static string MovesFileExtension {
+            get {
+                return ResourceManager.GetString("MovesFileExtension", resourceCulture);
             }
         }
         

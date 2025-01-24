@@ -90,18 +90,21 @@ partial class MainForm
         BookEventMenuItem.ShortcutKeys = Keys.Control | Keys.E;
         BookEventMenuItem.Size = new Size(176, 22);
         BookEventMenuItem.Text = "&Book Event";
+        BookEventMenuItem.Click += BookEventMenuItem_Click;
         // 
         // TitleHistoryMenuItem
         // 
         TitleHistoryMenuItem.Name = "TitleHistoryMenuItem";
         TitleHistoryMenuItem.Size = new Size(176, 22);
         TitleHistoryMenuItem.Text = "&Title History";
+        TitleHistoryMenuItem.Click += TitleHistoryMenuItem_Click;
         // 
         // RankMenuItem
         // 
         RankMenuItem.Name = "RankMenuItem";
         RankMenuItem.Size = new Size(176, 22);
         RankMenuItem.Text = "&Rank";
+        RankMenuItem.Click += RankMenuItem_Click;
         // 
         // HelpMenuMenuItem
         // 
@@ -115,6 +118,7 @@ partial class MainForm
         HelpMenuItem.Name = "HelpMenuItem";
         HelpMenuItem.Size = new Size(107, 22);
         HelpMenuItem.Text = "Help";
+        HelpMenuItem.Click += HelpMenuItem_Click;
         // 
         // ToolStripMenuItem4
         // 
@@ -126,6 +130,7 @@ partial class MainForm
         AboutMenuItem.Name = "AboutMenuItem";
         AboutMenuItem.Size = new Size(107, 22);
         AboutMenuItem.Text = "&About";
+        AboutMenuItem.Click += AboutMenuItem_Click;
         // 
         // ToolStripMenuItem3
         // 
@@ -137,6 +142,7 @@ partial class MainForm
         DeleteSelectionMenuItem.Name = "DeleteSelectionMenuItem";
         DeleteSelectionMenuItem.Size = new Size(176, 22);
         DeleteSelectionMenuItem.Text = "Delete Selection";
+        DeleteSelectionMenuItem.Click += DeleteSelectionMenuItem_Click;
         // 
         // MenuStrip
         // 
@@ -161,6 +167,7 @@ partial class MainForm
         NewMenuItem.ShortcutKeys = Keys.Control | Keys.N;
         NewMenuItem.Size = new Size(146, 22);
         NewMenuItem.Text = "&New";
+        NewMenuItem.Click += NewMenuItem_Click;
         // 
         // ToolStripMenuItem1
         // 
@@ -173,6 +180,7 @@ partial class MainForm
         OpenMenuItem.ShortcutKeys = Keys.Control | Keys.O;
         OpenMenuItem.Size = new Size(146, 22);
         OpenMenuItem.Text = "&Open";
+        OpenMenuItem.Click += OpenMenuItem_Click;
         // 
         // SaveMenuItem
         // 
@@ -180,12 +188,14 @@ partial class MainForm
         SaveMenuItem.ShortcutKeys = Keys.Control | Keys.S;
         SaveMenuItem.Size = new Size(146, 22);
         SaveMenuItem.Text = "&Save";
+        SaveMenuItem.Click += SaveMenuItem_Click;
         // 
         // SaveAsMenuItem
         // 
         SaveAsMenuItem.Name = "SaveAsMenuItem";
         SaveAsMenuItem.Size = new Size(146, 22);
         SaveAsMenuItem.Text = "Save &As";
+        SaveAsMenuItem.Click += SaveAsMenuItem_Click;
         // 
         // ToolStripMenuItem2
         // 
@@ -197,6 +207,7 @@ partial class MainForm
         ExitMenuItem.Name = "ExitMenuItem";
         ExitMenuItem.Size = new Size(146, 22);
         ExitMenuItem.Text = "&Exit";
+        ExitMenuItem.Click += ExitMenuItem_Click;
         // 
         // ResourcesMenuMenuItem
         // 
@@ -210,6 +221,7 @@ partial class MainForm
         CommentaryMenuItem.Name = "CommentaryMenuItem";
         CommentaryMenuItem.Size = new Size(169, 22);
         CommentaryMenuItem.Text = "&Commentary";
+        CommentaryMenuItem.Click += CommentaryMenuItem_Click;
         // 
         // MovesMenuItem
         // 
@@ -217,6 +229,7 @@ partial class MainForm
         MovesMenuItem.ShortcutKeys = Keys.Control | Keys.M;
         MovesMenuItem.Size = new Size(169, 22);
         MovesMenuItem.Text = "&Moves";
+        MovesMenuItem.Click += MovesMenuItem_Click;
         // 
         // GimmicksMenuItem
         // 
@@ -224,18 +237,21 @@ partial class MainForm
         GimmicksMenuItem.ShortcutKeys = Keys.Control | Keys.G;
         GimmicksMenuItem.Size = new Size(169, 22);
         GimmicksMenuItem.Text = "&Gimmicks";
+        GimmicksMenuItem.Click += GimmicksMenuItem_Click;
         // 
         // CommercialsMenuItem
         // 
         CommercialsMenuItem.Name = "CommercialsMenuItem";
         CommercialsMenuItem.Size = new Size(169, 22);
         CommercialsMenuItem.Text = "Co&mmercials";
+        CommercialsMenuItem.Click += CommercialsMenuItem_Click;
         // 
         // ImportZimFileMenuItem
         // 
         ImportZimFileMenuItem.Name = "ImportZimFileMenuItem";
         ImportZimFileMenuItem.Size = new Size(169, 22);
         ImportZimFileMenuItem.Text = "&Import Wrestler";
+        ImportZimFileMenuItem.Click += ImportZimFileMenuItem_Click;
         // 
         // FedMenuMenuItem
         // 
@@ -249,42 +265,49 @@ partial class MainForm
         FedOptionsMenuItem.Name = "FedOptionsMenuItem";
         FedOptionsMenuItem.Size = new Size(176, 22);
         FedOptionsMenuItem.Text = "&Fed Options";
+        FedOptionsMenuItem.Click += FedOptionsMenuItem_Click;
         // 
         // NewWrestlerMenuItem
         // 
         NewWrestlerMenuItem.Name = "NewWrestlerMenuItem";
         NewWrestlerMenuItem.Size = new Size(176, 22);
         NewWrestlerMenuItem.Text = "New Wrestler";
+        NewWrestlerMenuItem.Click += NewWrestlerMenuItem_Click;
         // 
         // NewTagTeamMenuItem
         // 
         NewTagTeamMenuItem.Name = "NewTagTeamMenuItem";
         NewTagTeamMenuItem.Size = new Size(176, 22);
         NewTagTeamMenuItem.Text = "New Tag Team";
+        NewTagTeamMenuItem.Click += NewTagTeamMenuItem_Click;
         // 
         // NewTitleMenuItem
         // 
         NewTitleMenuItem.Name = "NewTitleMenuItem";
         NewTitleMenuItem.Size = new Size(176, 22);
         NewTitleMenuItem.Text = "New Title";
+        NewTitleMenuItem.Click += NewTitleMenuItem_Click;
         // 
         // NewCommentatorMenuItem
         // 
         NewCommentatorMenuItem.Name = "NewCommentatorMenuItem";
         NewCommentatorMenuItem.Size = new Size(176, 22);
         NewCommentatorMenuItem.Text = "New Commentator";
+        NewCommentatorMenuItem.Click += NewCommentatorMenuItem_Click;
         // 
         // NewRefereeMenuItem
         // 
         NewRefereeMenuItem.Name = "NewRefereeMenuItem";
         NewRefereeMenuItem.Size = new Size(176, 22);
         NewRefereeMenuItem.Text = "New Referee";
+        NewRefereeMenuItem.Click += NewRefereeMenuItem_Click;
         // 
         // EditSelectionMenuItem
         // 
         EditSelectionMenuItem.Name = "EditSelectionMenuItem";
         EditSelectionMenuItem.Size = new Size(176, 22);
         EditSelectionMenuItem.Text = "Edit Selection";
+        EditSelectionMenuItem.Click += EditSelectionMenuItem_Click;
         // 
         // toolStripContainer1
         // 
@@ -316,6 +339,8 @@ partial class MainForm
         RosterTreeView.ShowRootLines = false;
         RosterTreeView.Size = new Size(933, 470);
         RosterTreeView.TabIndex = 6;
+        RosterTreeView.NodeMouseDoubleClick += RosterTreeView_NodeMouseDoubleClick;
+        RosterTreeView.KeyDown += RosterTreeView_KeyDown;
         // 
         // ToolStrip
         // 
@@ -343,6 +368,7 @@ partial class MainForm
         OpenFedToolButton.Name = "OpenFedToolButton";
         OpenFedToolButton.Size = new Size(23, 22);
         OpenFedToolButton.ToolTipText = "Open Fed";
+        OpenFedToolButton.Click += OpenFedToolButton_Click;
         // 
         // SaveFedToolButton
         // 
@@ -353,6 +379,7 @@ partial class MainForm
         SaveFedToolButton.Name = "SaveFedToolButton";
         SaveFedToolButton.Size = new Size(23, 22);
         SaveFedToolButton.ToolTipText = "Save Fed";
+        SaveFedToolButton.Click += SaveFedToolButton_Click;
         // 
         // ToolStripSeparator2
         // 
@@ -368,6 +395,7 @@ partial class MainForm
         NewWrestlerToolButton.Name = "NewWrestlerToolButton";
         NewWrestlerToolButton.Size = new Size(23, 22);
         NewWrestlerToolButton.ToolTipText = "New Wrestler";
+        NewWrestlerToolButton.Click += NewWrestlerToolButton_Click;
         // 
         // NewTeamToolButton
         // 
@@ -378,6 +406,7 @@ partial class MainForm
         NewTeamToolButton.Name = "NewTeamToolButton";
         NewTeamToolButton.Size = new Size(23, 22);
         NewTeamToolButton.ToolTipText = "New Tag Team";
+        NewTeamToolButton.Click += NewTeamToolButton_Click;
         // 
         // NewTitleToolButton
         // 
@@ -388,6 +417,7 @@ partial class MainForm
         NewTitleToolButton.Name = "NewTitleToolButton";
         NewTitleToolButton.Size = new Size(23, 22);
         NewTitleToolButton.ToolTipText = "New Title Belt";
+        NewTitleToolButton.Click += NewTitleToolButton_Click;
         // 
         // NewCommentatorToolButton
         // 
@@ -398,6 +428,7 @@ partial class MainForm
         NewCommentatorToolButton.Name = "NewCommentatorToolButton";
         NewCommentatorToolButton.Size = new Size(23, 22);
         NewCommentatorToolButton.ToolTipText = "New Commentator";
+        NewCommentatorToolButton.Click += NewCommentatorToolButton_Click;
         // 
         // NewRefereeToolButton
         // 
@@ -408,6 +439,7 @@ partial class MainForm
         NewRefereeToolButton.Name = "NewRefereeToolButton";
         NewRefereeToolButton.Size = new Size(23, 22);
         NewRefereeToolButton.ToolTipText = "New Referee";
+        NewRefereeToolButton.Click += NewRefereeToolButton_Click;
         // 
         // ToolStripSeparator3
         // 
@@ -423,6 +455,7 @@ partial class MainForm
         EditSelectionToolButton.Name = "EditSelectionToolButton";
         EditSelectionToolButton.Size = new Size(23, 22);
         EditSelectionToolButton.ToolTipText = "Edit Selection";
+        EditSelectionToolButton.Click += EditSelectionToolButton_Click;
         // 
         // DeleteSelectionToolButton
         // 
@@ -433,6 +466,7 @@ partial class MainForm
         DeleteSelectionToolButton.Name = "DeleteSelectionToolButton";
         DeleteSelectionToolButton.Size = new Size(23, 22);
         DeleteSelectionToolButton.ToolTipText = "Delete Selection";
+        DeleteSelectionToolButton.Click += DeleteSelectionToolButton_Click;
         // 
         // ToolStripSeparator4
         // 
@@ -448,6 +482,7 @@ partial class MainForm
         BookEventToolButton.Name = "BookEventToolButton";
         BookEventToolButton.Size = new Size(23, 22);
         BookEventToolButton.ToolTipText = "Book Event";
+        BookEventToolButton.Click += BookEventToolButton_Click;
         // 
         // MainForm
         // 
@@ -459,7 +494,7 @@ partial class MainForm
         Margin = new Padding(4, 3, 4, 3);
         Name = "MainForm";
         StartPosition = FormStartPosition.WindowsDefaultBounds;
-        Text = "Ares Pro";
+        Text = "Ares Pro ";
         MenuStrip.ResumeLayout(false);
         MenuStrip.PerformLayout();
         toolStripContainer1.ContentPanel.ResumeLayout(false);
