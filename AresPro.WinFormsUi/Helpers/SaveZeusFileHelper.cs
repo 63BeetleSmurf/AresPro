@@ -342,25 +342,25 @@ public static class SaveZeusFileHelper
 
         int settingsValue = 0;
         if (weapon.SwingAtOpponent)
-            settingsValue += 1024;
+            settingsValue |= 1024;
         if (weapon.UsedToCutOpponent)
-            settingsValue += 512;
+            settingsValue |= 512;
         if (weapon.ThrownAtOpponent)
-            settingsValue += 256;
+            settingsValue |= 256;
         if (weapon.UsedAsAWhip)
-            settingsValue += 128;
+            settingsValue |= 128;
         if (weapon.UsedToChoke)
-            settingsValue += 64;
+            settingsValue |= 64;
         if (weapon.CausesBleeding)
-            settingsValue += 32;
+            settingsValue |= 32;
         if (weapon.WillBreak)
-            settingsValue += 16;
+            settingsValue |= 16;
         if (weapon.ThrownInto)
-            settingsValue += 8;
+            settingsValue |= 8;
         if (weapon.ShootsAtOpponent)
-            settingsValue += 4;
+            settingsValue |= 4;
         if (weapon.SlammedOn)
-            settingsValue += 2;
+            settingsValue |= 2;
 
         weaponData.Add(
             string.Join(
