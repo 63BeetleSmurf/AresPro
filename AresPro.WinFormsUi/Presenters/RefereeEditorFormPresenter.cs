@@ -18,14 +18,14 @@ public class RefereeEditorFormPresenter
 
     private void PopulateForm()
     {
-        _refereeEditorForm.Name = _refereeModel.Name;
+        _refereeEditorForm.NameTextBox.Text = _refereeModel.Name;
         _refereeEditorForm.CountSpeedTrackBar.Value = _refereeModel.CountSpeed;
         _refereeEditorForm.StringencyTrackBar.Value = _refereeModel.Stringency;
     }
 
     private void UpdateModel()
     {
-        _refereeModel.Name = _refereeEditorForm.Name;
+        _refereeModel.Name = _refereeEditorForm.NameTextBox.Text;
         _refereeModel.CountSpeed = _refereeEditorForm.CountSpeedTrackBar.Value;
         _refereeModel.Stringency = _refereeEditorForm.StringencyTrackBar.Value;
     }
