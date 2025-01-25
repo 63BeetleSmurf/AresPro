@@ -339,6 +339,8 @@ partial class MainForm
         RosterTreeView.ShowRootLines = false;
         RosterTreeView.Size = new Size(933, 470);
         RosterTreeView.TabIndex = 6;
+        RosterTreeView.AfterCollapse += RosterTreeView_AfterCollapse;
+        RosterTreeView.BeforeExpand += RosterTreeView_BeforeExpand;
         RosterTreeView.NodeMouseDoubleClick += RosterTreeView_NodeMouseDoubleClick;
         RosterTreeView.KeyDown += RosterTreeView_KeyDown;
         // 

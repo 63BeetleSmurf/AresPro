@@ -26,11 +26,19 @@ public class WrestlerEditorFormPresenter
 
     }
 
-    public DialogResult ShowDialog(IWin32Window owner)
+    public DialogResult ShowDialog(IWin32Window owner, out string newKey)
     {
+        string originalKey = _wrestlerModel.Name;
+        newKey = originalKey;
+
         DialogResult result = _wrestlerEditorForm.ShowDialog(owner);
         if (result == DialogResult.OK)
+        {
             UpdateModel();
+            if (originalKey != _wrestlerModel.Name)
+                newKey = _wrestlerModel.Name;
+        }
+
         return result;
     }
 }

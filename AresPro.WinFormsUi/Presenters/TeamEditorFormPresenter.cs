@@ -26,11 +26,19 @@ public class TeamEditorFormPresenter
 
     }
 
-    public DialogResult ShowDialog(IWin32Window owner)
+    public DialogResult ShowDialog(IWin32Window owner, out string newKey)
     {
+        string originalKey = _teamModel.Name;
+        newKey = originalKey;
+
         DialogResult result = _teamEditorForm.ShowDialog(owner);
         if (result == DialogResult.OK)
+        {
             UpdateModel();
+            if (originalKey != _teamModel.Name)
+                newKey = _teamModel.Name;
+        }
+
         return result;
     }
 }

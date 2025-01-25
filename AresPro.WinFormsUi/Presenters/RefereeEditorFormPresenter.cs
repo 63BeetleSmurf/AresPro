@@ -30,11 +30,19 @@ public class RefereeEditorFormPresenter
         _refereeModel.Stringency = _refereeEditorForm.StringencyTrackBar.Value;
     }
 
-    public DialogResult ShowDialog(IWin32Window owner)
+    public DialogResult ShowDialog(IWin32Window owner, out string newKey)
     {
+        string originalKey = _refereeModel.Name;
+        newKey = originalKey;
+
         DialogResult result = _refereeEditorForm.ShowDialog(owner);
         if (result == DialogResult.OK)
+        {
             UpdateModel();
+            if (originalKey != _refereeModel.Name)
+                newKey = _refereeModel.Name;
+        }
+
         return result;
     }
 }

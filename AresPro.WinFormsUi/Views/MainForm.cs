@@ -67,11 +67,11 @@ public partial class MainForm : Form
         RosterTreeView.ImageList.Images.Add(TreeViewRefereeImageKey, Properties.Resources.referee);
 
         // Assign images to root nodes and add to TreeView.
-        foreach (TreeNode rootNote in new[] { WrestlersTreeNode, TeamsTreeNode, TitlesTreeNode, CommentatorsTreeNode, RefereesTreeNode })
+        foreach (TreeNode rootNode in new[] { WrestlersTreeNode, TeamsTreeNode, TitlesTreeNode, CommentatorsTreeNode, RefereesTreeNode })
         {
-            rootNote.ImageKey = TreeViewCollapsedImageKey;
-            rootNote.SelectedImageKey = TreeViewExpandedImageKey;
-            RosterTreeView.Nodes.Add(rootNote);
+            rootNode.ImageKey = TreeViewCollapsedImageKey;
+            rootNode.SelectedImageKey = TreeViewCollapsedImageKey;
+            RosterTreeView.Nodes.Add(rootNode);
         }
     }
 
@@ -81,6 +81,24 @@ public partial class MainForm : Form
             e.Cancel = true;
         else
             CloseApplication?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void RosterTreeView_BeforeExpand(object sender, TreeViewCancelEventArgs e)
+    {
+        if (e.Node == null)
+            return;
+
+        e.Node.ImageKey = TreeViewExpandedImageKey;
+        e.Node.SelectedImageKey = TreeViewExpandedImageKey;
+    }
+
+    private void RosterTreeView_AfterCollapse(object sender, TreeViewEventArgs e)
+    {
+        if (e.Node == null)
+            return;
+
+        e.Node.ImageKey = TreeViewCollapsedImageKey;
+        e.Node.SelectedImageKey = TreeViewCollapsedImageKey;
     }
 
     // Menu

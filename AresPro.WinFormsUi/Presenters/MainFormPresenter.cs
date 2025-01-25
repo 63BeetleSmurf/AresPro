@@ -63,13 +63,27 @@ public class MainFormPresenter
     {
         rootNode.Nodes.Clear();
         foreach (string name in nodeNames)
-            rootNode.Nodes.Add(
-                new TreeNode(name)
-                {
-                    Name = name,
-                    ImageKey = imageKey
-                }
-            );
+            AddTreeNode(rootNode, name, imageKey);
+    }
+
+    private static void AddTreeNode(TreeNode rootNode, string nodeName, string imageKey)
+    {
+        rootNode.Nodes.Add(
+            new TreeNode(nodeName)
+            {
+                ImageKey = imageKey,
+                Name = nodeName,
+                SelectedImageKey = imageKey
+            }
+        );
+    }
+
+    private static void UpdateTreeNode(TreeNode rootNode, string oldKey, string newKey)
+    {
+        TreeNode treeNode = rootNode.Nodes[oldKey]
+            ?? throw new KeyNotFoundException();
+        treeNode.Name = newKey;
+        treeNode.Text = newKey;
     }
 
     private void OnNewFederation(object? sender, EventArgs e)
@@ -173,8 +187,21 @@ public class MainFormPresenter
         WrestlerModel wrestlerModel = (key != null) ? _federationModel.Wrestlers[key] : new();
         WrestlerEditorForm wrestlerEditorForm = new();
         WrestlerEditorFormPresenter wrestlerEditorFormPresenter = new(wrestlerModel, wrestlerEditorForm);
-        if (wrestlerEditorFormPresenter.ShowDialog(_mainForm) == DialogResult.OK)
-            _mainForm.IsSaved = false;
+        if (wrestlerEditorFormPresenter.ShowDialog(_mainForm, out string newKey) != DialogResult.OK) // newKey defined here
+            return;
+
+        if (key == null) // New
+        {
+            _federationModel.Wrestlers.Add(newKey, wrestlerModel);
+            AddTreeNode(_mainForm.WrestlersTreeNode, newKey, MainForm.TreeViewWrestlerImageKey);
+        }
+        else if (key != newKey) // Updated name
+        {
+            _federationModel.Wrestlers.Remove(key);
+            _federationModel.Wrestlers.Add(newKey, wrestlerModel);
+            UpdateTreeNode(_mainForm.WrestlersTreeNode, key, newKey);
+        }
+        _mainForm.IsSaved = false;
     }
 
     private void OnEditTeam(object? sender, string? key)
@@ -182,8 +209,21 @@ public class MainFormPresenter
         TeamModel teamModel = (key != null) ? _federationModel.Teams[key] : new();
         TeamEditorForm teamEditorForm = new();
         TeamEditorFormPresenter teamEditorFormPresenter = new(teamModel, teamEditorForm);
-        if (teamEditorFormPresenter.ShowDialog(_mainForm) == DialogResult.OK)
-            _mainForm.IsSaved = false;
+        if (teamEditorFormPresenter.ShowDialog(_mainForm, out string newKey) != DialogResult.OK) // newKey defined here
+            return;
+
+        if (key == null) // New
+        {
+            _federationModel.Teams.Add(newKey, teamModel);
+            AddTreeNode(_mainForm.TeamsTreeNode, newKey, MainForm.TreeViewTeamImageKey);
+        }
+        else if (key != newKey) // Updated name
+        {
+            _federationModel.Teams.Remove(key);
+            _federationModel.Teams.Add(newKey, teamModel);
+            UpdateTreeNode(_mainForm.TeamsTreeNode, key, newKey);
+        }
+        _mainForm.IsSaved = false;
     }
 
     private void OnEditTitle(object? sender, string? key)
@@ -191,8 +231,21 @@ public class MainFormPresenter
         TitleModel titleModel = (key != null) ? _federationModel.Titles[key] : new();
         TitleEditorForm titleEditorForm = new();
         TitleEditorFormPresenter titleEditorFormPresenter = new(titleModel, titleEditorForm);
-        if (titleEditorFormPresenter.ShowDialog(_mainForm) == DialogResult.OK)
-            _mainForm.IsSaved = false;
+        if (titleEditorFormPresenter.ShowDialog(_mainForm, out string newKey) != DialogResult.OK) // newKey defined here
+            return;
+
+        if (key == null) // New
+        {
+            _federationModel.Titles.Add(newKey, titleModel);
+            AddTreeNode(_mainForm.TitlesTreeNode, newKey, MainForm.TreeViewTitleImageKey);
+        }
+        else if (key != newKey) // Updated name
+        {
+            _federationModel.Titles.Remove(key);
+            _federationModel.Titles.Add(newKey, titleModel);
+            UpdateTreeNode(_mainForm.TitlesTreeNode, key, newKey);
+        }
+        _mainForm.IsSaved = false;
     }
 
     private void OnEditCommentator(object? sender, string? key)
@@ -200,8 +253,21 @@ public class MainFormPresenter
         CommentatorModel commentatorModel = (key != null) ? _federationModel.Commentators[key] : new();
         CommentatorEditorForm commentatorEditorForm = new();
         CommentatorEditorFormPresenter commentatorEditorFormPresenter = new(commentatorModel, commentatorEditorForm);
-        if (commentatorEditorFormPresenter.ShowDialog(_mainForm) == DialogResult.OK)
-            _mainForm.IsSaved = false;
+        if (commentatorEditorFormPresenter.ShowDialog(_mainForm, out string newKey) != DialogResult.OK) // newKey defined here
+            return;
+
+        if (key == null) // New
+        {
+            _federationModel.Commentators.Add(newKey, commentatorModel);
+            AddTreeNode(_mainForm.CommentatorsTreeNode, newKey, MainForm.TreeViewCommentatorImageKey);
+        }
+        else if (key != newKey) // Updated name
+        {
+            _federationModel.Commentators.Remove(key);
+            _federationModel.Commentators.Add(newKey, commentatorModel);
+            UpdateTreeNode(_mainForm.CommentatorsTreeNode, key, newKey);
+        }
+        _mainForm.IsSaved = false;
     }
 
     private void OnEditReferee(object? sender, string? key)
@@ -209,8 +275,21 @@ public class MainFormPresenter
         RefereeModel refereeModel = (key != null) ? _federationModel.Referees[key] : new();
         RefereeEditorForm refereeEditorForm = new();
         RefereeEditorFormPresenter refereeEditorFormPresenter = new(refereeModel, refereeEditorForm);
-        if (refereeEditorFormPresenter.ShowDialog(_mainForm) == DialogResult.OK)
-            _mainForm.IsSaved = false;
+        if (refereeEditorFormPresenter.ShowDialog(_mainForm, out string newKey) != DialogResult.OK) // newKey defined here
+            return;
+
+        if (key == null) // New
+        {
+            _federationModel.Referees.Add(newKey, refereeModel);
+            AddTreeNode(_mainForm.RefereesTreeNode, newKey, MainForm.TreeViewRefereeImageKey);
+        }
+        else if (key != newKey) // Updated name
+        {
+            _federationModel.Referees.Remove(key);
+            _federationModel.Referees.Add(newKey, refereeModel);
+            UpdateTreeNode(_mainForm.RefereesTreeNode, key, newKey);
+        }
+        _mainForm.IsSaved = false;
     }
 
     private void OnDeleteWrestler(object? sender, string key)

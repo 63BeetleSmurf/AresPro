@@ -26,11 +26,19 @@ public class TitleEditorFormPresenter
 
     }
 
-    public DialogResult ShowDialog(IWin32Window owner)
+    public DialogResult ShowDialog(IWin32Window owner, out string newKey)
     {
+        string originalKey = _titleModel.Name;
+        newKey = originalKey;
+
         DialogResult result = _titleEditorForm.ShowDialog(owner);
         if (result == DialogResult.OK)
+        {
             UpdateModel();
+            if (originalKey != _titleModel.Name)
+                newKey = _titleModel.Name;
+        }
+
         return result;
     }
 }

@@ -32,11 +32,19 @@ public class CommentatorEditorFormPresenter
         _commentatorModel.Affiliation = (Affiliations)(_commentatorEditorForm.AffliliationComboBox.SelectedValue ?? 0);
     }
 
-    public DialogResult ShowDialog(IWin32Window owner)
+    public DialogResult ShowDialog(IWin32Window owner, out string newKey)
     {
+        string originalKey = _commentatorModel.Name;
+        newKey = originalKey;
+
         DialogResult result = _commentatorEditorForm.ShowDialog(owner);
         if (result == DialogResult.OK)
+        {
             UpdateModel();
+            if (originalKey != _commentatorModel.Name)
+                newKey = _commentatorModel.Name;
+        }
+
         return result;
     }
 }
