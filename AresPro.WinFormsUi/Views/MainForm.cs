@@ -398,8 +398,8 @@ public partial class MainForm : Form
         DialogResult result = FileDialogsHelper.ShowOpenDialog(
             this,
             Properties.Resources.FederationFileDialogFilter,
-            DirectoryHelper.GetPathDirectory(FederationFilename) ?? DirectoryHelper.FederationsPath,
-            DirectoryHelper.GetPathFileName(FederationFilename) ?? $"*.{Properties.Resources.FederationFileExtension}",
+            Path.GetDirectoryName(FederationFilename) ?? DirectoryHelper.FederationsPath,
+            Path.GetFileName(FederationFilename) ?? $"*.{Properties.Resources.FederationFileExtension}",
             out string fileName // fileName defined here as out parameter
         );
 
