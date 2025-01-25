@@ -1,4 +1,5 @@
-﻿using AresPro.WinFormsUi.Models;
+﻿using AresPro.WinFormsUi.Enums;
+using AresPro.WinFormsUi.Models;
 using AresPro.WinFormsUi.Views.Editors;
 
 namespace AresPro.WinFormsUi.Presenters;
@@ -18,12 +19,17 @@ public class TitleEditorFormPresenter
 
     private void PopulateForm()
     {
-
+        _titleEditorForm.NameTextBox.Text = _titleModel.Name;
+        if (_titleModel.Type == TitleTypes.Singles)
+            _titleEditorForm.SinglesTitleRadioButton.Checked = true;
+        else
+            _titleEditorForm.TeamTitleRadioButton.Checked = true;
     }
 
     private void UpdateModel()
     {
-
+        _titleModel.Name = _titleEditorForm.NameTextBox.Text;
+        _titleModel.Type = _titleEditorForm.SinglesTitleRadioButton.Checked ? TitleTypes.Singles : TitleTypes.Team;
     }
 
     public DialogResult ShowDialog(IWin32Window owner, out string newKey)
