@@ -15,7 +15,13 @@ public class CommentatorEditorFormPresenter
         _commentatorEditorForm = commentatorEditorForm;
 
         _commentatorEditorForm.InitializeForm();
+        ConnectHandlers();
         PopulateForm();
+    }
+
+    private void ConnectHandlers()
+    {
+        _commentatorEditorForm.CommentaryFileSelected += OnCommentaryFileSelected;
     }
 
     private void PopulateForm()
@@ -46,5 +52,10 @@ public class CommentatorEditorFormPresenter
         }
 
         return result;
+    }
+
+    public void OnCommentaryFileSelected(object? sender, string fileName)
+    {
+        _commentatorEditorForm.FileTextBox.Text = Path.GetFileName(fileName);
     }
 }

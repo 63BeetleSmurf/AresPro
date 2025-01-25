@@ -61,6 +61,7 @@ partial class CommentatorEditorForm
         ChangeFileButton.TabIndex = 1;
         ChangeFileButton.Text = "C&hange";
         ChangeFileButton.UseVisualStyleBackColor = true;
+        ChangeFileButton.Click += ChangeFileButton_Click;
         // 
         // FileTextBox
         // 
@@ -95,16 +96,13 @@ partial class CommentatorEditorForm
         // 
         // AffliliationComboBox
         // 
-        AffliliationComboBox.DisplayMember = "Display";
         AffliliationComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
         AffliliationComboBox.FormattingEnabled = true;
-        AffliliationComboBox.Items.AddRange(new object[] { "Face", "Neutral", "Heel" });
         AffliliationComboBox.Location = new Point(13, 102);
         AffliliationComboBox.Margin = new Padding(4, 3, 4, 3);
         AffliliationComboBox.Name = "AffliliationComboBox";
         AffliliationComboBox.Size = new Size(161, 23);
         AffliliationComboBox.TabIndex = 9;
-        AffliliationComboBox.ValueMember = "Value";
         // 
         // NameTextBox
         // 
@@ -129,7 +127,6 @@ partial class CommentatorEditorForm
         AcceptButton = OkButton;
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        CancelButton = CancelButton;
         ClientSize = new Size(339, 141);
         Controls.Add(grpFile);
         Controls.Add(CancelButton);
