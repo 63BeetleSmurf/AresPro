@@ -83,24 +83,6 @@ public partial class MainForm : Form
             CloseApplication?.Invoke(this, EventArgs.Empty);
     }
 
-    private void RosterTreeView_BeforeExpand(object sender, TreeViewCancelEventArgs e)
-    {
-        if (e.Node == null)
-            return;
-
-        e.Node.ImageKey = TreeViewExpandedImageKey;
-        e.Node.SelectedImageKey = TreeViewExpandedImageKey;
-    }
-
-    private void RosterTreeView_AfterCollapse(object sender, TreeViewEventArgs e)
-    {
-        if (e.Node == null)
-            return;
-
-        e.Node.ImageKey = TreeViewCollapsedImageKey;
-        e.Node.SelectedImageKey = TreeViewCollapsedImageKey;
-    }
-
     // Menu
 
     // - File menu
@@ -383,6 +365,24 @@ public partial class MainForm : Form
 
     // TreeView
 
+    private void RosterTreeView_BeforeExpand(object sender, TreeViewCancelEventArgs e)
+    {
+        if (e.Node == null)
+            return;
+
+        e.Node.ImageKey = TreeViewExpandedImageKey;
+        e.Node.SelectedImageKey = TreeViewExpandedImageKey;
+    }
+
+    private void RosterTreeView_AfterCollapse(object sender, TreeViewEventArgs e)
+    {
+        if (e.Node == null)
+            return;
+
+        e.Node.ImageKey = TreeViewCollapsedImageKey;
+        e.Node.SelectedImageKey = TreeViewCollapsedImageKey;
+    }
+
     private void RosterTreeView_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
     {
         EditSelectionMenuItem_Click(sender, e);
@@ -390,6 +390,7 @@ public partial class MainForm : Form
 
     private void RosterTreeView_KeyDown(object sender, KeyEventArgs e)
     {
+        if (e.KeyCode == Keys.Delete)
         DeleteSelectionMenuItem_Click(sender, e);
     }
 
