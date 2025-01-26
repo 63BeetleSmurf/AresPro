@@ -20,7 +20,6 @@ public class MainFormPresenter
         _mainForm.InitializeForm();
         ConnectHandlers();
         PopulateTreeView();
-        _mainForm.Show();
     }
 
     private void ConnectHandlers()
@@ -28,7 +27,6 @@ public class MainFormPresenter
         _mainForm.NewFederation += OnNewFederation;
         _mainForm.OpenFederation += OnOpenFederation;
         _mainForm.SaveFederation += OnSaveFederation;
-        _mainForm.CloseApplication += OnCloseApplication;
 
         _mainForm.EditCommentaryFile += OnEditCommentaryFile;
         _mainForm.EditMovesFile += OnEditMovesFile;
@@ -124,11 +122,6 @@ public class MainFormPresenter
         {
 
         }
-    }
-
-    private void OnCloseApplication(object? sender, EventArgs e)
-    {
-        Application.Exit();
     }
 
     private void OnEditCommentaryFile(object? sender, string fileName)

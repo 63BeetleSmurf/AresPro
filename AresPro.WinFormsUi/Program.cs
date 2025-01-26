@@ -15,6 +15,6 @@ internal static class Program
         MainForm mainForm = new();
         MainFormPresenter mainFormPresenter = new(federationModel, mainForm);
 
-        Application.Run();
+        Application.Run(mainForm);
     }
 }

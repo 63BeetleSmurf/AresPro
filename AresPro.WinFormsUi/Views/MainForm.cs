@@ -79,8 +79,6 @@ public partial class MainForm : Form
     {
         if (!IsSaved && ShowSaveDiscardPrompt() == DialogResult.Cancel)
             e.Cancel = true;
-        else
-            CloseApplication?.Invoke(this, EventArgs.Empty);
     }
 
     // Menu
@@ -391,7 +389,7 @@ public partial class MainForm : Form
     private void RosterTreeView_KeyDown(object sender, KeyEventArgs e)
     {
         if (e.KeyCode == Keys.Delete)
-        DeleteSelectionMenuItem_Click(sender, e);
+            DeleteSelectionMenuItem_Click(sender, e);
     }
 
     private DialogResult ShowSaveFederationDialog()
