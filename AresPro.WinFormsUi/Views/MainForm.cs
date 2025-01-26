@@ -381,6 +381,17 @@ public partial class MainForm : Form
         e.Node.SelectedImageKey = TreeViewCollapsedImageKey;
     }
 
+    private void RosterTreeView_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+    {
+        if (e.Node.Level != 0)
+            return;
+
+        if (e.Node.IsExpanded)
+            e.Node.Collapse();
+        else
+            e.Node.Expand();
+    }
+
     private void RosterTreeView_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
     {
         EditSelectionMenuItem_Click(sender, e);

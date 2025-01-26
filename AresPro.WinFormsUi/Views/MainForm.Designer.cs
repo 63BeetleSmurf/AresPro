@@ -341,6 +341,7 @@ partial class MainForm
         RosterTreeView.TabIndex = 6;
         RosterTreeView.AfterCollapse += RosterTreeView_AfterCollapse;
         RosterTreeView.BeforeExpand += RosterTreeView_BeforeExpand;
+        RosterTreeView.NodeMouseClick += RosterTreeView_NodeMouseClick;
         RosterTreeView.NodeMouseDoubleClick += RosterTreeView_NodeMouseDoubleClick;
         RosterTreeView.KeyDown += RosterTreeView_KeyDown;
         // 
