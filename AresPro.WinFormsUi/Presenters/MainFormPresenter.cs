@@ -1,4 +1,5 @@
-﻿using AresPro.WinFormsUi.Helpers;
+﻿using AresPro.WinFormsUi.Enums;
+using AresPro.WinFormsUi.Helpers;
 using AresPro.WinFormsUi.Models;
 using AresPro.WinFormsUi.Views;
 using AresPro.WinFormsUi.Views.Editors;
@@ -201,7 +202,13 @@ public class MainFormPresenter
     {
         TeamModel teamModel = (key != null) ? _federationModel.Teams[key] : new();
         TeamEditorForm teamEditorForm = new();
-        TeamEditorFormPresenter teamEditorFormPresenter = new(teamModel, teamEditorForm);
+        TeamEditorFormPresenter teamEditorFormPresenter = new(
+            teamModel,
+            teamEditorForm,
+            _federationModel.Teams.Values.Select(t => t.Name).ToArray(),
+            _federationModel.Wrestlers.Values.Select(w => w.Name).ToArray(),
+            _federationModel.Titles.Values.Where(t => t.Type == TitleTypes.Team).Select(t => t.Name).ToArray()
+        );
         if (teamEditorFormPresenter.ShowDialog(_mainForm, out string newKey) != DialogResult.OK) // newKey defined here
             return;
 

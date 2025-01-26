@@ -46,7 +46,7 @@ partial class TeamEditorForm
         EscortInterferesCheckBox = new CheckBox();
         EscortComboBox = new ComboBox();
         lblEscort = new Label();
-        RingIntroTextBox = new TextBox();
+        IntroductionTextBox = new TextBox();
         lblRingIntro = new Label();
         FinisherTextBox = new TextBox();
         lblFinisher = new Label();
@@ -89,6 +89,7 @@ partial class TeamEditorForm
         RemoveMemberButton.TabIndex = 12;
         RemoveMemberButton.Text = "Remove";
         RemoveMemberButton.UseVisualStyleBackColor = true;
+        RemoveMemberButton.Click += RemoveMemberButton_Click;
         // 
         // AddMemberButton
         // 
@@ -99,6 +100,7 @@ partial class TeamEditorForm
         AddMemberButton.TabIndex = 11;
         AddMemberButton.Text = "Add";
         AddMemberButton.UseVisualStyleBackColor = true;
+        AddMemberButton.Click += AddMemberButton_Click;
         // 
         // grpMembers
         // 
@@ -123,6 +125,7 @@ partial class TeamEditorForm
         AddTitleButton.TabIndex = 4;
         AddTitleButton.Text = "Add";
         AddTitleButton.UseVisualStyleBackColor = true;
+        AddTitleButton.Click += AddTitleButton_Click;
         // 
         // grpStats
         // 
@@ -196,6 +199,7 @@ partial class TeamEditorForm
         RemoveTitleButton.TabIndex = 5;
         RemoveTitleButton.Text = "Remove";
         RemoveTitleButton.UseVisualStyleBackColor = true;
+        RemoveTitleButton.Click += RemoveTitleButton_Click;
         // 
         // CancelButton
         // 
@@ -255,13 +259,13 @@ partial class TeamEditorForm
         lblEscort.TabIndex = 23;
         lblEscort.Text = "Escort";
         // 
-        // RingIntroTextBox
+        // IntroductionTextBox
         // 
-        RingIntroTextBox.Location = new Point(94, 70);
-        RingIntroTextBox.Margin = new Padding(4, 3, 4, 3);
-        RingIntroTextBox.Name = "RingIntroTextBox";
-        RingIntroTextBox.Size = new Size(425, 23);
-        RingIntroTextBox.TabIndex = 2;
+        IntroductionTextBox.Location = new Point(94, 70);
+        IntroductionTextBox.Margin = new Padding(4, 3, 4, 3);
+        IntroductionTextBox.Name = "IntroductionTextBox";
+        IntroductionTextBox.Size = new Size(425, 23);
+        IntroductionTextBox.TabIndex = 2;
         // 
         // lblRingIntro
         // 
@@ -314,7 +318,6 @@ partial class TeamEditorForm
         AcceptButton = OkButton;
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        CancelButton = CancelButton;
         ClientSize = new Size(532, 349);
         Controls.Add(OkButton);
         Controls.Add(grpMembers);
@@ -324,7 +327,7 @@ partial class TeamEditorForm
         Controls.Add(EscortInterferesCheckBox);
         Controls.Add(EscortComboBox);
         Controls.Add(lblEscort);
-        Controls.Add(RingIntroTextBox);
+        Controls.Add(IntroductionTextBox);
         Controls.Add(lblRingIntro);
         Controls.Add(FinisherTextBox);
         Controls.Add(lblFinisher);
@@ -366,7 +369,7 @@ partial class TeamEditorForm
     internal System.Windows.Forms.CheckBox EscortInterferesCheckBox;
     internal System.Windows.Forms.ComboBox EscortComboBox;
     internal System.Windows.Forms.Label lblEscort;
-    internal System.Windows.Forms.TextBox RingIntroTextBox;
+    internal System.Windows.Forms.TextBox IntroductionTextBox;
     internal System.Windows.Forms.Label lblRingIntro;
     internal System.Windows.Forms.TextBox FinisherTextBox;
     internal System.Windows.Forms.Label lblFinisher;

@@ -115,7 +115,7 @@ public static class LoadZeusFileHelper
 
         wrestler.Moves = LoadMoveList(reader);
 
-        wrestler.TitleNames.AddRange(ReadLine(reader).Split('|'));
+        wrestler.TitleNames.AddRange(ReadLine(reader).Split('|', StringSplitOptions.RemoveEmptyEntries));
 
         return wrestler;
     }
@@ -234,9 +234,9 @@ public static class LoadZeusFileHelper
         team.Loses = int.Parse(teamSettingsData[1]);
         team.EscortInterferes = (teamSettingsData[2] == "1");
 
-        team.MemberNames.AddRange(ReadLine(reader).Split('|'));
+        team.MemberNames.AddRange(ReadLine(reader).Split('|', StringSplitOptions.RemoveEmptyEntries));
 
-        team.TitleNames.AddRange(ReadLine(reader).Split('|'));
+        team.TitleNames.AddRange(ReadLine(reader).Split('|', StringSplitOptions.RemoveEmptyEntries));
 
         return team;
     }

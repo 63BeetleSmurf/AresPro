@@ -72,6 +72,7 @@ partial class ObjectListForm
         Action1Button.Size = new Size(70, 27);
         Action1Button.TabIndex = 1;
         Action1Button.UseVisualStyleBackColor = true;
+        Action1Button.Click += Action1Button_Click;
         // 
         // ObjectsListBox
         // 
