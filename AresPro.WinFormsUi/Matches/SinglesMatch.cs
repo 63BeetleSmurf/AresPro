@@ -7,19 +7,20 @@ namespace AresPro.WinFormsUi.Matches;
 
 public class SinglesMatch
 {
-    // No idea what these numbers mean, doubt it's a change out of 100 anyway.
-    private const int CallMoveChance = 3;
-    private const int TryPinChance = 3;
+    // numbers seem to determine how often something will happen, with lower numbers being more often.
+    private const int CallMoveChance = 3;               // How often commentators comment on the move being done - Tested
+    private const int TryPinChance = 3;                 // How often a pin is attempted - Tested
     private const int RECStandChance = 4;
-    private const int AdvantageChance = 2;
-    private const int TrySubChance = 4;
-    private const int CountOutChance = 10; // Used
-    private const int StayOutChance = 5; // Used
-    private const int WeaponChance = 3; // Used
-    private const int RandomChance = 3;
-    private const int DoTagChance = 3;
-    private const int ChangePosChance = 3; // Used
-    private const int StrengthChance = 6;
+    private const int AdvantageChance = 2;              // How often attacker/receiver switch, 99 creates a long match - Tested
+    private const int TrySubChance = 4;                 // How often a submission is attempted - Guess
+    private const int StayOutChance = 5;                // How often they will stay out for the full count out - Guess
+    private const int WeaponChance = 3;                 // How often they will use a weapon - Guess
+    private const int RandomChance = 3;                 // General random number or how often random things will happen, like ref bump
+    private const int DoTagChance = 3;                  // How often a submission is attempted - Guess
+    private const int ChangePosChance = 3;              // How often they will change location - Guess
+
+    private const int CountOut = 10;                    // Number the Ref counts to for a count out.
+    private const int Strength = 6;                     // Seems to change length of match (higher = longer), multiplier on stats? - Guess
 
     private readonly string[] _mTypes = ["Normal", "Submission", "Hardcore", "Cage", "Ladder", "Hell in the Cell"]; // Match types
     private readonly string[] _finishes = ["Random", "Pin", "Submission", "Finisher", "DQ", "Count Out", "Double Count Out", "Double DQ"];
@@ -124,12 +125,7 @@ public class SinglesMatch
 
     private bool Ch(int chance)
     {
-        if (chance == 0)
-            return false;
-        else if (chance == 100)
-            return true;
-        else
-            return (_random.Next(100) + 1 <= chance);
+        return (_random.Next(chance) == 0);
     }
 
     // MATCH OPTION FUNCTIONS
@@ -182,11 +178,11 @@ public class SinglesMatch
     private bool Wrestling(WrestlerModel w1, WrestlerModel w2, int finish)
     {
         _match.Add("...");
-        if (Ch() && _refBump == 0) // ref bump
+        if (Ch(RandomChance) && _refBump == 0) // ref bump
         {
             RefBump(w1, w2);
             _refBump = 1;
-            if (Ch()) // w1 cheats
+            if (Ch(RandomChance)) // w1 cheats
             {
                 LeaveRing(w1, w2);
                 Ringside(w2, w1);
@@ -194,7 +190,7 @@ public class SinglesMatch
                 string weap1 = Weapon(w1, w2);
                 ReturnToRing(w1, weap1);
                 UseWeapon(w1, w2, weap1);
-                if (Ch() && (finish == 1 || finish == 3)) // w1 cheated to win
+                if (Ch(RandomChance) && (finish == 1 || finish == 3)) // w1 cheated to win
                 {
                     RefUnbump(w1, w2);
                     if (finish == 1)
@@ -229,7 +225,7 @@ public class SinglesMatch
             if (Ch(ChangePosChance)) // leave ring
             {
                 LeaveRing(w1, w2);
-                if (Ch(CountOutChance) && finish == 6) //count out
+                if (Ch(StayOutChance) && finish == 6) //count out
                 {
                     Ringside(w1, w2);
                     Count(w1, w2, 3, 6);
@@ -242,7 +238,7 @@ public class SinglesMatch
                     if (Ch(WeaponChance)) // w1 gets a weapon
                     {
                         string weap1 = Weapon(w1, w2);
-                        if (Ch(StayOutChance) && finish == 7) // double DQ
+                        if (Ch(RandomChance) && finish == 7) // double DQ
                         {
                             string weap2 = Weapon(w2, w1);
                             UseWeapon(w1, w2, weap1);
@@ -274,7 +270,7 @@ public class SinglesMatch
                         if (Ch(WeaponChance)) // w2 grabs a weapon
                         {
                             string weap2 = Weapon(w2, w1);
-                            if (Ch(StayOutChance) && finish == 4) // W2 is DQd
+                            if (Ch(RandomChance) && finish == 4) // W2 is DQd
                             {
                                 ReturnToRing(w2, weap2);
                                 return false;
@@ -300,7 +296,7 @@ public class SinglesMatch
             {
                 if (_escapeFinish == 0)
                 {
-                    if (Ch() && finish == 3) // w1 gets the finisher
+                    if (Ch(RandomChance) && finish == 3) // w1 gets the finisher
                     {
                         Finisher(w1, w2);
                         return false;
@@ -316,13 +312,13 @@ public class SinglesMatch
                 }
                 else
                 {
-                    if (Ch() && finish == 1)
+                    if (Ch(TryPinChance) && finish == 1)
                     {
                         Pin(w1, w2);
                         Count(w1, w2, 1, 3);
                         return false;
                     }
-                    else if (Ch() && finish == 2)
+                    else if (Ch(TrySubChance) && finish == 2)
                     {
                         Submission(w1, w2);
                         _match.Add($"{w2.Name} taps out.");
@@ -571,7 +567,7 @@ public class SinglesMatch
 
     private MoveModel GetRandomMove(WrestlerModel wrestler, params MoveTypes[] moveTypes)
     {
-        List<MoveModel> moves = wrestler.Moves.Where(m => moveTypes.Contains(m.Type)).ToList();
+        List<MoveModel> moves = wrestler.Moves.Where(m => moveTypes.Contains(m.Value.Type)).Select(m => m.Value).ToList();
         return moves[moves.Count];
     }
 
