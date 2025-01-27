@@ -28,246 +28,185 @@ partial class GimmickEditorForm
     /// </summary>
     private void InitializeComponent()
     {
-        this.DeleteLocationButton = new System.Windows.Forms.Button();
-        this.EditLocationButton = new System.Windows.Forms.Button();
-        this.LocationsFrame = new System.Windows.Forms.GroupBox();
-        this.AddLocationButton = new System.Windows.Forms.Button();
-        this.LocationsListBox = new System.Windows.Forms.ListBox();
-        this.ExitButton = new System.Windows.Forms.ToolStripButton();
-        this.ToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-        this.SettingsButton = new System.Windows.Forms.ToolStripButton();
-        this.ToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-        this.SaveButton = new System.Windows.Forms.ToolStripButton();
-        this.OpenButton = new System.Windows.Forms.ToolStripButton();
-        this.NewButton = new System.Windows.Forms.ToolStripButton();
-        this.ToolStrip = new System.Windows.Forms.ToolStrip();
-        this.DeleteWeaponButton = new System.Windows.Forms.Button();
-        this.WeaponsListBox = new System.Windows.Forms.ListBox();
-        this.AddWeaponButton = new System.Windows.Forms.Button();
-        this.EditWeaponButton = new System.Windows.Forms.Button();
-        this.WeaponsFrame = new System.Windows.Forms.GroupBox();
-        this.NameFrame = new System.Windows.Forms.GroupBox();
-        this.NameField = new System.Windows.Forms.TextBox();
-        this.LocationsFrame.SuspendLayout();
-        this.ToolStrip.SuspendLayout();
-        this.WeaponsFrame.SuspendLayout();
-        this.NameFrame.SuspendLayout();
-        this.SuspendLayout();
-        // 
-        // DeleteLocationButton
-        // 
-        this.DeleteLocationButton.Location = new System.Drawing.Point(141, 77);
-        this.DeleteLocationButton.Name = "DeleteLocationButton";
-        this.DeleteLocationButton.Size = new System.Drawing.Size(23, 23);
-        this.DeleteLocationButton.TabIndex = 8;
-        this.DeleteLocationButton.UseVisualStyleBackColor = true;
-        // 
-        // EditLocationButton
-        // 
-        this.EditLocationButton.Location = new System.Drawing.Point(141, 48);
-        this.EditLocationButton.Name = "EditLocationButton";
-        this.EditLocationButton.Size = new System.Drawing.Size(23, 23);
-        this.EditLocationButton.TabIndex = 6;
-        this.EditLocationButton.UseVisualStyleBackColor = true;
+        LocationsFrame = new GroupBox();
+        LocationsListBox = new ListBox();
+        WeaponsListBox = new ListBox();
+        WeaponsFrame = new GroupBox();
+        NameFrame = new GroupBox();
+        NameTextBox = new TextBox();
+        ResetLocationButton = new Button();
+        EditLocationButton = new Button();
+        EditWeaponButton = new Button();
+        SettingsButton = new Button();
+        SaveButton = new Button();
+        CancelButton = new Button();
+        LocationsFrame.SuspendLayout();
+        WeaponsFrame.SuspendLayout();
+        NameFrame.SuspendLayout();
+        SuspendLayout();
         // 
         // LocationsFrame
         // 
-        this.LocationsFrame.Controls.Add(this.DeleteLocationButton);
-        this.LocationsFrame.Controls.Add(this.AddLocationButton);
-        this.LocationsFrame.Controls.Add(this.EditLocationButton);
-        this.LocationsFrame.Controls.Add(this.LocationsListBox);
-        this.LocationsFrame.Location = new System.Drawing.Point(12, 192);
-        this.LocationsFrame.Name = "LocationsFrame";
-        this.LocationsFrame.Size = new System.Drawing.Size(170, 146);
-        this.LocationsFrame.TabIndex = 5;
-        this.LocationsFrame.TabStop = false;
-        this.LocationsFrame.Text = "Locations";
-        // 
-        // AddLocationButton
-        // 
-        this.AddLocationButton.Location = new System.Drawing.Point(141, 19);
-        this.AddLocationButton.Name = "AddLocationButton";
-        this.AddLocationButton.Size = new System.Drawing.Size(23, 23);
-        this.AddLocationButton.TabIndex = 7;
-        this.AddLocationButton.UseVisualStyleBackColor = true;
+        LocationsFrame.Controls.Add(EditLocationButton);
+        LocationsFrame.Controls.Add(ResetLocationButton);
+        LocationsFrame.Controls.Add(LocationsListBox);
+        LocationsFrame.Location = new Point(13, 69);
+        LocationsFrame.Margin = new Padding(4, 3, 4, 3);
+        LocationsFrame.Name = "LocationsFrame";
+        LocationsFrame.Padding = new Padding(4, 3, 4, 3);
+        LocationsFrame.Size = new Size(198, 166);
+        LocationsFrame.TabIndex = 5;
+        LocationsFrame.TabStop = false;
+        LocationsFrame.Text = "Locations";
         // 
         // LocationsListBox
         // 
-        this.LocationsListBox.FormattingEnabled = true;
-        this.LocationsListBox.Location = new System.Drawing.Point(6, 19);
-        this.LocationsListBox.Name = "LocationsListBox";
-        this.LocationsListBox.Size = new System.Drawing.Size(129, 121);
-        this.LocationsListBox.TabIndex = 0;
-        // 
-        // ExitButton
-        // 
-        this.ExitButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-        this.ExitButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-        this.ExitButton.Name = "ExitButton";
-        this.ExitButton.Size = new System.Drawing.Size(23, 22);
-        this.ExitButton.ToolTipText = "Exit";
-        // 
-        // ToolStripSeparator2
-        // 
-        this.ToolStripSeparator2.Name = "ToolStripSeparator2";
-        this.ToolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-        // 
-        // SettingsButton
-        // 
-        this.SettingsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-        this.SettingsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-        this.SettingsButton.Name = "SettingsButton";
-        this.SettingsButton.Size = new System.Drawing.Size(23, 22);
-        this.SettingsButton.ToolTipText = "Gimmick Settings";
-        // 
-        // ToolStripSeparator1
-        // 
-        this.ToolStripSeparator1.Name = "ToolStripSeparator1";
-        this.ToolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-        // 
-        // SaveButton
-        // 
-        this.SaveButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-        this.SaveButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-        this.SaveButton.Name = "SaveButton";
-        this.SaveButton.Size = new System.Drawing.Size(23, 22);
-        this.SaveButton.ToolTipText = "Save Gimmick";
-        // 
-        // OpenButton
-        // 
-        this.OpenButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-        this.OpenButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-        this.OpenButton.Name = "OpenButton";
-        this.OpenButton.Size = new System.Drawing.Size(23, 22);
-        this.OpenButton.ToolTipText = "Open Gimmick File";
-        // 
-        // NewButton
-        // 
-        this.NewButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-        this.NewButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-        this.NewButton.Name = "NewButton";
-        this.NewButton.Size = new System.Drawing.Size(23, 22);
-        this.NewButton.ToolTipText = "New Gimmick";
-        // 
-        // ToolStrip
-        // 
-        this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-        this.NewButton,
-        this.OpenButton,
-        this.SaveButton,
-        this.ToolStripSeparator1,
-        this.SettingsButton,
-        this.ToolStripSeparator2,
-        this.ExitButton});
-        this.ToolStrip.Location = new System.Drawing.Point(0, 0);
-        this.ToolStrip.Name = "ToolStrip";
-        this.ToolStrip.Size = new System.Drawing.Size(800, 25);
-        this.ToolStrip.TabIndex = 7;
-        // 
-        // DeleteWeaponButton
-        // 
-        this.DeleteWeaponButton.Location = new System.Drawing.Point(141, 77);
-        this.DeleteWeaponButton.Name = "DeleteWeaponButton";
-        this.DeleteWeaponButton.Size = new System.Drawing.Size(23, 23);
-        this.DeleteWeaponButton.TabIndex = 11;
-        this.DeleteWeaponButton.UseVisualStyleBackColor = true;
+        LocationsListBox.FormattingEnabled = true;
+        LocationsListBox.ItemHeight = 15;
+        LocationsListBox.Location = new Point(8, 22);
+        LocationsListBox.Margin = new Padding(4, 3, 4, 3);
+        LocationsListBox.Name = "LocationsListBox";
+        LocationsListBox.Size = new Size(182, 109);
+        LocationsListBox.TabIndex = 0;
         // 
         // WeaponsListBox
         // 
-        this.WeaponsListBox.FormattingEnabled = true;
-        this.WeaponsListBox.Location = new System.Drawing.Point(6, 19);
-        this.WeaponsListBox.Name = "WeaponsListBox";
-        this.WeaponsListBox.Size = new System.Drawing.Size(129, 121);
-        this.WeaponsListBox.TabIndex = 0;
-        // 
-        // AddWeaponButton
-        // 
-        this.AddWeaponButton.Location = new System.Drawing.Point(141, 19);
-        this.AddWeaponButton.Name = "AddWeaponButton";
-        this.AddWeaponButton.Size = new System.Drawing.Size(23, 23);
-        this.AddWeaponButton.TabIndex = 10;
-        this.AddWeaponButton.UseVisualStyleBackColor = true;
-        // 
-        // EditWeaponButton
-        // 
-        this.EditWeaponButton.Location = new System.Drawing.Point(141, 48);
-        this.EditWeaponButton.Name = "EditWeaponButton";
-        this.EditWeaponButton.Size = new System.Drawing.Size(23, 23);
-        this.EditWeaponButton.TabIndex = 9;
-        this.EditWeaponButton.UseVisualStyleBackColor = true;
+        WeaponsListBox.FormattingEnabled = true;
+        WeaponsListBox.ItemHeight = 15;
+        WeaponsListBox.Location = new Point(8, 22);
+        WeaponsListBox.Margin = new Padding(4, 3, 4, 3);
+        WeaponsListBox.Name = "WeaponsListBox";
+        WeaponsListBox.Size = new Size(182, 109);
+        WeaponsListBox.TabIndex = 0;
         // 
         // WeaponsFrame
         // 
-        this.WeaponsFrame.Controls.Add(this.DeleteWeaponButton);
-        this.WeaponsFrame.Controls.Add(this.WeaponsListBox);
-        this.WeaponsFrame.Controls.Add(this.AddWeaponButton);
-        this.WeaponsFrame.Controls.Add(this.EditWeaponButton);
-        this.WeaponsFrame.Location = new System.Drawing.Point(188, 192);
-        this.WeaponsFrame.Name = "WeaponsFrame";
-        this.WeaponsFrame.Size = new System.Drawing.Size(170, 146);
-        this.WeaponsFrame.TabIndex = 6;
-        this.WeaponsFrame.TabStop = false;
-        this.WeaponsFrame.Text = "Weapons";
+        WeaponsFrame.Controls.Add(EditWeaponButton);
+        WeaponsFrame.Controls.Add(WeaponsListBox);
+        WeaponsFrame.Location = new Point(219, 69);
+        WeaponsFrame.Margin = new Padding(4, 3, 4, 3);
+        WeaponsFrame.Name = "WeaponsFrame";
+        WeaponsFrame.Padding = new Padding(4, 3, 4, 3);
+        WeaponsFrame.Size = new Size(198, 166);
+        WeaponsFrame.TabIndex = 6;
+        WeaponsFrame.TabStop = false;
+        WeaponsFrame.Text = "Weapons";
         // 
         // NameFrame
         // 
-        this.NameFrame.Controls.Add(this.NameField);
-        this.NameFrame.Location = new System.Drawing.Point(12, 141);
-        this.NameFrame.Name = "NameFrame";
-        this.NameFrame.Size = new System.Drawing.Size(346, 45);
-        this.NameFrame.TabIndex = 4;
-        this.NameFrame.TabStop = false;
-        this.NameFrame.Text = "Name";
+        NameFrame.Controls.Add(NameTextBox);
+        NameFrame.Location = new Point(13, 12);
+        NameFrame.Margin = new Padding(4, 3, 4, 3);
+        NameFrame.Name = "NameFrame";
+        NameFrame.Padding = new Padding(4, 3, 4, 3);
+        NameFrame.Size = new Size(404, 51);
+        NameFrame.TabIndex = 4;
+        NameFrame.TabStop = false;
+        NameFrame.Text = "Name";
         // 
-        // NameField
+        // NameTextBox
         // 
-        this.NameField.Location = new System.Drawing.Point(6, 19);
-        this.NameField.Name = "NameField";
-        this.NameField.Size = new System.Drawing.Size(334, 20);
-        this.NameField.TabIndex = 0;
+        NameTextBox.Location = new Point(8, 22);
+        NameTextBox.Margin = new Padding(4, 3, 4, 3);
+        NameTextBox.Name = "NameTextBox";
+        NameTextBox.Size = new Size(388, 23);
+        NameTextBox.TabIndex = 0;
+        // 
+        // ResetLocationButton
+        // 
+        ResetLocationButton.Location = new Point(85, 137);
+        ResetLocationButton.Name = "ResetLocationButton";
+        ResetLocationButton.Size = new Size(50, 23);
+        ResetLocationButton.TabIndex = 1;
+        ResetLocationButton.Text = "Reset";
+        ResetLocationButton.UseVisualStyleBackColor = true;
+        // 
+        // EditLocationButton
+        // 
+        EditLocationButton.Location = new Point(141, 137);
+        EditLocationButton.Name = "EditLocationButton";
+        EditLocationButton.Size = new Size(50, 23);
+        EditLocationButton.TabIndex = 2;
+        EditLocationButton.Text = "Edit";
+        EditLocationButton.UseVisualStyleBackColor = true;
+        // 
+        // EditWeaponButton
+        // 
+        EditWeaponButton.Location = new Point(140, 137);
+        EditWeaponButton.Name = "EditWeaponButton";
+        EditWeaponButton.Size = new Size(50, 23);
+        EditWeaponButton.TabIndex = 1;
+        EditWeaponButton.Text = "Edit";
+        EditWeaponButton.UseVisualStyleBackColor = true;
+        // 
+        // SettingsButton
+        // 
+        SettingsButton.Location = new Point(37, 241);
+        SettingsButton.Name = "SettingsButton";
+        SettingsButton.Size = new Size(150, 23);
+        SettingsButton.TabIndex = 7;
+        SettingsButton.Text = "Tweak Gimmick";
+        SettingsButton.UseVisualStyleBackColor = true;
+        // 
+        // SaveButton
+        // 
+        SaveButton.DialogResult = DialogResult.OK;
+        SaveButton.Location = new Point(261, 241);
+        SaveButton.Name = "SaveButton";
+        SaveButton.Size = new Size(75, 23);
+        SaveButton.TabIndex = 8;
+        SaveButton.Text = "&Save";
+        SaveButton.UseVisualStyleBackColor = true;
+        // 
+        // CancelButton
+        // 
+        CancelButton.DialogResult = DialogResult.Cancel;
+        CancelButton.Location = new Point(342, 241);
+        CancelButton.Name = "CancelButton";
+        CancelButton.Size = new Size(75, 23);
+        CancelButton.TabIndex = 9;
+        CancelButton.Text = "&Cancel";
+        CancelButton.UseVisualStyleBackColor = true;
         // 
         // GimmickEditorForm
         // 
-        this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(800, 450);
-        this.Controls.Add(this.LocationsFrame);
-        this.Controls.Add(this.ToolStrip);
-        this.Controls.Add(this.WeaponsFrame);
-        this.Controls.Add(this.NameFrame);
-        this.Name = "GimmickEditorForm";
-        this.Text = "GimmickEditorForm";
-        this.LocationsFrame.ResumeLayout(false);
-        this.ToolStrip.ResumeLayout(false);
-        this.ToolStrip.PerformLayout();
-        this.WeaponsFrame.ResumeLayout(false);
-        this.NameFrame.ResumeLayout(false);
-        this.NameFrame.PerformLayout();
-        this.ResumeLayout(false);
-        this.PerformLayout();
-
+        AcceptButton = SaveButton;
+        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleMode = AutoScaleMode.Font;
+        CancelButton = CancelButton;
+        ClientSize = new Size(429, 276);
+        Controls.Add(CancelButton);
+        Controls.Add(SaveButton);
+        Controls.Add(SettingsButton);
+        Controls.Add(LocationsFrame);
+        Controls.Add(WeaponsFrame);
+        Controls.Add(NameFrame);
+        FormBorderStyle = FormBorderStyle.FixedDialog;
+        Margin = new Padding(4, 3, 4, 3);
+        MaximizeBox = false;
+        MinimizeBox = false;
+        Name = "GimmickEditorForm";
+        ShowIcon = false;
+        ShowInTaskbar = false;
+        Text = "Gimmick Editor";
+        LocationsFrame.ResumeLayout(false);
+        WeaponsFrame.ResumeLayout(false);
+        NameFrame.ResumeLayout(false);
+        NameFrame.PerformLayout();
+        ResumeLayout(false);
     }
 
     #endregion
-
-    internal System.Windows.Forms.Button DeleteLocationButton;
-    internal System.Windows.Forms.Button EditLocationButton;
     internal System.Windows.Forms.GroupBox LocationsFrame;
-    internal System.Windows.Forms.Button AddLocationButton;
     internal System.Windows.Forms.ListBox LocationsListBox;
-    internal System.Windows.Forms.ToolStripButton ExitButton;
-    internal System.Windows.Forms.ToolStripSeparator ToolStripSeparator2;
-    internal System.Windows.Forms.ToolStripButton SettingsButton;
-    internal System.Windows.Forms.ToolStripSeparator ToolStripSeparator1;
-    internal System.Windows.Forms.ToolStripButton SaveButton;
-    internal System.Windows.Forms.ToolStripButton OpenButton;
-    internal System.Windows.Forms.ToolStripButton NewButton;
-    internal System.Windows.Forms.ToolStrip ToolStrip;
-    internal System.Windows.Forms.Button DeleteWeaponButton;
     internal System.Windows.Forms.ListBox WeaponsListBox;
-    internal System.Windows.Forms.Button AddWeaponButton;
-    internal System.Windows.Forms.Button EditWeaponButton;
     internal System.Windows.Forms.GroupBox WeaponsFrame;
     internal System.Windows.Forms.GroupBox NameFrame;
-    internal System.Windows.Forms.TextBox NameField;
+    internal System.Windows.Forms.TextBox NameTextBox;
+    private Button EditLocationButton;
+    private Button ResetLocationButton;
+    private Button EditWeaponButton;
+    private Button SettingsButton;
+    private Button SaveButton;
+    private Button CancelButton;
 }
