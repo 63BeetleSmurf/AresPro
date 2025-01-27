@@ -28,228 +28,252 @@ partial class WeaponEditorForm
     /// </summary>
     private void InitializeComponent()
     {
-        this.grpName = new System.Windows.Forms.GroupBox();
-        this.NameField = new System.Windows.Forms.TextBox();
-        this.grpLocation = new System.Windows.Forms.GroupBox();
-        this.AvailableAtDropDown = new System.Windows.Forms.ComboBox();
-        this.WillBreakCheckbox = new System.Windows.Forms.CheckBox();
-        this.ThrowIntoCheckbox = new System.Windows.Forms.CheckBox();
-        this.ShootAtCheckbox = new System.Windows.Forms.CheckBox();
-        this.SlamOnCheckbox = new System.Windows.Forms.CheckBox();
-        this.CausesBleedingCheckbox = new System.Windows.Forms.CheckBox();
-        this.WhipOppCheckbox = new System.Windows.Forms.CheckBox();
-        this.CutOppCheckbox = new System.Windows.Forms.CheckBox();
-        this.ChokeOppCheckbox = new System.Windows.Forms.CheckBox();
-        this.ThrowAtCheckbox = new System.Windows.Forms.CheckBox();
-        this.SwingAtOppCheckbox = new System.Windows.Forms.CheckBox();
-        this.btnCancel = new System.Windows.Forms.Button();
-        this.btnOk = new System.Windows.Forms.Button();
-        this.grpName.SuspendLayout();
-        this.grpLocation.SuspendLayout();
-        this.SuspendLayout();
+        grpName = new GroupBox();
+        NameTextBox = new TextBox();
+        grpLocation = new GroupBox();
+        AvailableAtComboBox = new ComboBox();
+        WillBreakCheckBox = new CheckBox();
+        ThrowIntoCheckBox = new CheckBox();
+        ShootsAtOppCheckBox = new CheckBox();
+        SlammedOnCheckBox = new CheckBox();
+        CausesBleedingCheckBox = new CheckBox();
+        UsedAsAWhipCheckBox = new CheckBox();
+        UsedToCutOppCheckBox = new CheckBox();
+        UsedToChokeCheckBox = new CheckBox();
+        ThrowAtOppCheckBox = new CheckBox();
+        SwingAtOppCheckBox = new CheckBox();
+        CancelButton = new Button();
+        OkButton = new Button();
+        grpName.SuspendLayout();
+        grpLocation.SuspendLayout();
+        SuspendLayout();
         // 
         // grpName
         // 
-        this.grpName.Controls.Add(this.NameField);
-        this.grpName.Location = new System.Drawing.Point(268, 116);
-        this.grpName.Name = "grpName";
-        this.grpName.Size = new System.Drawing.Size(265, 45);
-        this.grpName.TabIndex = 14;
-        this.grpName.TabStop = false;
-        this.grpName.Text = "Name";
+        grpName.Controls.Add(NameTextBox);
+        grpName.Location = new Point(13, 12);
+        grpName.Margin = new Padding(4, 3, 4, 3);
+        grpName.Name = "grpName";
+        grpName.Padding = new Padding(4, 3, 4, 3);
+        grpName.Size = new Size(309, 51);
+        grpName.TabIndex = 14;
+        grpName.TabStop = false;
+        grpName.Text = "Name";
         // 
-        // NameField
+        // NameTextBox
         // 
-        this.NameField.Location = new System.Drawing.Point(6, 19);
-        this.NameField.Name = "NameField";
-        this.NameField.Size = new System.Drawing.Size(253, 20);
-        this.NameField.TabIndex = 0;
+        NameTextBox.Location = new Point(8, 22);
+        NameTextBox.Margin = new Padding(4, 3, 4, 3);
+        NameTextBox.Name = "NameTextBox";
+        NameTextBox.Size = new Size(293, 23);
+        NameTextBox.TabIndex = 0;
         // 
         // grpLocation
         // 
-        this.grpLocation.Controls.Add(this.AvailableAtDropDown);
-        this.grpLocation.Location = new System.Drawing.Point(268, 282);
-        this.grpLocation.Name = "grpLocation";
-        this.grpLocation.Size = new System.Drawing.Size(170, 46);
-        this.grpLocation.TabIndex = 25;
-        this.grpLocation.TabStop = false;
-        this.grpLocation.Text = "Weapon is at";
+        grpLocation.Controls.Add(AvailableAtComboBox);
+        grpLocation.Location = new Point(13, 194);
+        grpLocation.Margin = new Padding(4, 3, 4, 3);
+        grpLocation.Name = "grpLocation";
+        grpLocation.Padding = new Padding(4, 3, 4, 3);
+        grpLocation.Size = new Size(200, 51);
+        grpLocation.TabIndex = 25;
+        grpLocation.TabStop = false;
+        grpLocation.Text = "Weapon is at";
         // 
-        // AvailableAtDropDown
+        // AvailableAtComboBox
         // 
-        this.AvailableAtDropDown.DisplayMember = "DisplayMember";
-        this.AvailableAtDropDown.FormattingEnabled = true;
-        this.AvailableAtDropDown.Location = new System.Drawing.Point(6, 19);
-        this.AvailableAtDropDown.Name = "AvailableAtDropDown";
-        this.AvailableAtDropDown.Size = new System.Drawing.Size(158, 21);
-        this.AvailableAtDropDown.TabIndex = 0;
-        this.AvailableAtDropDown.ValueMember = "ValueMember";
+        AvailableAtComboBox.DisplayMember = "DisplayMember";
+        AvailableAtComboBox.FormattingEnabled = true;
+        AvailableAtComboBox.Location = new Point(8, 22);
+        AvailableAtComboBox.Margin = new Padding(4, 3, 4, 3);
+        AvailableAtComboBox.Name = "AvailableAtComboBox";
+        AvailableAtComboBox.Size = new Size(184, 23);
+        AvailableAtComboBox.TabIndex = 0;
+        AvailableAtComboBox.ValueMember = "ValueMember";
         // 
-        // WillBreakCheckbox
+        // WillBreakCheckBox
         // 
-        this.WillBreakCheckbox.AutoSize = true;
-        this.WillBreakCheckbox.Location = new System.Drawing.Point(404, 259);
-        this.WillBreakCheckbox.Name = "WillBreakCheckbox";
-        this.WillBreakCheckbox.Size = new System.Drawing.Size(73, 17);
-        this.WillBreakCheckbox.TabIndex = 24;
-        this.WillBreakCheckbox.Text = "Will break";
-        this.WillBreakCheckbox.UseVisualStyleBackColor = true;
+        WillBreakCheckBox.AutoSize = true;
+        WillBreakCheckBox.Location = new Point(173, 169);
+        WillBreakCheckBox.Margin = new Padding(4, 3, 4, 3);
+        WillBreakCheckBox.Name = "WillBreakCheckBox";
+        WillBreakCheckBox.Size = new Size(78, 19);
+        WillBreakCheckBox.TabIndex = 24;
+        WillBreakCheckBox.Text = "Will break";
+        WillBreakCheckBox.UseVisualStyleBackColor = true;
         // 
-        // ThrowIntoCheckbox
+        // ThrowIntoCheckBox
         // 
-        this.ThrowIntoCheckbox.AutoSize = true;
-        this.ThrowIntoCheckbox.Location = new System.Drawing.Point(268, 259);
-        this.ThrowIntoCheckbox.Name = "ThrowIntoCheckbox";
-        this.ThrowIntoCheckbox.Size = new System.Drawing.Size(82, 17);
-        this.ThrowIntoCheckbox.TabIndex = 23;
-        this.ThrowIntoCheckbox.Text = "Thrown into";
-        this.ThrowIntoCheckbox.UseVisualStyleBackColor = true;
+        ThrowIntoCheckBox.AutoSize = true;
+        ThrowIntoCheckBox.Location = new Point(21, 169);
+        ThrowIntoCheckBox.Margin = new Padding(4, 3, 4, 3);
+        ThrowIntoCheckBox.Name = "ThrowIntoCheckBox";
+        ThrowIntoCheckBox.Size = new Size(90, 19);
+        ThrowIntoCheckBox.TabIndex = 23;
+        ThrowIntoCheckBox.Text = "Thrown into";
+        ThrowIntoCheckBox.UseVisualStyleBackColor = true;
         // 
-        // ShootAtCheckbox
+        // ShootsAtOppCheckBox
         // 
-        this.ShootAtCheckbox.AutoSize = true;
-        this.ShootAtCheckbox.Location = new System.Drawing.Point(404, 236);
-        this.ShootAtCheckbox.Name = "ShootAtCheckbox";
-        this.ShootAtCheckbox.Size = new System.Drawing.Size(119, 17);
-        this.ShootAtCheckbox.TabIndex = 22;
-        this.ShootAtCheckbox.Text = "Shoots at opponent";
-        this.ShootAtCheckbox.UseVisualStyleBackColor = true;
+        ShootsAtOppCheckBox.AutoSize = true;
+        ShootsAtOppCheckBox.Location = new Point(173, 144);
+        ShootsAtOppCheckBox.Margin = new Padding(4, 3, 4, 3);
+        ShootsAtOppCheckBox.Name = "ShootsAtOppCheckBox";
+        ShootsAtOppCheckBox.Size = new Size(130, 19);
+        ShootsAtOppCheckBox.TabIndex = 22;
+        ShootsAtOppCheckBox.Text = "Shoots at opponent";
+        ShootsAtOppCheckBox.UseVisualStyleBackColor = true;
         // 
-        // SlamOnCheckbox
+        // SlammedOnCheckBox
         // 
-        this.SlamOnCheckbox.AutoSize = true;
-        this.SlamOnCheckbox.Location = new System.Drawing.Point(268, 236);
-        this.SlamOnCheckbox.Name = "SlamOnCheckbox";
-        this.SlamOnCheckbox.Size = new System.Drawing.Size(84, 17);
-        this.SlamOnCheckbox.TabIndex = 21;
-        this.SlamOnCheckbox.Text = "Slammed on";
-        this.SlamOnCheckbox.UseVisualStyleBackColor = true;
+        SlammedOnCheckBox.AutoSize = true;
+        SlammedOnCheckBox.Location = new Point(21, 144);
+        SlammedOnCheckBox.Margin = new Padding(4, 3, 4, 3);
+        SlammedOnCheckBox.Name = "SlammedOnCheckBox";
+        SlammedOnCheckBox.Size = new Size(93, 19);
+        SlammedOnCheckBox.TabIndex = 21;
+        SlammedOnCheckBox.Text = "Slammed on";
+        SlammedOnCheckBox.UseVisualStyleBackColor = true;
         // 
-        // CausesBleedingCheckbox
+        // CausesBleedingCheckBox
         // 
-        this.CausesBleedingCheckbox.AutoSize = true;
-        this.CausesBleedingCheckbox.Location = new System.Drawing.Point(404, 213);
-        this.CausesBleedingCheckbox.Name = "CausesBleedingCheckbox";
-        this.CausesBleedingCheckbox.Size = new System.Drawing.Size(104, 17);
-        this.CausesBleedingCheckbox.TabIndex = 20;
-        this.CausesBleedingCheckbox.Text = "Causes bleeding";
-        this.CausesBleedingCheckbox.UseVisualStyleBackColor = true;
+        CausesBleedingCheckBox.AutoSize = true;
+        CausesBleedingCheckBox.Location = new Point(173, 119);
+        CausesBleedingCheckBox.Margin = new Padding(4, 3, 4, 3);
+        CausesBleedingCheckBox.Name = "CausesBleedingCheckBox";
+        CausesBleedingCheckBox.Size = new Size(112, 19);
+        CausesBleedingCheckBox.TabIndex = 20;
+        CausesBleedingCheckBox.Text = "Causes bleeding";
+        CausesBleedingCheckBox.UseVisualStyleBackColor = true;
         // 
-        // WhipOppCheckbox
+        // UsedAsAWhipCheckBox
         // 
-        this.WhipOppCheckbox.AutoSize = true;
-        this.WhipOppCheckbox.Location = new System.Drawing.Point(268, 213);
-        this.WhipOppCheckbox.Name = "WhipOppCheckbox";
-        this.WhipOppCheckbox.Size = new System.Drawing.Size(99, 17);
-        this.WhipOppCheckbox.TabIndex = 19;
-        this.WhipOppCheckbox.Text = "Used as a whip";
-        this.WhipOppCheckbox.UseVisualStyleBackColor = true;
+        UsedAsAWhipCheckBox.AutoSize = true;
+        UsedAsAWhipCheckBox.Location = new Point(21, 119);
+        UsedAsAWhipCheckBox.Margin = new Padding(4, 3, 4, 3);
+        UsedAsAWhipCheckBox.Name = "UsedAsAWhipCheckBox";
+        UsedAsAWhipCheckBox.Size = new Size(104, 19);
+        UsedAsAWhipCheckBox.TabIndex = 19;
+        UsedAsAWhipCheckBox.Text = "Used as a whip";
+        UsedAsAWhipCheckBox.UseVisualStyleBackColor = true;
         // 
-        // CutOppCheckbox
+        // UsedToCutOppCheckBox
         // 
-        this.CutOppCheckbox.AutoSize = true;
-        this.CutOppCheckbox.Location = new System.Drawing.Point(404, 190);
-        this.CutOppCheckbox.Name = "CutOppCheckbox";
-        this.CutOppCheckbox.Size = new System.Drawing.Size(129, 17);
-        this.CutOppCheckbox.TabIndex = 18;
-        this.CutOppCheckbox.Text = "Used to cut opponent";
-        this.CutOppCheckbox.UseVisualStyleBackColor = true;
+        UsedToCutOppCheckBox.AutoSize = true;
+        UsedToCutOppCheckBox.Location = new Point(173, 94);
+        UsedToCutOppCheckBox.Margin = new Padding(4, 3, 4, 3);
+        UsedToCutOppCheckBox.Name = "UsedToCutOppCheckBox";
+        UsedToCutOppCheckBox.Size = new Size(141, 19);
+        UsedToCutOppCheckBox.TabIndex = 18;
+        UsedToCutOppCheckBox.Text = "Used to cut opponent";
+        UsedToCutOppCheckBox.UseVisualStyleBackColor = true;
         // 
-        // ChokeOppCheckbox
+        // UsedToChokeCheckBox
         // 
-        this.ChokeOppCheckbox.AutoSize = true;
-        this.ChokeOppCheckbox.Location = new System.Drawing.Point(268, 190);
-        this.ChokeOppCheckbox.Name = "ChokeOppCheckbox";
-        this.ChokeOppCheckbox.Size = new System.Drawing.Size(96, 17);
-        this.ChokeOppCheckbox.TabIndex = 17;
-        this.ChokeOppCheckbox.Text = "Used to choke";
-        this.ChokeOppCheckbox.UseVisualStyleBackColor = true;
+        UsedToChokeCheckBox.AutoSize = true;
+        UsedToChokeCheckBox.Location = new Point(21, 94);
+        UsedToChokeCheckBox.Margin = new Padding(4, 3, 4, 3);
+        UsedToChokeCheckBox.Name = "UsedToChokeCheckBox";
+        UsedToChokeCheckBox.Size = new Size(101, 19);
+        UsedToChokeCheckBox.TabIndex = 17;
+        UsedToChokeCheckBox.Text = "Used to choke";
+        UsedToChokeCheckBox.UseVisualStyleBackColor = true;
         // 
-        // ThrowAtCheckbox
+        // ThrowAtOppCheckBox
         // 
-        this.ThrowAtCheckbox.AutoSize = true;
-        this.ThrowAtCheckbox.Location = new System.Drawing.Point(404, 167);
-        this.ThrowAtCheckbox.Name = "ThrowAtCheckbox";
-        this.ThrowAtCheckbox.Size = new System.Drawing.Size(122, 17);
-        this.ThrowAtCheckbox.TabIndex = 16;
-        this.ThrowAtCheckbox.Text = "Thrown at opponent";
-        this.ThrowAtCheckbox.UseVisualStyleBackColor = true;
+        ThrowAtOppCheckBox.AutoSize = true;
+        ThrowAtOppCheckBox.Location = new Point(173, 69);
+        ThrowAtOppCheckBox.Margin = new Padding(4, 3, 4, 3);
+        ThrowAtOppCheckBox.Name = "ThrowAtOppCheckBox";
+        ThrowAtOppCheckBox.Size = new Size(134, 19);
+        ThrowAtOppCheckBox.TabIndex = 16;
+        ThrowAtOppCheckBox.Text = "Thrown at opponent";
+        ThrowAtOppCheckBox.UseVisualStyleBackColor = true;
         // 
-        // SwingAtOppCheckbox
+        // SwingAtOppCheckBox
         // 
-        this.SwingAtOppCheckbox.AutoSize = true;
-        this.SwingAtOppCheckbox.Location = new System.Drawing.Point(268, 167);
-        this.SwingAtOppCheckbox.Name = "SwingAtOppCheckbox";
-        this.SwingAtOppCheckbox.Size = new System.Drawing.Size(115, 17);
-        this.SwingAtOppCheckbox.TabIndex = 15;
-        this.SwingAtOppCheckbox.Text = "Swing at opponent";
-        this.SwingAtOppCheckbox.UseVisualStyleBackColor = true;
+        SwingAtOppCheckBox.AutoSize = true;
+        SwingAtOppCheckBox.Location = new Point(21, 69);
+        SwingAtOppCheckBox.Margin = new Padding(4, 3, 4, 3);
+        SwingAtOppCheckBox.Name = "SwingAtOppCheckBox";
+        SwingAtOppCheckBox.Size = new Size(126, 19);
+        SwingAtOppCheckBox.TabIndex = 15;
+        SwingAtOppCheckBox.Text = "Swing at opponent";
+        SwingAtOppCheckBox.UseVisualStyleBackColor = true;
         // 
-        // btnCancel
+        // CancelButton
         // 
-        this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-        this.btnCancel.Location = new System.Drawing.Point(458, 311);
-        this.btnCancel.Name = "btnCancel";
-        this.btnCancel.Size = new System.Drawing.Size(75, 23);
-        this.btnCancel.TabIndex = 27;
-        this.btnCancel.Text = "&Cancel";
-        this.btnCancel.UseVisualStyleBackColor = true;
+        CancelButton.DialogResult = DialogResult.Cancel;
+        CancelButton.Location = new Point(234, 194);
+        CancelButton.Margin = new Padding(4, 3, 4, 3);
+        CancelButton.Name = "CancelButton";
+        CancelButton.Size = new Size(88, 27);
+        CancelButton.TabIndex = 27;
+        CancelButton.Text = "&Cancel";
+        CancelButton.UseVisualStyleBackColor = true;
         // 
-        // btnOk
+        // OkButton
         // 
-        this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-        this.btnOk.Location = new System.Drawing.Point(458, 282);
-        this.btnOk.Name = "btnOk";
-        this.btnOk.Size = new System.Drawing.Size(75, 23);
-        this.btnOk.TabIndex = 26;
-        this.btnOk.Text = "&Ok";
-        this.btnOk.UseVisualStyleBackColor = true;
+        OkButton.DialogResult = DialogResult.OK;
+        OkButton.Location = new Point(234, 227);
+        OkButton.Margin = new Padding(4, 3, 4, 3);
+        OkButton.Name = "OkButton";
+        OkButton.Size = new Size(88, 27);
+        OkButton.TabIndex = 26;
+        OkButton.Text = "&Ok";
+        OkButton.UseVisualStyleBackColor = true;
         // 
         // WeaponEditorForm
         // 
-        this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(800, 450);
-        this.Controls.Add(this.grpName);
-        this.Controls.Add(this.grpLocation);
-        this.Controls.Add(this.WillBreakCheckbox);
-        this.Controls.Add(this.ThrowIntoCheckbox);
-        this.Controls.Add(this.ShootAtCheckbox);
-        this.Controls.Add(this.SlamOnCheckbox);
-        this.Controls.Add(this.CausesBleedingCheckbox);
-        this.Controls.Add(this.WhipOppCheckbox);
-        this.Controls.Add(this.CutOppCheckbox);
-        this.Controls.Add(this.ChokeOppCheckbox);
-        this.Controls.Add(this.ThrowAtCheckbox);
-        this.Controls.Add(this.SwingAtOppCheckbox);
-        this.Controls.Add(this.btnCancel);
-        this.Controls.Add(this.btnOk);
-        this.Name = "WeaponEditorForm";
-        this.Text = "WeaponEditorForm";
-        this.grpName.ResumeLayout(false);
-        this.grpName.PerformLayout();
-        this.grpLocation.ResumeLayout(false);
-        this.ResumeLayout(false);
-        this.PerformLayout();
-
+        AcceptButton = OkButton;
+        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleMode = AutoScaleMode.Font;
+        CancelButton = CancelButton;
+        ClientSize = new Size(335, 266);
+        Controls.Add(grpName);
+        Controls.Add(grpLocation);
+        Controls.Add(WillBreakCheckBox);
+        Controls.Add(ThrowIntoCheckBox);
+        Controls.Add(ShootsAtOppCheckBox);
+        Controls.Add(SlammedOnCheckBox);
+        Controls.Add(CausesBleedingCheckBox);
+        Controls.Add(UsedAsAWhipCheckBox);
+        Controls.Add(UsedToCutOppCheckBox);
+        Controls.Add(UsedToChokeCheckBox);
+        Controls.Add(ThrowAtOppCheckBox);
+        Controls.Add(SwingAtOppCheckBox);
+        Controls.Add(CancelButton);
+        Controls.Add(OkButton);
+        FormBorderStyle = FormBorderStyle.FixedDialog;
+        Margin = new Padding(4, 3, 4, 3);
+        MaximizeBox = false;
+        MinimizeBox = false;
+        Name = "WeaponEditorForm";
+        ShowIcon = false;
+        ShowInTaskbar = false;
+        grpName.ResumeLayout(false);
+        grpName.PerformLayout();
+        grpLocation.ResumeLayout(false);
+        ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
 
     internal System.Windows.Forms.GroupBox grpName;
-    internal System.Windows.Forms.TextBox NameField;
+    internal System.Windows.Forms.TextBox NameTextBox;
     internal System.Windows.Forms.GroupBox grpLocation;
-    internal System.Windows.Forms.ComboBox AvailableAtDropDown;
-    internal System.Windows.Forms.CheckBox WillBreakCheckbox;
-    internal System.Windows.Forms.CheckBox ThrowIntoCheckbox;
-    internal System.Windows.Forms.CheckBox ShootAtCheckbox;
-    internal System.Windows.Forms.CheckBox SlamOnCheckbox;
-    internal System.Windows.Forms.CheckBox CausesBleedingCheckbox;
-    internal System.Windows.Forms.CheckBox WhipOppCheckbox;
-    internal System.Windows.Forms.CheckBox CutOppCheckbox;
-    internal System.Windows.Forms.CheckBox ChokeOppCheckbox;
-    internal System.Windows.Forms.CheckBox ThrowAtCheckbox;
-    internal System.Windows.Forms.CheckBox SwingAtOppCheckbox;
-    internal System.Windows.Forms.Button btnCancel;
-    internal System.Windows.Forms.Button btnOk;
+    internal System.Windows.Forms.ComboBox AvailableAtComboBox;
+    internal System.Windows.Forms.CheckBox WillBreakCheckBox;
+    internal System.Windows.Forms.CheckBox ThrowIntoCheckBox;
+    internal System.Windows.Forms.CheckBox ShootsAtOppCheckBox;
+    internal System.Windows.Forms.CheckBox SlammedOnCheckBox;
+    internal System.Windows.Forms.CheckBox CausesBleedingCheckBox;
+    internal System.Windows.Forms.CheckBox UsedAsAWhipCheckBox;
+    internal System.Windows.Forms.CheckBox UsedToCutOppCheckBox;
+    internal System.Windows.Forms.CheckBox UsedToChokeCheckBox;
+    internal System.Windows.Forms.CheckBox ThrowAtOppCheckBox;
+    internal System.Windows.Forms.CheckBox SwingAtOppCheckBox;
+    internal System.Windows.Forms.Button CancelButton;
+    internal System.Windows.Forms.Button OkButton;
 }
