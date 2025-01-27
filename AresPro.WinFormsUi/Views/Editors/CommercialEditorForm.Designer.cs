@@ -28,67 +28,79 @@ partial class CommercialEditorForm
     /// </summary>
     private void InitializeComponent()
     {
-        this.btnCancel = new System.Windows.Forms.Button();
-        this.btnOk = new System.Windows.Forms.Button();
-        this.txtEdit = new System.Windows.Forms.TextBox();
-        this.lstCommercials = new System.Windows.Forms.ListBox();
-        this.SuspendLayout();
+        CancelButton = new Button();
+        OkButton = new Button();
+        EditCommercialTextBox = new TextBox();
+        CommercialsListBox = new ListBox();
+        SuspendLayout();
         // 
-        // btnCancel
+        // CancelButton
         // 
-        this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-        this.btnCancel.Location = new System.Drawing.Point(521, 310);
-        this.btnCancel.Name = "btnCancel";
-        this.btnCancel.Size = new System.Drawing.Size(72, 23);
-        this.btnCancel.TabIndex = 7;
-        this.btnCancel.Text = "&Cancel";
-        this.btnCancel.UseVisualStyleBackColor = true;
+        CancelButton.DialogResult = DialogResult.Cancel;
+        CancelButton.Location = new Point(377, 231);
+        CancelButton.Margin = new Padding(4, 3, 4, 3);
+        CancelButton.Name = "CancelButton";
+        CancelButton.Size = new Size(84, 27);
+        CancelButton.TabIndex = 3;
+        CancelButton.Text = "&Cancel";
+        CancelButton.UseVisualStyleBackColor = true;
         // 
-        // btnOk
+        // OkButton
         // 
-        this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-        this.btnOk.Location = new System.Drawing.Point(443, 310);
-        this.btnOk.Name = "btnOk";
-        this.btnOk.Size = new System.Drawing.Size(72, 23);
-        this.btnOk.TabIndex = 6;
-        this.btnOk.Text = "&Ok";
-        this.btnOk.UseVisualStyleBackColor = true;
+        OkButton.DialogResult = DialogResult.OK;
+        OkButton.Location = new Point(285, 231);
+        OkButton.Margin = new Padding(4, 3, 4, 3);
+        OkButton.Name = "OkButton";
+        OkButton.Size = new Size(84, 27);
+        OkButton.TabIndex = 2;
+        OkButton.Text = "&Ok";
+        OkButton.UseVisualStyleBackColor = true;
         // 
-        // txtEdit
+        // EditCommercialTextBox
         // 
-        this.txtEdit.Location = new System.Drawing.Point(208, 284);
-        this.txtEdit.Name = "txtEdit";
-        this.txtEdit.Size = new System.Drawing.Size(385, 20);
-        this.txtEdit.TabIndex = 5;
+        EditCommercialTextBox.Location = new Point(13, 202);
+        EditCommercialTextBox.Margin = new Padding(4, 3, 4, 3);
+        EditCommercialTextBox.Name = "EditCommercialTextBox";
+        EditCommercialTextBox.Size = new Size(448, 23);
+        EditCommercialTextBox.TabIndex = 1;
         // 
-        // lstCommercials
+        // CommercialsListBox
         // 
-        this.lstCommercials.FormattingEnabled = true;
-        this.lstCommercials.Location = new System.Drawing.Point(208, 118);
-        this.lstCommercials.Name = "lstCommercials";
-        this.lstCommercials.Size = new System.Drawing.Size(385, 160);
-        this.lstCommercials.TabIndex = 4;
+        CommercialsListBox.FormattingEnabled = true;
+        CommercialsListBox.ItemHeight = 15;
+        CommercialsListBox.Location = new Point(13, 12);
+        CommercialsListBox.Margin = new Padding(4, 3, 4, 3);
+        CommercialsListBox.Name = "CommercialsListBox";
+        CommercialsListBox.Size = new Size(448, 184);
+        CommercialsListBox.TabIndex = 0;
         // 
         // CommercialEditorForm
         // 
-        this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(800, 450);
-        this.Controls.Add(this.btnCancel);
-        this.Controls.Add(this.btnOk);
-        this.Controls.Add(this.txtEdit);
-        this.Controls.Add(this.lstCommercials);
-        this.Name = "CommercialEditorForm";
-        this.Text = "CommercialEditorForm";
-        this.ResumeLayout(false);
-        this.PerformLayout();
-
+        AcceptButton = OkButton;
+        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleMode = AutoScaleMode.Font;
+        CancelButton = CancelButton;
+        ClientSize = new Size(474, 270);
+        Controls.Add(CancelButton);
+        Controls.Add(OkButton);
+        Controls.Add(EditCommercialTextBox);
+        Controls.Add(CommercialsListBox);
+        FormBorderStyle = FormBorderStyle.FixedDialog;
+        Margin = new Padding(4, 3, 4, 3);
+        MaximizeBox = false;
+        MinimizeBox = false;
+        Name = "CommercialEditorForm";
+        ShowIcon = false;
+        ShowInTaskbar = false;
+        Text = "Commercial Editor";
+        ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
 
-    internal System.Windows.Forms.Button btnCancel;
-    internal System.Windows.Forms.Button btnOk;
-    internal System.Windows.Forms.TextBox txtEdit;
-    internal System.Windows.Forms.ListBox lstCommercials;
+    internal System.Windows.Forms.Button CancelButton;
+    internal System.Windows.Forms.Button OkButton;
+    internal System.Windows.Forms.TextBox EditCommercialTextBox;
+    internal System.Windows.Forms.ListBox CommercialsListBox;
 }
