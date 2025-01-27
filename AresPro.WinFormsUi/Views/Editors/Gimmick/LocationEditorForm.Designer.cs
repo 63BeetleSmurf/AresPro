@@ -28,271 +28,284 @@ partial class LocationEditorForm
     /// </summary>
     private void InitializeComponent()
     {
-        this.CancelCommand = new System.Windows.Forms.Button();
-        this.CanFightCheckBox = new System.Windows.Forms.CheckBox();
-        this.WeaponsCheckBox = new System.Windows.Forms.CheckBox();
-        this.DQsCheckBox = new System.Windows.Forms.CheckBox();
-        this.CountOutCheckBox = new System.Windows.Forms.CheckBox();
-        this.CanTagCheckBox = new System.Windows.Forms.CheckBox();
-        this.ATTWinsCheckBox = new System.Windows.Forms.CheckBox();
-        this.SubmissionsCheckBox = new System.Windows.Forms.CheckBox();
-        this.PinfallsCheckBox = new System.Windows.Forms.CheckBox();
-        this.FloorField = new System.Windows.Forms.TextBox();
-        this.grpFloor = new System.Windows.Forms.GroupBox();
-        this.DeleteTransitionButton = new System.Windows.Forms.Button();
-        this.AddTransitionButton = new System.Windows.Forms.Button();
-        this.EditTransitionButton = new System.Windows.Forms.Button();
-        this.TransitionsListBox = new System.Windows.Forms.ListBox();
-        this.grpTransitions = new System.Windows.Forms.GroupBox();
-        this.LocationsListBox = new System.Windows.Forms.ListBox();
-        this.NameField = new System.Windows.Forms.TextBox();
-        this.OkCommand = new System.Windows.Forms.Button();
-        this.grpName = new System.Windows.Forms.GroupBox();
-        this.grpFloor.SuspendLayout();
-        this.grpTransitions.SuspendLayout();
-        this.grpName.SuspendLayout();
-        this.SuspendLayout();
+        CancelButton = new Button();
+        CanFightHereCheckBox = new CheckBox();
+        WeaponsAtLocCheckBox = new CheckBox();
+        DQAtLocCheckBox = new CheckBox();
+        CountOutAtLocCheckBox = new CheckBox();
+        CanTagHereCheckBox = new CheckBox();
+        ATTWinsIfHereCheckBox = new CheckBox();
+        SubmissionsAtLocCheckBox = new CheckBox();
+        PinfallsAtLocCheckBox = new CheckBox();
+        FloorTextBox = new TextBox();
+        grpFloor = new GroupBox();
+        grpTransitions = new GroupBox();
+        LocationsListBox = new ListBox();
+        NameTextBox = new TextBox();
+        OkButton = new Button();
+        grpName = new GroupBox();
+        TransitionText1TextBox = new TextBox();
+        TransitionText2TextBox = new TextBox();
+        TransitionText3TextBox = new TextBox();
+        grpFloor.SuspendLayout();
+        grpTransitions.SuspendLayout();
+        grpName.SuspendLayout();
+        SuspendLayout();
         // 
-        // CancelCommand
+        // CancelButton
         // 
-        this.CancelCommand.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-        this.CancelCommand.Location = new System.Drawing.Point(498, 369);
-        this.CancelCommand.Name = "CancelCommand";
-        this.CancelCommand.Size = new System.Drawing.Size(75, 23);
-        this.CancelCommand.TabIndex = 25;
-        this.CancelCommand.Text = "&Cancel";
-        this.CancelCommand.UseVisualStyleBackColor = true;
+        CancelButton.DialogResult = DialogResult.Cancel;
+        CancelButton.Location = new Point(329, 381);
+        CancelButton.Margin = new Padding(4, 3, 4, 3);
+        CancelButton.Name = "CancelButton";
+        CancelButton.Size = new Size(88, 27);
+        CancelButton.TabIndex = 25;
+        CancelButton.Text = "&Cancel";
+        CancelButton.UseVisualStyleBackColor = true;
         // 
-        // CanFightCheckBox
+        // CanFightHereCheckBox
         // 
-        this.CanFightCheckBox.AutoSize = true;
-        this.CanFightCheckBox.Location = new System.Drawing.Point(349, 375);
-        this.CanFightCheckBox.Name = "CanFightCheckBox";
-        this.CanFightCheckBox.Size = new System.Drawing.Size(92, 17);
-        this.CanFightCheckBox.TabIndex = 23;
-        this.CanFightCheckBox.Text = "Can fight here";
-        this.CanFightCheckBox.UseVisualStyleBackColor = true;
+        CanFightHereCheckBox.AutoSize = true;
+        CanFightHereCheckBox.Location = new Point(148, 389);
+        CanFightHereCheckBox.Margin = new Padding(4, 3, 4, 3);
+        CanFightHereCheckBox.Name = "CanFightHereCheckBox";
+        CanFightHereCheckBox.Size = new Size(101, 19);
+        CanFightHereCheckBox.TabIndex = 23;
+        CanFightHereCheckBox.Text = "Can fight here";
+        CanFightHereCheckBox.UseVisualStyleBackColor = true;
         // 
-        // WeaponsCheckBox
+        // WeaponsAtLocCheckBox
         // 
-        this.WeaponsCheckBox.AutoSize = true;
-        this.WeaponsCheckBox.Location = new System.Drawing.Point(349, 355);
-        this.WeaponsCheckBox.Name = "WeaponsCheckBox";
-        this.WeaponsCheckBox.Size = new System.Drawing.Size(104, 17);
-        this.WeaponsCheckBox.TabIndex = 22;
-        this.WeaponsCheckBox.Text = "Weapons at loc.";
-        this.WeaponsCheckBox.UseVisualStyleBackColor = true;
+        WeaponsAtLocCheckBox.AutoSize = true;
+        WeaponsAtLocCheckBox.Location = new Point(148, 364);
+        WeaponsAtLocCheckBox.Margin = new Padding(4, 3, 4, 3);
+        WeaponsAtLocCheckBox.Name = "WeaponsAtLocCheckBox";
+        WeaponsAtLocCheckBox.Size = new Size(110, 19);
+        WeaponsAtLocCheckBox.TabIndex = 22;
+        WeaponsAtLocCheckBox.Text = "Weapons at loc.";
+        WeaponsAtLocCheckBox.UseVisualStyleBackColor = true;
         // 
-        // DQsCheckBox
+        // DQAtLocCheckBox
         // 
-        this.DQsCheckBox.AutoSize = true;
-        this.DQsCheckBox.Location = new System.Drawing.Point(349, 335);
-        this.DQsCheckBox.Name = "DQsCheckBox";
-        this.DQsCheckBox.Size = new System.Drawing.Size(74, 17);
-        this.DQsCheckBox.TabIndex = 21;
-        this.DQsCheckBox.Text = "DQ at loc.";
-        this.DQsCheckBox.UseVisualStyleBackColor = true;
+        DQAtLocCheckBox.AutoSize = true;
+        DQAtLocCheckBox.Location = new Point(148, 339);
+        DQAtLocCheckBox.Margin = new Padding(4, 3, 4, 3);
+        DQAtLocCheckBox.Name = "DQAtLocCheckBox";
+        DQAtLocCheckBox.Size = new Size(78, 19);
+        DQAtLocCheckBox.TabIndex = 21;
+        DQAtLocCheckBox.Text = "DQ at loc.";
+        DQAtLocCheckBox.UseVisualStyleBackColor = true;
         // 
-        // CountOutCheckBox
+        // CountOutAtLocCheckBox
         // 
-        this.CountOutCheckBox.AutoSize = true;
-        this.CountOutCheckBox.Location = new System.Drawing.Point(349, 315);
-        this.CountOutCheckBox.Name = "CountOutCheckBox";
-        this.CountOutCheckBox.Size = new System.Drawing.Size(106, 17);
-        this.CountOutCheckBox.TabIndex = 20;
-        this.CountOutCheckBox.Text = "Count-Out at loc.";
-        this.CountOutCheckBox.UseVisualStyleBackColor = true;
+        CountOutAtLocCheckBox.AutoSize = true;
+        CountOutAtLocCheckBox.Location = new Point(148, 314);
+        CountOutAtLocCheckBox.Margin = new Padding(4, 3, 4, 3);
+        CountOutAtLocCheckBox.Name = "CountOutAtLocCheckBox";
+        CountOutAtLocCheckBox.Size = new Size(119, 19);
+        CountOutAtLocCheckBox.TabIndex = 20;
+        CountOutAtLocCheckBox.Text = "Count-Out at loc.";
+        CountOutAtLocCheckBox.UseVisualStyleBackColor = true;
         // 
-        // CanTagCheckBox
+        // CanTagHereCheckBox
         // 
-        this.CanTagCheckBox.AutoSize = true;
-        this.CanTagCheckBox.Location = new System.Drawing.Point(227, 375);
-        this.CanTagCheckBox.Name = "CanTagCheckBox";
-        this.CanTagCheckBox.Size = new System.Drawing.Size(87, 17);
-        this.CanTagCheckBox.TabIndex = 19;
-        this.CanTagCheckBox.Text = "Can tag here";
-        this.CanTagCheckBox.UseVisualStyleBackColor = true;
+        CanTagHereCheckBox.AutoSize = true;
+        CanTagHereCheckBox.Location = new Point(13, 389);
+        CanTagHereCheckBox.Margin = new Padding(4, 3, 4, 3);
+        CanTagHereCheckBox.Name = "CanTagHereCheckBox";
+        CanTagHereCheckBox.Size = new Size(93, 19);
+        CanTagHereCheckBox.TabIndex = 19;
+        CanTagHereCheckBox.Text = "Can tag here";
+        CanTagHereCheckBox.UseVisualStyleBackColor = true;
         // 
-        // ATTWinsCheckBox
+        // ATTWinsIfHereCheckBox
         // 
-        this.ATTWinsCheckBox.AutoSize = true;
-        this.ATTWinsCheckBox.Location = new System.Drawing.Point(227, 355);
-        this.ATTWinsCheckBox.Name = "ATTWinsCheckBox";
-        this.ATTWinsCheckBox.Size = new System.Drawing.Size(103, 17);
-        this.ATTWinsCheckBox.TabIndex = 18;
-        this.ATTWinsCheckBox.Text = "ATT wins if here";
-        this.ATTWinsCheckBox.UseVisualStyleBackColor = true;
+        ATTWinsIfHereCheckBox.AutoSize = true;
+        ATTWinsIfHereCheckBox.Location = new Point(13, 364);
+        ATTWinsIfHereCheckBox.Margin = new Padding(4, 3, 4, 3);
+        ATTWinsIfHereCheckBox.Name = "ATTWinsIfHereCheckBox";
+        ATTWinsIfHereCheckBox.Size = new Size(108, 19);
+        ATTWinsIfHereCheckBox.TabIndex = 18;
+        ATTWinsIfHereCheckBox.Text = "ATT wins if here";
+        ATTWinsIfHereCheckBox.UseVisualStyleBackColor = true;
         // 
-        // SubmissionsCheckBox
+        // SubmissionsAtLocCheckBox
         // 
-        this.SubmissionsCheckBox.AutoSize = true;
-        this.SubmissionsCheckBox.Location = new System.Drawing.Point(227, 335);
-        this.SubmissionsCheckBox.Name = "SubmissionsCheckBox";
-        this.SubmissionsCheckBox.Size = new System.Drawing.Size(116, 17);
-        this.SubmissionsCheckBox.TabIndex = 17;
-        this.SubmissionsCheckBox.Text = "Submissions at loc.";
-        this.SubmissionsCheckBox.UseVisualStyleBackColor = true;
+        SubmissionsAtLocCheckBox.AutoSize = true;
+        SubmissionsAtLocCheckBox.Location = new Point(13, 339);
+        SubmissionsAtLocCheckBox.Margin = new Padding(4, 3, 4, 3);
+        SubmissionsAtLocCheckBox.Name = "SubmissionsAtLocCheckBox";
+        SubmissionsAtLocCheckBox.Size = new Size(127, 19);
+        SubmissionsAtLocCheckBox.TabIndex = 17;
+        SubmissionsAtLocCheckBox.Text = "Submissions at loc.";
+        SubmissionsAtLocCheckBox.UseVisualStyleBackColor = true;
         // 
-        // PinfallsCheckBox
+        // PinfallsAtLocCheckBox
         // 
-        this.PinfallsCheckBox.AutoSize = true;
-        this.PinfallsCheckBox.Location = new System.Drawing.Point(227, 315);
-        this.PinfallsCheckBox.Name = "PinfallsCheckBox";
-        this.PinfallsCheckBox.Size = new System.Drawing.Size(91, 17);
-        this.PinfallsCheckBox.TabIndex = 16;
-        this.PinfallsCheckBox.Text = "Pinfalls at loc.";
-        this.PinfallsCheckBox.UseVisualStyleBackColor = true;
+        PinfallsAtLocCheckBox.AutoSize = true;
+        PinfallsAtLocCheckBox.Location = new Point(13, 314);
+        PinfallsAtLocCheckBox.Margin = new Padding(4, 3, 4, 3);
+        PinfallsAtLocCheckBox.Name = "PinfallsAtLocCheckBox";
+        PinfallsAtLocCheckBox.Size = new Size(99, 19);
+        PinfallsAtLocCheckBox.TabIndex = 16;
+        PinfallsAtLocCheckBox.Text = "Pinfalls at loc.";
+        PinfallsAtLocCheckBox.UseVisualStyleBackColor = true;
         // 
-        // FloorField
+        // FloorTextBox
         // 
-        this.FloorField.Location = new System.Drawing.Point(6, 19);
-        this.FloorField.Name = "FloorField";
-        this.FloorField.Size = new System.Drawing.Size(334, 20);
-        this.FloorField.TabIndex = 0;
+        FloorTextBox.Location = new Point(8, 22);
+        FloorTextBox.Margin = new Padding(4, 3, 4, 3);
+        FloorTextBox.Name = "FloorTextBox";
+        FloorTextBox.Size = new Size(388, 23);
+        FloorTextBox.TabIndex = 0;
         // 
         // grpFloor
         // 
-        this.grpFloor.Controls.Add(this.FloorField);
-        this.grpFloor.Location = new System.Drawing.Point(227, 264);
-        this.grpFloor.Name = "grpFloor";
-        this.grpFloor.Size = new System.Drawing.Size(346, 45);
-        this.grpFloor.TabIndex = 15;
-        this.grpFloor.TabStop = false;
-        this.grpFloor.Text = "Floor";
-        // 
-        // DeleteTransitionButton
-        // 
-        this.DeleteTransitionButton.Location = new System.Drawing.Point(317, 120);
-        this.DeleteTransitionButton.Name = "DeleteTransitionButton";
-        this.DeleteTransitionButton.Size = new System.Drawing.Size(23, 23);
-        this.DeleteTransitionButton.TabIndex = 11;
-        this.DeleteTransitionButton.UseVisualStyleBackColor = true;
-        // 
-        // AddTransitionButton
-        // 
-        this.AddTransitionButton.Location = new System.Drawing.Point(259, 120);
-        this.AddTransitionButton.Name = "AddTransitionButton";
-        this.AddTransitionButton.Size = new System.Drawing.Size(23, 23);
-        this.AddTransitionButton.TabIndex = 10;
-        this.AddTransitionButton.UseVisualStyleBackColor = true;
-        // 
-        // EditTransitionButton
-        // 
-        this.EditTransitionButton.Location = new System.Drawing.Point(288, 120);
-        this.EditTransitionButton.Name = "EditTransitionButton";
-        this.EditTransitionButton.Size = new System.Drawing.Size(23, 23);
-        this.EditTransitionButton.TabIndex = 9;
-        this.EditTransitionButton.UseVisualStyleBackColor = true;
-        // 
-        // TransitionsListBox
-        // 
-        this.TransitionsListBox.FormattingEnabled = true;
-        this.TransitionsListBox.Location = new System.Drawing.Point(147, 19);
-        this.TransitionsListBox.Name = "TransitionsListBox";
-        this.TransitionsListBox.Size = new System.Drawing.Size(193, 95);
-        this.TransitionsListBox.TabIndex = 1;
+        grpFloor.Controls.Add(FloorTextBox);
+        grpFloor.Location = new Point(13, 257);
+        grpFloor.Margin = new Padding(4, 3, 4, 3);
+        grpFloor.Name = "grpFloor";
+        grpFloor.Padding = new Padding(4, 3, 4, 3);
+        grpFloor.Size = new Size(404, 51);
+        grpFloor.TabIndex = 15;
+        grpFloor.TabStop = false;
+        grpFloor.Text = "Floor";
         // 
         // grpTransitions
         // 
-        this.grpTransitions.Controls.Add(this.DeleteTransitionButton);
-        this.grpTransitions.Controls.Add(this.AddTransitionButton);
-        this.grpTransitions.Controls.Add(this.EditTransitionButton);
-        this.grpTransitions.Controls.Add(this.TransitionsListBox);
-        this.grpTransitions.Controls.Add(this.LocationsListBox);
-        this.grpTransitions.Location = new System.Drawing.Point(227, 109);
-        this.grpTransitions.Name = "grpTransitions";
-        this.grpTransitions.Size = new System.Drawing.Size(346, 149);
-        this.grpTransitions.TabIndex = 14;
-        this.grpTransitions.TabStop = false;
-        this.grpTransitions.Text = "Transitions";
+        grpTransitions.Controls.Add(TransitionText3TextBox);
+        grpTransitions.Controls.Add(TransitionText2TextBox);
+        grpTransitions.Controls.Add(TransitionText1TextBox);
+        grpTransitions.Controls.Add(LocationsListBox);
+        grpTransitions.Location = new Point(13, 69);
+        grpTransitions.Margin = new Padding(4, 3, 4, 3);
+        grpTransitions.Name = "grpTransitions";
+        grpTransitions.Padding = new Padding(4, 3, 4, 3);
+        grpTransitions.Size = new Size(404, 182);
+        grpTransitions.TabIndex = 14;
+        grpTransitions.TabStop = false;
+        grpTransitions.Text = "Transitions";
         // 
         // LocationsListBox
         // 
-        this.LocationsListBox.DisplayMember = "DisplayMember";
-        this.LocationsListBox.FormattingEnabled = true;
-        this.LocationsListBox.Location = new System.Drawing.Point(6, 19);
-        this.LocationsListBox.Name = "LocationsListBox";
-        this.LocationsListBox.Size = new System.Drawing.Size(135, 121);
-        this.LocationsListBox.TabIndex = 0;
-        this.LocationsListBox.ValueMember = "ValueMember";
+        LocationsListBox.DisplayMember = "DisplayMember";
+        LocationsListBox.FormattingEnabled = true;
+        LocationsListBox.ItemHeight = 15;
+        LocationsListBox.Location = new Point(8, 22);
+        LocationsListBox.Margin = new Padding(4, 3, 4, 3);
+        LocationsListBox.Name = "LocationsListBox";
+        LocationsListBox.Size = new Size(157, 154);
+        LocationsListBox.TabIndex = 0;
+        LocationsListBox.ValueMember = "ValueMember";
         // 
-        // NameField
+        // NameTextBox
         // 
-        this.NameField.Location = new System.Drawing.Point(6, 19);
-        this.NameField.Name = "NameField";
-        this.NameField.Size = new System.Drawing.Size(334, 20);
-        this.NameField.TabIndex = 0;
+        NameTextBox.Location = new Point(8, 22);
+        NameTextBox.Margin = new Padding(4, 3, 4, 3);
+        NameTextBox.Name = "NameTextBox";
+        NameTextBox.Size = new Size(388, 23);
+        NameTextBox.TabIndex = 0;
         // 
-        // OkCommand
+        // OkButton
         // 
-        this.OkCommand.DialogResult = System.Windows.Forms.DialogResult.OK;
-        this.OkCommand.Location = new System.Drawing.Point(498, 340);
-        this.OkCommand.Name = "OkCommand";
-        this.OkCommand.Size = new System.Drawing.Size(75, 23);
-        this.OkCommand.TabIndex = 24;
-        this.OkCommand.Text = "&Ok";
-        this.OkCommand.UseVisualStyleBackColor = true;
+        OkButton.DialogResult = DialogResult.OK;
+        OkButton.Location = new Point(329, 348);
+        OkButton.Margin = new Padding(4, 3, 4, 3);
+        OkButton.Name = "OkButton";
+        OkButton.Size = new Size(88, 27);
+        OkButton.TabIndex = 24;
+        OkButton.Text = "&Ok";
+        OkButton.UseVisualStyleBackColor = true;
         // 
         // grpName
         // 
-        this.grpName.Controls.Add(this.NameField);
-        this.grpName.Location = new System.Drawing.Point(227, 58);
-        this.grpName.Name = "grpName";
-        this.grpName.Size = new System.Drawing.Size(346, 45);
-        this.grpName.TabIndex = 13;
-        this.grpName.TabStop = false;
-        this.grpName.Text = "Name";
+        grpName.Controls.Add(NameTextBox);
+        grpName.Location = new Point(13, 12);
+        grpName.Margin = new Padding(4, 3, 4, 3);
+        grpName.Name = "grpName";
+        grpName.Padding = new Padding(4, 3, 4, 3);
+        grpName.Size = new Size(404, 51);
+        grpName.TabIndex = 13;
+        grpName.TabStop = false;
+        grpName.Text = "Name";
+        // 
+        // TransitionText1TextBox
+        // 
+        TransitionText1TextBox.Location = new Point(172, 22);
+        TransitionText1TextBox.Name = "TransitionText1TextBox";
+        TransitionText1TextBox.Size = new Size(225, 23);
+        TransitionText1TextBox.TabIndex = 1;
+        // 
+        // TransitionText2TextBox
+        // 
+        TransitionText2TextBox.Location = new Point(172, 51);
+        TransitionText2TextBox.Name = "TransitionText2TextBox";
+        TransitionText2TextBox.Size = new Size(225, 23);
+        TransitionText2TextBox.TabIndex = 2;
+        // 
+        // TransitionText3TextBox
+        // 
+        TransitionText3TextBox.Location = new Point(172, 80);
+        TransitionText3TextBox.Name = "TransitionText3TextBox";
+        TransitionText3TextBox.Size = new Size(225, 23);
+        TransitionText3TextBox.TabIndex = 3;
         // 
         // LocationEditorForm
         // 
-        this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(800, 450);
-        this.Controls.Add(this.CancelCommand);
-        this.Controls.Add(this.CanFightCheckBox);
-        this.Controls.Add(this.WeaponsCheckBox);
-        this.Controls.Add(this.DQsCheckBox);
-        this.Controls.Add(this.CountOutCheckBox);
-        this.Controls.Add(this.CanTagCheckBox);
-        this.Controls.Add(this.ATTWinsCheckBox);
-        this.Controls.Add(this.SubmissionsCheckBox);
-        this.Controls.Add(this.PinfallsCheckBox);
-        this.Controls.Add(this.grpFloor);
-        this.Controls.Add(this.grpTransitions);
-        this.Controls.Add(this.OkCommand);
-        this.Controls.Add(this.grpName);
-        this.Name = "LocationEditorForm";
-        this.Text = "LocationEditorForm";
-        this.grpFloor.ResumeLayout(false);
-        this.grpFloor.PerformLayout();
-        this.grpTransitions.ResumeLayout(false);
-        this.grpName.ResumeLayout(false);
-        this.grpName.PerformLayout();
-        this.ResumeLayout(false);
-        this.PerformLayout();
-
+        AcceptButton = OkButton;
+        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleMode = AutoScaleMode.Font;
+        CancelButton = CancelButton;
+        ClientSize = new Size(430, 420);
+        Controls.Add(CancelButton);
+        Controls.Add(CanFightHereCheckBox);
+        Controls.Add(WeaponsAtLocCheckBox);
+        Controls.Add(DQAtLocCheckBox);
+        Controls.Add(CountOutAtLocCheckBox);
+        Controls.Add(CanTagHereCheckBox);
+        Controls.Add(ATTWinsIfHereCheckBox);
+        Controls.Add(SubmissionsAtLocCheckBox);
+        Controls.Add(PinfallsAtLocCheckBox);
+        Controls.Add(grpFloor);
+        Controls.Add(grpTransitions);
+        Controls.Add(OkButton);
+        Controls.Add(grpName);
+        FormBorderStyle = FormBorderStyle.FixedDialog;
+        Margin = new Padding(4, 3, 4, 3);
+        MaximizeBox = false;
+        MinimizeBox = false;
+        Name = "LocationEditorForm";
+        ShowIcon = false;
+        ShowInTaskbar = false;
+        grpFloor.ResumeLayout(false);
+        grpFloor.PerformLayout();
+        grpTransitions.ResumeLayout(false);
+        grpTransitions.PerformLayout();
+        grpName.ResumeLayout(false);
+        grpName.PerformLayout();
+        ResumeLayout(false);
+        PerformLayout();
     }
 
     #endregion
 
-    internal System.Windows.Forms.Button CancelCommand;
-    internal System.Windows.Forms.CheckBox CanFightCheckBox;
-    internal System.Windows.Forms.CheckBox WeaponsCheckBox;
-    internal System.Windows.Forms.CheckBox DQsCheckBox;
-    internal System.Windows.Forms.CheckBox CountOutCheckBox;
-    internal System.Windows.Forms.CheckBox CanTagCheckBox;
-    internal System.Windows.Forms.CheckBox ATTWinsCheckBox;
-    internal System.Windows.Forms.CheckBox SubmissionsCheckBox;
-    internal System.Windows.Forms.CheckBox PinfallsCheckBox;
-    internal System.Windows.Forms.TextBox FloorField;
+    internal System.Windows.Forms.Button CancelButton;
+    internal System.Windows.Forms.CheckBox CanFightHereCheckBox;
+    internal System.Windows.Forms.CheckBox WeaponsAtLocCheckBox;
+    internal System.Windows.Forms.CheckBox DQAtLocCheckBox;
+    internal System.Windows.Forms.CheckBox CountOutAtLocCheckBox;
+    internal System.Windows.Forms.CheckBox CanTagHereCheckBox;
+    internal System.Windows.Forms.CheckBox ATTWinsIfHereCheckBox;
+    internal System.Windows.Forms.CheckBox SubmissionsAtLocCheckBox;
+    internal System.Windows.Forms.CheckBox PinfallsAtLocCheckBox;
+    internal System.Windows.Forms.TextBox FloorTextBox;
     internal System.Windows.Forms.GroupBox grpFloor;
-    internal System.Windows.Forms.Button DeleteTransitionButton;
-    internal System.Windows.Forms.Button AddTransitionButton;
-    internal System.Windows.Forms.Button EditTransitionButton;
-    internal System.Windows.Forms.ListBox TransitionsListBox;
     internal System.Windows.Forms.GroupBox grpTransitions;
     internal System.Windows.Forms.ListBox LocationsListBox;
-    internal System.Windows.Forms.TextBox NameField;
-    internal System.Windows.Forms.Button OkCommand;
+    internal System.Windows.Forms.TextBox NameTextBox;
+    internal System.Windows.Forms.Button OkButton;
     internal System.Windows.Forms.GroupBox grpName;
+    private TextBox TransitionText3TextBox;
+    private TextBox TransitionText2TextBox;
+    private TextBox TransitionText1TextBox;
 }
