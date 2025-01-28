@@ -75,8 +75,8 @@ partial class WrestlerEditorForm
         lblRingIntro = new Label();
         StableTextBox = new TextBox();
         lblStable = new Label();
-        AffliliationComboBox = new ComboBox();
-        lblAffliliation = new Label();
+        AffiliationComboBox = new ComboBox();
+        lblAffiliation = new Label();
         HometownTextBox = new TextBox();
         lblHometown = new Label();
         NamesTextBox = new TextBox();
@@ -137,6 +137,7 @@ partial class WrestlerEditorForm
         CharismaDecreaseButton.Size = new Size(15, 15);
         CharismaDecreaseButton.TabIndex = 20;
         CharismaDecreaseButton.UseVisualStyleBackColor = true;
+        CharismaDecreaseButton.Click += CharismaDecreaseButton_Click;
         // 
         // CharismaIncreaseButton
         // 
@@ -145,6 +146,7 @@ partial class WrestlerEditorForm
         CharismaIncreaseButton.Size = new Size(15, 15);
         CharismaIncreaseButton.TabIndex = 22;
         CharismaIncreaseButton.UseVisualStyleBackColor = true;
+        CharismaIncreaseButton.Click += CharismaIncreaseButton_Click;
         // 
         // CharismaProgressBar
         // 
@@ -160,6 +162,7 @@ partial class WrestlerEditorForm
         VitalityDecreaseButton.Size = new Size(15, 15);
         VitalityDecreaseButton.TabIndex = 17;
         VitalityDecreaseButton.UseVisualStyleBackColor = true;
+        VitalityDecreaseButton.Click += VitalityDecreaseButton_Click;
         // 
         // VitalityIncreaseButton
         // 
@@ -168,6 +171,7 @@ partial class WrestlerEditorForm
         VitalityIncreaseButton.Size = new Size(15, 15);
         VitalityIncreaseButton.TabIndex = 19;
         VitalityIncreaseButton.UseVisualStyleBackColor = true;
+        VitalityIncreaseButton.Click += VitalityIncreaseButton_Click;
         // 
         // VitalityProgressBar
         // 
@@ -183,6 +187,7 @@ partial class WrestlerEditorForm
         SpeedDecreaseButton.Size = new Size(15, 15);
         SpeedDecreaseButton.TabIndex = 14;
         SpeedDecreaseButton.UseVisualStyleBackColor = true;
+        SpeedDecreaseButton.Click += SpeedDecreaseButton_Click;
         // 
         // SpeedIncreaseButton
         // 
@@ -191,6 +196,7 @@ partial class WrestlerEditorForm
         SpeedIncreaseButton.Size = new Size(15, 15);
         SpeedIncreaseButton.TabIndex = 16;
         SpeedIncreaseButton.UseVisualStyleBackColor = true;
+        SpeedIncreaseButton.Click += SpeedIncreaseButton_Click;
         // 
         // SpeedProgressBar
         // 
@@ -206,6 +212,7 @@ partial class WrestlerEditorForm
         StrengthDecreaseButton.Size = new Size(15, 15);
         StrengthDecreaseButton.TabIndex = 11;
         StrengthDecreaseButton.UseVisualStyleBackColor = true;
+        StrengthDecreaseButton.Click += StrengthDecreaseButton_Click;
         // 
         // StrengthIncreaseButton
         // 
@@ -214,6 +221,7 @@ partial class WrestlerEditorForm
         StrengthIncreaseButton.Size = new Size(15, 15);
         StrengthIncreaseButton.TabIndex = 13;
         StrengthIncreaseButton.UseVisualStyleBackColor = true;
+        StrengthIncreaseButton.Click += StrengthIncreaseButton_Click;
         // 
         // LosesTextBox
         // 
@@ -338,6 +346,7 @@ partial class WrestlerEditorForm
         AddMoveButton.TabIndex = 28;
         AddMoveButton.Text = "Add";
         AddMoveButton.UseVisualStyleBackColor = true;
+        AddMoveButton.Click += AddMoveButton_Click;
         // 
         // RemoveMoveButton
         // 
@@ -348,6 +357,7 @@ partial class WrestlerEditorForm
         RemoveMoveButton.TabIndex = 30;
         RemoveMoveButton.Text = "Remove";
         RemoveMoveButton.UseVisualStyleBackColor = true;
+        RemoveMoveButton.Click += RemoveMoveButton_Click;
         // 
         // EditMoveButton
         // 
@@ -358,6 +368,7 @@ partial class WrestlerEditorForm
         EditMoveButton.TabIndex = 29;
         EditMoveButton.Text = "Edit";
         EditMoveButton.UseVisualStyleBackColor = true;
+        EditMoveButton.Click += EditMoveButton_Click;
         // 
         // MovesListBox
         // 
@@ -420,7 +431,6 @@ partial class WrestlerEditorForm
         // 
         // ExportHTMLButton
         // 
-        ExportHTMLButton.Enabled = false;
         ExportHTMLButton.Location = new Point(234, 318);
         ExportHTMLButton.Margin = new Padding(4, 3, 4, 3);
         ExportHTMLButton.Name = "ExportHTMLButton";
@@ -464,6 +474,7 @@ partial class WrestlerEditorForm
         RemoveTitleButton.TabIndex = 10;
         RemoveTitleButton.Text = "Remove";
         RemoveTitleButton.UseVisualStyleBackColor = true;
+        RemoveTitleButton.Click += RemoveTitleButton_Click;
         // 
         // AddTitleButton
         // 
@@ -474,6 +485,7 @@ partial class WrestlerEditorForm
         AddTitleButton.TabIndex = 9;
         AddTitleButton.Text = "Add";
         AddTitleButton.UseVisualStyleBackColor = true;
+        AddTitleButton.Click += AddTitleButton_Click;
         // 
         // EscortInterferesCheckBox
         // 
@@ -563,26 +575,25 @@ partial class WrestlerEditorForm
         lblStable.TabIndex = 28;
         lblStable.Text = "Stable";
         // 
-        // AffliliationComboBox
+        // AffiliationComboBox
         // 
-        AffliliationComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-        AffliliationComboBox.FormattingEnabled = true;
-        AffliliationComboBox.Items.AddRange(new object[] { "Face", "Neutral", "Heel" });
-        AffliliationComboBox.Location = new Point(309, 70);
-        AffliliationComboBox.Margin = new Padding(4, 3, 4, 3);
-        AffliliationComboBox.Name = "AffliliationComboBox";
-        AffliliationComboBox.Size = new Size(221, 23);
-        AffliliationComboBox.TabIndex = 2;
+        AffiliationComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+        AffiliationComboBox.FormattingEnabled = true;
+        AffiliationComboBox.Location = new Point(309, 70);
+        AffiliationComboBox.Margin = new Padding(4, 3, 4, 3);
+        AffiliationComboBox.Name = "AffiliationComboBox";
+        AffiliationComboBox.Size = new Size(221, 23);
+        AffiliationComboBox.TabIndex = 2;
         // 
-        // lblAffliliation
+        // lblAffiliation
         // 
-        lblAffliliation.AutoSize = true;
-        lblAffliliation.Location = new Point(234, 73);
-        lblAffliliation.Margin = new Padding(4, 0, 4, 0);
-        lblAffliliation.Name = "lblAffliliation";
-        lblAffliliation.Size = new Size(62, 15);
-        lblAffliliation.TabIndex = 26;
-        lblAffliliation.Text = "Affliliation";
+        lblAffiliation.AutoSize = true;
+        lblAffiliation.Location = new Point(234, 73);
+        lblAffiliation.Margin = new Padding(4, 0, 4, 0);
+        lblAffiliation.Name = "lblAffiliation";
+        lblAffiliation.Size = new Size(59, 15);
+        lblAffiliation.TabIndex = 26;
+        lblAffiliation.Text = "Affiliation";
         // 
         // HometownTextBox
         // 
@@ -625,7 +636,6 @@ partial class WrestlerEditorForm
         AcceptButton = OkButton;
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        CancelButton = CancelButton;
         ClientSize = new Size(543, 356);
         Controls.Add(grpStats);
         Controls.Add(grpMoves);
@@ -643,8 +653,8 @@ partial class WrestlerEditorForm
         Controls.Add(lblRingIntro);
         Controls.Add(StableTextBox);
         Controls.Add(lblStable);
-        Controls.Add(AffliliationComboBox);
-        Controls.Add(lblAffliliation);
+        Controls.Add(AffiliationComboBox);
+        Controls.Add(lblAffiliation);
         Controls.Add(HometownTextBox);
         Controls.Add(lblHometown);
         Controls.Add(NamesTextBox);
@@ -702,22 +712,22 @@ partial class WrestlerEditorForm
     internal System.Windows.Forms.Label lblRingIntro;
     internal System.Windows.Forms.TextBox StableTextBox;
     internal System.Windows.Forms.Label lblStable;
-    internal System.Windows.Forms.ComboBox AffliliationComboBox;
-    internal System.Windows.Forms.Label lblAffliliation;
+    internal System.Windows.Forms.ComboBox AffiliationComboBox;
+    internal System.Windows.Forms.Label lblAffiliation;
     internal System.Windows.Forms.TextBox HometownTextBox;
     internal System.Windows.Forms.Label lblHometown;
     internal System.Windows.Forms.TextBox NamesTextBox;
     internal System.Windows.Forms.Label lblNames;
-    private Button StrengthDecreaseButton;
-    private Button StrengthIncreaseButton;
-    private ProgressBar StrengthProgressBar;
-    private Button CharismaDecreaseButton;
-    private Button CharismaIncreaseButton;
-    private ProgressBar CharismaProgressBar;
-    private Button VitalityDecreaseButton;
-    private Button VitalityIncreaseButton;
-    private ProgressBar VitalityProgressBar;
-    private Button SpeedDecreaseButton;
-    private Button SpeedIncreaseButton;
-    private ProgressBar SpeedProgressBar;
+    internal System.Windows.Forms.Button StrengthDecreaseButton;
+    internal System.Windows.Forms.Button StrengthIncreaseButton;
+    internal System.Windows.Forms.ProgressBar StrengthProgressBar;
+    internal System.Windows.Forms.Button CharismaDecreaseButton;
+    internal System.Windows.Forms.Button CharismaIncreaseButton;
+    internal System.Windows.Forms.ProgressBar CharismaProgressBar;
+    internal System.Windows.Forms.Button VitalityDecreaseButton;
+    internal System.Windows.Forms.Button VitalityIncreaseButton;
+    internal System.Windows.Forms.ProgressBar VitalityProgressBar;
+    internal System.Windows.Forms.Button SpeedDecreaseButton;
+    internal System.Windows.Forms.Button SpeedIncreaseButton;
+    internal System.Windows.Forms.ProgressBar SpeedProgressBar;
 }
