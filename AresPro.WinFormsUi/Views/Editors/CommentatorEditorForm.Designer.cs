@@ -33,7 +33,7 @@ partial class CommentatorEditorForm
         FileTextBox = new TextBox();
         CancelButton = new Button();
         OkButton = new Button();
-        AffliliationComboBox = new ComboBox();
+        AffiliationComboBox = new ComboBox();
         NameTextBox = new TextBox();
         lblName = new Label();
         grpFile.SuspendLayout();
@@ -94,15 +94,15 @@ partial class CommentatorEditorForm
         OkButton.Text = "&Ok";
         OkButton.UseVisualStyleBackColor = true;
         // 
-        // AffliliationComboBox
+        // AffiliationComboBox
         // 
-        AffliliationComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-        AffliliationComboBox.FormattingEnabled = true;
-        AffliliationComboBox.Location = new Point(13, 102);
-        AffliliationComboBox.Margin = new Padding(4, 3, 4, 3);
-        AffliliationComboBox.Name = "AffliliationComboBox";
-        AffliliationComboBox.Size = new Size(161, 23);
-        AffliliationComboBox.TabIndex = 9;
+        AffiliationComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+        AffiliationComboBox.FormattingEnabled = true;
+        AffiliationComboBox.Location = new Point(13, 102);
+        AffiliationComboBox.Margin = new Padding(4, 3, 4, 3);
+        AffiliationComboBox.Name = "AffiliationComboBox";
+        AffiliationComboBox.Size = new Size(161, 23);
+        AffiliationComboBox.TabIndex = 9;
         // 
         // NameTextBox
         // 
@@ -131,7 +131,7 @@ partial class CommentatorEditorForm
         Controls.Add(grpFile);
         Controls.Add(CancelButton);
         Controls.Add(OkButton);
-        Controls.Add(AffliliationComboBox);
+        Controls.Add(AffiliationComboBox);
         Controls.Add(NameTextBox);
         Controls.Add(lblName);
         FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -155,7 +155,7 @@ partial class CommentatorEditorForm
     internal System.Windows.Forms.TextBox FileTextBox;
     internal System.Windows.Forms.Button CancelButton;
     internal System.Windows.Forms.Button OkButton;
-    internal System.Windows.Forms.ComboBox AffliliationComboBox;
+    internal System.Windows.Forms.ComboBox AffiliationComboBox;
     internal System.Windows.Forms.TextBox NameTextBox;
     internal System.Windows.Forms.Label lblName;
 }

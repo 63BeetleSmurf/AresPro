@@ -13,9 +13,9 @@ public partial class CommentatorEditorForm : Form
 
     public void InitializeForm()
     {
-        AffliliationComboBox.DataSource = CommonListsHelper.AffiliationsList;
-        AffliliationComboBox.DisplayMember = "Display";
-        AffliliationComboBox.ValueMember = "Value";
+        AffiliationComboBox.DataSource = CommonListsHelper.AffiliationsList;
+        AffiliationComboBox.DisplayMember = "Display";
+        AffiliationComboBox.ValueMember = "Value";
     }
 
     private void ChangeFileButton_Click(object sender, EventArgs e)

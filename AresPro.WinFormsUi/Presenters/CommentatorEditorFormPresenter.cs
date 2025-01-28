@@ -28,14 +28,14 @@ public class CommentatorEditorFormPresenter
     {
         _commentatorEditorForm.NameTextBox.Text = _commentatorModel.Name;
         _commentatorEditorForm.FileTextBox.Text = _commentatorModel.FileName;
-        _commentatorEditorForm.AffliliationComboBox.SelectedValue = _commentatorModel.Affiliation;
+        _commentatorEditorForm.AffiliationComboBox.SelectedValue = _commentatorModel.Affiliation;
     }
 
     private void UpdateModel()
     {
         _commentatorModel.Name = _commentatorEditorForm.NameTextBox.Text;
         _commentatorModel.FileName = _commentatorEditorForm.FileTextBox.Text;
-        _commentatorModel.Affiliation = (Affiliations)(_commentatorEditorForm.AffliliationComboBox.SelectedValue ?? 0);
+        _commentatorModel.Affiliation = (Affiliations)(_commentatorEditorForm.AffiliationComboBox.SelectedValue ?? 0);
     }
 
     public DialogResult ShowDialog(IWin32Window owner, out string newKey)
