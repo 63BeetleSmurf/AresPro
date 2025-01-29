@@ -1,11 +1,12 @@
 ﻿using System.Text;
+using System.Text.RegularExpressions;
 
 using AresPro.WinFormsUi.Enums;
 using AresPro.WinFormsUi.Models;
 
 namespace AresPro.WinFormsUi.Matches;
 
-public class SinglesMatch
+public partial class SinglesMatch
 {
     // numbers seem to determine how often something will happen, with lower numbers being more often.
     private const int CallMoveChance = 3;               // How often commentators comment on the move being done - Tested
@@ -135,26 +136,11 @@ public class SinglesMatch
             finish = _random.Next(5) + 1;
 
         bool running = true; // CHANGE - continue is keyword so changed to running.
-        int time = 0;
         while (running)
-        {
             running = Wrestling(w1, w2, finish);
 
-            if (_match.Count > 10)
-                while (_match.Count > 10)
-                    _match.RemoveAt(0);
-        }
-
-        int size = _match.Count;
-        Output.AppendLine("(Match Joined in progress)");
-        for (int x = 0; x < size; x++)
-        {
-            string line = _match[x];
+        foreach (string line in _match)
             Output.AppendLine(line);
-        }
-
-        int min = _random.Next(6) + 4;
-        int sec = _random.Next(60);
 
         if (finish == 1)
             Output.AppendLine($"{w2.Name} has been pinned.");
@@ -170,7 +156,6 @@ public class SinglesMatch
             Output.AppendLine("The Referee calls for the bell and rules the match a double countout.");
         if (finish == 7)
             Output.AppendLine("The Referee calls for the bell and rules the match a double disqualification.");
-        Output.AppendLine($"Match Length: {min} minutes and {sec} seconds");
         Output.AppendLine("");
         Output.AppendLine("");
     }
@@ -337,189 +322,224 @@ public class SinglesMatch
 
     private void RefBump(WrestlerModel w1, WrestlerModel w2)
     {
-        string[] bumps = [
-            "w1 whips w2 into the referee. The referee goes down.",
-            "w1 clotheslines w2, w2 ducks. w1 takes out the ref.",
-            "w2 misses with a clothesline and takes down the referee.",
-            "w1 sends w2 into the corner crushing the referee."
-        ];
-
-        int size = bumps.Length;
-        string text = bumps[_random.Next(size)];
-        text = text.Replace("w1", w1.Name);
-        text = text.Replace("w2", w2.Name);
-        _match.Add(text);
+        _match.Add(
+            GetRandomText(
+                [
+                    "#ATT# whips #REC# into the referee. The referee goes down.",
+                    "#ATT# clotheslines #REC#, #REC# ducks. #ATT# takes out the ref.",
+                    "#REC# misses with a clothesline and takes down the referee.",
+                    "#ATT# sends #REC# into the corner crushing the referee."
+                ],
+                new() {
+                    { "#ATT#", w1.Name },
+                    { "#REC#", w2.Name },
+                }
+            )
+        );
     }
 
     private void LeaveRing(WrestlerModel w1, WrestlerModel w2)
     {
-        string[] texts = [
-            "w1 takes w2 out to the floor.",
-            "w1 and w2 go to the floor.",
-            "w1 leaves the ring and w2 follows.",
-            "w2 and w1 fight to the floor."
-        ];
-
-        int size = texts.Length;
-        string text = texts[_random.Next(size)];
-        text = text.Replace("w1", w1.Name);
-        text = text.Replace("w2", w2.Name);
-        _match.Add(text);
+        _match.Add(
+            GetRandomText(
+                [
+                    "#ATT# takes #REC# out to the floor.",
+                    "#ATT# and #REC# go to the floor.",
+                    "#ATT# leaves the ring and #REC# follows.",
+                    "#REC# and #ATT# fight to the floor."
+                ],
+                new() {
+                    { "#ATT#", w1.Name },
+                    { "#REC#", w2.Name },
+                }
+            )
+        );
     }
 
     private void Pin(WrestlerModel w1, WrestlerModel w2)
     {
-        string[] texts = [
-            "w1 makes the cover on w2.",
-            "w1 rolls up w2.",
-            "w1 hooks the leg of w2 for a cover.",
-            "w1 is able to cover w2."
-        ];
-
-        int size = texts.Length;
-        string text = texts[_random.Next(size)];
-        text = text.Replace("w1", w1.Name);
-        text = text.Replace("w2", w2.Name);
-        _match.Add(text);
+        _match.Add(
+            GetRandomText(
+                [
+                    "#ATT# makes the cover on #REC#.",
+                    "#ATT# rolls up #REC#.",
+                    "#ATT# hooks the leg of #REC# for a cover.",
+                    "#ATT# is able to cover #REC#."
+                ],
+                new() {
+                    { "#ATT#", w1.Name },
+                    { "#REC#", w2.Name },
+                }
+            )
+        );
     }
 
     private void Submission(WrestlerModel w1, WrestlerModel w2)
     {
-        string[] texts = [
-            "w1 puts w2 in anklelock submission.",
-            "w1 locks a chickenwing on w2.",
-            "w1 rolls w2 over into a Boston crab.",
-            "w1 has w2 in a figure-four leg lock."
-        ];
-
-        int size = texts.Length;
-        string text = texts[_random.Next(size)];
-        text = text.Replace("w1", w1.Name);
-        text = text.Replace("w2", w2.Name);
-        _match.Add(text);
+        _match.Add(
+            GetRandomText(
+                [
+                    "#ATT# puts #REC# in anklelock submission.",
+                    "#ATT# locks a chickenwing on #REC#.",
+                    "#ATT# rolls #REC# over into a Boston crab.",
+                    "#ATT# has #REC# in a figure-four leg lock."
+                ],
+                new() {
+                    { "#ATT#", w1.Name },
+                    { "#REC#", w2.Name },
+                }
+            )
+        );
     }
 
     private void Count(WrestlerModel w1, WrestlerModel w2, int c1, int c2)
     {
-        string[] texts = [
-            "The referee counts ",
-            "the count "
-        ];
+        string text = GetRandomText(
+            [
+                "The referee counts",
+                "the count"
+            ],
+            new() {
+                { "#ATT#", w1.Name },
+                { "#REC#", w2.Name },
+            }
+        );
 
-        int size = texts.Length;
-        string text = texts[_random.Next(size)];
-        text = text.Replace("w1", w1.Name);
-        text = text.Replace("w2", w2.Name);
-        for (int x = c1; x < c2; x++)
-            text = $"{text}{x}, ";
-        text = $"{text}{c2}";
+        for (int i = c1; i < c2; i++)
+            text = $"{text} {i},";
+        text = $"{text} {c2}";
+
         _match.Add(text);
     }
 
     private void RefUnbump(WrestlerModel w1, WrestlerModel w2)
     {
-        string[] texts = [
-            "The referee has regained consisness.",
-            "The referee is back to his feet.",
-            "The referee recovers from that blow.",
-            "The referee sees w1 and w2."
-        ];
-
-        int size = texts.Length;
-        string text = texts[_random.Next(size)];
-        text = text.Replace("w1", w1.Name);
-        text = text.Replace("w2", w2.Name);
-        _match.Add(text);
+        _match.Add(
+            GetRandomText(
+                [
+                    "The referee has regained consisness.",
+                    "The referee is back to his feet.",
+                    "The referee recovers from that blow.",
+                    "The referee sees #ATT# and #REC#."
+                ],
+                new() {
+                    { "#ATT#", w1.Name },
+                    { "#REC#", w2.Name },
+                }
+            )
+        );
     }
 
     private void Ringside(WrestlerModel w1, WrestlerModel w2)
     {
-        string[] texts = [
-            "w1 sends w2 into the steel steps.",
-            "w2 irish whips w1 into the guard railing.",
-            "w1 and w2 fight around the ring.",
-            "w2 send w1 into the steel ring post."
-        ];
-
-        int size = texts.Length;
-        string text = texts[_random.Next(size)];
-        text = text.Replace("w1", w1.Name);
-        text = text.Replace("w2", w2.Name);
-        _match.Add(text);
+        _match.Add(
+            GetRandomText(
+                [
+                    "#ATT# sends #REC# into the steel steps.",
+                    "#REC# irish whips #ATT# into the guard railing.",
+                    "#ATT# and #REC# fight around the ring.",
+                    "#REC# send #ATT# into the steel ring post."
+                ],
+                new() {
+                    { "#ATT#", w1.Name },
+                    { "#REC#", w2.Name },
+                }
+            )
+        );
     }
 
     private string Weapon(WrestlerModel w1, WrestlerModel w2)
     {
-        string[] weapons = [
-            "chair",
-            "bell",
-            "steel chair",
-            "frying pan",
-            "monkey wrench"
-        ];
-        string[] texts = [
-            "w1 has gotten ahold of a weap.",
-            "w1 grabs a weap.",
-            "w1 now has a weap.",
-            "w1 has a weap."
-        ];
-        int size;
-        size = weapons.Length;
-        string weap = weapons[_random.Next(size)];
+        string weap = GetRandomText(
+            [
+                "chair",
+                "bell",
+                "steel chair",
+                "frying pan",
+                "monkey wrench"
+            ]
+        );
 
-        size = texts.Length;
-        string text = texts[_random.Next(size)];
-        text = text.Replace("w1", w1.Name);
-        text = text.Replace("w2", w2.Name);
-        text = text.Replace("weap", weap);
-        _match.Add(text);
+        _match.Add(
+            GetRandomText(
+                [
+                    "#ATT# has gotten ahold of a #WEP#.",
+                    "#ATT# grabs a #WEP#.",
+                    "#ATT# now has a #WEP#.",
+                    "#ATT# has a #WEP#."
+                ],
+                new() {
+                    { "#ATT#", w1.Name },
+                    { "#REC#", w2.Name },
+                    { "#WEP#", weap }
+                }
+            )
+        );
+
         return weap;
     }
 
     private void UseWeapon(WrestlerModel w1, WrestlerModel w2, string weap)
     {
-        string[] texts = [
-            "w1 hits w2 with the weap.",
-            "w2 was hit by w1 with the weap.",
-            "w1 uses that weap.",
-            "w2 takes a blow from the weap."
-        ];
-
-        int size = texts.Length;
-        string text = texts[_random.Next(size)];
-        text = text.Replace("w1", w1.Name);
-        text = text.Replace("w2", w2.Name);
-        text = text.Replace("weap", weap);
-        _match.Add(text);
+        _match.Add(
+            GetRandomText(
+                [
+                    "#ATT# hits #REC# with the #WEP#.",
+                    "#REC# was hit by #ATT# with the #WEP#.",
+                    "#ATT# uses that #WEP#.",
+                    "#REC# takes a blow from the #WEP#."
+                ],
+                new() {
+                    { "#ATT#", w1.Name },
+                    { "#REC#", w2.Name },
+                    { "#WEP#", weap }
+                }
+            )
+        );
     }
 
     private void ReturnToRing(WrestlerModel w1, string? weap = null)
     {
-        string[] texts = [
-            "w1 climbs back into the ring.",
-            "w1 moves back into the ring.",
-            "w1 slides into the ring.",
-            "w1 returns to the ring."
-        ];
-
-        int size = texts.Length;
-        string text = texts[_random.Next(size)];
         if (!string.IsNullOrWhiteSpace(weap))
-            text = $"w1 takes the {weap} into the ring.";
-        text = text.Replace("w1", w1.Name);
-
-        _match.Add(text);
+            _match.Add(
+                ReplacePlaceholders(
+                    "#ATT# takes the #WEP# into the ring.",
+                    new() {
+                        { "#ATT#", w1.Name },
+                        { "#WEP#", weap }
+                    }
+                )
+            );
+        else
+            _match.Add(
+                GetRandomText(
+                    [
+                        "#ATT# climbs back into the ring.",
+                        "#ATT# moves back into the ring.",
+                        "#ATT# slides into the ring.",
+                        "#ATT# returns to the ring."
+                    ],
+                    new() {
+                        { "#ATT#", w1.Name }
+                    }
+                )
+            );
     }
 
     private MoveModel Finisher(WrestlerModel w1, WrestlerModel w2)
     {
         MoveModel finisherMove = GetRandomMove(w1, MoveTypes.SubmissionFinisher, MoveTypes.KnockoutFinisher);
 
-        string text = GetRandomText(finisherMove.Texts);
-        text = text.Replace("#ATT#", w1.Name);
-        text = text.Replace("#REC#", w2.Name);
-        text = text.Replace("#MOV#", finisherMove.Name);
-        _match.Add(text);
+        _match.Add(
+            GetRandomText(
+                finisherMove.Texts,
+                new() {
+                    { "#ATT#", w1.Name },
+                    { "#REC#", w2.Name },
+                    { "#MOV#", finisherMove.Name }
+                }
+            )
+        );
 
         if (finisherMove.Type == MoveTypes.KnockoutFinisher)
         {
@@ -534,35 +554,38 @@ public class SinglesMatch
         return finisherMove;
     }
 
-    private void EscapeFinisher(WrestlerModel w1, WrestlerModel w2, MoveModel finishingMove)
+    private void EscapeFinisher(WrestlerModel w1, WrestlerModel w2, MoveModel finisherMove)
     {
-        string[] texts = [
-            "NO!! w1 escapes the fin!!!",
-            "w1 breaks away before the fin was completed!!"
-        ];
-
-        int size = texts.Length;
-        string text = texts[_random.Next(size)];
-
-        text = text.Replace("w1", w1.Name);
-        text = text.Replace("w2", w2.Name);
-        text = text.Replace("fin", finishingMove.Name);
-        _match.Add(text);
+        _match.Add(
+            GetRandomText(
+                [
+                    "NO!! #ATT# escapes the #MOV#!!!",
+                    "#ATT# breaks away before the #MOV# was completed!!"
+                ],
+                new() {
+                    { "#ATT#", w1.Name },
+                    { "#REC#", w2.Name },
+                    { "#MOV#", finisherMove.Name }
+                }
+            )
+        );
     }
 
     private void Comeback(WrestlerModel w1)
     {
-        string[] texts = [
-            "w1 has managed to get up.",
-            "Somehow w1 is up!",
-            "w1 is back to his feet.",
-            "w1 is making a comeback after that!"
-        ];
-
-        int size = texts.Length;
-        string text = texts[_random.Next(size)];
-        text = text.Replace("w1", w1.Name);
-        _match.Add(text);
+        _match.Add(
+            GetRandomText(
+                [
+                    "#ATT# has managed to get up.",
+                    "Somehow #ATT# is up!",
+                    "#ATT# is back to his feet.",
+                    "#ATT# is making a comeback after that!"
+                ],
+                new() {
+                    { "#ATT#", w1.Name }
+                }
+            )
+        );
     }
 
     private MoveModel GetRandomMove(WrestlerModel wrestler, params MoveTypes[] moveTypes)
@@ -571,8 +594,24 @@ public class SinglesMatch
         return moves[moves.Count];
     }
 
-    private string GetRandomText(string[] texts)
+    private string GetRandomText(string[] texts, Dictionary<string, string>? placeholders = null)
     {
-        return texts[_random.Next(texts.Length)];
+        string text = texts[_random.Next(texts.Length)];
+        if (placeholders == null)
+            return text;
+        else
+            return ReplacePlaceholders(text, placeholders);
+    }
+
+    [GeneratedRegex(@"#(\w+)#")]
+    private static partial Regex PlaceholderRegex();
+
+    static string ReplacePlaceholders(string text, Dictionary<string, string> placeholders)
+    {
+        return PlaceholderRegex().Replace(text, match =>
+        {
+            string key = match.Groups[1].Value;
+            return placeholders.TryGetValue(key, out string? value) ? value : match.Value;
+        });
     }
 }
