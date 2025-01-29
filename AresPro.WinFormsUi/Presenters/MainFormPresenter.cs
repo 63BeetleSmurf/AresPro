@@ -178,7 +178,7 @@ public class MainFormPresenter
 
     private void OnEditWrestler(object? sender, string? key)
     {
-        WrestlerModel wrestlerModel = (key != null) ? _federationModel.Wrestlers[key] : new();
+        WrestlerModel wrestlerModel = (key != null) ? _federationModel.Wrestlers[key] : new() { Names = [ NameHelper.GetNewName("Wrestler", _federationModel.Wrestlers.Keys) ] };
         WrestlerEditorForm wrestlerEditorForm = new();
         WrestlerEditorFormPresenter wrestlerEditorFormPresenter = new(
             wrestlerModel,
@@ -206,7 +206,7 @@ public class MainFormPresenter
 
     private void OnEditTeam(object? sender, string? key)
     {
-        TeamModel teamModel = (key != null) ? _federationModel.Teams[key] : new();
+        TeamModel teamModel = (key != null) ? _federationModel.Teams[key] : new() { Name = NameHelper.GetNewName("Team", _federationModel.Teams.Keys) };
         TeamEditorForm teamEditorForm = new();
         TeamEditorFormPresenter teamEditorFormPresenter = new(
             teamModel,
@@ -234,7 +234,7 @@ public class MainFormPresenter
 
     private void OnEditTitle(object? sender, string? key)
     {
-        TitleModel titleModel = (key != null) ? _federationModel.Titles[key] : new();
+        TitleModel titleModel = (key != null) ? _federationModel.Titles[key] : new() { Name = NameHelper.GetNewName("Title", _federationModel.Titles.Keys) };
         TitleEditorForm titleEditorForm = new();
         TitleEditorFormPresenter titleEditorFormPresenter = new(titleModel, titleEditorForm);
         if (titleEditorFormPresenter.ShowDialog(_mainForm, out string newKey) != DialogResult.OK) // newKey defined here
@@ -256,7 +256,7 @@ public class MainFormPresenter
 
     private void OnEditCommentator(object? sender, string? key)
     {
-        CommentatorModel commentatorModel = (key != null) ? _federationModel.Commentators[key] : new();
+        CommentatorModel commentatorModel = (key != null) ? _federationModel.Commentators[key] : new() { Name = NameHelper.GetNewName("Commentator", _federationModel.Commentators.Keys) };
         CommentatorEditorForm commentatorEditorForm = new();
         CommentatorEditorFormPresenter commentatorEditorFormPresenter = new(commentatorModel, commentatorEditorForm);
         if (commentatorEditorFormPresenter.ShowDialog(_mainForm, out string newKey) != DialogResult.OK) // newKey defined here
@@ -278,7 +278,7 @@ public class MainFormPresenter
 
     private void OnEditReferee(object? sender, string? key)
     {
-        RefereeModel refereeModel = (key != null) ? _federationModel.Referees[key] : new();
+        RefereeModel refereeModel = (key != null) ? _federationModel.Referees[key] : new() { Name = NameHelper.GetNewName("Referee", _federationModel.Referees.Keys) };
         RefereeEditorForm refereeEditorForm = new();
         RefereeEditorFormPresenter refereeEditorFormPresenter = new(refereeModel, refereeEditorForm);
         if (refereeEditorFormPresenter.ShowDialog(_mainForm, out string newKey) != DialogResult.OK) // newKey defined here

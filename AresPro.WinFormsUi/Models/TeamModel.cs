@@ -2,7 +2,7 @@
 
 public class TeamModel
 {
-    public string Name { get; set; }
+    public string Name { get; set; } = string.Empty;
     public string? Finisher { get; set; }
     public string? Introduction { get; set; }
     public List<string> TitleNames { get; } = [];
