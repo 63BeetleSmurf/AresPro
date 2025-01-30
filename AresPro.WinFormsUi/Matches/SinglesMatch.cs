@@ -1,12 +1,12 @@
 ﻿using System.Text;
-using System.Text.RegularExpressions;
 
 using AresPro.WinFormsUi.Enums;
+using AresPro.WinFormsUi.Helpers;
 using AresPro.WinFormsUi.Models;
 
 namespace AresPro.WinFormsUi.Matches;
 
-public partial class SinglesMatch
+public class SinglesMatch
 {
     // numbers seem to determine how often something will happen, with lower numbers being more often.
     private const int CallMoveChance = 3;               // How often commentators comment on the move being done - Tested
@@ -502,7 +502,7 @@ public partial class SinglesMatch
     {
         if (!string.IsNullOrWhiteSpace(weap))
             _match.Add(
-                ReplacePlaceholders(
+                StringHelper.ReplacePlaceholders(
                     "#ATT# takes the #WEP# into the ring.",
                     new() {
                         { "#ATT#", w1.Name },
@@ -600,18 +600,6 @@ public partial class SinglesMatch
         if (placeholders == null)
             return text;
         else
-            return ReplacePlaceholders(text, placeholders);
-    }
-
-    [GeneratedRegex(@"#(\w+)#")]
-    private static partial Regex PlaceholderRegex();
-
-    static string ReplacePlaceholders(string text, Dictionary<string, string> placeholders)
-    {
-        return PlaceholderRegex().Replace(text, match =>
-        {
-            string key = match.Groups[1].Value;
-            return placeholders.TryGetValue(key, out string? value) ? value : match.Value;
-        });
+            return StringHelper.ReplacePlaceholders(text, placeholders);
     }
 }

@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>#Name#</title>
+
+    <style type="text/css">
+        body {
+            background-color: #BackgroundColor#;
+            color: #FontColor#;
+        }
+
+        table {
+            border-collapse: separate;
+            border: 1px solid;
+            border-color: #aaa #444 #444 #aaa;
+        }
+        td {
+            border: 1px solid;
+            border-color: #444 #aaa #aaa #444;
+        }
+
+        table.no-border {
+            border: none;
+            border-collapse: collapse;
+        }
+        table.no-border td {
+            border: none;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .statBar-container {
+            width: 150px;
+            height: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        .statBar {
+            height: 100%;
+            background-color: #FontColor#;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <center>
+        <table>
+
+            <tr>
+                <td colspan="4" class="title"><strong>#Name#</strong></td>
+            </tr>
+
+            <tr>
+                <td>Strength</td>
+                <td>
+                    <div class="statBar-container">
+                        <div class="statBar" style="width: #StrengthPercent#%;"></div>
+                    </div>
+                </td>
+                <td>Hometown</td>
+                <td>#Hometown#</td>
+            </tr>
+            <tr>
+                <td>Speed</td>
+                <td>
+                    <div class="statBar-container">
+                        <div class="statBar" style="width: #StrengthPercent#%;"></div>
+                    </div>
+                </td>
+                <td>Stable</td>
+                <td>#Stable#</td>
+            </tr>
+            <tr>
+                <td>Vitality</td>
+                <td>
+                    <div class="statBar-container">
+                        <div class="statBar" style="width: #StrengthPercent#%;"></div>
+                    </div>
+                </td>
+                <td>Escort</td>
+                <td>#Escort#</td>
+            </tr>
+            <tr>
+                <td>Charisma</td>
+                <td>
+                    <div class="statBar-container">
+                        <div class="statBar" style="width: #StrengthPercent#%;"></div>
+                    </div>
+                </td>
+                <td colspan="2" class="title">Titles</td>
+            </tr>
+
+            <tr>
+                <td colspan="2" valign="top">
+                    <table class="no-border">
+                        <tr>
+                            <td>Weight</td>
+                            <td>#Weight#</td>
+                            <td>Height</td>
+                            <td>#Height#</td>
+                        </tr>
+                        <tr>
+                            <td>Wins</td>
+                            <td>#Wins#</td>
+                            <td>Loses</td>
+                            <td>#Loses#</td>
+                        </tr>
+                    </table>
+                </td>
+
+                <td colspan="2" valign="top">
+                    #Titles#
+                </td>
+            </tr>
+
+        </table>
+    </center>
+
+</body>
+
+</html>

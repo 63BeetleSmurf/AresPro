@@ -428,6 +428,7 @@ partial class WrestlerEditorForm
         ExportZimButton.TabIndex = 32;
         ExportZimButton.Text = ".ZIM";
         ExportZimButton.UseVisualStyleBackColor = true;
+        ExportZimButton.Click += ExportZimButton_Click;
         // 
         // ExportHTMLButton
         // 
@@ -438,6 +439,7 @@ partial class WrestlerEditorForm
         ExportHTMLButton.TabIndex = 31;
         ExportHTMLButton.Text = ".HTML";
         ExportHTMLButton.UseVisualStyleBackColor = true;
+        ExportHTMLButton.Click += ExportHTMLButton_Click;
         // 
         // grpTitles
         // 

@@ -9,4 +9,6 @@ public static class DirectoryHelper
     public static readonly string MovesPath = Path.Combine(InstallPath, "moves");
     public static readonly string ImportFilePath = Path.Combine(InstallPath, "");
     public static readonly string ResultsPath = Path.Combine(InstallPath, "results");
+    public static readonly string AssetsPath = Path.Combine(InstallPath, "Assets");
+    public static readonly string HTMLTemplatesPath = Path.Combine(AssetsPath, "HTMLTemplates");
 }

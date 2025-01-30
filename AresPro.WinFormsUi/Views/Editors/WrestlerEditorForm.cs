@@ -11,6 +11,9 @@ public partial class WrestlerEditorForm : Form
     public EventHandler<string>? EditMove;
     public EventHandler<string>? RemoveMove;
 
+    public EventHandler<string>? ExportWrestler;
+    public EventHandler? ExportHtml;
+
     public WrestlerEditorForm()
     {
         InitializeComponent();
@@ -88,11 +91,30 @@ public partial class WrestlerEditorForm : Form
 
     private void EditMoveButton_Click(object sender, EventArgs e)
     {
-        EditMove?.Invoke(this, (string?)MovesListBox.SelectedValue ?? string.Empty);
+        if (MovesListBox.SelectedValue != null)
+            EditMove?.Invoke(this, (string)MovesListBox.SelectedValue);
     }
 
     private void RemoveMoveButton_Click(object sender, EventArgs e)
     {
-        RemoveMove?.Invoke(this, (string?)MovesListBox.SelectedValue ?? string.Empty);
+        if (MovesListBox.SelectedValue != null)
+            RemoveMove?.Invoke(this, (string)MovesListBox.SelectedValue);
+    }
+
+    private void ExportZimButton_Click(object sender, EventArgs e)
+    {
+        if (FileDialogsHelper.ShowOpenDialog(
+            this,
+            Properties.Resources.ImportFileDialogFilter,
+            DirectoryHelper.ImportFilePath,
+            $"*.{Properties.Resources.ImportFileExtension}",
+            out string fileName // fileName defined here as out parameter
+        ) == DialogResult.OK)
+            ExportWrestler?.Invoke(this, fileName);
+    }
+
+    private void ExportHTMLButton_Click(object sender, EventArgs e)
+    {
+        ExportHtml?.Invoke(this, EventArgs.Empty);
     }
 }

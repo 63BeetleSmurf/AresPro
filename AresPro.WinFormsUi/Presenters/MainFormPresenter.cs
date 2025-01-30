@@ -183,9 +183,11 @@ public class MainFormPresenter
         WrestlerEditorFormPresenter wrestlerEditorFormPresenter = new(
             wrestlerModel,
             wrestlerEditorForm,
-            _federationModel.StatMax,
             _federationModel.Wrestlers.Values.Select(w => w.Name).ToArray(),
-            _federationModel.Titles.Values.Where(t => t.Type == TitleTypes.Singles).Select(t => t.Name).ToArray()
+            _federationModel.Titles.Values.Where(t => t.Type == TitleTypes.Singles).Select(t => t.Name).ToArray(),
+            _federationModel.StatMax,
+            _federationModel.BackgroundColor,
+            _federationModel.FontColor
         );
         if (wrestlerEditorFormPresenter.ShowDialog(_mainForm, out string newKey) != DialogResult.OK) // newKey defined here
             return;

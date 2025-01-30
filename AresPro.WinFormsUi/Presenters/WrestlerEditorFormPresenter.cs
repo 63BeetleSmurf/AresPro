@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel;
+using System.Diagnostics;
 
 using AresPro.WinFormsUi.Enums;
+using AresPro.WinFormsUi.Helpers;
 using AresPro.WinFormsUi.Models;
 using AresPro.WinFormsUi.Views.Common;
 using AresPro.WinFormsUi.Views.Editors;
@@ -19,8 +21,13 @@ public class WrestlerEditorFormPresenter
     private readonly IEnumerable<string> _fedWrestlers;
     private readonly IEnumerable<string> _fedSinglesTitles;
 
+    private readonly int _fedStatMax;
+    private readonly string _fedBackgroundColor;
+    private readonly string _fedFontColor;
+
     public WrestlerEditorFormPresenter(WrestlerModel wrestlerModel, WrestlerEditorForm wrestlerEditorForm,
-        int statMax, IEnumerable<string> fedWrestlers, IEnumerable<string> fedSinglesTitles
+        IEnumerable<string> fedWrestlers, IEnumerable<string> fedSinglesTitles,
+        int fedStatMax, string fedBackgroundColor, string fedFontColor
     )
     {
         _wrestlerModel = wrestlerModel;
@@ -28,6 +35,10 @@ public class WrestlerEditorFormPresenter
 
         _fedWrestlers = fedWrestlers;
         _fedSinglesTitles = fedSinglesTitles;
+
+        _fedStatMax = fedStatMax;
+        _fedBackgroundColor = fedBackgroundColor;
+        _fedFontColor = fedFontColor;
 
         foreach (string titleName in _wrestlerModel.TitleNames)
             _titleNames.Add(titleName);
@@ -37,7 +48,7 @@ public class WrestlerEditorFormPresenter
             _wrestlerMoves.Add(moveName, _wrestlerModel.Moves[moveName]);
         }
 
-        _wrestlerEditorForm.InitializeForm(statMax, _fedWrestlers);
+        _wrestlerEditorForm.InitializeForm(_fedStatMax, _fedWrestlers);
         ConnectHandlers();
         PopulateForm();
     }
@@ -46,6 +57,13 @@ public class WrestlerEditorFormPresenter
     {
         _wrestlerEditorForm.AddTitle += OnAddTitle;
         _wrestlerEditorForm.RemoveTitle += OnRemoveTitle;
+
+        _wrestlerEditorForm.AddMove += OnAddMove;
+        _wrestlerEditorForm.EditMove += OnEditMove;
+        _wrestlerEditorForm.RemoveMove += OnRemoveMove;
+
+        _wrestlerEditorForm.ExportWrestler += OnExportWrestler;
+        _wrestlerEditorForm.ExportHtml += OnExportHtml;
     }
 
     private void PopulateForm()
@@ -128,5 +146,99 @@ public class WrestlerEditorFormPresenter
     public void OnRemoveTitle(object? sender, string name)
     {
         _titleNames.Remove(name);
+    }
+
+    public void OnAddMove(object? sender, EventArgs e)
+    {
+        ObjectListForm objectListForm = new();
+        AddMoveObjectListFormPresenter addMoveObjectListFormPresenter = new(objectListForm);
+        addMoveObjectListFormPresenter.AddMoves += OnAddMoves;
+        _ = addMoveObjectListFormPresenter.ShowDialog(_wrestlerEditorForm);
+    }
+
+    public void OnAddMoves(object? sender, IEnumerable<MoveModel> moves)
+    {
+        foreach (MoveModel move in moves)
+            if (!_wrestlerMoves.ContainsKey(move.Name))
+            {
+                _wrestlerMoves[move.Name] = move;
+                _moveNames.Add(move.Name);
+            }
+    }
+
+    public void OnEditMove(object? sender, string key)
+    {
+        MoveModel moveModel = _wrestlerMoves[key];
+        MoveEditorForm MoveEditorForm = new();
+        MoveEditorFormPresenter MoveEditorFormPresenter = new(moveModel, MoveEditorForm);
+        if (MoveEditorFormPresenter.ShowDialog(_wrestlerEditorForm, out string newKey) != DialogResult.OK) // newKey defined here
+            return;
+
+        if (key != newKey) // Updated name
+        {
+            _wrestlerMoves.Remove(key);
+            _wrestlerMoves.Add(newKey, moveModel);
+            _moveNames.Remove(key);
+            _moveNames.Add(newKey);
+        }
+    }
+
+    public void OnRemoveMove(object? sender, string name)
+    {
+        _wrestlerMoves.Remove(name);
+        _moveNames.Remove(name);
+    }
+
+    public void OnExportWrestler(object? sender, string fileName)
+    {
+        UpdateModel(); // Zeus doesn't save before Zim export, but does before HTML. Think it's better to do so.
+
+        try
+        {
+            using StreamWriter writer = new(fileName);
+            SaveZeusFileHelper.SaveWrestler(_wrestlerModel, writer);
+        }
+        catch
+        {
+
+        }
+    }
+
+    public void OnExportHtml(object? sender, EventArgs e)
+    {
+        UpdateModel();
+
+        string exportPath = Path.Combine(DirectoryHelper.InstallPath, $"{_wrestlerModel.Name}.html");
+
+        string htmlTemplate = File.ReadAllText(Path.Combine(DirectoryHelper.HTMLTemplatesPath, "WrestlerExport.html"));
+        string exportHtml = StringHelper.ReplacePlaceholders(
+            htmlTemplate,
+            new() {
+                { "#BackgroundColor#", _fedBackgroundColor },
+                { "#FontColor#", _fedFontColor },
+                { "#Name#", _wrestlerModel.Name },
+                { "#Hometown#", _wrestlerModel.Hometown },
+                { "#Stable#", _wrestlerModel.Stable },
+                { "#Escort#", _wrestlerModel.EscortName },
+                { "#StrengthPercent#", ((_wrestlerModel.Strength / _fedStatMax) * 100).ToString() },
+                { "#StrengthPercent#", ((_wrestlerModel.Speed / _fedStatMax) * 100).ToString() },
+                { "#StrengthPercent#", ((_wrestlerModel.Vitality / _fedStatMax) * 100).ToString() },
+                { "#StrengthPercent#", ((_wrestlerModel.Charisma / _fedStatMax) * 100).ToString() },
+                { "#Weight#", _wrestlerModel.Weight.ToString() },
+                { "#Height#", _wrestlerModel.Height },
+                { "#Wins#", _wrestlerModel.Wins.ToString() },
+                { "#Loses#", _wrestlerModel.Loses.ToString() },
+                { "#Titles#", string.Join("<br>", _wrestlerModel.TitleNames) }
+            }
+        );
+        File.WriteAllText(exportPath, exportHtml);
+        if (MessageBox.Show(
+            _wrestlerEditorForm,
+            "Your File has been saved. Would you like to view it?",
+            "Zeus Message",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Question
+        ) == DialogResult.Yes)
+            Process.Start(new ProcessStartInfo(exportPath) { UseShellExecute = true });
     }
 }

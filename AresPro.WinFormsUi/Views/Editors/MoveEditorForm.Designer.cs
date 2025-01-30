@@ -261,6 +261,7 @@ partial class MoveEditorForm
         DamageDecreaseButton.Size = new Size(15, 15);
         DamageDecreaseButton.TabIndex = 1;
         DamageDecreaseButton.UseVisualStyleBackColor = true;
+        DamageDecreaseButton.Click += DamageDecreaseButton_Click;
         // 
         // DamageIncreaseButton
         // 
@@ -269,6 +270,7 @@ partial class MoveEditorForm
         DamageIncreaseButton.Size = new Size(15, 15);
         DamageIncreaseButton.TabIndex = 3;
         DamageIncreaseButton.UseVisualStyleBackColor = true;
+        DamageIncreaseButton.Click += DamageIncreaseButton_Click;
         // 
         // DamageProgressBar
         // 
@@ -282,7 +284,6 @@ partial class MoveEditorForm
         AcceptButton = OkButton;
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        CancelButton = CancelButton;
         ClientSize = new Size(506, 270);
         Controls.Add(DamageDecreaseButton);
         Controls.Add(DamageIncreaseButton);
@@ -338,5 +339,5 @@ partial class MoveEditorForm
     internal System.Windows.Forms.Label lblDamage;
     private Button DamageDecreaseButton;
     private Button DamageIncreaseButton;
-    private ProgressBar DamageProgressBar;
+    internal ProgressBar DamageProgressBar;
 }
