@@ -98,7 +98,7 @@ public static class SaveZeusFileHelper
                     wrestler.Charisma.ToString(),
                     wrestler.Wins.ToString(),
                     wrestler.Loses.ToString(),
-                    wrestler.Affiliation.ToString(),
+                    ((int)wrestler.Affiliation).ToString(),
                     wrestler.Push.ToString()
                 ]
             )
@@ -188,7 +188,7 @@ public static class SaveZeusFileHelper
                     (move.RecStandingAfter) ? "1" : "0",
                     (move.IsLift) ? "1" : "0",
                     move.Damage.ToString(),
-                    move.Type.ToString(),
+                    ((int)move.Type).ToString(),
                     (move.IsIllegal) ? "1" : "0",
                     (move.IsHighRisk) ? "1" : "0"
                 ]
@@ -241,7 +241,7 @@ public static class SaveZeusFileHelper
         */
 
         writer.WriteLine(title.Name);
-        writer.WriteLine(title.Type.ToString());
+        writer.WriteLine(((int)title.Type).ToString());
     }
 
     private static void SaveCommentator(CommentatorModel commentator, StreamWriter writer)
@@ -253,7 +253,7 @@ public static class SaveZeusFileHelper
         */
 
         writer.WriteLine(commentator.Name);
-        writer.WriteLine(commentator.Affiliation.ToString());
+        writer.WriteLine(((int)commentator.Affiliation).ToString());
         writer.WriteLine(commentator.FileName);
     }
 

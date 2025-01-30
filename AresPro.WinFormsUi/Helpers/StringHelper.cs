@@ -11,7 +11,7 @@ public static partial class StringHelper
     {
         return PlaceholderRegex().Replace(text, match =>
         {
-            string key = match.Groups[1].Value;
+            string key = match.Groups[0].Value;
             return placeholders.TryGetValue(key, out string? value) ? value ?? string.Empty : match.Value;
         });
     }

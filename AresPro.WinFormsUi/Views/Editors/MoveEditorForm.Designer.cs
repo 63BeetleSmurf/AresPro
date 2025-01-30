@@ -275,6 +275,7 @@ partial class MoveEditorForm
         // DamageProgressBar
         // 
         DamageProgressBar.Location = new Point(92, 15);
+        DamageProgressBar.Maximum = 10;
         DamageProgressBar.Name = "DamageProgressBar";
         DamageProgressBar.Size = new Size(91, 15);
         DamageProgressBar.TabIndex = 2;

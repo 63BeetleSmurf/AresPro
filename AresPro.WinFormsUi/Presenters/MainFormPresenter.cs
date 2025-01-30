@@ -156,13 +156,7 @@ public class MainFormPresenter
             WrestlerModel wrestlerModel = LoadZeusFileHelper.LoadWrestler(reader);
 
             _federationModel.Wrestlers.Add(wrestlerModel.Name, wrestlerModel);
-            _mainForm.WrestlersTreeNode.Nodes.Add(
-                new TreeNode(wrestlerModel.Name)
-                {
-                    Name = wrestlerModel.Name,
-                    ImageKey = MainForm.TreeViewWrestlerImageKey
-                }
-            );
+            AddTreeNode(_mainForm.WrestlersTreeNode, wrestlerModel.Name, MainForm.TreeViewWrestlerImageKey);
             _mainForm.IsSaved = false;
         }
         catch

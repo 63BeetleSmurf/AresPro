@@ -178,8 +178,7 @@ public class WrestlerEditorFormPresenter
         {
             _wrestlerMoves.Remove(key);
             _wrestlerMoves.Add(newKey, moveModel);
-            _moveNames.Remove(key);
-            _moveNames.Add(newKey);
+            _moveNames[_moveNames.IndexOf(key)] = newKey;
         }
     }
 
@@ -220,10 +219,10 @@ public class WrestlerEditorFormPresenter
                 { "#Hometown#", _wrestlerModel.Hometown },
                 { "#Stable#", _wrestlerModel.Stable },
                 { "#Escort#", _wrestlerModel.EscortName },
-                { "#StrengthPercent#", ((_wrestlerModel.Strength / _fedStatMax) * 100).ToString() },
-                { "#StrengthPercent#", ((_wrestlerModel.Speed / _fedStatMax) * 100).ToString() },
-                { "#StrengthPercent#", ((_wrestlerModel.Vitality / _fedStatMax) * 100).ToString() },
-                { "#StrengthPercent#", ((_wrestlerModel.Charisma / _fedStatMax) * 100).ToString() },
+                { "#StrengthPercent#", (((float)_wrestlerModel.Strength / _fedStatMax) * 100).ToString() },
+                { "#SpeedPercent#", (((float)_wrestlerModel.Speed / _fedStatMax) * 100).ToString() },
+                { "#VitalityPercent#", (((float)_wrestlerModel.Vitality / _fedStatMax) * 100).ToString() },
+                { "#CharismaPercent#", (((float)_wrestlerModel.Charisma / _fedStatMax) * 100).ToString() },
                 { "#Weight#", _wrestlerModel.Weight.ToString() },
                 { "#Height#", _wrestlerModel.Height },
                 { "#Wins#", _wrestlerModel.Wins.ToString() },

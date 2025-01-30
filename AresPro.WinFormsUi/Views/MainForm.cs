@@ -109,7 +109,10 @@ public partial class MainForm : Form
                 out string fileName // fileName defined here as out parameter
             ) == DialogResult.OK
         )
+        {
             OpenFederation?.Invoke(this, fileName);
+            FederationFilename = fileName;
+        }
     }
 
     private void SaveMenuItem_Click(object sender, EventArgs e)
@@ -228,6 +231,9 @@ public partial class MainForm : Form
     private void EditSelectionMenuItem_Click(object sender, EventArgs e)
     {
         TreeNode selectedNode = RosterTreeView.SelectedNode;
+        if (selectedNode.Level == 0)
+            return;
+
         // Using ImageKey to identify what type of item was selected
         switch (selectedNode.ImageKey)
         {
@@ -252,6 +258,8 @@ public partial class MainForm : Form
     private void DeleteSelectionMenuItem_Click(object sender, EventArgs e)
     {
         TreeNode selectedNode = RosterTreeView.SelectedNode;
+        if (selectedNode.Level == 0)
+            return;
 
         if (
             MessageBox.Show(
@@ -320,7 +328,7 @@ public partial class MainForm : Form
 
     private void SaveFedToolButton_Click(object sender, EventArgs e)
     {
-        SaveAsMenuItem_Click(sender, e);
+        SaveMenuItem_Click(sender, e);
     }
 
     private void NewWrestlerToolButton_Click(object sender, EventArgs e)
@@ -407,7 +415,7 @@ public partial class MainForm : Form
 
     private DialogResult ShowSaveFederationDialog()
     {
-        DialogResult result = FileDialogsHelper.ShowOpenDialog(
+        DialogResult result = FileDialogsHelper.ShowSaveDialog(
             this,
             Properties.Resources.FederationFileDialogFilter,
             Path.GetDirectoryName(FederationFilename) ?? DirectoryHelper.FederationsPath,

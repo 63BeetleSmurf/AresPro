@@ -164,6 +164,9 @@ public class BookACardFormPresenter
 
     private void OnRemoveSegment(object? sender, int index)
     {
+        if (index == -1)
+            return;
+
         _bookedSegments.Remove((string)_bookedSegmentsList[index].Value);
         _bookedSegmentsList.RemoveAt(index);
     }

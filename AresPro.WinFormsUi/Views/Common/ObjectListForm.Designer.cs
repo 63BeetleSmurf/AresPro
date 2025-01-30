@@ -54,6 +54,7 @@ partial class ObjectListForm
         Action3Button.Size = new Size(70, 27);
         Action3Button.TabIndex = 3;
         Action3Button.UseVisualStyleBackColor = true;
+        Action3Button.Click += Action3Button_Click;
         // 
         // Action2Button
         // 
@@ -63,6 +64,7 @@ partial class ObjectListForm
         Action2Button.Size = new Size(70, 27);
         Action2Button.TabIndex = 2;
         Action2Button.UseVisualStyleBackColor = true;
+        Action2Button.Click += Action2Button_Click;
         // 
         // Action1Button
         // 
@@ -86,6 +88,7 @@ partial class ObjectListForm
         ObjectsListBox.Sorted = true;
         ObjectsListBox.TabIndex = 0;
         ObjectsListBox.ValueMember = "Key";
+        ObjectsListBox.MouseDoubleClick += ObjectsListBox_MouseDoubleClick;
         // 
         // ObjectListForm
         // 

@@ -10,7 +10,7 @@ public class AddMoveObjectListFormPresenter
     private const int TargetMoveCount = 65;
 
     private Dictionary<string, MoveModel>? _moves;
-    private readonly IEnumerable<string> _listItems;
+    private readonly List<string> _listItems = [];
     private readonly ObjectListForm _objectListForm;
 
     public EventHandler<IEnumerable<MoveModel>>? AddMoves;
@@ -18,7 +18,7 @@ public class AddMoveObjectListFormPresenter
     public AddMoveObjectListFormPresenter(ObjectListForm objectListForm)
     {
         LoadDefaultMovesFile();
-        _listItems = _moves.Keys;
+        _listItems.AddRange(_moves.Keys);
         _objectListForm = objectListForm;
 
         InitializeForm();
@@ -49,9 +49,10 @@ public class AddMoveObjectListFormPresenter
 
     public void ConnectHandlers()
     {
+        _objectListForm.ListDoubleClick += OnAddClicked;
         _objectListForm.Action1 += OnAddClicked;
-        _objectListForm.Action1 += OnRandSetClicked;
-        _objectListForm.Action1 += OnAddFileClicked;
+        _objectListForm.Action2 += OnRandSetClicked;
+        _objectListForm.Action3 += OnAddFileClicked;
     }
 
     public DialogResult ShowDialog(IWin32Window owner)
@@ -59,13 +60,13 @@ public class AddMoveObjectListFormPresenter
         return _objectListForm.ShowDialog(owner);
     }
 
-    public void OnAddClicked(object? sender, string? selectedValue)
+    public void OnAddClicked(object? sender, string? selectedItem)
     {
-        if (!string.IsNullOrEmpty(selectedValue))
-            AddMoves?.Invoke(sender, [ _moves[selectedValue] ]);
+        if (!string.IsNullOrEmpty(selectedItem))
+            AddMoves?.Invoke(sender, [ _moves[selectedItem] ]);
     }
 
-    public void OnRandSetClicked(object? sender, string? selectedValue)
+    public void OnRandSetClicked(object? sender, string? selectedItem)
     {
         int moveListCount = _objectListForm.ObjectsListBox.Items.Count;
         if (moveListCount == 0)
@@ -79,16 +80,17 @@ public class AddMoveObjectListFormPresenter
         {
             int moveCount = (moveListCount < TargetMoveCount) ? moveListCount : TargetMoveCount;
             List<MoveModel> selectedMoves = [];
+            Random random = new();
             for (int i = 0; i < moveCount; i++)
             {
-                _objectListForm.ObjectsListBox.SelectedIndex = new Random().Next(moveCount);
-                selectedMoves.Add(_moves[selectedValue]);
+                _objectListForm.ObjectsListBox.SelectedIndex = random.Next(moveCount);
+                selectedMoves.Add(_moves[(string)_objectListForm.ObjectsListBox.SelectedItem]);
             }
             AddMoves?.Invoke(sender, selectedMoves);
         }
     }
 
-    public void OnAddFileClicked(object? sender, string? selectedValue)
+    public void OnAddFileClicked(object? sender, string? SelectedItem)
     {
         if (
             FileDialogsHelper.ShowOpenDialog(

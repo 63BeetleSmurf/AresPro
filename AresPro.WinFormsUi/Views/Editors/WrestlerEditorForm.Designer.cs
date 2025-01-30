@@ -381,6 +381,7 @@ partial class WrestlerEditorForm
         MovesListBox.Size = new Size(197, 94);
         MovesListBox.TabIndex = 27;
         MovesListBox.ValueMember = "Key";
+        MovesListBox.MouseDoubleClick += MovesListBox_MouseDoubleClick;
         // 
         // grpMoves
         // 

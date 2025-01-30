@@ -1,6 +1,4 @@
-﻿using AresPro.WinFormsUi.Models;
-using AresPro.WinFormsUi.Views.Common;
-using AresPro.WinFormsUi.Views.Editors;
+﻿using AresPro.WinFormsUi.Views.Common;
 
 namespace AresPro.WinFormsUi.Presenters;
 
@@ -33,6 +31,7 @@ public class AddItemObjectListFormPresenter
 
     public void ConnectHandlers()
     {
+        _objectListForm.ListDoubleClick += OnAddClicked;
         _objectListForm.Action1 += OnAddClicked;
     }
 
@@ -41,9 +40,9 @@ public class AddItemObjectListFormPresenter
         return _objectListForm.ShowDialog(owner);
     }
 
-    public void OnAddClicked(object? sender, string? selectedValue)
+    public void OnAddClicked(object? sender, string? selectedItem)
     {
-        if (!string.IsNullOrEmpty(selectedValue))
-            AddObject?.Invoke(sender, selectedValue);
+        if (!string.IsNullOrEmpty(selectedItem))
+            AddObject?.Invoke(sender, selectedItem);
     }
 }

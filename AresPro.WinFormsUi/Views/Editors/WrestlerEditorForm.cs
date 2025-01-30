@@ -84,6 +84,11 @@ public partial class WrestlerEditorForm : Form
         ProgressBarHelper.Increase(CharismaProgressBar);
     }
 
+    private void MovesListBox_MouseDoubleClick(object sender, MouseEventArgs e)
+    {
+        EditMoveButton_Click(sender, e);
+    }
+
     private void AddMoveButton_Click(object sender, EventArgs e)
     {
         AddMove?.Invoke(this, EventArgs.Empty);
@@ -103,7 +108,7 @@ public partial class WrestlerEditorForm : Form
 
     private void ExportZimButton_Click(object sender, EventArgs e)
     {
-        if (FileDialogsHelper.ShowOpenDialog(
+        if (FileDialogsHelper.ShowSaveDialog(
             this,
             Properties.Resources.ImportFileDialogFilter,
             DirectoryHelper.ImportFilePath,
