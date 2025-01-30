@@ -2,6 +2,7 @@
 using AresPro.WinFormsUi.Helpers;
 using AresPro.WinFormsUi.Models;
 using AresPro.WinFormsUi.Views;
+using AresPro.WinFormsUi.Views.Booking;
 using AresPro.WinFormsUi.Views.Editors;
 
 namespace AresPro.WinFormsUi.Presenters;
@@ -47,6 +48,8 @@ public class MainFormPresenter
         _mainForm.DeleteTitle += OnDeleteTitle;
         _mainForm.DeleteCommentator += OnDeleteCommentator;
         _mainForm.DeleteReferee += OnDeleteReferee;
+
+        _mainForm.BookEvent += OnBookEvent;
     }
 
     private void PopulateTreeView()
@@ -333,5 +336,12 @@ public class MainFormPresenter
         _federationModel.Referees.Remove(key);
         _mainForm.RefereesTreeNode.Nodes.RemoveByKey(key);
         _mainForm.IsSaved = false;
+    }
+
+    private void OnBookEvent(object? sender, EventArgs e)
+    {
+        BookACardForm bookACardForm = new();
+        BookACardFormPresenter bookACardFormPresenter = new(_federationModel, bookACardForm);
+        bookACardFormPresenter.ShowDialog(_mainForm);
     }
 }

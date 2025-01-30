@@ -32,15 +32,15 @@ partial class BookACardForm
         EventNameTextBox = new TextBox();
         HTMLFormatRadioButton = new RadioButton();
         PlainTextFormatRadioButton = new RadioButton();
-        CardEventsListBox = new ListBox();
-        BookedEventsListBox = new ListBox();
+        AvailableSegmentsListBox = new ListBox();
+        BookedSegmentsListBox = new ListBox();
         AddButton = new Button();
-        MoveUpbutton = new Button();
+        MoveUpButton = new Button();
         MoveDownButton = new Button();
         RemoveButton = new Button();
         RunCardButton = new Button();
         CloseButton = new Button();
-        BookedEventTextBox = new TextBox();
+        SelectedSegmentTextBox = new TextBox();
         groupBox1.SuspendLayout();
         SuspendLayout();
         // 
@@ -83,23 +83,25 @@ partial class BookACardForm
         PlainTextFormatRadioButton.Text = "For the Email or Newsgroup";
         PlainTextFormatRadioButton.UseVisualStyleBackColor = true;
         // 
-        // CardEventsListBox
+        // AvailableSegmentsListBox
         // 
-        CardEventsListBox.FormattingEnabled = true;
-        CardEventsListBox.ItemHeight = 15;
-        CardEventsListBox.Location = new Point(12, 94);
-        CardEventsListBox.Name = "CardEventsListBox";
-        CardEventsListBox.Size = new Size(420, 64);
-        CardEventsListBox.TabIndex = 3;
+        AvailableSegmentsListBox.FormattingEnabled = true;
+        AvailableSegmentsListBox.ItemHeight = 15;
+        AvailableSegmentsListBox.Location = new Point(12, 94);
+        AvailableSegmentsListBox.Name = "AvailableSegmentsListBox";
+        AvailableSegmentsListBox.Size = new Size(420, 64);
+        AvailableSegmentsListBox.TabIndex = 3;
+        AvailableSegmentsListBox.SelectedIndexChanged += AvailableSegmentsListBox_SelectedIndexChanged;
         // 
-        // BookedEventsListBox
+        // BookedSegmentsListBox
         // 
-        BookedEventsListBox.FormattingEnabled = true;
-        BookedEventsListBox.ItemHeight = 15;
-        BookedEventsListBox.Location = new Point(12, 164);
-        BookedEventsListBox.Name = "BookedEventsListBox";
-        BookedEventsListBox.Size = new Size(332, 169);
-        BookedEventsListBox.TabIndex = 4;
+        BookedSegmentsListBox.FormattingEnabled = true;
+        BookedSegmentsListBox.ItemHeight = 15;
+        BookedSegmentsListBox.Location = new Point(12, 164);
+        BookedSegmentsListBox.Name = "BookedSegmentsListBox";
+        BookedSegmentsListBox.Size = new Size(332, 169);
+        BookedSegmentsListBox.TabIndex = 4;
+        BookedSegmentsListBox.SelectedIndexChanged += BookedSegmentsListBox_SelectedIndexChanged;
         // 
         // AddButton
         // 
@@ -109,15 +111,17 @@ partial class BookACardForm
         AddButton.TabIndex = 5;
         AddButton.Text = "&Add";
         AddButton.UseVisualStyleBackColor = true;
+        AddButton.Click += AddButton_Click;
         // 
-        // MoveUpbutton
+        // MoveUpButton
         // 
-        MoveUpbutton.Location = new Point(350, 193);
-        MoveUpbutton.Name = "MoveUpbutton";
-        MoveUpbutton.Size = new Size(82, 23);
-        MoveUpbutton.TabIndex = 6;
-        MoveUpbutton.Text = "Move &Up";
-        MoveUpbutton.UseVisualStyleBackColor = true;
+        MoveUpButton.Location = new Point(350, 193);
+        MoveUpButton.Name = "MoveUpButton";
+        MoveUpButton.Size = new Size(82, 23);
+        MoveUpButton.TabIndex = 6;
+        MoveUpButton.Text = "Move &Up";
+        MoveUpButton.UseVisualStyleBackColor = true;
+        MoveUpButton.Click += MoveUpButton_Click;
         // 
         // MoveDownButton
         // 
@@ -127,6 +131,7 @@ partial class BookACardForm
         MoveDownButton.TabIndex = 7;
         MoveDownButton.Text = "Move &Down";
         MoveDownButton.UseVisualStyleBackColor = true;
+        MoveDownButton.Click += MoveDownButton_Click;
         // 
         // RemoveButton
         // 
@@ -136,6 +141,7 @@ partial class BookACardForm
         RemoveButton.TabIndex = 8;
         RemoveButton.Text = "&Remove";
         RemoveButton.UseVisualStyleBackColor = true;
+        RemoveButton.Click += RemoveButton_Click;
         // 
         // RunCardButton
         // 
@@ -145,6 +151,7 @@ partial class BookACardForm
         RunCardButton.TabIndex = 9;
         RunCardButton.Text = "R&un Card";
         RunCardButton.UseVisualStyleBackColor = true;
+        RunCardButton.Click += RunCardButton_Click;
         // 
         // CloseButton
         // 
@@ -156,13 +163,13 @@ partial class BookACardForm
         CloseButton.Text = "&Close";
         CloseButton.UseVisualStyleBackColor = true;
         // 
-        // BookedEventTextBox
+        // SelectedSegmentTextBox
         // 
-        BookedEventTextBox.Location = new Point(12, 339);
-        BookedEventTextBox.Name = "BookedEventTextBox";
-        BookedEventTextBox.ReadOnly = true;
-        BookedEventTextBox.Size = new Size(420, 23);
-        BookedEventTextBox.TabIndex = 11;
+        SelectedSegmentTextBox.Location = new Point(12, 339);
+        SelectedSegmentTextBox.Name = "SelectedSegmentTextBox";
+        SelectedSegmentTextBox.ReadOnly = true;
+        SelectedSegmentTextBox.Size = new Size(420, 23);
+        SelectedSegmentTextBox.TabIndex = 11;
         // 
         // BookACardForm
         // 
@@ -170,15 +177,15 @@ partial class BookACardForm
         AutoScaleMode = AutoScaleMode.Font;
         CancelButton = CloseButton;
         ClientSize = new Size(444, 374);
-        Controls.Add(BookedEventTextBox);
+        Controls.Add(SelectedSegmentTextBox);
         Controls.Add(CloseButton);
         Controls.Add(RunCardButton);
         Controls.Add(RemoveButton);
         Controls.Add(MoveDownButton);
-        Controls.Add(MoveUpbutton);
+        Controls.Add(MoveUpButton);
         Controls.Add(AddButton);
-        Controls.Add(BookedEventsListBox);
-        Controls.Add(CardEventsListBox);
+        Controls.Add(BookedSegmentsListBox);
+        Controls.Add(AvailableSegmentsListBox);
         Controls.Add(PlainTextFormatRadioButton);
         Controls.Add(HTMLFormatRadioButton);
         Controls.Add(groupBox1);
@@ -201,13 +208,13 @@ partial class BookACardForm
     private TextBox EventNameTextBox;
     private RadioButton HTMLFormatRadioButton;
     private RadioButton PlainTextFormatRadioButton;
-    private ListBox CardEventsListBox;
-    private ListBox BookedEventsListBox;
+    private ListBox AvailableSegmentsListBox;
+    private ListBox BookedSegmentsListBox;
     private Button AddButton;
-    private Button MoveUpbutton;
+    private Button MoveUpButton;
     private Button MoveDownButton;
     private Button RemoveButton;
     private Button RunCardButton;
     private Button CloseButton;
-    private TextBox BookedEventTextBox;
+    private TextBox SelectedSegmentTextBox;
 }

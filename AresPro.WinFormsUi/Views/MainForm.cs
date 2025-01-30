@@ -42,6 +42,8 @@ public partial class MainForm : Form
     public EventHandler<string>? DeleteCommentator;
     public EventHandler<string>? DeleteReferee;
 
+    public EventHandler? BookEvent;
+
     public bool IsSaved { get; set; } = true;
     public string? FederationFilename { get; set; }
 
@@ -284,7 +286,7 @@ public partial class MainForm : Form
 
     private void BookEventMenuItem_Click(object sender, EventArgs e)
     {
-
+        BookEvent?.Invoke(this, EventArgs.Empty);
     }
 
     private void TitleHistoryMenuItem_Click(object sender, EventArgs e)
