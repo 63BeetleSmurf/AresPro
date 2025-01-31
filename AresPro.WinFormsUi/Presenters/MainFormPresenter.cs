@@ -199,7 +199,20 @@ public class MainFormPresenter
             _federationModel.Wrestlers.Remove(key);
             _federationModel.Wrestlers.Add(newKey, wrestlerModel);
             UpdateTreeNode(_mainForm.WrestlersTreeNode, key, newKey);
+
+            // Update teams
+            foreach (string teamName in wrestlerModel.Teams)
+            {
+                _federationModel.Teams[teamName].MemberNames.Remove(key);
+                _federationModel.Teams[teamName].MemberNames.Add(newKey);
+            }
         }
+
+        // Update title holders
+        if (wrestlerModel.TitleNames.Count != 0)
+            foreach (string titleName in wrestlerModel.TitleNames)
+                UpdateTitleHolder(titleName, wrestlerModel.Name);
+
         _mainForm.IsSaved = false;
     }
 
@@ -228,6 +241,22 @@ public class MainFormPresenter
             _federationModel.Teams.Add(newKey, teamModel);
             UpdateTreeNode(_mainForm.TeamsTreeNode, key, newKey);
         }
+
+        // Update members
+        foreach (string memberName in teamModel.MemberNames)
+        {
+            if (!_federationModel.Wrestlers[memberName].Teams.Contains(teamModel.Name))
+                _federationModel.Wrestlers[memberName].Teams.Add(teamModel.Name);
+
+            if (key != null && key != newKey && _federationModel.Wrestlers[memberName].Teams.Contains(key))
+                _federationModel.Wrestlers[memberName].Teams.Remove(key);
+        }
+
+        // Update title holders
+        if (teamModel.TitleNames.Count != 0)
+            foreach (string titleName in teamModel.TitleNames)
+                UpdateTitleHolder(titleName, teamModel.Name);
+
         _mainForm.IsSaved = false;
     }
 
@@ -253,6 +282,14 @@ public class MainFormPresenter
             _federationModel.Titles.Remove(key);
             _federationModel.Titles.Add(newKey, titleModel);
             UpdateTreeNode(_mainForm.TitlesTreeNode, key, newKey);
+
+            // Update holders title list
+            if (!string.IsNullOrEmpty(titleModel.Holder))
+            {
+                List<string> holderTitlesList = (titleModel.Type == TitleTypes.Singles) ? _federationModel.Wrestlers[titleModel.Holder].TitleNames : _federationModel.Teams[titleModel.Holder].TitleNames;
+                holderTitlesList.Remove(key);
+                holderTitlesList.Add(newKey);
+            }
         }
         _mainForm.IsSaved = false;
     }
@@ -311,6 +348,16 @@ public class MainFormPresenter
 
     private void OnDeleteWrestler(object? sender, string key)
     {
+        WrestlerModel wrestler = _federationModel.Wrestlers[key];
+
+        // Remove from teams
+        foreach (string teamName in wrestler.Teams)
+            _federationModel.Teams[teamName].MemberNames.Remove(wrestler.Name);
+
+        // Remove titles
+        foreach (string titleName in wrestler.TitleNames)
+            _federationModel.Titles[titleName].Holder = null;
+
         _federationModel.Wrestlers.Remove(key);
         _mainForm.WrestlersTreeNode.Nodes.RemoveByKey(key);
         _mainForm.IsSaved = false;
@@ -318,6 +365,16 @@ public class MainFormPresenter
 
     private void OnDeleteTeam(object? sender, string key)
     {
+        TeamModel team = _federationModel.Teams[key];
+
+        // Remove wrestlers from team
+        foreach (string wrestlerName in team.MemberNames)
+            _federationModel.Wrestlers[wrestlerName].Teams.Remove(team.Name);
+
+        // Remove titles
+        foreach (string titleName in team.TitleNames)
+            _federationModel.Titles[titleName].Holder = null;
+
         _federationModel.Teams.Remove(key);
         _mainForm.TeamsTreeNode.Nodes.RemoveByKey(key);
         _mainForm.IsSaved = false;
@@ -325,6 +382,17 @@ public class MainFormPresenter
 
     private void OnDeleteTitle(object? sender, string key)
     {
+        TitleModel title = _federationModel.Titles[key];
+
+        // Remove from holder
+        if (!string.IsNullOrEmpty(title.Holder))
+        {
+            if (title.Type == TitleTypes.Singles)
+                _federationModel.Wrestlers[title.Holder].TitleNames.Remove(title.Name);
+            else
+                _federationModel.Teams[title.Holder].TitleNames.Remove(title.Name);
+        }
+
         _federationModel.Titles.Remove(key);
         _mainForm.TitlesTreeNode.Nodes.RemoveByKey(key);
         _mainForm.IsSaved = false;
@@ -349,5 +417,19 @@ public class MainFormPresenter
         BookACardForm bookACardForm = new();
         BookACardFormPresenter bookACardFormPresenter = new(_federationModel, bookACardForm);
         bookACardFormPresenter.ShowDialog(_mainForm);
+    }
+
+    private void UpdateTitleHolder(string titleName, string newHolderName)
+    {
+        TitleModel title = _federationModel.Titles[titleName];
+        if (!string.IsNullOrEmpty(title.Holder) && title.Holder != newHolderName)
+        {
+            // Check if key exists encase it's been a rename of a wrestler/team
+            if (title.Type == TitleTypes.Singles && _federationModel.Wrestlers.ContainsKey(title.Holder))
+                _federationModel.Wrestlers[title.Holder].TitleNames.Remove(title.Name);
+            else if(title.Type == TitleTypes.Team && _federationModel.Teams.ContainsKey(title.Holder))
+                _federationModel.Teams[title.Holder].TitleNames.Remove(title.Name);
+        }
+        title.Holder = newHolderName;
     }
 }

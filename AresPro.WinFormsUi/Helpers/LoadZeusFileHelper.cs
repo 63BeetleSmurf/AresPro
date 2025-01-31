@@ -11,6 +11,10 @@ public static class LoadZeusFileHelper
 
     public static FederationModel LoadFederation(StreamReader reader)
     {
+        // Used to populate title.holder properties
+        Dictionary<string, string> titlesToWrestlersMap = [];
+        Dictionary<string, string> titlesToTeamsMap = [];
+
         /*
             [STRING:Federation.Name]
             [STRING:Fed.Owner]
@@ -49,19 +53,54 @@ public static class LoadZeusFileHelper
         {
             WrestlerModel wrestler = LoadWrestler(reader);
             federation.Wrestlers.Add(wrestler.Name, wrestler);
+
+            // Add reference for when titles are loaded
+            foreach (string titleName in wrestler.TitleNames)
+                titlesToWrestlersMap.Add(titleName, wrestler.Name);
         }
 
         for (int i = 0; i < teamCount; i++)
         {
             TeamModel team = LoadTeam(reader);
             federation.Teams.Add(team.Name, team);
+
+            // Add team references to wresters
+            List<string> phantomMembers = [];
+            foreach (string memberName in team.MemberNames)
+            {
+                if (!federation.Wrestlers.ContainsKey(memberName))
+                    phantomMembers.Add(memberName);
+                else
+                    federation.Wrestlers[memberName].Teams.Add(team.Name);
+            }
+            // Remove any phantom members that were found
+            foreach (string phantomMember in phantomMembers)
+                team.MemberNames.Remove(phantomMember);
+
+            // Add reference for when titles are loaded
+            foreach (string titleName in team.TitleNames)
+                titlesToTeamsMap.Add(titleName, team.Name);
         }
 
         for (int i = 0; i < titleCount; i++)
         {
             TitleModel title = LoadTitle(reader);
             federation.Titles.Add(title.Name, title);
+
+            // Set holder property based on reference data
+            if (title.Type == TitleTypes.Singles && titlesToWrestlersMap.ContainsKey(title.Name))
+                title.Holder = titlesToWrestlersMap[title.Name];
+            else if (title.Type == TitleTypes.Singles && titlesToWrestlersMap.ContainsKey(title.Name))
+                title.Holder = titlesToWrestlersMap[title.Name];
         }
+        // Check singles titles referenced when loading wrestlers
+        foreach (string titleName in titlesToWrestlersMap.Keys)
+            if (!federation.Titles.ContainsKey(titleName))
+                federation.Wrestlers[titlesToWrestlersMap[titleName]].TitleNames.Remove(titleName);
+        // Check team titles referenced when loading team
+        foreach (string titleName in titlesToTeamsMap.Keys)
+            if (!federation.Titles.ContainsKey(titleName))
+                federation.Teams[titlesToTeamsMap[titleName]].TitleNames.Remove(titleName);
 
         for (int i = 0; i < commentatorCount; i++)
         {
@@ -336,16 +375,16 @@ public static class LoadZeusFileHelper
             [STRING:Weapon.Name]|[BOOL(0/1):Weapon.SwingAtOpponent] [BOOL(0/1):Weapon.UsedToChoke] [BOOL(0/1):Weapon.UsedAsAWhip] [BOOL(0/1):Weapon.ThrownAtOpponent] [BOOL(0/1):Weapon.UsedToCutOpponent] [BOOL(0/1):Weapon.CausesBleeding]
             -- Zeus Pro version
             [STRING:Weapon.Name]|[INT:Weapon.Settings] [STRING:Weapon.IsAt] 0 0 0 0
-                --	1024 - SwingAtOpponent
-                --	512 - UsedToCutOpponent
-                --	256 - ThrownAtOpponent
-                --	128 - UsedAsAWhip
-                --	64 - UsedToChoke
-                --	32 - CausesBleeding
-                --	16 - WillBreak
-                --	8 - ThrownInto
-                --	4 - ShootsAtOpponent
-                --	2 - SlammedOn
+                -- 1024 - SwingAtOpponent
+                -- 512 - UsedToCutOpponent
+                -- 256 - ThrownAtOpponent
+                -- 128 - UsedAsAWhip
+                -- 64 - UsedToChoke
+                -- 32 - CausesBleeding
+                -- 16 - WillBreak
+                -- 8 - ThrownInto
+                -- 4 - ShootsAtOpponent
+                -- 2 - SlammedOn
         */
 
         WeaponModel weapon = new();
@@ -379,7 +418,7 @@ public static class LoadZeusFileHelper
 
             weapon.AvailableAtLocation = int.Parse(weaponSettingsData[1]) - 2;
 
-            // weaponSettingsData[2] to weaponSettingsData[5] are unused (always 0) in Zeus Pro verison
+            // weaponSettingsData[2] to weaponSettingsData[5] are unused (always 0) in Zeus Pro version
         }
 
         return weapon;
