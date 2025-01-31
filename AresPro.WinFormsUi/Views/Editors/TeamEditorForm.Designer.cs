@@ -41,7 +41,7 @@ partial class TeamEditorForm
         lblWins = new Label();
         TitlesListBox = new ListBox();
         RemoveTitleButton = new Button();
-        CancelButton = new Button();
+        CancelationButton = new Button();
         grpTitles = new GroupBox();
         EscortInterferesCheckBox = new CheckBox();
         EscortComboBox = new ComboBox();
@@ -201,16 +201,16 @@ partial class TeamEditorForm
         RemoveTitleButton.UseVisualStyleBackColor = true;
         RemoveTitleButton.Click += RemoveTitleButton_Click;
         // 
-        // CancelButton
+        // CancelationButton
         // 
-        CancelButton.DialogResult = DialogResult.Cancel;
-        CancelButton.Location = new Point(451, 310);
-        CancelButton.Margin = new Padding(4, 3, 4, 3);
-        CancelButton.Name = "CancelButton";
-        CancelButton.Size = new Size(68, 27);
-        CancelButton.TabIndex = 14;
-        CancelButton.Text = "&Cancel";
-        CancelButton.UseVisualStyleBackColor = true;
+        CancelationButton.DialogResult = DialogResult.Cancel;
+        CancelationButton.Location = new Point(451, 310);
+        CancelationButton.Margin = new Padding(4, 3, 4, 3);
+        CancelationButton.Name = "CancelationButton";
+        CancelationButton.Size = new Size(68, 27);
+        CancelationButton.TabIndex = 14;
+        CancelationButton.Text = "&Cancel";
+        CancelationButton.UseVisualStyleBackColor = true;
         // 
         // grpTitles
         // 
@@ -322,7 +322,7 @@ partial class TeamEditorForm
         Controls.Add(OkButton);
         Controls.Add(grpMembers);
         Controls.Add(grpStats);
-        Controls.Add(CancelButton);
+        Controls.Add(CancelationButton);
         Controls.Add(grpTitles);
         Controls.Add(EscortInterferesCheckBox);
         Controls.Add(EscortComboBox);
@@ -365,7 +365,7 @@ partial class TeamEditorForm
     internal System.Windows.Forms.Label lblWins;
     internal System.Windows.Forms.ListBox TitlesListBox;
     internal System.Windows.Forms.Button RemoveTitleButton;
-    internal System.Windows.Forms.Button CancelButton;
+    internal System.Windows.Forms.Button CancelationButton;
     internal System.Windows.Forms.GroupBox grpTitles;
     internal System.Windows.Forms.CheckBox EscortInterferesCheckBox;
     internal System.Windows.Forms.ComboBox EscortComboBox;

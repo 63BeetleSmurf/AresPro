@@ -28,7 +28,7 @@ partial class LocationEditorForm
     /// </summary>
     private void InitializeComponent()
     {
-        CancelButton = new Button();
+        CancelationButton = new Button();
         CanFightHereCheckBox = new CheckBox();
         WeaponsAtLocCheckBox = new CheckBox();
         DQAtLocCheckBox = new CheckBox();
@@ -52,16 +52,16 @@ partial class LocationEditorForm
         grpName.SuspendLayout();
         SuspendLayout();
         // 
-        // CancelButton
+        // CancelationButton
         // 
-        CancelButton.DialogResult = DialogResult.Cancel;
-        CancelButton.Location = new Point(329, 381);
-        CancelButton.Margin = new Padding(4, 3, 4, 3);
-        CancelButton.Name = "CancelButton";
-        CancelButton.Size = new Size(88, 27);
-        CancelButton.TabIndex = 25;
-        CancelButton.Text = "&Cancel";
-        CancelButton.UseVisualStyleBackColor = true;
+        CancelationButton.DialogResult = DialogResult.Cancel;
+        CancelationButton.Location = new Point(329, 381);
+        CancelationButton.Margin = new Padding(4, 3, 4, 3);
+        CancelationButton.Name = "CancelationButton";
+        CancelationButton.Size = new Size(88, 27);
+        CancelationButton.TabIndex = 25;
+        CancelationButton.Text = "&Cancel";
+        CancelationButton.UseVisualStyleBackColor = true;
         // 
         // CanFightHereCheckBox
         // 
@@ -255,9 +255,9 @@ partial class LocationEditorForm
         AcceptButton = OkButton;
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        CancelButton = CancelButton;
+        CancelButton = CancelationButton;
         ClientSize = new Size(430, 420);
-        Controls.Add(CancelButton);
+        Controls.Add(CancelationButton);
         Controls.Add(CanFightHereCheckBox);
         Controls.Add(WeaponsAtLocCheckBox);
         Controls.Add(DQAtLocCheckBox);
@@ -289,7 +289,7 @@ partial class LocationEditorForm
 
     #endregion
 
-    internal System.Windows.Forms.Button CancelButton;
+    internal System.Windows.Forms.Button CancelationButton;
     internal System.Windows.Forms.CheckBox CanFightHereCheckBox;
     internal System.Windows.Forms.CheckBox WeaponsAtLocCheckBox;
     internal System.Windows.Forms.CheckBox DQAtLocCheckBox;

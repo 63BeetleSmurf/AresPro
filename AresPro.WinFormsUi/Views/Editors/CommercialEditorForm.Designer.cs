@@ -28,22 +28,22 @@ partial class CommercialEditorForm
     /// </summary>
     private void InitializeComponent()
     {
-        CancelButton = new Button();
+        CancelationButton = new Button();
         OkButton = new Button();
         EditCommercialTextBox = new TextBox();
         CommercialsListBox = new ListBox();
         SuspendLayout();
         // 
-        // CancelButton
+        // CancelationButton
         // 
-        CancelButton.DialogResult = DialogResult.Cancel;
-        CancelButton.Location = new Point(377, 231);
-        CancelButton.Margin = new Padding(4, 3, 4, 3);
-        CancelButton.Name = "CancelButton";
-        CancelButton.Size = new Size(84, 27);
-        CancelButton.TabIndex = 3;
-        CancelButton.Text = "&Cancel";
-        CancelButton.UseVisualStyleBackColor = true;
+        CancelationButton.DialogResult = DialogResult.Cancel;
+        CancelationButton.Location = new Point(377, 231);
+        CancelationButton.Margin = new Padding(4, 3, 4, 3);
+        CancelationButton.Name = "CancelationButton";
+        CancelationButton.Size = new Size(84, 27);
+        CancelationButton.TabIndex = 3;
+        CancelationButton.Text = "&Cancel";
+        CancelationButton.UseVisualStyleBackColor = true;
         // 
         // OkButton
         // 
@@ -79,9 +79,9 @@ partial class CommercialEditorForm
         AcceptButton = OkButton;
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        CancelButton = CancelButton;
+        CancelButton = CancelationButton;
         ClientSize = new Size(474, 270);
-        Controls.Add(CancelButton);
+        Controls.Add(CancelationButton);
         Controls.Add(OkButton);
         Controls.Add(EditCommercialTextBox);
         Controls.Add(CommercialsListBox);
@@ -99,7 +99,7 @@ partial class CommercialEditorForm
 
     #endregion
 
-    internal System.Windows.Forms.Button CancelButton;
+    internal System.Windows.Forms.Button CancelationButton;
     internal System.Windows.Forms.Button OkButton;
     internal System.Windows.Forms.TextBox EditCommercialTextBox;
     internal System.Windows.Forms.ListBox CommercialsListBox;

@@ -28,22 +28,22 @@ partial class CustomTextBlockForm
     /// </summary>
     private void InitializeComponent()
     {
-        CancelButton = new Button();
+        CancelationButton = new Button();
         OkButton = new Button();
         CustomTextBlockTextBox = new TextBox();
         DescriptionTextBox = new TextBox();
         label1 = new Label();
         SuspendLayout();
         // 
-        // CancelButton
+        // CancelationButton
         // 
-        CancelButton.DialogResult = DialogResult.Cancel;
-        CancelButton.Location = new Point(247, 201);
-        CancelButton.Name = "CancelButton";
-        CancelButton.Size = new Size(75, 23);
-        CancelButton.TabIndex = 3;
-        CancelButton.Text = "&Cancel";
-        CancelButton.UseVisualStyleBackColor = true;
+        CancelationButton.DialogResult = DialogResult.Cancel;
+        CancelationButton.Location = new Point(247, 201);
+        CancelationButton.Name = "CancelationButton";
+        CancelationButton.Size = new Size(75, 23);
+        CancelationButton.TabIndex = 3;
+        CancelationButton.Text = "&Cancel";
+        CancelationButton.UseVisualStyleBackColor = true;
         // 
         // OkButton
         // 
@@ -87,7 +87,7 @@ partial class CustomTextBlockForm
         Controls.Add(label1);
         Controls.Add(DescriptionTextBox);
         Controls.Add(CustomTextBlockTextBox);
-        Controls.Add(CancelButton);
+        Controls.Add(CancelationButton);
         Controls.Add(OkButton);
         FormBorderStyle = FormBorderStyle.FixedDialog;
         MaximizeBox = false;
@@ -102,7 +102,7 @@ partial class CustomTextBlockForm
 
     #endregion
 
-    private Button CancelButton;
+    private Button CancelationButton;
     private Button OkButton;
     private TextBox CustomTextBlockTextBox;
     private TextBox DescriptionTextBox;

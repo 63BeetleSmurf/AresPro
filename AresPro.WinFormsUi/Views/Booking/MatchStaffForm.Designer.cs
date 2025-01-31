@@ -38,7 +38,7 @@ partial class MatchStaffForm
         groupBox3 = new GroupBox();
         RingAnnouncerComboBox = new ComboBox();
         OkButton = new Button();
-        CancelButton = new Button();
+        CancelationButton = new Button();
         groupBox1.SuspendLayout();
         groupBox2.SuspendLayout();
         groupBox3.SuspendLayout();
@@ -135,24 +135,24 @@ partial class MatchStaffForm
         OkButton.Text = "&Ok";
         OkButton.UseVisualStyleBackColor = true;
         // 
-        // CancelButton
+        // CancelationButton
         // 
-        CancelButton.DialogResult = DialogResult.Cancel;
-        CancelButton.Location = new Point(205, 234);
-        CancelButton.Name = "CancelButton";
-        CancelButton.Size = new Size(75, 23);
-        CancelButton.TabIndex = 7;
-        CancelButton.Text = "&Cancel";
-        CancelButton.UseVisualStyleBackColor = true;
+        CancelationButton.DialogResult = DialogResult.Cancel;
+        CancelationButton.Location = new Point(205, 234);
+        CancelationButton.Name = "CancelationButton";
+        CancelationButton.Size = new Size(75, 23);
+        CancelationButton.TabIndex = 7;
+        CancelationButton.Text = "&Cancel";
+        CancelationButton.UseVisualStyleBackColor = true;
         // 
         // MatchStaffForm
         // 
         AcceptButton = OkButton;
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        CancelButton = CancelButton;
+        CancelButton = CancelationButton;
         ClientSize = new Size(292, 276);
-        Controls.Add(CancelButton);
+        Controls.Add(CancelationButton);
         Controls.Add(OkButton);
         Controls.Add(groupBox3);
         Controls.Add(groupBox2);
@@ -182,5 +182,5 @@ partial class MatchStaffForm
     private GroupBox groupBox3;
     private ComboBox RingAnnouncerComboBox;
     private Button OkButton;
-    private Button CancelButton;
+    private Button CancelationButton;
 }

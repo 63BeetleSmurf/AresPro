@@ -28,8 +28,8 @@ partial class FedOptionsForm
     /// </summary>
     private void InitializeComponent()
     {
-        OkCommand = new Button();
-        CancelCommand = new Button();
+        OkButton = new Button();
+        CancelationButton = new Button();
         lblBackgroundColor = new Label();
         BackgroundColorTextBox = new TextBox();
         lblFontColor = new Label();
@@ -48,27 +48,27 @@ partial class FedOptionsForm
         NameTextBox = new TextBox();
         SuspendLayout();
         // 
-        // OkCommand
+        // OkButton
         // 
-        OkCommand.DialogResult = DialogResult.OK;
-        OkCommand.Location = new Point(272, 178);
-        OkCommand.Margin = new Padding(4, 3, 4, 3);
-        OkCommand.Name = "OkCommand";
-        OkCommand.Size = new Size(78, 27);
-        OkCommand.TabIndex = 11;
-        OkCommand.Text = "&Ok";
-        OkCommand.UseVisualStyleBackColor = true;
+        OkButton.DialogResult = DialogResult.OK;
+        OkButton.Location = new Point(272, 178);
+        OkButton.Margin = new Padding(4, 3, 4, 3);
+        OkButton.Name = "OkButton";
+        OkButton.Size = new Size(78, 27);
+        OkButton.TabIndex = 11;
+        OkButton.Text = "&Ok";
+        OkButton.UseVisualStyleBackColor = true;
         // 
-        // CancelCommand
+        // CancelationButton
         // 
-        CancelCommand.DialogResult = DialogResult.Cancel;
-        CancelCommand.Location = new Point(186, 178);
-        CancelCommand.Margin = new Padding(4, 3, 4, 3);
-        CancelCommand.Name = "CancelCommand";
-        CancelCommand.Size = new Size(78, 27);
-        CancelCommand.TabIndex = 10;
-        CancelCommand.Text = "&Cancel";
-        CancelCommand.UseVisualStyleBackColor = true;
+        CancelationButton.DialogResult = DialogResult.Cancel;
+        CancelationButton.Location = new Point(186, 178);
+        CancelationButton.Margin = new Padding(4, 3, 4, 3);
+        CancelationButton.Name = "CancelationButton";
+        CancelationButton.Size = new Size(78, 27);
+        CancelationButton.TabIndex = 10;
+        CancelationButton.Text = "&Cancel";
+        CancelationButton.UseVisualStyleBackColor = true;
         // 
         // lblBackgroundColor
         // 
@@ -224,13 +224,13 @@ partial class FedOptionsForm
         // 
         // FedOptionsForm
         // 
-        AcceptButton = OkCommand;
+        AcceptButton = OkButton;
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        CancelButton = CancelCommand;
+        CancelButton = CancelationButton;
         ClientSize = new Size(363, 217);
-        Controls.Add(OkCommand);
-        Controls.Add(CancelCommand);
+        Controls.Add(OkButton);
+        Controls.Add(CancelationButton);
         Controls.Add(lblBackgroundColor);
         Controls.Add(BackgroundColorTextBox);
         Controls.Add(lblFontColor);
@@ -261,8 +261,8 @@ partial class FedOptionsForm
 
     #endregion
 
-    internal System.Windows.Forms.Button OkCommand;
-    internal System.Windows.Forms.Button CancelCommand;
+    internal System.Windows.Forms.Button OkButton;
+    internal System.Windows.Forms.Button CancelationButton;
     internal System.Windows.Forms.Label lblBackgroundColor;
     internal System.Windows.Forms.TextBox BackgroundColorTextBox;
     internal System.Windows.Forms.Label lblFontColor;

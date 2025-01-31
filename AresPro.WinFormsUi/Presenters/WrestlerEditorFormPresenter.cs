@@ -98,7 +98,8 @@ public class WrestlerEditorFormPresenter
         _wrestlerModel.Stable = _wrestlerEditorForm.StableTextBox.Text;
         _wrestlerModel.RingIntro = _wrestlerEditorForm.RingIntroTextBox.Text;
         _wrestlerModel.Push = int.Parse(_wrestlerEditorForm.PushTextBox.Text);
-        _wrestlerModel.EscortName = (_wrestlerEditorForm.EscortComboBox.SelectedItem == "None") ? null : (string)_wrestlerEditorForm.EscortComboBox.SelectedItem;
+        string selectedEscortItem = (string)(_wrestlerEditorForm.EscortComboBox.SelectedItem ?? "None");
+        _wrestlerModel.EscortName = (selectedEscortItem == "None") ? null : selectedEscortItem;
         _wrestlerModel.EscortInterferes = _wrestlerEditorForm.EscortInterferesCheckBox.Checked;
         _wrestlerModel.TitleNames.Clear();
         _wrestlerModel.TitleNames.AddRange(_titleNames);

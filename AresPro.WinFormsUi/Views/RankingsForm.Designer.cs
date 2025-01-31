@@ -28,7 +28,7 @@ partial class RankingsForm
     /// </summary>
     private void InitializeComponent()
     {
-        CancelButton = new Button();
+        CancelationButton = new Button();
         CreateButton = new Button();
         ByPushRadioButton = new RadioButton();
         ByNameRadioButton = new RadioButton();
@@ -37,16 +37,16 @@ partial class RankingsForm
         ByWinsRadioButton = new RadioButton();
         SuspendLayout();
         // 
-        // CancelButton
+        // CancelationButton
         // 
-        CancelButton.DialogResult = DialogResult.Cancel;
-        CancelButton.Location = new Point(45, 170);
-        CancelButton.Margin = new Padding(4, 3, 4, 3);
-        CancelButton.Name = "CancelButton";
-        CancelButton.Size = new Size(88, 27);
-        CancelButton.TabIndex = 6;
-        CancelButton.Text = "&Cancel";
-        CancelButton.UseVisualStyleBackColor = true;
+        CancelationButton.DialogResult = DialogResult.Cancel;
+        CancelationButton.Location = new Point(45, 170);
+        CancelationButton.Margin = new Padding(4, 3, 4, 3);
+        CancelationButton.Name = "CancelationButton";
+        CancelationButton.Size = new Size(88, 27);
+        CancelationButton.TabIndex = 6;
+        CancelationButton.Text = "&Cancel";
+        CancelationButton.UseVisualStyleBackColor = true;
         // 
         // CreateButton
         // 
@@ -123,9 +123,9 @@ partial class RankingsForm
         AcceptButton = CreateButton;
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        CancelButton = CancelButton;
+        CancelButton = CancelationButton;
         ClientSize = new Size(146, 209);
-        Controls.Add(CancelButton);
+        Controls.Add(CancelationButton);
         Controls.Add(CreateButton);
         Controls.Add(ByPushRadioButton);
         Controls.Add(ByNameRadioButton);
@@ -146,7 +146,7 @@ partial class RankingsForm
 
     #endregion
 
-    internal System.Windows.Forms.Button CancelButton;
+    internal System.Windows.Forms.Button CancelationButton;
     internal System.Windows.Forms.Button CreateButton;
     internal System.Windows.Forms.RadioButton ByPushRadioButton;
     internal System.Windows.Forms.RadioButton ByNameRadioButton;

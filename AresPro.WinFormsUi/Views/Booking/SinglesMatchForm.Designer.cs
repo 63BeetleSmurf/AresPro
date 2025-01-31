@@ -46,7 +46,7 @@ partial class SinglesMatchForm
         groupBox4 = new GroupBox();
         WinsByComboBox = new ComboBox();
         OkButton = new Button();
-        CancelButton = new Button();
+        CancelationButton = new Button();
         groupBox1.SuspendLayout();
         groupBox2.SuspendLayout();
         groupBox3.SuspendLayout();
@@ -226,15 +226,15 @@ partial class SinglesMatchForm
         OkButton.Text = "&Ok";
         OkButton.UseVisualStyleBackColor = true;
         // 
-        // CancelButton
+        // CancelationButton
         // 
-        CancelButton.DialogResult = DialogResult.Cancel;
-        CancelButton.Location = new Point(327, 249);
-        CancelButton.Name = "CancelButton";
-        CancelButton.Size = new Size(75, 23);
-        CancelButton.TabIndex = 13;
-        CancelButton.Text = "&Cancel";
-        CancelButton.UseVisualStyleBackColor = true;
+        CancelationButton.DialogResult = DialogResult.Cancel;
+        CancelationButton.Location = new Point(327, 249);
+        CancelationButton.Name = "CancelationButton";
+        CancelationButton.Size = new Size(75, 23);
+        CancelationButton.TabIndex = 13;
+        CancelationButton.Text = "&Cancel";
+        CancelationButton.UseVisualStyleBackColor = true;
         // 
         // SinglesMatchForm
         // 
@@ -242,7 +242,7 @@ partial class SinglesMatchForm
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(414, 284);
-        Controls.Add(CancelButton);
+        Controls.Add(CancelationButton);
         Controls.Add(OkButton);
         Controls.Add(groupBox4);
         Controls.Add(groupBox3);
@@ -291,5 +291,5 @@ partial class SinglesMatchForm
     private GroupBox groupBox4;
     private ComboBox WinsByComboBox;
     private Button OkButton;
-    private Button CancelButton;
+    private Button CancelationButton;
 }

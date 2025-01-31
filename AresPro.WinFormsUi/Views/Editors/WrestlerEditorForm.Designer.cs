@@ -58,7 +58,7 @@ partial class WrestlerEditorForm
         EditMoveButton = new Button();
         MovesListBox = new ListBox();
         grpMoves = new GroupBox();
-        CancelButton = new Button();
+        CancelationButton = new Button();
         OkButton = new Button();
         ExportZimButton = new Button();
         ExportHTMLButton = new Button();
@@ -398,16 +398,16 @@ partial class WrestlerEditorForm
         grpMoves.TabStop = false;
         grpMoves.Text = "Moves List";
         // 
-        // CancelButton
+        // CancelationButton
         // 
-        CancelButton.DialogResult = DialogResult.Cancel;
-        CancelButton.Location = new Point(462, 318);
-        CancelButton.Margin = new Padding(4, 3, 4, 3);
-        CancelButton.Name = "CancelButton";
-        CancelButton.Size = new Size(68, 26);
-        CancelButton.TabIndex = 34;
-        CancelButton.Text = "&Cancel";
-        CancelButton.UseVisualStyleBackColor = true;
+        CancelationButton.DialogResult = DialogResult.Cancel;
+        CancelationButton.Location = new Point(462, 318);
+        CancelationButton.Margin = new Padding(4, 3, 4, 3);
+        CancelationButton.Name = "CancelationButton";
+        CancelationButton.Size = new Size(68, 26);
+        CancelationButton.TabIndex = 34;
+        CancelationButton.Text = "&Cancel";
+        CancelationButton.UseVisualStyleBackColor = true;
         // 
         // OkButton
         // 
@@ -642,7 +642,7 @@ partial class WrestlerEditorForm
         ClientSize = new Size(543, 356);
         Controls.Add(grpStats);
         Controls.Add(grpMoves);
-        Controls.Add(CancelButton);
+        Controls.Add(CancelationButton);
         Controls.Add(OkButton);
         Controls.Add(ExportZimButton);
         Controls.Add(ExportHTMLButton);
@@ -699,7 +699,7 @@ partial class WrestlerEditorForm
     internal System.Windows.Forms.Button EditMoveButton;
     internal System.Windows.Forms.ListBox MovesListBox;
     internal System.Windows.Forms.GroupBox grpMoves;
-    internal System.Windows.Forms.Button CancelButton;
+    internal System.Windows.Forms.Button CancelationButton;
     internal System.Windows.Forms.Button OkButton;
     internal System.Windows.Forms.Button ExportZimButton;
     internal System.Windows.Forms.Button ExportHTMLButton;

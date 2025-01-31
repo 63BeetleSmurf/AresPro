@@ -37,7 +37,7 @@ partial class MoveEditorForm
         Text3TextBox = new TextBox();
         Text2TextBox = new TextBox();
         Text1TextBox = new TextBox();
-        CancelButton = new Button();
+        CancelationButton = new Button();
         grpTexts = new GroupBox();
         HighRiskCheckBox = new CheckBox();
         IllegalCheckBox = new CheckBox();
@@ -148,16 +148,16 @@ partial class MoveEditorForm
         Text1TextBox.Size = new Size(464, 23);
         Text1TextBox.TabIndex = 8;
         // 
-        // CancelButton
+        // CancelationButton
         // 
-        CancelButton.DialogResult = DialogResult.Cancel;
-        CancelButton.Location = new Point(430, 231);
-        CancelButton.Margin = new Padding(4, 3, 4, 3);
-        CancelButton.Name = "CancelButton";
-        CancelButton.Size = new Size(63, 27);
-        CancelButton.TabIndex = 16;
-        CancelButton.Text = "&Cancel";
-        CancelButton.UseVisualStyleBackColor = true;
+        CancelationButton.DialogResult = DialogResult.Cancel;
+        CancelationButton.Location = new Point(430, 231);
+        CancelationButton.Margin = new Padding(4, 3, 4, 3);
+        CancelationButton.Name = "CancelationButton";
+        CancelationButton.Size = new Size(63, 27);
+        CancelationButton.TabIndex = 16;
+        CancelationButton.Text = "&Cancel";
+        CancelationButton.UseVisualStyleBackColor = true;
         // 
         // grpTexts
         // 
@@ -291,7 +291,7 @@ partial class MoveEditorForm
         Controls.Add(DamageProgressBar);
         Controls.Add(OkButton);
         Controls.Add(grpPositions);
-        Controls.Add(CancelButton);
+        Controls.Add(CancelationButton);
         Controls.Add(grpTexts);
         Controls.Add(HighRiskCheckBox);
         Controls.Add(IllegalCheckBox);
@@ -329,7 +329,7 @@ partial class MoveEditorForm
     internal System.Windows.Forms.TextBox Text3TextBox;
     internal System.Windows.Forms.TextBox Text2TextBox;
     internal System.Windows.Forms.TextBox Text1TextBox;
-    internal System.Windows.Forms.Button CancelButton;
+    internal System.Windows.Forms.Button CancelationButton;
     internal System.Windows.Forms.GroupBox grpTexts;
     internal System.Windows.Forms.CheckBox HighRiskCheckBox;
     internal System.Windows.Forms.CheckBox IllegalCheckBox;

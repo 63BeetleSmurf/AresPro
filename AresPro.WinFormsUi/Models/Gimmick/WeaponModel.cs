@@ -2,7 +2,7 @@
 
 public class WeaponModel
 {
-    public string Name { get; set; }
+    public string Name { get; set; } = string.Empty;
     public bool SwingAtOpponent { get; set; }
     public bool UsedToChoke { get; set; }
     public bool UsedAsAWhip { get; set; }

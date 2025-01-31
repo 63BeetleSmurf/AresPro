@@ -33,7 +33,7 @@ partial class TitleEditorForm
         SinglesTitleRadioButton = new RadioButton();
         NameTextBox = new TextBox();
         lblName = new Label();
-        CancelButton = new Button();
+        CancelationButton = new Button();
         OkButton = new Button();
         grpType.SuspendLayout();
         SuspendLayout();
@@ -93,16 +93,16 @@ partial class TitleEditorForm
         lblName.TabIndex = 5;
         lblName.Text = "Title Name";
         // 
-        // CancelButton
+        // CancelationButton
         // 
-        CancelButton.DialogResult = DialogResult.Cancel;
-        CancelButton.Location = new Point(293, 61);
-        CancelButton.Margin = new Padding(4, 3, 4, 3);
-        CancelButton.Name = "CancelButton";
-        CancelButton.Size = new Size(75, 27);
-        CancelButton.TabIndex = 9;
-        CancelButton.Text = "&Cancel";
-        CancelButton.UseVisualStyleBackColor = true;
+        CancelationButton.DialogResult = DialogResult.Cancel;
+        CancelationButton.Location = new Point(293, 61);
+        CancelationButton.Margin = new Padding(4, 3, 4, 3);
+        CancelationButton.Name = "CancelationButton";
+        CancelationButton.Size = new Size(75, 27);
+        CancelationButton.TabIndex = 9;
+        CancelationButton.Text = "&Cancel";
+        CancelationButton.UseVisualStyleBackColor = true;
         // 
         // OkButton
         // 
@@ -124,7 +124,7 @@ partial class TitleEditorForm
         Controls.Add(grpType);
         Controls.Add(NameTextBox);
         Controls.Add(lblName);
-        Controls.Add(CancelButton);
+        Controls.Add(CancelationButton);
         Controls.Add(OkButton);
         FormBorderStyle = FormBorderStyle.FixedDialog;
         Margin = new Padding(4, 3, 4, 3);
@@ -148,6 +148,6 @@ partial class TitleEditorForm
     internal System.Windows.Forms.RadioButton SinglesTitleRadioButton;
     internal System.Windows.Forms.TextBox NameTextBox;
     internal System.Windows.Forms.Label lblName;
-    internal System.Windows.Forms.Button CancelButton;
+    internal System.Windows.Forms.Button CancelationButton;
     internal System.Windows.Forms.Button OkButton;
 }

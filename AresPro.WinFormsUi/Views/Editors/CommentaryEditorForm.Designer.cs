@@ -30,7 +30,7 @@ partial class CommentaryEditorForm
     {
         grpUsedWhen = new GroupBox();
         UsedWhenComboBox = new ComboBox();
-        CancelButton = new Button();
+        CancelationButton = new Button();
         SaveButton = new Button();
         EditTextTextBox = new TextBox();
         TextsListBox = new ListBox();
@@ -59,16 +59,16 @@ partial class CommentaryEditorForm
         UsedWhenComboBox.Size = new Size(434, 23);
         UsedWhenComboBox.TabIndex = 0;
         // 
-        // CancelButton
+        // CancelationButton
         // 
-        CancelButton.DialogResult = DialogResult.Cancel;
-        CancelButton.Location = new Point(378, 245);
-        CancelButton.Margin = new Padding(4, 3, 4, 3);
-        CancelButton.Name = "CancelButton";
-        CancelButton.Size = new Size(84, 27);
-        CancelButton.TabIndex = 4;
-        CancelButton.Text = "&Cancel";
-        CancelButton.UseVisualStyleBackColor = true;
+        CancelationButton.DialogResult = DialogResult.Cancel;
+        CancelationButton.Location = new Point(378, 245);
+        CancelationButton.Margin = new Padding(4, 3, 4, 3);
+        CancelationButton.Name = "CancelationButton";
+        CancelationButton.Size = new Size(84, 27);
+        CancelationButton.TabIndex = 4;
+        CancelationButton.Text = "&Cancel";
+        CancelationButton.UseVisualStyleBackColor = true;
         // 
         // SaveButton
         // 
@@ -105,7 +105,7 @@ partial class CommentaryEditorForm
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(475, 284);
         Controls.Add(grpUsedWhen);
-        Controls.Add(CancelButton);
+        Controls.Add(CancelationButton);
         Controls.Add(SaveButton);
         Controls.Add(EditTextTextBox);
         Controls.Add(TextsListBox);
@@ -126,7 +126,7 @@ partial class CommentaryEditorForm
 
     internal System.Windows.Forms.GroupBox grpUsedWhen;
     internal System.Windows.Forms.ComboBox UsedWhenComboBox;
-    internal System.Windows.Forms.Button CancelButton;
+    internal System.Windows.Forms.Button CancelationButton;
     internal System.Windows.Forms.Button SaveButton;
     internal System.Windows.Forms.TextBox EditTextTextBox;
     internal System.Windows.Forms.ListBox TextsListBox;

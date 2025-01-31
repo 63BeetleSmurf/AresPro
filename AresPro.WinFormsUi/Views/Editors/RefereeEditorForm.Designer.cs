@@ -34,7 +34,7 @@ partial class RefereeEditorForm
         StringencyTrackBar = new TrackBar();
         grpCountSpeed = new GroupBox();
         NameTextBox = new TextBox();
-        CancelButton = new Button();
+        CancelationButton = new Button();
         OkButton = new Button();
         ((System.ComponentModel.ISupportInitialize)CountSpeedTrackBar).BeginInit();
         grpStringency.SuspendLayout();
@@ -102,16 +102,16 @@ partial class RefereeEditorForm
         NameTextBox.Size = new Size(271, 23);
         NameTextBox.TabIndex = 0;
         // 
-        // CancelButton
+        // CancelationButton
         // 
-        CancelButton.DialogResult = DialogResult.Cancel;
-        CancelButton.Location = new Point(247, 107);
-        CancelButton.Margin = new Padding(4, 3, 4, 3);
-        CancelButton.Name = "CancelButton";
-        CancelButton.Size = new Size(84, 27);
-        CancelButton.TabIndex = 4;
-        CancelButton.Text = "&Cancel";
-        CancelButton.UseVisualStyleBackColor = true;
+        CancelationButton.DialogResult = DialogResult.Cancel;
+        CancelationButton.Location = new Point(247, 107);
+        CancelationButton.Margin = new Padding(4, 3, 4, 3);
+        CancelationButton.Name = "CancelationButton";
+        CancelationButton.Size = new Size(84, 27);
+        CancelationButton.TabIndex = 4;
+        CancelationButton.Text = "&Cancel";
+        CancelationButton.UseVisualStyleBackColor = true;
         // 
         // OkButton
         // 
@@ -133,7 +133,7 @@ partial class RefereeEditorForm
         Controls.Add(grpStringency);
         Controls.Add(grpCountSpeed);
         Controls.Add(NameTextBox);
-        Controls.Add(CancelButton);
+        Controls.Add(CancelationButton);
         Controls.Add(OkButton);
         FormBorderStyle = FormBorderStyle.FixedDialog;
         Margin = new Padding(4, 3, 4, 3);
@@ -160,6 +160,6 @@ partial class RefereeEditorForm
     internal System.Windows.Forms.TrackBar StringencyTrackBar;
     internal System.Windows.Forms.GroupBox grpCountSpeed;
     internal System.Windows.Forms.TextBox NameTextBox;
-    internal System.Windows.Forms.Button CancelButton;
+    internal System.Windows.Forms.Button CancelationButton;
     internal System.Windows.Forms.Button OkButton;
 }

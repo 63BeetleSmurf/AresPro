@@ -42,7 +42,7 @@ partial class WeaponEditorForm
         UsedToChokeCheckBox = new CheckBox();
         ThrowAtOppCheckBox = new CheckBox();
         SwingAtOppCheckBox = new CheckBox();
-        CancelButton = new Button();
+        CancelationButton = new Button();
         OkButton = new Button();
         grpName.SuspendLayout();
         grpLocation.SuspendLayout();
@@ -201,16 +201,16 @@ partial class WeaponEditorForm
         SwingAtOppCheckBox.Text = "Swing at opponent";
         SwingAtOppCheckBox.UseVisualStyleBackColor = true;
         // 
-        // CancelButton
+        // CancelationButton
         // 
-        CancelButton.DialogResult = DialogResult.Cancel;
-        CancelButton.Location = new Point(234, 194);
-        CancelButton.Margin = new Padding(4, 3, 4, 3);
-        CancelButton.Name = "CancelButton";
-        CancelButton.Size = new Size(88, 27);
-        CancelButton.TabIndex = 27;
-        CancelButton.Text = "&Cancel";
-        CancelButton.UseVisualStyleBackColor = true;
+        CancelationButton.DialogResult = DialogResult.Cancel;
+        CancelationButton.Location = new Point(234, 194);
+        CancelationButton.Margin = new Padding(4, 3, 4, 3);
+        CancelationButton.Name = "CancelationButton";
+        CancelationButton.Size = new Size(88, 27);
+        CancelationButton.TabIndex = 27;
+        CancelationButton.Text = "&Cancel";
+        CancelationButton.UseVisualStyleBackColor = true;
         // 
         // OkButton
         // 
@@ -228,7 +228,7 @@ partial class WeaponEditorForm
         AcceptButton = OkButton;
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        CancelButton = CancelButton;
+        CancelButton = CancelationButton;
         ClientSize = new Size(335, 266);
         Controls.Add(grpName);
         Controls.Add(grpLocation);
@@ -242,7 +242,7 @@ partial class WeaponEditorForm
         Controls.Add(UsedToChokeCheckBox);
         Controls.Add(ThrowAtOppCheckBox);
         Controls.Add(SwingAtOppCheckBox);
-        Controls.Add(CancelButton);
+        Controls.Add(CancelationButton);
         Controls.Add(OkButton);
         FormBorderStyle = FormBorderStyle.FixedDialog;
         Margin = new Padding(4, 3, 4, 3);
@@ -274,6 +274,6 @@ partial class WeaponEditorForm
     internal System.Windows.Forms.CheckBox UsedToChokeCheckBox;
     internal System.Windows.Forms.CheckBox ThrowAtOppCheckBox;
     internal System.Windows.Forms.CheckBox SwingAtOppCheckBox;
-    internal System.Windows.Forms.Button CancelButton;
+    internal System.Windows.Forms.Button CancelationButton;
     internal System.Windows.Forms.Button OkButton;
 }

@@ -41,7 +41,7 @@ partial class BattleRoyalForm
         groupBox5 = new GroupBox();
         GimmickFileBrowseButton = new Button();
         GimmickFileNameTextBox = new TextBox();
-        CancelButton = new Button();
+        CancelationButton = new Button();
         OkButton = new Button();
         groupBox1.SuspendLayout();
         groupBox2.SuspendLayout();
@@ -170,15 +170,15 @@ partial class BattleRoyalForm
         GimmickFileNameTextBox.Size = new Size(131, 23);
         GimmickFileNameTextBox.TabIndex = 6;
         // 
-        // CancelButton
+        // CancelationButton
         // 
-        CancelButton.DialogResult = DialogResult.Cancel;
-        CancelButton.Location = new Point(301, 301);
-        CancelButton.Name = "CancelButton";
-        CancelButton.Size = new Size(75, 23);
-        CancelButton.TabIndex = 9;
-        CancelButton.Text = "&Cancel";
-        CancelButton.UseVisualStyleBackColor = true;
+        CancelationButton.DialogResult = DialogResult.Cancel;
+        CancelationButton.Location = new Point(301, 301);
+        CancelationButton.Name = "CancelationButton";
+        CancelationButton.Size = new Size(75, 23);
+        CancelationButton.TabIndex = 9;
+        CancelationButton.Text = "&Cancel";
+        CancelationButton.UseVisualStyleBackColor = true;
         // 
         // OkButton
         // 
@@ -196,7 +196,7 @@ partial class BattleRoyalForm
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(388, 336);
-        Controls.Add(CancelButton);
+        Controls.Add(CancelationButton);
         Controls.Add(OkButton);
         Controls.Add(groupBox4);
         Controls.Add(groupBox5);
@@ -236,6 +236,6 @@ partial class BattleRoyalForm
     private GroupBox groupBox5;
     private Button GimmickFileBrowseButton;
     private TextBox GimmickFileNameTextBox;
-    private Button CancelButton;
+    private Button CancelationButton;
     private Button OkButton;
 }

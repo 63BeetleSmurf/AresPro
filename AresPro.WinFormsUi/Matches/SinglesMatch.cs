@@ -594,7 +594,7 @@ public class SinglesMatch
         return moves[moves.Count];
     }
 
-    private string GetRandomText(string[] texts, Dictionary<string, string>? placeholders = null)
+    private string GetRandomText(string[] texts, Dictionary<string, string?>? placeholders = null)
     {
         string text = texts[_random.Next(texts.Length)];
         if (placeholders == null)

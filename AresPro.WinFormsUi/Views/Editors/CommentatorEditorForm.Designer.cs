@@ -31,7 +31,7 @@ partial class CommentatorEditorForm
         grpFile = new GroupBox();
         ChangeFileButton = new Button();
         FileTextBox = new TextBox();
-        CancelButton = new Button();
+        CancelationButton = new Button();
         OkButton = new Button();
         AffiliationComboBox = new ComboBox();
         NameTextBox = new TextBox();
@@ -72,16 +72,16 @@ partial class CommentatorEditorForm
         FileTextBox.Size = new Size(204, 23);
         FileTextBox.TabIndex = 0;
         // 
-        // CancelButton
+        // CancelationButton
         // 
-        CancelButton.DialogResult = DialogResult.Cancel;
-        CancelButton.Location = new Point(258, 102);
-        CancelButton.Margin = new Padding(4, 3, 4, 3);
-        CancelButton.Name = "CancelButton";
-        CancelButton.Size = new Size(68, 27);
-        CancelButton.TabIndex = 11;
-        CancelButton.Text = "&Cancel";
-        CancelButton.UseVisualStyleBackColor = true;
+        CancelationButton.DialogResult = DialogResult.Cancel;
+        CancelationButton.Location = new Point(258, 102);
+        CancelationButton.Margin = new Padding(4, 3, 4, 3);
+        CancelationButton.Name = "CancelationButton";
+        CancelationButton.Size = new Size(68, 27);
+        CancelationButton.TabIndex = 11;
+        CancelationButton.Text = "&Cancel";
+        CancelationButton.UseVisualStyleBackColor = true;
         // 
         // OkButton
         // 
@@ -129,7 +129,7 @@ partial class CommentatorEditorForm
         AutoScaleMode = AutoScaleMode.Font;
         ClientSize = new Size(339, 141);
         Controls.Add(grpFile);
-        Controls.Add(CancelButton);
+        Controls.Add(CancelationButton);
         Controls.Add(OkButton);
         Controls.Add(AffiliationComboBox);
         Controls.Add(NameTextBox);
@@ -154,7 +154,7 @@ partial class CommentatorEditorForm
     internal System.Windows.Forms.GroupBox grpFile;
     internal System.Windows.Forms.Button ChangeFileButton;
     internal System.Windows.Forms.TextBox FileTextBox;
-    internal System.Windows.Forms.Button CancelButton;
+    internal System.Windows.Forms.Button CancelationButton;
     internal System.Windows.Forms.Button OkButton;
     internal System.Windows.Forms.ComboBox AffiliationComboBox;
     internal System.Windows.Forms.TextBox NameTextBox;

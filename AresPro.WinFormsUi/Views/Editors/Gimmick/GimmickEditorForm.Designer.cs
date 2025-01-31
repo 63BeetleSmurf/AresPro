@@ -39,7 +39,7 @@ partial class GimmickEditorForm
         EditWeaponButton = new Button();
         SettingsButton = new Button();
         SaveButton = new Button();
-        CancelButton = new Button();
+        CancelationButton = new Button();
         LocationsFrame.SuspendLayout();
         WeaponsFrame.SuspendLayout();
         NameFrame.SuspendLayout();
@@ -158,24 +158,24 @@ partial class GimmickEditorForm
         SaveButton.Text = "&Save";
         SaveButton.UseVisualStyleBackColor = true;
         // 
-        // CancelButton
+        // CancelationButton
         // 
-        CancelButton.DialogResult = DialogResult.Cancel;
-        CancelButton.Location = new Point(342, 241);
-        CancelButton.Name = "CancelButton";
-        CancelButton.Size = new Size(75, 23);
-        CancelButton.TabIndex = 9;
-        CancelButton.Text = "&Cancel";
-        CancelButton.UseVisualStyleBackColor = true;
+        CancelationButton.DialogResult = DialogResult.Cancel;
+        CancelationButton.Location = new Point(342, 241);
+        CancelationButton.Name = "CancelationButton";
+        CancelationButton.Size = new Size(75, 23);
+        CancelationButton.TabIndex = 9;
+        CancelationButton.Text = "&Cancel";
+        CancelationButton.UseVisualStyleBackColor = true;
         // 
         // GimmickEditorForm
         // 
         AcceptButton = SaveButton;
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        CancelButton = CancelButton;
+        CancelButton = CancelationButton;
         ClientSize = new Size(429, 276);
-        Controls.Add(CancelButton);
+        Controls.Add(CancelationButton);
         Controls.Add(SaveButton);
         Controls.Add(SettingsButton);
         Controls.Add(LocationsFrame);
@@ -208,5 +208,5 @@ partial class GimmickEditorForm
     private Button EditWeaponButton;
     private Button SettingsButton;
     private Button SaveButton;
-    private Button CancelButton;
+    private Button CancelationButton;
 }

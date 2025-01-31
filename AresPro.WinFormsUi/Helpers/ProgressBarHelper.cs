@@ -13,9 +13,9 @@ public static class ProgressBarHelper
         if (progressBar.Value == progressBar.Maximum)
             return;
 
-        // Progress bars have an annimation on increase that makes it seem sliggish for use with stats.
-        // Since the annimation is only on increase, if we add 2 then remove 1 it will update immediatly.
-        // Need to tempoarally increase maximum to allow this to work on the last increase.
+        // Progress bars have an animation on increase that makes it seem sluggish for use with stats.
+        // Since the animation is only on increase, if we add 2 then remove 1 it will update immediately.
+        // Need to temporally increase maximum to allow this to work on the last increase.
         int newValue = progressBar.Value + 2;
         if (newValue > progressBar.Maximum)
         {

@@ -71,7 +71,8 @@ public class TeamEditorFormPresenter
         _teamModel.TitleNames.AddRange(_titleNames);
         _teamModel.Wins = int.Parse(_teamEditorForm.WinsTextBox.Text);
         _teamModel.Loses = int.Parse(_teamEditorForm.LosesTextBox.Text);
-        _teamModel.EscortName = (_teamEditorForm.EscortComboBox.SelectedItem == "None") ? null : (string)_teamEditorForm.EscortComboBox.SelectedItem;
+        string selectedEscortItem = (string)(_teamEditorForm.EscortComboBox.SelectedItem ?? "None");
+        _teamModel.EscortName = (selectedEscortItem == "None") ? null : selectedEscortItem;
         _teamModel.EscortInterferes = _teamEditorForm.EscortInterferesCheckBox.Checked;
         _teamModel.MemberNames.Clear();
         _teamModel.MemberNames.AddRange(_memberNames);

@@ -1,5 +1,4 @@
-﻿using AresPro.WinFormsUi.Enums;
-using AresPro.WinFormsUi.Models;
+﻿using AresPro.WinFormsUi.Models;
 using AresPro.WinFormsUi.Models.Gimmick;
 
 namespace AresPro.WinFormsUi.Helpers;
@@ -324,16 +323,16 @@ public static class SaveZeusFileHelper
     {
         /*
             [STRING:Weapon.Name]|[INT:Weapon.Settings] [STRING:Weapon.IsAt] 0 0 0 0
-                --	1024 - SwingAtOpponent
-                --	512 - UsedToCutOpponent
-                --	256 - ThrownAtOpponent
-                --	128 - UsedAsAWhip
-                --	64 - UsedToChoke
-                --	32 - CausesBleeding
-                --	16 - WillBreak
-                --	8 - ThrownInto
-                --	4 - ShootsAtOpponent
-                --	2 - SlammedOn
+                -- 1024 - SwingAtOpponent
+                -- 512 - UsedToCutOpponent
+                -- 256 - ThrownAtOpponent
+                -- 128 - UsedAsAWhip
+                -- 64 - UsedToChoke
+                -- 32 - CausesBleeding
+                -- 16 - WillBreak
+                -- 8 - ThrownInto
+                -- 4 - ShootsAtOpponent
+                -- 2 - SlammedOn
         */
 
         List<string> weaponData = [

@@ -47,7 +47,7 @@ partial class TripleThreatMatchForm
         groupBox4 = new GroupBox();
         WinsByComboBox = new ComboBox();
         OkButton = new Button();
-        CancelButton = new Button();
+        CancelationButton = new Button();
         Participant3ComboBox = new ComboBox();
         label2 = new Label();
         Participant3WinsRadioButton = new RadioButton();
@@ -241,15 +241,15 @@ partial class TripleThreatMatchForm
         OkButton.Text = "&Ok";
         OkButton.UseVisualStyleBackColor = true;
         // 
-        // CancelButton
+        // CancelationButton
         // 
-        CancelButton.DialogResult = DialogResult.Cancel;
-        CancelButton.Location = new Point(327, 310);
-        CancelButton.Name = "CancelButton";
-        CancelButton.Size = new Size(75, 23);
-        CancelButton.TabIndex = 16;
-        CancelButton.Text = "&Cancel";
-        CancelButton.UseVisualStyleBackColor = true;
+        CancelationButton.DialogResult = DialogResult.Cancel;
+        CancelationButton.Location = new Point(327, 310);
+        CancelationButton.Name = "CancelationButton";
+        CancelationButton.Size = new Size(75, 23);
+        CancelationButton.TabIndex = 16;
+        CancelationButton.Text = "&Cancel";
+        CancelationButton.UseVisualStyleBackColor = true;
         // 
         // Participant3ComboBox
         // 
@@ -288,7 +288,7 @@ partial class TripleThreatMatchForm
         Controls.Add(Participant3WinsRadioButton);
         Controls.Add(label2);
         Controls.Add(Participant3ComboBox);
-        Controls.Add(CancelButton);
+        Controls.Add(CancelationButton);
         Controls.Add(OkButton);
         Controls.Add(groupBox4);
         Controls.Add(groupBox3);
@@ -337,7 +337,7 @@ partial class TripleThreatMatchForm
     private GroupBox groupBox4;
     private ComboBox WinsByComboBox;
     private Button OkButton;
-    private Button CancelButton;
+    private Button CancelationButton;
     private CheckBox AttacksParticipant3CheckBox;
     private ComboBox Participant3ComboBox;
     private Label label2;
