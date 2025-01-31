@@ -8,12 +8,23 @@ public class RefereeEditorFormPresenter
     private readonly RefereeModel _refereeModel;
     private readonly RefereeEditorForm _refereeEditorForm;
 
-    public RefereeEditorFormPresenter(RefereeModel refereeModel, RefereeEditorForm refereeEditorForm)
+    private readonly IEnumerable<string> _fedReferees;
+
+    public RefereeEditorFormPresenter(RefereeModel refereeModel, RefereeEditorForm refereeEditorForm,
+        IEnumerable<string> fedReferees)
     {
         _refereeModel = refereeModel;
         _refereeEditorForm = refereeEditorForm;
 
+        _fedReferees = fedReferees;
+
+        ConnectHandlers();
         PopulateForm();
+    }
+
+    private void ConnectHandlers()
+    {
+        _refereeEditorForm.ValidateForm += OnValidateForm;
     }
 
     private void PopulateForm()
@@ -44,5 +55,15 @@ public class RefereeEditorFormPresenter
         }
 
         return result;
+    }
+
+    private string? OnValidateForm()
+    {
+        if (_refereeEditorForm.NameTextBox.Text.Length == 0)
+            return "The Referee Must be given a name";
+        else if (_fedReferees.Contains(_refereeEditorForm.NameTextBox.Text))
+            return "There is already a referee with this name in the roster";
+
+        return null;
     }
 }

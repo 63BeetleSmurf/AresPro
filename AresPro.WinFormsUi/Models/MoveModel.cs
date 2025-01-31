@@ -4,9 +4,9 @@ namespace AresPro.WinFormsUi.Models;
 
 public class MoveModel
 {
-    public string Name { get; set; }
-    public int Damage { get; set; }
-    public MoveTypes Type { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public int Damage { get; set; } = 4;
+    public MoveTypes Type { get; set; } = MoveTypes.MatchPrepare;
     public bool IsLift { get; set; }
     public bool IsIllegal { get; set; }
     public bool IsHighRisk { get; set; }

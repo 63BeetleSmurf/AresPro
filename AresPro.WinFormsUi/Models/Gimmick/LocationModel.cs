@@ -2,9 +2,9 @@
 
 public class LocationModel
 {
-    public string Name { get; set; }
+    public string Name { get; set; } = string.Empty;
     public List<TransitionModel> Transitions { get; } = [];
-    public string Floor { get; set; }
+    public string Floor { get; set; } = string.Empty;
     public bool PinfallsAtLoc { get; set; }
     public bool SubmissionsAtLoc { get; set; }
     public bool AttackerWinsIfHere { get; set; }
@@ -12,5 +12,5 @@ public class LocationModel
     public bool CountOutAtLoc { get; set; }
     public bool DQAtLoc { get; set; }
     public bool WeaponsAtLoc { get; set; }
-    public bool CanFightHere { get; set; }
+    public bool CanFightHere { get; set; } = true;
 }

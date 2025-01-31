@@ -120,7 +120,6 @@ partial class TitleEditorForm
         AcceptButton = OkButton;
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        CancelButton = CancelButton;
         ClientSize = new Size(381, 100);
         Controls.Add(grpType);
         Controls.Add(NameTextBox);
@@ -135,6 +134,7 @@ partial class TitleEditorForm
         ShowIcon = false;
         ShowInTaskbar = false;
         Text = "Titles";
+        FormClosing += TitleEditorForm_FormClosing;
         grpType.ResumeLayout(false);
         grpType.PerformLayout();
         ResumeLayout(false);

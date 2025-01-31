@@ -9,13 +9,24 @@ public class MoveEditorFormPresenter
     private readonly MoveModel _MoveModel;
     private readonly MoveEditorForm _MoveEditorForm;
 
-    public MoveEditorFormPresenter(MoveModel MoveModel, MoveEditorForm MoveEditorForm)
+    private readonly IEnumerable<string> _existingMoves;
+
+    public MoveEditorFormPresenter(MoveModel MoveModel, MoveEditorForm MoveEditorForm,
+        IEnumerable<string> existingMoves)
     {
         _MoveModel = MoveModel;
         _MoveEditorForm = MoveEditorForm;
 
+        _existingMoves = existingMoves;
+
         _MoveEditorForm.InitializeForm();
+        ConnectHandlers();
         PopulateForm();
+    }
+
+    private void ConnectHandlers()
+    {
+        _MoveEditorForm.ValidateForm += OnValidateForm;
     }
 
     private void PopulateForm()
@@ -66,5 +77,17 @@ public class MoveEditorFormPresenter
         }
 
         return result;
+    }
+
+    private string? OnValidateForm()
+    {
+        if (_MoveEditorForm.NameTextBox.Text.Length == 0)
+            return "Each move must be given a unique name";
+        else if (_existingMoves.Contains(_MoveEditorForm.NameTextBox.Text))
+            return "Each move must be given a unique name";
+        else if (_MoveEditorForm.Text1TextBox.Text.Length == 0 && _MoveEditorForm.Text2TextBox.Text.Length == 0 && _MoveEditorForm.Text3TextBox.Text.Length == 0)
+            return "Each move must contain at least one move text.";
+
+        return null;
     }
 }

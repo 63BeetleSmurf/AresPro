@@ -15,6 +15,8 @@ public partial class MoveEditorForm : Form
         new SelectionListItem(MoveTypes.SubmissionFinisher.GetDisplayName(), MoveTypes.SubmissionFinisher)
     ];
 
+    public event Func<string?>? ValidateForm;
+
     public MoveEditorForm()
     {
         InitializeComponent();
@@ -25,6 +27,19 @@ public partial class MoveEditorForm : Form
         TypeComboBox.DataSource = _moveTypesList;
         TypeComboBox.DisplayMember = "Display";
         TypeComboBox.ValueMember = "Value";
+    }
+
+    private void MoveEditorForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+        if (DialogResult != DialogResult.OK)
+            return;
+
+        string? error = ValidateForm?.Invoke();
+        if (!string.IsNullOrEmpty(error))
+        {
+            e.Cancel = true;
+            MessageBox.Show(error, "Zeus Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
     }
 
     private void DamageDecreaseButton_Click(object sender, EventArgs e)

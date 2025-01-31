@@ -55,6 +55,8 @@ public class WrestlerEditorFormPresenter
 
     private void ConnectHandlers()
     {
+        _wrestlerEditorForm.ValidateForm += OnValidateForm;
+
         _wrestlerEditorForm.AddTitle += OnAddTitle;
         _wrestlerEditorForm.RemoveTitle += OnRemoveTitle;
 
@@ -128,6 +130,22 @@ public class WrestlerEditorFormPresenter
         }
 
         return result;
+    }
+
+    private string? OnValidateForm()
+    {
+        if (_wrestlerEditorForm.NamesTextBox.Text.Length == 0)
+            return "The wrestler must be given a name";
+        else if (_fedWrestlers.Contains(_wrestlerEditorForm.NamesTextBox.Text))
+            return "There is already a wrestler with this name in the roster";
+        else if (_wrestlerEditorForm.MovesListBox.Items.Count == 0)
+            return "The move list must contain at lease one move";
+        if (_wrestlerEditorForm.WeightTextBox.Text.Length == 0)
+            return "Wrestler Weight Required";
+        if (_wrestlerEditorForm.HeightTextBox.Text.Length == 0)
+            return "Wrestler Height Required";
+
+        return null;
     }
 
     public void OnAddTitle(object? sender, EventArgs e)

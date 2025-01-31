@@ -341,6 +341,7 @@ partial class TeamEditorForm
         ShowIcon = false;
         ShowInTaskbar = false;
         Text = "Team";
+        FormClosing += TeamEditorForm_FormClosing;
         grpMembers.ResumeLayout(false);
         grpStats.ResumeLayout(false);
         grpStats.PerformLayout();

@@ -142,6 +142,7 @@ partial class CommentatorEditorForm
         ShowIcon = false;
         ShowInTaskbar = false;
         Text = "Commentator Editor";
+        FormClosing += CommentatorEditorForm_FormClosing;
         grpFile.ResumeLayout(false);
         grpFile.PerformLayout();
         ResumeLayout(false);

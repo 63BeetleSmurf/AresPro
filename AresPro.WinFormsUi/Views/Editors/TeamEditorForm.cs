@@ -9,6 +9,8 @@ public partial class TeamEditorForm : Form
     public EventHandler? AddMember;
     public EventHandler<string>? RemoveMember;
 
+    public event Func<string?>? ValidateForm;
+
     public TeamEditorForm()
     {
         InitializeComponent();
@@ -17,6 +19,19 @@ public partial class TeamEditorForm : Form
     public void InitializeForm(IEnumerable<string> _fedWrestlers)
     {
         EscortComboBox.DataSource = CommonListsHelper.GetEscortsList(_fedWrestlers);
+    }
+
+    private void TeamEditorForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+        if (DialogResult != DialogResult.OK)
+            return;
+
+        string? error = ValidateForm?.Invoke();
+        if (!string.IsNullOrEmpty(error))
+        {
+            e.Cancel = true;
+            MessageBox.Show(error, "Zeus Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
     }
 
     private void AddTitleButton_Click(object sender, EventArgs e)

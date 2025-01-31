@@ -6,6 +6,8 @@ public partial class CommentatorEditorForm : Form
 {
     public EventHandler<string>? CommentaryFileSelected;
 
+    public event Func<string?>? ValidateForm;
+
     public CommentatorEditorForm()
     {
         InitializeComponent();
@@ -16,6 +18,19 @@ public partial class CommentatorEditorForm : Form
         AffiliationComboBox.DataSource = CommonListsHelper.AffiliationsList;
         AffiliationComboBox.DisplayMember = "Display";
         AffiliationComboBox.ValueMember = "Value";
+    }
+
+    private void CommentatorEditorForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+        if (DialogResult != DialogResult.OK)
+            return;
+
+        string? error = ValidateForm?.Invoke();
+        if (!string.IsNullOrEmpty(error))
+        {
+            e.Cancel = true;
+            MessageBox.Show(error, "Zeus Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
     }
 
     private void ChangeFileButton_Click(object sender, EventArgs e)

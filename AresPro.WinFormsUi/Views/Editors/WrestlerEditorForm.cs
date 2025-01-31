@@ -14,6 +14,8 @@ public partial class WrestlerEditorForm : Form
     public EventHandler<string>? ExportWrestler;
     public EventHandler? ExportHtml;
 
+    public event Func<string?>? ValidateForm;
+
     public WrestlerEditorForm()
     {
         InitializeComponent();
@@ -32,6 +34,19 @@ public partial class WrestlerEditorForm : Form
         CharismaProgressBar.Maximum = statMax;
 
         EscortComboBox.DataSource = CommonListsHelper.GetEscortsList(fedWrestlers);
+    }
+
+    private void WrestlerEditorForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+        if (DialogResult != DialogResult.OK)
+            return;
+
+        string? error = ValidateForm?.Invoke();
+        if (!string.IsNullOrEmpty(error))
+        {
+            e.Cancel = true;
+            MessageBox.Show(error, "Zeus Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
     }
 
     private void AddTitleButton_Click(object sender, EventArgs e)

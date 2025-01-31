@@ -6,7 +6,7 @@ public class FederationModel
     public string Owner { get; set; } = "None";
     public string Website { get; set; } = "None";
     public bool IncludeCommentary { get; set; } = true;
-    public bool MovesInBlockFormat { get; set; } = true;
+    public bool MovesInBlockFormat { get; set; } = false;
     public bool ShowOnlyEndings { get; set; } = false;
     public bool IncludeMatchHeading { get; set; } = true;
     public int StatMax { get; set; } = 10;

@@ -235,7 +235,11 @@ public class MainFormPresenter
     {
         TitleModel titleModel = (key != null) ? _federationModel.Titles[key] : new() { Name = NameHelper.GetNewName("Title", _federationModel.Titles.Keys) };
         TitleEditorForm titleEditorForm = new();
-        TitleEditorFormPresenter titleEditorFormPresenter = new(titleModel, titleEditorForm);
+        TitleEditorFormPresenter titleEditorFormPresenter = new(
+            titleModel,
+            titleEditorForm,
+            _federationModel.Titles.Values.Select(t => t.Name).ToArray()
+        );
         if (titleEditorFormPresenter.ShowDialog(_mainForm, out string newKey) != DialogResult.OK) // newKey defined here
             return;
 
@@ -257,7 +261,11 @@ public class MainFormPresenter
     {
         CommentatorModel commentatorModel = (key != null) ? _federationModel.Commentators[key] : new() { Name = NameHelper.GetNewName("Commentator", _federationModel.Commentators.Keys) };
         CommentatorEditorForm commentatorEditorForm = new();
-        CommentatorEditorFormPresenter commentatorEditorFormPresenter = new(commentatorModel, commentatorEditorForm);
+        CommentatorEditorFormPresenter commentatorEditorFormPresenter = new(
+            commentatorModel,
+            commentatorEditorForm,
+            _federationModel.Commentators.Values.Select(t => t.Name).ToArray()
+        );
         if (commentatorEditorFormPresenter.ShowDialog(_mainForm, out string newKey) != DialogResult.OK) // newKey defined here
             return;
 
@@ -279,7 +287,11 @@ public class MainFormPresenter
     {
         RefereeModel refereeModel = (key != null) ? _federationModel.Referees[key] : new() { Name = NameHelper.GetNewName("Referee", _federationModel.Referees.Keys) };
         RefereeEditorForm refereeEditorForm = new();
-        RefereeEditorFormPresenter refereeEditorFormPresenter = new(refereeModel, refereeEditorForm);
+        RefereeEditorFormPresenter refereeEditorFormPresenter = new(
+            refereeModel,
+            refereeEditorForm,
+            _federationModel.Referees.Values.Select(t => t.Name).ToArray()
+        );
         if (refereeEditorFormPresenter.ShowDialog(_mainForm, out string newKey) != DialogResult.OK) // newKey defined here
             return;
 

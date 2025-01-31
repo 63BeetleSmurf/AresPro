@@ -670,6 +670,7 @@ partial class WrestlerEditorForm
         ShowIcon = false;
         ShowInTaskbar = false;
         Text = "Wrestler Information";
+        FormClosing += WrestlerEditorForm_FormClosing;
         grpStats.ResumeLayout(false);
         grpStats.PerformLayout();
         grpMoves.ResumeLayout(false);

@@ -9,12 +9,22 @@ public class TitleEditorFormPresenter
     private readonly TitleModel _titleModel;
     private readonly TitleEditorForm _titleEditorForm;
 
-    public TitleEditorFormPresenter(TitleModel titleModel, TitleEditorForm titleEditorForm)
+    private readonly IEnumerable<string> _fedTitles;
+
+    public TitleEditorFormPresenter(TitleModel titleModel, TitleEditorForm titleEditorForm,
+        IEnumerable<string> fedTitles)
     {
         _titleModel = titleModel;
         _titleEditorForm = titleEditorForm;
 
+        _fedTitles = fedTitles;
+
+        ConnectHandlers();
         PopulateForm();
+    }
+    private void ConnectHandlers()
+    {
+        _titleEditorForm.ValidateForm += OnValidateForm;
     }
 
     private void PopulateForm()
@@ -46,5 +56,15 @@ public class TitleEditorFormPresenter
         }
 
         return result;
+    }
+
+    private string? OnValidateForm()
+    {
+        if (_titleEditorForm.NameTextBox.Text.Length == 0)
+            return "The Title Must be given a name";
+        else if (_fedTitles.Contains(_titleEditorForm.NameTextBox.Text))
+            return "There is already a title with this name in the roster";
+
+        return null;
     }
 }

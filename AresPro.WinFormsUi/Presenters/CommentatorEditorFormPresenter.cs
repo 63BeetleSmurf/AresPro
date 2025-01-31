@@ -9,10 +9,15 @@ public class CommentatorEditorFormPresenter
     private readonly CommentatorModel _commentatorModel;
     private readonly CommentatorEditorForm _commentatorEditorForm;
 
-    public CommentatorEditorFormPresenter(CommentatorModel commentatorModel, CommentatorEditorForm commentatorEditorForm)
+    private readonly IEnumerable<string> _fedCommentators;
+
+    public CommentatorEditorFormPresenter(CommentatorModel commentatorModel, CommentatorEditorForm commentatorEditorForm,
+        IEnumerable<string> fedCommentators)
     {
         _commentatorModel = commentatorModel;
         _commentatorEditorForm = commentatorEditorForm;
+
+        _fedCommentators = fedCommentators;
 
         _commentatorEditorForm.InitializeForm();
         ConnectHandlers();
@@ -21,6 +26,8 @@ public class CommentatorEditorFormPresenter
 
     private void ConnectHandlers()
     {
+        _commentatorEditorForm.ValidateForm += OnValidateForm;
+
         _commentatorEditorForm.CommentaryFileSelected += OnCommentaryFileSelected;
     }
 
@@ -52,6 +59,16 @@ public class CommentatorEditorFormPresenter
         }
 
         return result;
+    }
+
+    private string? OnValidateForm()
+    {
+        if (_commentatorEditorForm.NameTextBox.Text.Length == 0)
+            return "The Commentator Must be given a name";
+        else if (_fedCommentators.Contains(_commentatorEditorForm.NameTextBox.Text))
+            return "There is already a commentator with this name in the roster";
+
+        return null;
     }
 
     public void OnCommentaryFileSelected(object? sender, string fileName)

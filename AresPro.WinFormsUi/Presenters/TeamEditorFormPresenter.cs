@@ -41,6 +41,8 @@ public class TeamEditorFormPresenter
 
     private void ConnectHandlers()
     {
+        _teamEditorForm.ValidateForm += OnValidateForm;
+
         _teamEditorForm.AddTitle += OnAddTitle;
         _teamEditorForm.RemoveTitle += OnRemoveTitle;
         _teamEditorForm.AddMember += OnAddMember;
@@ -89,6 +91,18 @@ public class TeamEditorFormPresenter
         }
 
         return result;
+    }
+
+    private string? OnValidateForm()
+    {
+        if (_teamEditorForm.NameTextBox.Text.Length == 0)
+            return "The team must be given a name";
+        else if (_fedTeams.Contains(_teamEditorForm.NameTextBox.Text))
+            return "There is already a team with this name in the roster";
+        else if (_teamEditorForm.MembersListBox.Items.Count == 0)
+            return "The team must contain at lease two wrestlers";
+
+        return null;
     }
 
     public void OnAddTitle(object? sender, EventArgs e)
