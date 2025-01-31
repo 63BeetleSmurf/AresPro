@@ -188,7 +188,11 @@ public class WrestlerEditorFormPresenter
     {
         MoveModel moveModel = _wrestlerMoves[key];
         MoveEditorForm MoveEditorForm = new();
-        MoveEditorFormPresenter MoveEditorFormPresenter = new(moveModel, MoveEditorForm);
+        MoveEditorFormPresenter MoveEditorFormPresenter = new(
+            moveModel,
+            MoveEditorForm,
+            _wrestlerMoves.Keys
+        );
         if (MoveEditorFormPresenter.ShowDialog(_wrestlerEditorForm, out string newKey) != DialogResult.OK) // newKey defined here
             return;
 
