@@ -158,7 +158,8 @@ public class WrestlerEditorFormPresenter
         ObjectListForm objectListForm = new()
         {
             Left = _wrestlerEditorForm.Left + 20,
-            Top = _wrestlerEditorForm.Top + 20
+            Top = _wrestlerEditorForm.Top + 20,
+            Text = "Title List - Select a singles Title"
         };
         AddItemObjectListFormPresenter addItemObjectListFormPresenter = new(_fedSinglesTitles, objectListForm);
         addItemObjectListFormPresenter.AddObject += OnAddTitleObject;
@@ -180,7 +181,8 @@ public class WrestlerEditorFormPresenter
         ObjectListForm objectListForm = new()
         {
             Left = _wrestlerEditorForm.Left + 20,
-            Top = _wrestlerEditorForm.Top + 20
+            Top = _wrestlerEditorForm.Top + 20,
+            Text = "Move List - Select a move"
         };
         AddMoveObjectListFormPresenter addMoveObjectListFormPresenter = new(objectListForm);
         addMoveObjectListFormPresenter.AddMoves += OnAddMoves;

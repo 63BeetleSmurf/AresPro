@@ -115,7 +115,8 @@ public class TeamEditorFormPresenter
         ObjectListForm objectListForm = new()
         {
             Left = _teamEditorForm.Left + 20,
-            Top = _teamEditorForm.Top + 20
+            Top = _teamEditorForm.Top + 20,
+            Text = "Title List - Select a Tag Title"
         };
         AddItemObjectListFormPresenter addItemObjectListFormPresenter = new(_fedTeamTitles, objectListForm);
         addItemObjectListFormPresenter.AddObject += OnAddTitleObject;
@@ -137,7 +138,8 @@ public class TeamEditorFormPresenter
         ObjectListForm objectListForm = new()
         {
             Left = _teamEditorForm.Left + 20,
-            Top = _teamEditorForm.Top + 20
+            Top = _teamEditorForm.Top + 20,
+            Text = "Wrestler List - Select Team"
         };
         AddItemObjectListFormPresenter addItemObjectListFormPresenter = new(_fedWrestlers, objectListForm);
         addItemObjectListFormPresenter.AddObject += OnAddMemberObject;
