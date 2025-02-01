@@ -414,6 +414,17 @@ public class MainFormPresenter
 
     private void OnBookEvent(object? sender, EventArgs e)
     {
+        if (_federationModel.Wrestlers.Count == 0)
+        {
+            MessageBox.Show("There must be two wrestlers to book a card", "Zeus Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return;
+        }
+        else if (_federationModel.Commentators.Count == 0 || _federationModel.Referees.Count == 0)
+        {
+            MessageBox.Show("You must have a commentator and a referee to book a card.", "Zeus Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return;
+        }
+
         BookACardForm bookACardForm = new();
         BookACardFormPresenter bookACardFormPresenter = new(_federationModel, bookACardForm);
         bookACardFormPresenter.ShowDialog(_mainForm);
