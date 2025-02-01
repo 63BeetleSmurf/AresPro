@@ -9,6 +9,8 @@ public class CommentatorEditorFormPresenter
     private readonly CommentatorModel _commentatorModel;
     private readonly CommentatorEditorForm _commentatorEditorForm;
 
+    private readonly string _originalName;
+
     private readonly IEnumerable<string> _fedCommentators;
 
     public CommentatorEditorFormPresenter(CommentatorModel commentatorModel, CommentatorEditorForm commentatorEditorForm,
@@ -16,6 +18,8 @@ public class CommentatorEditorFormPresenter
     {
         _commentatorModel = commentatorModel;
         _commentatorEditorForm = commentatorEditorForm;
+
+        _originalName = _commentatorModel.Name;
 
         _fedCommentators = fedCommentators;
 
@@ -65,7 +69,7 @@ public class CommentatorEditorFormPresenter
     {
         if (_commentatorEditorForm.NameTextBox.Text.Length == 0)
             return "The Commentator Must be given a name";
-        else if (_fedCommentators.Contains(_commentatorEditorForm.NameTextBox.Text))
+        else if (_originalName != _commentatorModel.Name && _fedCommentators.Contains(_commentatorEditorForm.NameTextBox.Text))
             return "There is already a commentator with this name in the roster";
 
         return null;

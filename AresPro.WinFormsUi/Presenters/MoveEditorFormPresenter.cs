@@ -6,74 +6,78 @@ namespace AresPro.WinFormsUi.Presenters;
 
 public class MoveEditorFormPresenter
 {
-    private readonly MoveModel _MoveModel;
-    private readonly MoveEditorForm _MoveEditorForm;
+    private readonly MoveModel _moveModel;
+    private readonly MoveEditorForm _moveEditorForm;
+
+    private readonly string _originalName;
 
     private readonly IEnumerable<string> _existingMoves;
 
     public MoveEditorFormPresenter(MoveModel MoveModel, MoveEditorForm MoveEditorForm,
         IEnumerable<string> existingMoves)
     {
-        _MoveModel = MoveModel;
-        _MoveEditorForm = MoveEditorForm;
+        _moveModel = MoveModel;
+        _moveEditorForm = MoveEditorForm;
+
+        _originalName = _moveModel.Name;
 
         _existingMoves = existingMoves;
 
-        _MoveEditorForm.InitializeForm();
+        _moveEditorForm.InitializeForm();
         ConnectHandlers();
         PopulateForm();
     }
 
     private void ConnectHandlers()
     {
-        _MoveEditorForm.ValidateForm += OnValidateForm;
+        _moveEditorForm.ValidateForm += OnValidateForm;
     }
 
     private void PopulateForm()
     {
-        _MoveEditorForm.NameTextBox.Text = _MoveModel.Name;
-        _MoveEditorForm.DamageProgressBar.Value = _MoveModel.Damage;
-        _MoveEditorForm.TypeComboBox.SelectedValue = _MoveModel.Type;
-        _MoveEditorForm.LiftCheckBox.Checked = _MoveModel.IsLift;
-        _MoveEditorForm.IllegalCheckBox.Checked = _MoveModel.IsIllegal;
-        _MoveEditorForm.HighRiskCheckBox.Checked = _MoveModel.IsHighRisk;
-        _MoveEditorForm.Text1TextBox.Text = _MoveModel.Texts[0];
-        _MoveEditorForm.Text2TextBox.Text = _MoveModel.Texts[1];
-        _MoveEditorForm.Text3TextBox.Text = _MoveModel.Texts[2];
-        _MoveEditorForm.AttStandingBeforeCheckBox.Checked = _MoveModel.AttStandingBefore;
-        _MoveEditorForm.AttStandingAfterCheckBox.Checked = _MoveModel.AttStandingAfter;
-        _MoveEditorForm.RecStandingBeforeCheckBox.Checked = _MoveModel.RecStandingBefore;
-        _MoveEditorForm.RecStandingAfterCheckBox.Checked = _MoveModel.RecStandingAfter;
+        _moveEditorForm.NameTextBox.Text = _moveModel.Name;
+        _moveEditorForm.DamageProgressBar.Value = _moveModel.Damage;
+        _moveEditorForm.TypeComboBox.SelectedValue = _moveModel.Type;
+        _moveEditorForm.LiftCheckBox.Checked = _moveModel.IsLift;
+        _moveEditorForm.IllegalCheckBox.Checked = _moveModel.IsIllegal;
+        _moveEditorForm.HighRiskCheckBox.Checked = _moveModel.IsHighRisk;
+        _moveEditorForm.Text1TextBox.Text = _moveModel.Texts[0];
+        _moveEditorForm.Text2TextBox.Text = _moveModel.Texts[1];
+        _moveEditorForm.Text3TextBox.Text = _moveModel.Texts[2];
+        _moveEditorForm.AttStandingBeforeCheckBox.Checked = _moveModel.AttStandingBefore;
+        _moveEditorForm.AttStandingAfterCheckBox.Checked = _moveModel.AttStandingAfter;
+        _moveEditorForm.RecStandingBeforeCheckBox.Checked = _moveModel.RecStandingBefore;
+        _moveEditorForm.RecStandingAfterCheckBox.Checked = _moveModel.RecStandingAfter;
     }
 
     private void UpdateModel()
     {
-        _MoveModel.Name = _MoveEditorForm.NameTextBox.Text;
-        _MoveModel.Damage = _MoveEditorForm.DamageProgressBar.Value;
-        _MoveModel.Type = (MoveTypes)(_MoveEditorForm.TypeComboBox.SelectedValue ?? 0);
-        _MoveModel.IsLift = _MoveEditorForm.LiftCheckBox.Checked;
-        _MoveModel.IsIllegal = _MoveEditorForm.IllegalCheckBox.Checked;
-        _MoveModel.IsHighRisk = _MoveEditorForm.HighRiskCheckBox.Checked;
-        _MoveModel.Texts[0] = _MoveEditorForm.Text1TextBox.Text;
-        _MoveModel.Texts[1] = _MoveEditorForm.Text2TextBox.Text;
-        _MoveModel.Texts[2] = _MoveEditorForm.Text3TextBox.Text;
-        _MoveModel.AttStandingBefore = _MoveEditorForm.AttStandingBeforeCheckBox.Checked;
-        _MoveModel.AttStandingAfter = _MoveEditorForm.AttStandingAfterCheckBox.Checked;
-        _MoveModel.RecStandingBefore = _MoveEditorForm.RecStandingBeforeCheckBox.Checked;
-        _MoveModel.RecStandingAfter = _MoveEditorForm.RecStandingAfterCheckBox.Checked;
+        _moveModel.Name = _moveEditorForm.NameTextBox.Text;
+        _moveModel.Damage = _moveEditorForm.DamageProgressBar.Value;
+        _moveModel.Type = (MoveTypes)(_moveEditorForm.TypeComboBox.SelectedValue ?? 0);
+        _moveModel.IsLift = _moveEditorForm.LiftCheckBox.Checked;
+        _moveModel.IsIllegal = _moveEditorForm.IllegalCheckBox.Checked;
+        _moveModel.IsHighRisk = _moveEditorForm.HighRiskCheckBox.Checked;
+        _moveModel.Texts[0] = _moveEditorForm.Text1TextBox.Text;
+        _moveModel.Texts[1] = _moveEditorForm.Text2TextBox.Text;
+        _moveModel.Texts[2] = _moveEditorForm.Text3TextBox.Text;
+        _moveModel.AttStandingBefore = _moveEditorForm.AttStandingBeforeCheckBox.Checked;
+        _moveModel.AttStandingAfter = _moveEditorForm.AttStandingAfterCheckBox.Checked;
+        _moveModel.RecStandingBefore = _moveEditorForm.RecStandingBeforeCheckBox.Checked;
+        _moveModel.RecStandingAfter = _moveEditorForm.RecStandingAfterCheckBox.Checked;
     }
 
     public DialogResult ShowDialog(IWin32Window owner, out string newKey)
     {
-        string originalKey = _MoveModel.Name;
+        string originalKey = _moveModel.Name;
         newKey = originalKey;
 
-        DialogResult result = _MoveEditorForm.ShowDialog(owner);
+        DialogResult result = _moveEditorForm.ShowDialog(owner);
         if (result == DialogResult.OK)
         {
             UpdateModel();
-            if (originalKey != _MoveModel.Name)
-                newKey = _MoveModel.Name;
+            if (originalKey != _moveModel.Name)
+                newKey = _moveModel.Name;
         }
 
         return result;
@@ -81,11 +85,11 @@ public class MoveEditorFormPresenter
 
     private string? OnValidateForm()
     {
-        if (_MoveEditorForm.NameTextBox.Text.Length == 0)
+        if (_moveEditorForm.NameTextBox.Text.Length == 0)
             return "Each move must be given a unique name";
-        else if (_existingMoves.Contains(_MoveEditorForm.NameTextBox.Text))
+        else if (_originalName != _moveModel.Name && _existingMoves.Contains(_moveEditorForm.NameTextBox.Text))
             return "Each move must be given a unique name";
-        else if (_MoveEditorForm.Text1TextBox.Text.Length == 0 && _MoveEditorForm.Text2TextBox.Text.Length == 0 && _MoveEditorForm.Text3TextBox.Text.Length == 0)
+        else if (_moveEditorForm.Text1TextBox.Text.Length == 0 && _moveEditorForm.Text2TextBox.Text.Length == 0 && _moveEditorForm.Text3TextBox.Text.Length == 0)
             return "Each move must contain at least one move text.";
 
         return null;

@@ -8,6 +8,8 @@ public class RefereeEditorFormPresenter
     private readonly RefereeModel _refereeModel;
     private readonly RefereeEditorForm _refereeEditorForm;
 
+    private readonly string _originalName;
+
     private readonly IEnumerable<string> _fedReferees;
 
     public RefereeEditorFormPresenter(RefereeModel refereeModel, RefereeEditorForm refereeEditorForm,
@@ -15,6 +17,8 @@ public class RefereeEditorFormPresenter
     {
         _refereeModel = refereeModel;
         _refereeEditorForm = refereeEditorForm;
+
+        _originalName = _refereeModel.Name;
 
         _fedReferees = fedReferees;
 
@@ -61,7 +65,7 @@ public class RefereeEditorFormPresenter
     {
         if (_refereeEditorForm.NameTextBox.Text.Length == 0)
             return "The Referee Must be given a name";
-        else if (_fedReferees.Contains(_refereeEditorForm.NameTextBox.Text))
+        else if (_originalName != _refereeModel.Name && _fedReferees.Contains(_refereeEditorForm.NameTextBox.Text))
             return "There is already a referee with this name in the roster";
 
         return null;

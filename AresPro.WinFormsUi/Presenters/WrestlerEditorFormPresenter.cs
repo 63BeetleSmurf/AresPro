@@ -14,6 +14,8 @@ public class WrestlerEditorFormPresenter
     private readonly WrestlerModel _wrestlerModel;
     private readonly WrestlerEditorForm _wrestlerEditorForm;
 
+    private readonly string _originalName;
+
     private readonly BindingList<string> _titleNames = [];
     private readonly BindingList<string> _moveNames = [];
     private readonly Dictionary<string, MoveModel> _wrestlerMoves = [];
@@ -32,6 +34,8 @@ public class WrestlerEditorFormPresenter
     {
         _wrestlerModel = wrestlerModel;
         _wrestlerEditorForm = wrestlerEditorForm;
+
+        _originalName = _wrestlerModel.Name;
 
         _fedWrestlers = fedWrestlers;
         _fedSinglesTitles = fedSinglesTitles;
@@ -137,7 +141,7 @@ public class WrestlerEditorFormPresenter
     {
         if (_wrestlerEditorForm.NamesTextBox.Text.Length == 0)
             return "The wrestler must be given a name";
-        else if (_fedWrestlers.Contains(_wrestlerEditorForm.NamesTextBox.Text))
+        else if (_originalName != _wrestlerModel.Name && _fedWrestlers.Contains(_wrestlerEditorForm.NamesTextBox.Text))
             return "There is already a wrestler with this name in the roster";
         else if (_wrestlerEditorForm.MovesListBox.Items.Count == 0)
             return "The move list must contain at lease one move";

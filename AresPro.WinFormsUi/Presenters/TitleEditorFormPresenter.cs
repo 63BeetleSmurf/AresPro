@@ -9,6 +9,8 @@ public class TitleEditorFormPresenter
     private readonly TitleModel _titleModel;
     private readonly TitleEditorForm _titleEditorForm;
 
+    private readonly string _originalName;
+
     private readonly IEnumerable<string> _fedTitles;
 
     public TitleEditorFormPresenter(TitleModel titleModel, TitleEditorForm titleEditorForm,
@@ -16,6 +18,8 @@ public class TitleEditorFormPresenter
     {
         _titleModel = titleModel;
         _titleEditorForm = titleEditorForm;
+
+        _originalName = _titleModel.Name;
 
         _fedTitles = fedTitles;
 
@@ -62,7 +66,7 @@ public class TitleEditorFormPresenter
     {
         if (_titleEditorForm.NameTextBox.Text.Length == 0)
             return "The Title Must be given a name";
-        else if (_fedTitles.Contains(_titleEditorForm.NameTextBox.Text))
+        else if (_originalName != _titleModel.Name && _fedTitles.Contains(_titleEditorForm.NameTextBox.Text))
             return "There is already a title with this name in the roster";
 
         return null;

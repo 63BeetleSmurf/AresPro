@@ -11,6 +11,8 @@ public class TeamEditorFormPresenter
     private readonly TeamModel _teamModel;
     private readonly TeamEditorForm _teamEditorForm;
 
+    private readonly string _originalName;
+
     private readonly BindingList<string> _titleNames = [];
     private readonly BindingList<string> _memberNames = [];
 
@@ -24,6 +26,8 @@ public class TeamEditorFormPresenter
     {
         _teamModel = teamModel;
         _teamEditorForm = teamEditorForm;
+
+        _originalName = _teamModel.Name;
 
         foreach (string titleName in _teamModel.TitleNames)
             _titleNames.Add(titleName);
@@ -98,7 +102,7 @@ public class TeamEditorFormPresenter
     {
         if (_teamEditorForm.NameTextBox.Text.Length == 0)
             return "The team must be given a name";
-        else if (_fedTeams.Contains(_teamEditorForm.NameTextBox.Text))
+        else if (_originalName != _teamModel.Name && _fedTeams.Contains(_teamEditorForm.NameTextBox.Text))
             return "There is already a team with this name in the roster";
         else if (_teamEditorForm.MembersListBox.Items.Count == 0)
             return "The team must contain at lease two wrestlers";
