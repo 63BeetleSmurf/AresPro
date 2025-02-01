@@ -80,7 +80,7 @@ public class WrestlerEditorFormPresenter
         _wrestlerEditorForm.StableTextBox.Text = _wrestlerModel.Stable;
         _wrestlerEditorForm.RingIntroTextBox.Text = _wrestlerModel.RingIntro;
         _wrestlerEditorForm.PushTextBox.Text = _wrestlerModel.Push.ToString();
-        _wrestlerEditorForm.EscortComboBox.SelectedItem = _wrestlerModel.EscortName;
+        _wrestlerEditorForm.EscortComboBox.SelectedItem = _wrestlerModel.EscortName ?? "None";
         _wrestlerEditorForm.EscortInterferesCheckBox.Checked = _wrestlerModel.EscortInterferes;
         _wrestlerEditorForm.TitlesListBox.DataSource = _titleNames;
         _wrestlerEditorForm.StrengthProgressBar.Value = _wrestlerModel.Strength;

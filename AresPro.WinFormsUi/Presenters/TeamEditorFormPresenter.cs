@@ -61,7 +61,7 @@ public class TeamEditorFormPresenter
         _teamEditorForm.TitlesListBox.DataSource = _titleNames;
         _teamEditorForm.WinsTextBox.Text = _teamModel.Wins.ToString();
         _teamEditorForm.LosesTextBox.Text = _teamModel.Loses.ToString();
-        _teamEditorForm.EscortComboBox.SelectedItem = _teamModel.EscortName;
+        _teamEditorForm.EscortComboBox.SelectedItem = _teamModel.EscortName ?? "None";
         _teamEditorForm.EscortInterferesCheckBox.Checked = _teamModel.EscortInterferes;
         _teamEditorForm.MembersListBox.DataSource = _memberNames;
     }
