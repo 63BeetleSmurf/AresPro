@@ -110,13 +110,15 @@ partial class AboutForm
         // CompanyLabel
         // 
         CompanyLabel.AutoSize = true;
-        CompanyLabel.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        CompanyLabel.Cursor = Cursors.Hand;
+        CompanyLabel.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
         CompanyLabel.Location = new Point(7, 91);
         CompanyLabel.Margin = new Padding(4, 0, 4, 0);
         CompanyLabel.Name = "CompanyLabel";
-        CompanyLabel.Size = new Size(94, 16);
+        CompanyLabel.Size = new Size(124, 16);
         CompanyLabel.TabIndex = 3;
-        CompanyLabel.Text = "Geeksoft.net";
+        CompanyLabel.Text = "Vist GitHub page";
+        CompanyLabel.Click += CompanyLabel_Click;
         // 
         // AboutForm
         // 
@@ -150,5 +152,5 @@ partial class AboutForm
     internal System.Windows.Forms.Label VersionLabel;
     internal System.Windows.Forms.Label TitleLabel;
     internal System.Windows.Forms.GroupBox AboutFrame;
-    internal System.Windows.Forms.Label CompanyLabel;
+    internal Label CompanyLabel;
 }
