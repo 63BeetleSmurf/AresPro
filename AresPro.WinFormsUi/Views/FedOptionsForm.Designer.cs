@@ -254,6 +254,7 @@ partial class FedOptionsForm
         Name = "FedOptionsForm";
         ShowIcon = false;
         ShowInTaskbar = false;
+        StartPosition = FormStartPosition.Manual;
         Text = "Federation Options";
         ResumeLayout(false);
         PerformLayout();

@@ -167,6 +167,7 @@ partial class TournamentForm
         Name = "TournamentForm";
         ShowIcon = false;
         ShowInTaskbar = false;
+        StartPosition = FormStartPosition.Manual;
         Text = "Zeus Tournament";
         groupBox3.ResumeLayout(false);
         ResumeLayout(false);

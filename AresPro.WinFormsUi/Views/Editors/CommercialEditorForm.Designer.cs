@@ -92,6 +92,7 @@ partial class CommercialEditorForm
         Name = "CommercialEditorForm";
         ShowIcon = false;
         ShowInTaskbar = false;
+        StartPosition = FormStartPosition.Manual;
         Text = "Commercial Editor";
         ResumeLayout(false);
         PerformLayout();

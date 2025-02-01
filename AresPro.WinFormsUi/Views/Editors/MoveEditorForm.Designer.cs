@@ -308,6 +308,7 @@ partial class MoveEditorForm
         Name = "MoveEditorForm";
         ShowIcon = false;
         ShowInTaskbar = false;
+        StartPosition = FormStartPosition.Manual;
         Text = "Move Editor";
         FormClosing += MoveEditorForm_FormClosing;
         grpPositions.ResumeLayout(false);

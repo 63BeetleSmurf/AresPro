@@ -306,6 +306,7 @@ partial class TripleThreatMatchForm
         Name = "TripleThreatMatchForm";
         ShowIcon = false;
         ShowInTaskbar = false;
+        StartPosition = FormStartPosition.Manual;
         Text = "Triple Threat Match";
         groupBox1.ResumeLayout(false);
         groupBox1.PerformLayout();

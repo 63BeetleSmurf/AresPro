@@ -105,6 +105,7 @@ partial class TitleHistoryForm
         Name = "TitleHistoryForm";
         ShowIcon = false;
         ShowInTaskbar = false;
+        StartPosition = FormStartPosition.Manual;
         Text = "Title History";
         ResumeLayout(false);
     }

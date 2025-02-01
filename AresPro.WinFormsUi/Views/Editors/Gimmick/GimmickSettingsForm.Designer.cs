@@ -332,6 +332,7 @@ partial class GimmickSettingsForm
         Name = "GimmickSettingsForm";
         ShowIcon = false;
         ShowInTaskbar = false;
+        StartPosition = FormStartPosition.Manual;
         Text = "Tweak Gimmick";
         ResumeLayout(false);
         PerformLayout();

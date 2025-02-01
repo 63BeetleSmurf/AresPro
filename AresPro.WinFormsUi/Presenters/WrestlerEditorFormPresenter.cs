@@ -155,7 +155,11 @@ public class WrestlerEditorFormPresenter
 
     public void OnAddTitle(object? sender, EventArgs e)
     {
-        ObjectListForm objectListForm = new();
+        ObjectListForm objectListForm = new()
+        {
+            Left = _wrestlerEditorForm.Left + 20,
+            Top = _wrestlerEditorForm.Top + 20
+        };
         AddItemObjectListFormPresenter addItemObjectListFormPresenter = new(_fedSinglesTitles, objectListForm);
         addItemObjectListFormPresenter.AddObject += OnAddTitleObject;
         _ = addItemObjectListFormPresenter.ShowDialog(_wrestlerEditorForm);
@@ -173,7 +177,11 @@ public class WrestlerEditorFormPresenter
 
     public void OnAddMove(object? sender, EventArgs e)
     {
-        ObjectListForm objectListForm = new();
+        ObjectListForm objectListForm = new()
+        {
+            Left = _wrestlerEditorForm.Left + 20,
+            Top = _wrestlerEditorForm.Top + 20
+        };
         AddMoveObjectListFormPresenter addMoveObjectListFormPresenter = new(objectListForm);
         addMoveObjectListFormPresenter.AddMoves += OnAddMoves;
         _ = addMoveObjectListFormPresenter.ShowDialog(_wrestlerEditorForm);
@@ -192,7 +200,11 @@ public class WrestlerEditorFormPresenter
     public void OnEditMove(object? sender, string key)
     {
         MoveModel moveModel = _wrestlerMoves[key];
-        MoveEditorForm MoveEditorForm = new();
+        MoveEditorForm MoveEditorForm = new()
+        {
+            Left = _wrestlerEditorForm.Left + 20,
+            Top = _wrestlerEditorForm.Top + 20
+        };
         MoveEditorFormPresenter MoveEditorFormPresenter = new(
             moveModel,
             MoveEditorForm,

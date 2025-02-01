@@ -108,6 +108,7 @@ partial class ObjectListForm
         Name = "ObjectListForm";
         ShowIcon = false;
         ShowInTaskbar = false;
+        StartPosition = FormStartPosition.Manual;
         ResumeLayout(false);
     }
 

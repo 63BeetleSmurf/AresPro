@@ -29,14 +29,14 @@ partial class GimmickEditorForm
     private void InitializeComponent()
     {
         LocationsFrame = new GroupBox();
+        EditLocationButton = new Button();
+        ResetLocationButton = new Button();
         LocationsListBox = new ListBox();
         WeaponsListBox = new ListBox();
         WeaponsFrame = new GroupBox();
+        EditWeaponButton = new Button();
         NameFrame = new GroupBox();
         NameTextBox = new TextBox();
-        ResetLocationButton = new Button();
-        EditLocationButton = new Button();
-        EditWeaponButton = new Button();
         SettingsButton = new Button();
         SaveButton = new Button();
         CancelationButton = new Button();
@@ -58,6 +58,24 @@ partial class GimmickEditorForm
         LocationsFrame.TabIndex = 5;
         LocationsFrame.TabStop = false;
         LocationsFrame.Text = "Locations";
+        // 
+        // EditLocationButton
+        // 
+        EditLocationButton.Location = new Point(141, 137);
+        EditLocationButton.Name = "EditLocationButton";
+        EditLocationButton.Size = new Size(50, 23);
+        EditLocationButton.TabIndex = 2;
+        EditLocationButton.Text = "Edit";
+        EditLocationButton.UseVisualStyleBackColor = true;
+        // 
+        // ResetLocationButton
+        // 
+        ResetLocationButton.Location = new Point(85, 137);
+        ResetLocationButton.Name = "ResetLocationButton";
+        ResetLocationButton.Size = new Size(50, 23);
+        ResetLocationButton.TabIndex = 1;
+        ResetLocationButton.Text = "Reset";
+        ResetLocationButton.UseVisualStyleBackColor = true;
         // 
         // LocationsListBox
         // 
@@ -92,6 +110,15 @@ partial class GimmickEditorForm
         WeaponsFrame.TabStop = false;
         WeaponsFrame.Text = "Weapons";
         // 
+        // EditWeaponButton
+        // 
+        EditWeaponButton.Location = new Point(140, 137);
+        EditWeaponButton.Name = "EditWeaponButton";
+        EditWeaponButton.Size = new Size(50, 23);
+        EditWeaponButton.TabIndex = 1;
+        EditWeaponButton.Text = "Edit";
+        EditWeaponButton.UseVisualStyleBackColor = true;
+        // 
         // NameFrame
         // 
         NameFrame.Controls.Add(NameTextBox);
@@ -111,33 +138,6 @@ partial class GimmickEditorForm
         NameTextBox.Name = "NameTextBox";
         NameTextBox.Size = new Size(388, 23);
         NameTextBox.TabIndex = 0;
-        // 
-        // ResetLocationButton
-        // 
-        ResetLocationButton.Location = new Point(85, 137);
-        ResetLocationButton.Name = "ResetLocationButton";
-        ResetLocationButton.Size = new Size(50, 23);
-        ResetLocationButton.TabIndex = 1;
-        ResetLocationButton.Text = "Reset";
-        ResetLocationButton.UseVisualStyleBackColor = true;
-        // 
-        // EditLocationButton
-        // 
-        EditLocationButton.Location = new Point(141, 137);
-        EditLocationButton.Name = "EditLocationButton";
-        EditLocationButton.Size = new Size(50, 23);
-        EditLocationButton.TabIndex = 2;
-        EditLocationButton.Text = "Edit";
-        EditLocationButton.UseVisualStyleBackColor = true;
-        // 
-        // EditWeaponButton
-        // 
-        EditWeaponButton.Location = new Point(140, 137);
-        EditWeaponButton.Name = "EditWeaponButton";
-        EditWeaponButton.Size = new Size(50, 23);
-        EditWeaponButton.TabIndex = 1;
-        EditWeaponButton.Text = "Edit";
-        EditWeaponButton.UseVisualStyleBackColor = true;
         // 
         // SettingsButton
         // 
@@ -188,6 +188,7 @@ partial class GimmickEditorForm
         Name = "GimmickEditorForm";
         ShowIcon = false;
         ShowInTaskbar = false;
+        StartPosition = FormStartPosition.Manual;
         Text = "Gimmick Editor";
         LocationsFrame.ResumeLayout(false);
         WeaponsFrame.ResumeLayout(false);

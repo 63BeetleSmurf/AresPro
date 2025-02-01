@@ -316,7 +316,12 @@ public partial class MainForm : Form
 
     private void AboutMenuItem_Click(object sender, EventArgs e)
     {
-        new AboutForm().ShowDialog(this);
+        AboutForm aboutForm = new()
+        {
+            Left = this.Left + 20,
+            Top = this.Top + 40
+        };
+        aboutForm.ShowDialog(this);
     }
 
     // Toolbar

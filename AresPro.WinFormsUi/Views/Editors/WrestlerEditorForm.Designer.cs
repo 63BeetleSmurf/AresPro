@@ -669,6 +669,7 @@ partial class WrestlerEditorForm
         Name = "WrestlerEditorForm";
         ShowIcon = false;
         ShowInTaskbar = false;
+        StartPosition = FormStartPosition.Manual;
         Text = "Wrestler Information";
         FormClosing += WrestlerEditorForm_FormClosing;
         grpStats.ResumeLayout(false);

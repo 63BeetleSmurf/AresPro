@@ -340,6 +340,7 @@ partial class TeamEditorForm
         Name = "TeamEditorForm";
         ShowIcon = false;
         ShowInTaskbar = false;
+        StartPosition = FormStartPosition.Manual;
         Text = "Team";
         FormClosing += TeamEditorForm_FormClosing;
         grpMembers.ResumeLayout(false);

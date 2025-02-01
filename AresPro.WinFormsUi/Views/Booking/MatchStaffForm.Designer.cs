@@ -29,10 +29,10 @@ partial class MatchStaffForm
     private void InitializeComponent()
     {
         groupBox1 = new GroupBox();
-        Commentator1ComboBox = new ComboBox();
-        Commentator2ComboBox = new ComboBox();
-        Commentator3ComboBox = new ComboBox();
         Commentator4ComboBox = new ComboBox();
+        Commentator3ComboBox = new ComboBox();
+        Commentator2ComboBox = new ComboBox();
+        Commentator1ComboBox = new ComboBox();
         groupBox2 = new GroupBox();
         RefereeComboBox = new ComboBox();
         groupBox3 = new GroupBox();
@@ -57,21 +57,13 @@ partial class MatchStaffForm
         groupBox1.TabStop = false;
         groupBox1.Text = "Commentators";
         // 
-        // Commentator1ComboBox
+        // Commentator4ComboBox
         // 
-        Commentator1ComboBox.FormattingEnabled = true;
-        Commentator1ComboBox.Location = new Point(6, 22);
-        Commentator1ComboBox.Name = "Commentator1ComboBox";
-        Commentator1ComboBox.Size = new Size(175, 23);
-        Commentator1ComboBox.TabIndex = 0;
-        // 
-        // Commentator2ComboBox
-        // 
-        Commentator2ComboBox.FormattingEnabled = true;
-        Commentator2ComboBox.Location = new Point(6, 51);
-        Commentator2ComboBox.Name = "Commentator2ComboBox";
-        Commentator2ComboBox.Size = new Size(175, 23);
-        Commentator2ComboBox.TabIndex = 1;
+        Commentator4ComboBox.FormattingEnabled = true;
+        Commentator4ComboBox.Location = new Point(6, 109);
+        Commentator4ComboBox.Name = "Commentator4ComboBox";
+        Commentator4ComboBox.Size = new Size(175, 23);
+        Commentator4ComboBox.TabIndex = 3;
         // 
         // Commentator3ComboBox
         // 
@@ -81,13 +73,21 @@ partial class MatchStaffForm
         Commentator3ComboBox.Size = new Size(175, 23);
         Commentator3ComboBox.TabIndex = 2;
         // 
-        // Commentator4ComboBox
+        // Commentator2ComboBox
         // 
-        Commentator4ComboBox.FormattingEnabled = true;
-        Commentator4ComboBox.Location = new Point(6, 109);
-        Commentator4ComboBox.Name = "Commentator4ComboBox";
-        Commentator4ComboBox.Size = new Size(175, 23);
-        Commentator4ComboBox.TabIndex = 3;
+        Commentator2ComboBox.FormattingEnabled = true;
+        Commentator2ComboBox.Location = new Point(6, 51);
+        Commentator2ComboBox.Name = "Commentator2ComboBox";
+        Commentator2ComboBox.Size = new Size(175, 23);
+        Commentator2ComboBox.TabIndex = 1;
+        // 
+        // Commentator1ComboBox
+        // 
+        Commentator1ComboBox.FormattingEnabled = true;
+        Commentator1ComboBox.Location = new Point(6, 22);
+        Commentator1ComboBox.Name = "Commentator1ComboBox";
+        Commentator1ComboBox.Size = new Size(175, 23);
+        Commentator1ComboBox.TabIndex = 0;
         // 
         // groupBox2
         // 
@@ -163,6 +163,7 @@ partial class MatchStaffForm
         Name = "MatchStaffForm";
         ShowIcon = false;
         ShowInTaskbar = false;
+        StartPosition = FormStartPosition.Manual;
         Text = "Change Commentators/Referee/Announcer";
         groupBox1.ResumeLayout(false);
         groupBox2.ResumeLayout(false);

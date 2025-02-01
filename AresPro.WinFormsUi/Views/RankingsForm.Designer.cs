@@ -139,6 +139,7 @@ partial class RankingsForm
         Name = "RankingsForm";
         ShowIcon = false;
         ShowInTaskbar = false;
+        StartPosition = FormStartPosition.Manual;
         Text = "Zeus Rankings";
         ResumeLayout(false);
         PerformLayout();

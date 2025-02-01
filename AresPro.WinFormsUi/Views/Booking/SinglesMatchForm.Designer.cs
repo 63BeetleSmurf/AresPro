@@ -260,6 +260,7 @@ partial class SinglesMatchForm
         Name = "SinglesMatchForm";
         ShowIcon = false;
         ShowInTaskbar = false;
+        StartPosition = FormStartPosition.Manual;
         Text = "Singles Match";
         groupBox1.ResumeLayout(false);
         groupBox1.PerformLayout();

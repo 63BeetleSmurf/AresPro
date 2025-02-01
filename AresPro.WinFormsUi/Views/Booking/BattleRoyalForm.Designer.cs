@@ -211,6 +211,7 @@ partial class BattleRoyalForm
         Name = "BattleRoyalForm";
         ShowIcon = false;
         ShowInTaskbar = false;
+        StartPosition = FormStartPosition.Manual;
         Text = "Battle Royal";
         groupBox1.ResumeLayout(false);
         groupBox2.ResumeLayout(false);

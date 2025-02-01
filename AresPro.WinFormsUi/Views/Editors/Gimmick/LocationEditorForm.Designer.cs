@@ -40,13 +40,13 @@ partial class LocationEditorForm
         FloorTextBox = new TextBox();
         grpFloor = new GroupBox();
         grpTransitions = new GroupBox();
+        TransitionText3TextBox = new TextBox();
+        TransitionText2TextBox = new TextBox();
+        TransitionText1TextBox = new TextBox();
         LocationsListBox = new ListBox();
         NameTextBox = new TextBox();
         OkButton = new Button();
         grpName = new GroupBox();
-        TransitionText1TextBox = new TextBox();
-        TransitionText2TextBox = new TextBox();
-        TransitionText3TextBox = new TextBox();
         grpFloor.SuspendLayout();
         grpTransitions.SuspendLayout();
         grpName.SuspendLayout();
@@ -186,6 +186,27 @@ partial class LocationEditorForm
         grpTransitions.TabStop = false;
         grpTransitions.Text = "Transitions";
         // 
+        // TransitionText3TextBox
+        // 
+        TransitionText3TextBox.Location = new Point(172, 80);
+        TransitionText3TextBox.Name = "TransitionText3TextBox";
+        TransitionText3TextBox.Size = new Size(225, 23);
+        TransitionText3TextBox.TabIndex = 3;
+        // 
+        // TransitionText2TextBox
+        // 
+        TransitionText2TextBox.Location = new Point(172, 51);
+        TransitionText2TextBox.Name = "TransitionText2TextBox";
+        TransitionText2TextBox.Size = new Size(225, 23);
+        TransitionText2TextBox.TabIndex = 2;
+        // 
+        // TransitionText1TextBox
+        // 
+        TransitionText1TextBox.Location = new Point(172, 22);
+        TransitionText1TextBox.Name = "TransitionText1TextBox";
+        TransitionText1TextBox.Size = new Size(225, 23);
+        TransitionText1TextBox.TabIndex = 1;
+        // 
         // LocationsListBox
         // 
         LocationsListBox.DisplayMember = "DisplayMember";
@@ -229,27 +250,6 @@ partial class LocationEditorForm
         grpName.TabStop = false;
         grpName.Text = "Name";
         // 
-        // TransitionText1TextBox
-        // 
-        TransitionText1TextBox.Location = new Point(172, 22);
-        TransitionText1TextBox.Name = "TransitionText1TextBox";
-        TransitionText1TextBox.Size = new Size(225, 23);
-        TransitionText1TextBox.TabIndex = 1;
-        // 
-        // TransitionText2TextBox
-        // 
-        TransitionText2TextBox.Location = new Point(172, 51);
-        TransitionText2TextBox.Name = "TransitionText2TextBox";
-        TransitionText2TextBox.Size = new Size(225, 23);
-        TransitionText2TextBox.TabIndex = 2;
-        // 
-        // TransitionText3TextBox
-        // 
-        TransitionText3TextBox.Location = new Point(172, 80);
-        TransitionText3TextBox.Name = "TransitionText3TextBox";
-        TransitionText3TextBox.Size = new Size(225, 23);
-        TransitionText3TextBox.TabIndex = 3;
-        // 
         // LocationEditorForm
         // 
         AcceptButton = OkButton;
@@ -277,6 +277,7 @@ partial class LocationEditorForm
         Name = "LocationEditorForm";
         ShowIcon = false;
         ShowInTaskbar = false;
+        StartPosition = FormStartPosition.Manual;
         grpFloor.ResumeLayout(false);
         grpFloor.PerformLayout();
         grpTransitions.ResumeLayout(false);

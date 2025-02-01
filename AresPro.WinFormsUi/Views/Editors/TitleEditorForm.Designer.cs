@@ -133,6 +133,7 @@ partial class TitleEditorForm
         Name = "TitleEditorForm";
         ShowIcon = false;
         ShowInTaskbar = false;
+        StartPosition = FormStartPosition.Manual;
         Text = "Titles";
         FormClosing += TitleEditorForm_FormClosing;
         grpType.ResumeLayout(false);

@@ -112,7 +112,11 @@ public class TeamEditorFormPresenter
 
     public void OnAddTitle(object? sender, EventArgs e)
     {
-        ObjectListForm objectListForm = new();
+        ObjectListForm objectListForm = new()
+        {
+            Left = _teamEditorForm.Left + 20,
+            Top = _teamEditorForm.Top + 20
+        };
         AddItemObjectListFormPresenter addItemObjectListFormPresenter = new(_fedTeamTitles, objectListForm);
         addItemObjectListFormPresenter.AddObject += OnAddTitleObject;
         _ = addItemObjectListFormPresenter.ShowDialog(_teamEditorForm);
@@ -130,7 +134,11 @@ public class TeamEditorFormPresenter
 
     public void OnAddMember(object? sender, EventArgs e)
     {
-        ObjectListForm objectListForm = new();
+        ObjectListForm objectListForm = new()
+        {
+            Left = _teamEditorForm.Left + 20,
+            Top = _teamEditorForm.Top + 20
+        };
         AddItemObjectListFormPresenter addItemObjectListFormPresenter = new(_fedWrestlers, objectListForm);
         addItemObjectListFormPresenter.AddObject += OnAddMemberObject;
         _ = addItemObjectListFormPresenter.ShowDialog(_teamEditorForm);

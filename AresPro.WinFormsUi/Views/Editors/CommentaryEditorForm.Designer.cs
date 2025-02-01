@@ -116,6 +116,7 @@ partial class CommentaryEditorForm
         Name = "CommentaryEditorForm";
         ShowIcon = false;
         ShowInTaskbar = false;
+        StartPosition = FormStartPosition.Manual;
         Text = "Commentary Editor";
         grpUsedWhen.ResumeLayout(false);
         ResumeLayout(false);

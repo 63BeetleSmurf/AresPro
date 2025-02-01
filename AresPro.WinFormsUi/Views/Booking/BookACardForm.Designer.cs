@@ -195,6 +195,7 @@ partial class BookACardForm
         Name = "BookACardForm";
         ShowIcon = false;
         ShowInTaskbar = false;
+        StartPosition = FormStartPosition.Manual;
         Text = "Book a Card";
         groupBox1.ResumeLayout(false);
         groupBox1.PerformLayout();

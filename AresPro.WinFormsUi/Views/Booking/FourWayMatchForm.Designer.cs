@@ -352,6 +352,7 @@ partial class FourWayMatchForm
         Name = "FourWayMatchForm";
         ShowIcon = false;
         ShowInTaskbar = false;
+        StartPosition = FormStartPosition.Manual;
         Text = "Four Way Match";
         groupBox1.ResumeLayout(false);
         groupBox1.PerformLayout();

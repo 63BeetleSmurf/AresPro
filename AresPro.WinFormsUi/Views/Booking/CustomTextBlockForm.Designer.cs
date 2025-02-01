@@ -95,6 +95,7 @@ partial class CustomTextBlockForm
         Name = "CustomTextBlockForm";
         ShowIcon = false;
         ShowInTaskbar = false;
+        StartPosition = FormStartPosition.Manual;
         Text = "Custom Text Block";
         ResumeLayout(false);
         PerformLayout();

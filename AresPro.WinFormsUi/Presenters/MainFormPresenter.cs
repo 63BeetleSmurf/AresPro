@@ -167,7 +167,11 @@ public class MainFormPresenter
 
     private void OnEditFederationOptions(object? sender, EventArgs e)
     {
-        FedOptionsForm fedOptionsForm = new();
+        FedOptionsForm fedOptionsForm = new()
+        {
+            Left = _mainForm.Left + 20,
+            Top = _mainForm.Top + 40
+        };
         FedOptionsFormPresenter fedOptionsFormPresenter = new(_federationModel, fedOptionsForm);
         if (fedOptionsFormPresenter.ShowDialog(_mainForm) == DialogResult.OK)
             _mainForm.IsSaved = false;
@@ -176,7 +180,11 @@ public class MainFormPresenter
     private void OnEditWrestler(object? sender, string? key)
     {
         WrestlerModel wrestlerModel = (key != null) ? _federationModel.Wrestlers[key] : new() { Names = [ NameHelper.GetNewName("Wrestler", _federationModel.Wrestlers.Keys) ] };
-        WrestlerEditorForm wrestlerEditorForm = new();
+        WrestlerEditorForm wrestlerEditorForm = new()
+        {
+            Left = _mainForm.Left + 20,
+            Top = _mainForm.Top + 40
+        };
         WrestlerEditorFormPresenter wrestlerEditorFormPresenter = new(
             wrestlerModel,
             wrestlerEditorForm,
@@ -219,7 +227,11 @@ public class MainFormPresenter
     private void OnEditTeam(object? sender, string? key)
     {
         TeamModel teamModel = (key != null) ? _federationModel.Teams[key] : new() { Name = NameHelper.GetNewName("Team", _federationModel.Teams.Keys) };
-        TeamEditorForm teamEditorForm = new();
+        TeamEditorForm teamEditorForm = new()
+        {
+            Left = _mainForm.Left + 20,
+            Top = _mainForm.Top + 40
+        };
         TeamEditorFormPresenter teamEditorFormPresenter = new(
             teamModel,
             teamEditorForm,
@@ -263,7 +275,11 @@ public class MainFormPresenter
     private void OnEditTitle(object? sender, string? key)
     {
         TitleModel titleModel = (key != null) ? _federationModel.Titles[key] : new() { Name = NameHelper.GetNewName("Title", _federationModel.Titles.Keys) };
-        TitleEditorForm titleEditorForm = new();
+        TitleEditorForm titleEditorForm = new()
+        {
+            Left = _mainForm.Left + 20,
+            Top = _mainForm.Top + 40
+        };
         TitleEditorFormPresenter titleEditorFormPresenter = new(
             titleModel,
             titleEditorForm,
@@ -297,7 +313,11 @@ public class MainFormPresenter
     private void OnEditCommentator(object? sender, string? key)
     {
         CommentatorModel commentatorModel = (key != null) ? _federationModel.Commentators[key] : new() { Name = NameHelper.GetNewName("Commentator", _federationModel.Commentators.Keys) };
-        CommentatorEditorForm commentatorEditorForm = new();
+        CommentatorEditorForm commentatorEditorForm = new()
+        {
+            Left = _mainForm.Left + 20,
+            Top = _mainForm.Top + 40
+        };
         CommentatorEditorFormPresenter commentatorEditorFormPresenter = new(
             commentatorModel,
             commentatorEditorForm,
@@ -323,7 +343,11 @@ public class MainFormPresenter
     private void OnEditReferee(object? sender, string? key)
     {
         RefereeModel refereeModel = (key != null) ? _federationModel.Referees[key] : new() { Name = NameHelper.GetNewName("Referee", _federationModel.Referees.Keys) };
-        RefereeEditorForm refereeEditorForm = new();
+        RefereeEditorForm refereeEditorForm = new()
+        {
+            Left = _mainForm.Left + 20,
+            Top = _mainForm.Top + 40
+        };
         RefereeEditorFormPresenter refereeEditorFormPresenter = new(
             refereeModel,
             refereeEditorForm,
@@ -425,7 +449,11 @@ public class MainFormPresenter
             return;
         }
 
-        BookACardForm bookACardForm = new();
+        BookACardForm bookACardForm = new()
+        {
+            Left = _mainForm.Left + 20,
+            Top = _mainForm.Top + 40
+        };
         BookACardFormPresenter bookACardFormPresenter = new(_federationModel, bookACardForm);
         bookACardFormPresenter.ShowDialog(_mainForm);
     }

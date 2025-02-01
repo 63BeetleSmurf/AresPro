@@ -142,6 +142,7 @@ partial class RefereeEditorForm
         Name = "RefereeEditorForm";
         ShowIcon = false;
         ShowInTaskbar = false;
+        StartPosition = FormStartPosition.Manual;
         Text = "Referee Editor";
         FormClosing += RefereeEditorForm_FormClosing;
         ((System.ComponentModel.ISupportInitialize)CountSpeedTrackBar).EndInit();

@@ -134,6 +134,7 @@ partial class AboutForm
         Name = "AboutForm";
         ShowIcon = false;
         ShowInTaskbar = false;
+        StartPosition = FormStartPosition.Manual;
         Text = "About...";
         ((System.ComponentModel.ISupportInitialize)IconPictureBox).EndInit();
         AboutFrame.ResumeLayout(false);

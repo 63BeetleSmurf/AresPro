@@ -251,6 +251,7 @@ partial class WeaponEditorForm
         Name = "WeaponEditorForm";
         ShowIcon = false;
         ShowInTaskbar = false;
+        StartPosition = FormStartPosition.Manual;
         grpName.ResumeLayout(false);
         grpName.PerformLayout();
         grpLocation.ResumeLayout(false);
