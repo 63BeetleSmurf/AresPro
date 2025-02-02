@@ -6,28 +6,29 @@ using AresPro.WinFormsUi.Models;
 
 namespace AresPro.WinFormsUi.Matches;
 
-public class SinglesMatch
+public class SinglesMatch(MatchModel match)
 {
     // numbers seem to determine how often something will happen, with lower numbers being more often.
-    private const int CallMoveChance = 3;               // How often commentators comment on the move being done - Tested
-    private const int TryPinChance = 3;                 // How often a pin is attempted - Tested
-    private const int RECStandChance = 4;
-    private const int AdvantageChance = 2;              // How often attacker/receiver switch, 99 creates a long match - Tested
-    private const int TrySubChance = 4;                 // How often a submission is attempted - Guess
-    private const int StayOutChance = 5;                // How often they will stay out for the full count out - Guess
-    private const int WeaponChance = 3;                 // How often they will use a weapon - Guess
-    private const int RandomChance = 3;                 // General random number or how often random things will happen, like ref bump
-    private const int DoTagChance = 3;                  // How often a submission is attempted - Guess
-    private const int ChangePosChance = 3;              // How often they will change location - Guess
+    // CallMove     How often commentators comment on the move being done - Tested
+    // TryPin       How often a pin is attempted - Tested
+    // RECStand     
+    // Advantage    How often attacker/receiver switch, 99 creates a long match - Tested
+    // TrySub       How often a submission is attempted - Guess
+    // StayOut      How often they will stay out for the full count out - Guess
+    // Weapon       How often they will use a weapon - Guess
+    // Random       General random number or how often random things will happen, like ref bump
+    // DoTag        How often a submission is attempted - Guess
+    // ChangePos    How often they will change location - Guess
 
-    private const int CountOut = 10;                    // Number the Ref counts to for a count out.
-    private const int Strength = 6;                     // Seems to change length of match (higher = longer), multiplier on stats? - Guess
+    // CountOut     Number the Ref counts to for a count out.
+    // Strength     Seems to change length of match (higher = longer), multiplier on stats? - Guess
 
-    private readonly string[] _mTypes = ["Normal", "Submission", "Hardcore", "Cage", "Ladder", "Hell in the Cell"]; // Match types
+    private readonly MatchModel _match = match;
+
     private readonly string[] _finishes = ["Random", "Pin", "Submission", "Finisher", "DQ", "Count Out", "Double Count Out", "Double DQ"];
 
     private readonly Random _random = new();
-    private readonly List<string> _match = [];
+    private readonly List<string> _output = [];
 
     private int _refBump;
     private int _escapeFinish;
@@ -42,7 +43,7 @@ public class SinglesMatch
         int w2Score = 0;
 
         Output.AppendLine($"{w1.Name} Vs. {w2.Name}");
-        Output.AppendLine(_mTypes[type]);
+        Output.AppendLine(_match.Gimmick.Name);
 
         WrestlerModel loser;
         if (winner == w1)
@@ -139,7 +140,7 @@ public class SinglesMatch
         while (running)
             running = Wrestling(w1, w2, finish);
 
-        foreach (string line in _match)
+        foreach (string line in _output)
             Output.AppendLine(line);
 
         if (finish == 1)
@@ -162,12 +163,12 @@ public class SinglesMatch
 
     private bool Wrestling(WrestlerModel w1, WrestlerModel w2, int finish)
     {
-        _match.Add("...");
-        if (Ch(RandomChance) && _refBump == 0) // ref bump
+        _output.Add("...");
+        if (Ch(_match.Gimmick.Random) && _refBump == 0) // ref bump
         {
             RefBump(w1, w2);
             _refBump = 1;
-            if (Ch(RandomChance)) // w1 cheats
+            if (Ch(_match.Gimmick.Random)) // w1 cheats
             {
                 LeaveRing(w1, w2);
                 Ringside(w2, w1);
@@ -175,7 +176,7 @@ public class SinglesMatch
                 string weap1 = Weapon(w1, w2);
                 ReturnToRing(w1, weap1);
                 UseWeapon(w1, w2, weap1);
-                if (Ch(RandomChance) && (finish == 1 || finish == 3)) // w1 cheated to win
+                if (Ch(_match.Gimmick.Random) && (finish == 1 || finish == 3)) // w1 cheated to win
                 {
                     RefUnbump(w1, w2);
                     if (finish == 1)
@@ -187,7 +188,7 @@ public class SinglesMatch
                     {
                         Finisher(w1, w2);
                     }
-                    _match.Add($"{w1.Name} used the {weap1} to win but the referee didn't see it.");
+                    _output.Add($"{w1.Name} used the {weap1} to win but the referee didn't see it.");
                     return false;
                 }
                 else // w2 comes back
@@ -200,17 +201,17 @@ public class SinglesMatch
             else // w1 does not cheat
             {
                 Pin(w1, w2);
-                _match.Add("The referee is down, there is no one to make the count.");
+                _output.Add("The referee is down, there is no one to make the count.");
                 RefUnbump(w1, w2);
                 return true; // CHANGE - Added return to keep fighting
             }
         }
         else // NO ref bump
         {
-            if (Ch(ChangePosChance)) // leave ring
+            if (Ch(_match.Gimmick.ChangePos)) // leave ring
             {
                 LeaveRing(w1, w2);
-                if (Ch(StayOutChance) && finish == 6) //count out
+                if (Ch(_match.Gimmick.StayOut) && finish == 6) //count out
                 {
                     Ringside(w1, w2);
                     Count(w1, w2, 3, 6);
@@ -220,10 +221,10 @@ public class SinglesMatch
                 }
                 else
                 {
-                    if (Ch(WeaponChance)) // w1 gets a weapon
+                    if (Ch(_match.Gimmick.Weapon)) // w1 gets a weapon
                     {
                         string weap1 = Weapon(w1, w2);
-                        if (Ch(RandomChance) && finish == 7) // double DQ
+                        if (Ch(_match.Gimmick.Random) && finish == 7) // double DQ
                         {
                             string weap2 = Weapon(w2, w1);
                             UseWeapon(w1, w2, weap1);
@@ -234,11 +235,11 @@ public class SinglesMatch
                         {
                             UseWeapon(w1, w2, weap1);
                             ReturnToRing(w1, null);
-                            _match.Add($"{w2.Name} is being counted out.");
-                            if (Ch(StayOutChance) && finish == 5) // w2 is counted out
+                            _output.Add($"{w2.Name} is being counted out.");
+                            if (Ch(_match.Gimmick.StayOut) && finish == 5) // w2 is counted out
                             {
                                 Count(w1, w2, 3, 6);
-                                _match.Add(".....");
+                                _output.Add(".....");
                                 Count(w1, w2, 8, 10);
                                 return false;
                             }
@@ -252,10 +253,10 @@ public class SinglesMatch
                     }
                     else // w1 did not get a weapon
                     {
-                        if (Ch(WeaponChance)) // w2 grabs a weapon
+                        if (Ch(_match.Gimmick.Weapon)) // w2 grabs a weapon
                         {
                             string weap2 = Weapon(w2, w1);
-                            if (Ch(RandomChance) && finish == 4) // W2 is DQd
+                            if (Ch(_match.Gimmick.Random) && finish == 4) // W2 is DQd
                             {
                                 ReturnToRing(w2, weap2);
                                 return false;
@@ -281,7 +282,7 @@ public class SinglesMatch
             {
                 if (_escapeFinish == 0)
                 {
-                    if (Ch(RandomChance) && finish == 3) // w1 gets the finisher
+                    if (Ch(_match.Gimmick.Random) && finish == 3) // w1 gets the finisher
                     {
                         Finisher(w1, w2);
                         return false;
@@ -297,16 +298,16 @@ public class SinglesMatch
                 }
                 else
                 {
-                    if (Ch(TryPinChance) && finish == 1)
+                    if (Ch(_match.Gimmick.TryPin) && finish == 1)
                     {
                         Pin(w1, w2);
                         Count(w1, w2, 1, 3);
                         return false;
                     }
-                    else if (Ch(TrySubChance) && finish == 2)
+                    else if (Ch(_match.Gimmick.TrySub) && finish == 2)
                     {
                         Submission(w1, w2);
-                        _match.Add($"{w2.Name} taps out.");
+                        _output.Add($"{w2.Name} taps out.");
                         return false;
                     }
                     else
@@ -322,7 +323,7 @@ public class SinglesMatch
 
     private void RefBump(WrestlerModel w1, WrestlerModel w2)
     {
-        _match.Add(
+        _output.Add(
             GetRandomText(
                 [
                     "#ATT# whips #REC# into the referee. The referee goes down.",
@@ -340,7 +341,7 @@ public class SinglesMatch
 
     private void LeaveRing(WrestlerModel w1, WrestlerModel w2)
     {
-        _match.Add(
+        _output.Add(
             GetRandomText(
                 [
                     "#ATT# takes #REC# out to the floor.",
@@ -358,7 +359,7 @@ public class SinglesMatch
 
     private void Pin(WrestlerModel w1, WrestlerModel w2)
     {
-        _match.Add(
+        _output.Add(
             GetRandomText(
                 [
                     "#ATT# makes the cover on #REC#.",
@@ -376,7 +377,7 @@ public class SinglesMatch
 
     private void Submission(WrestlerModel w1, WrestlerModel w2)
     {
-        _match.Add(
+        _output.Add(
             GetRandomText(
                 [
                     "#ATT# puts #REC# in anklelock submission.",
@@ -409,12 +410,12 @@ public class SinglesMatch
             text = $"{text} {i},";
         text = $"{text} {c2}";
 
-        _match.Add(text);
+        _output.Add(text);
     }
 
     private void RefUnbump(WrestlerModel w1, WrestlerModel w2)
     {
-        _match.Add(
+        _output.Add(
             GetRandomText(
                 [
                     "The referee has regained consisness.",
@@ -432,7 +433,7 @@ public class SinglesMatch
 
     private void Ringside(WrestlerModel w1, WrestlerModel w2)
     {
-        _match.Add(
+        _output.Add(
             GetRandomText(
                 [
                     "#ATT# sends #REC# into the steel steps.",
@@ -460,7 +461,7 @@ public class SinglesMatch
             ]
         );
 
-        _match.Add(
+        _output.Add(
             GetRandomText(
                 [
                     "#ATT# has gotten ahold of a #WEP#.",
@@ -481,7 +482,7 @@ public class SinglesMatch
 
     private void UseWeapon(WrestlerModel w1, WrestlerModel w2, string weap)
     {
-        _match.Add(
+        _output.Add(
             GetRandomText(
                 [
                     "#ATT# hits #REC# with the #WEP#.",
@@ -501,7 +502,7 @@ public class SinglesMatch
     private void ReturnToRing(WrestlerModel w1, string? weap = null)
     {
         if (!string.IsNullOrWhiteSpace(weap))
-            _match.Add(
+            _output.Add(
                 StringHelper.ReplacePlaceholders(
                     "#ATT# takes the #WEP# into the ring.",
                     new() {
@@ -511,7 +512,7 @@ public class SinglesMatch
                 )
             );
         else
-            _match.Add(
+            _output.Add(
                 GetRandomText(
                     [
                         "#ATT# climbs back into the ring.",
@@ -530,7 +531,7 @@ public class SinglesMatch
     {
         MoveModel finisherMove = GetRandomMove(w1, MoveTypes.SubmissionFinisher, MoveTypes.KnockoutFinisher);
 
-        _match.Add(
+        _output.Add(
             GetRandomText(
                 finisherMove.Texts,
                 new() {
@@ -548,7 +549,7 @@ public class SinglesMatch
         }
         else
         {
-            _match.Add($"{w2.Name} taps out.");
+            _output.Add($"{w2.Name} taps out.");
         }
 
         return finisherMove;
@@ -556,7 +557,7 @@ public class SinglesMatch
 
     private void EscapeFinisher(WrestlerModel w1, WrestlerModel w2, MoveModel finisherMove)
     {
-        _match.Add(
+        _output.Add(
             GetRandomText(
                 [
                     "NO!! #ATT# escapes the #MOV#!!!",
@@ -573,7 +574,7 @@ public class SinglesMatch
 
     private void Comeback(WrestlerModel w1)
     {
-        _match.Add(
+        _output.Add(
             GetRandomText(
                 [
                     "#ATT# has managed to get up.",

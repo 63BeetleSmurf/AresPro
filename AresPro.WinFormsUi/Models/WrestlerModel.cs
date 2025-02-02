@@ -2,7 +2,7 @@
 
 namespace AresPro.WinFormsUi.Models;
 
-public class WrestlerModel
+public class WrestlerModel : IParticipant
 {
     public string[] Names { get; set; } = [ string.Empty ];
     public string Name => Names[0];

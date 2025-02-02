@@ -1,6 +1,6 @@
 ﻿namespace AresPro.WinFormsUi.Models;
 
-public class TeamModel
+public class TeamModel : IParticipant
 {
     public string Name { get; set; } = string.Empty;
     public string? Finisher { get; set; }
