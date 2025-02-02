@@ -37,31 +37,32 @@ public class SinglesMatch(MatchModel match)
     public List<WrestlerModel> Winners { get; } = [];
     public List<WrestlerModel> Losers { get; } = [];
 
-    public void SimMatch(WrestlerModel w1, WrestlerModel w2, int type, WrestlerModel? winner, int finish)
+    public void SimMatch(int finish)
     {
         int w1Score = 0;
         int w2Score = 0;
 
+        if (_match.Participants[0] is not WrestlerModel w1) // w1 defined here
+            return;
+        if (_match.Participants[1] is not WrestlerModel w2) // w2 defined here
+            return;
+
         Output.AppendLine($"{w1.Name} Vs. {w2.Name}");
         Output.AppendLine(_match.Gimmick.Name);
 
+        WrestlerModel winner;
         WrestlerModel loser;
-        if (winner == w1)
+        if (_match.PredeterminedWinner == w1.Name)
         {
+            winner = w1;
             loser = w2;
             Output.AppendLine("Booking Decission");
-            Output.AppendLine($"Winner: {w1.Name}");
-            Output.AppendLine("Scheduled Finish: {_finishes[finish]}");
-            Output.AppendLine("");
-            Match(w1, w2, finish);
         }
-        else if (winner == w2) // CHANGE - Added else
+        else if (_match.PredeterminedWinner == w2.Name) // CHANGE - Added else
         {
+            winner = w2;
             loser = w1;
             Output.AppendLine("Booking Decission");
-            Output.AppendLine($"Winner: {w2.Name}");
-            Output.AppendLine("Scheduled Finish: {_finishes[finish]}");
-            Match(w2, w1, finish);
         }
         else // CHANGE - winner is nullable so no longer uses "sim"
         {
@@ -83,10 +84,14 @@ public class SinglesMatch(MatchModel match)
             }
             Output.AppendLine($"{w1.Name} scored: {w1Score}");
             Output.AppendLine($"{w2.Name} scored: {w2Score}");
-            Output.AppendLine($"Winner: {winner.Name}");
-            Output.AppendLine($"Scheduled Finish: {_finishes[finish]}");
-            Match(winner, loser, finish);
         }
+
+        Output.AppendLine($"Winner: {winner.Name}");
+        Output.AppendLine($"Scheduled Finish: {_finishes[finish]}");
+        Output.AppendLine("");
+        Match(winner, loser, finish);
+
+
         if (finish < 6)
         {
             Winners.Add(winner);
