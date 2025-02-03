@@ -13,4 +13,7 @@ public class MatchModel
     public string? TitleName { get; set; }
     public string? WinLocation { get; set; }
     public MatchWinTypes? WinType { get; set; }
+    public CommentatorModel RingAnnouncer { get; set; }
+    public List<CommentatorModel> Commentators { get; set; }
+    public RefereeModel Referee { get; set; }
 }
