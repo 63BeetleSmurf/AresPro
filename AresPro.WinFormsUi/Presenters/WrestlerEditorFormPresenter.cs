@@ -275,7 +275,7 @@ public class WrestlerEditorFormPresenter
         if (MessageBox.Show(
             _wrestlerEditorForm,
             "Your File has been saved. Would you like to view it?",
-            "Zeus Message",
+            "Ares Message",
             MessageBoxButtons.YesNo,
             MessageBoxIcon.Question
         ) == DialogResult.Yes)

@@ -28,7 +28,7 @@ partial class FourWayMatchForm
     /// </summary>
     private void InitializeComponent()
     {
-        ZeusDecidesWinnerRadioButton = new RadioButton();
+        AresDecidesWinnerRadioButton = new RadioButton();
         Participant1WinsRadioButton = new RadioButton();
         Participant2WinsRadioButton = new RadioButton();
         Participant1ComboBox = new ComboBox();
@@ -61,16 +61,16 @@ partial class FourWayMatchForm
         groupBox4.SuspendLayout();
         SuspendLayout();
         // 
-        // ZeusDecidesWinnerRadioButton
+        // AresDecidesWinnerRadioButton
         // 
-        ZeusDecidesWinnerRadioButton.AutoSize = true;
-        ZeusDecidesWinnerRadioButton.Location = new Point(12, 12);
-        ZeusDecidesWinnerRadioButton.Name = "ZeusDecidesWinnerRadioButton";
-        ZeusDecidesWinnerRadioButton.Size = new Size(135, 19);
-        ZeusDecidesWinnerRadioButton.TabIndex = 0;
-        ZeusDecidesWinnerRadioButton.TabStop = true;
-        ZeusDecidesWinnerRadioButton.Text = "Zeus Decides Winner";
-        ZeusDecidesWinnerRadioButton.UseVisualStyleBackColor = true;
+        AresDecidesWinnerRadioButton.AutoSize = true;
+        AresDecidesWinnerRadioButton.Location = new Point(12, 12);
+        AresDecidesWinnerRadioButton.Name = "AresDecidesWinnerRadioButton";
+        AresDecidesWinnerRadioButton.Size = new Size(133, 19);
+        AresDecidesWinnerRadioButton.TabIndex = 0;
+        AresDecidesWinnerRadioButton.TabStop = true;
+        AresDecidesWinnerRadioButton.Text = "Ares Decides Winner";
+        AresDecidesWinnerRadioButton.UseVisualStyleBackColor = true;
         // 
         // Participant1WinsRadioButton
         // 
@@ -345,7 +345,7 @@ partial class FourWayMatchForm
         Controls.Add(Participant1ComboBox);
         Controls.Add(Participant2WinsRadioButton);
         Controls.Add(Participant1WinsRadioButton);
-        Controls.Add(ZeusDecidesWinnerRadioButton);
+        Controls.Add(AresDecidesWinnerRadioButton);
         FormBorderStyle = FormBorderStyle.FixedDialog;
         MaximizeBox = false;
         MinimizeBox = false;
@@ -366,7 +366,7 @@ partial class FourWayMatchForm
 
     #endregion
 
-    private RadioButton ZeusDecidesWinnerRadioButton;
+    private RadioButton AresDecidesWinnerRadioButton;
     private RadioButton Participant1WinsRadioButton;
     private RadioButton Participant2WinsRadioButton;
     private ComboBox Participant1ComboBox;

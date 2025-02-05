@@ -140,7 +140,7 @@ partial class RankingsForm
         ShowIcon = false;
         ShowInTaskbar = false;
         StartPosition = FormStartPosition.Manual;
-        Text = "Zeus Rankings";
+        Text = "Ares Rankings";
         ResumeLayout(false);
         PerformLayout();
     }

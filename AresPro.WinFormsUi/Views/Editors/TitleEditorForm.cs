@@ -18,7 +18,7 @@ public partial class TitleEditorForm : Form
         if (!string.IsNullOrEmpty(error))
         {
             e.Cancel = true;
-            MessageBox.Show(error, "Zeus Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show(error, "Ares Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

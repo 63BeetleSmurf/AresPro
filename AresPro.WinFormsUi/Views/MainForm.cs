@@ -264,7 +264,7 @@ public partial class MainForm : Form
         if (
             MessageBox.Show(
                 $"Delete {selectedNode.Text}?",
-                "Zeus Message",
+                "Ares Message",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question
             ) != DialogResult.Yes
@@ -438,7 +438,7 @@ public partial class MainForm : Form
     {
         DialogResult result = MessageBox.Show(
             "Fed has changed. Save changes?",
-            "Zeus Message",
+            "Ares Message",
             MessageBoxButtons.YesNoCancel,
             MessageBoxIcon.Question
         );

@@ -440,12 +440,12 @@ public class MainFormPresenter
     {
         if (_federationModel.Wrestlers.Count == 0)
         {
-            MessageBox.Show("There must be two wrestlers to book a card", "Zeus Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show("There must be two wrestlers to book a card", "Ares Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return;
         }
         else if (_federationModel.Commentators.Count == 0 || _federationModel.Referees.Count == 0)
         {
-            MessageBox.Show("You must have a commentator and a referee to book a card.", "Zeus Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show("You must have a commentator and a referee to book a card.", "Ares Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             return;
         }
 
