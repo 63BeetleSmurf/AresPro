@@ -2,7 +2,7 @@
 
 using AresPro.WinFormsUi.Views.Common;
 
-namespace AresPro.WinFormsUi.Presenters;
+namespace AresPro.WinFormsUi.Presenters.Common;
 
 public class GenericObjectListFormPresenter
 {

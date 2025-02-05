@@ -1,6 +1,8 @@
 ﻿using AresPro.WinFormsUi.Enums;
 using AresPro.WinFormsUi.Helpers;
 using AresPro.WinFormsUi.Models;
+using AresPro.WinFormsUi.Presenters.Booking;
+using AresPro.WinFormsUi.Presenters.Editors;
 using AresPro.WinFormsUi.Views;
 using AresPro.WinFormsUi.Views.Booking;
 using AresPro.WinFormsUi.Views.Editors;

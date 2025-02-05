@@ -4,10 +4,11 @@ using System.Diagnostics;
 using AresPro.WinFormsUi.Enums;
 using AresPro.WinFormsUi.Helpers;
 using AresPro.WinFormsUi.Models;
+using AresPro.WinFormsUi.Presenters.Common;
 using AresPro.WinFormsUi.Views.Common;
 using AresPro.WinFormsUi.Views.Editors;
 
-namespace AresPro.WinFormsUi.Presenters;
+namespace AresPro.WinFormsUi.Presenters.Editors;
 
 public class WrestlerEditorFormPresenter
 {

@@ -2,7 +2,7 @@
 using AresPro.WinFormsUi.Models;
 using AresPro.WinFormsUi.Views.Editors;
 
-namespace AresPro.WinFormsUi.Presenters;
+namespace AresPro.WinFormsUi.Presenters.Editors;
 
 public class CommentatorEditorFormPresenter
 {

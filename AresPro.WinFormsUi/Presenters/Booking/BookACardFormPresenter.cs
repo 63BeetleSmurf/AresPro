@@ -5,7 +5,7 @@ using AresPro.WinFormsUi.Models;
 using AresPro.WinFormsUi.Models.Common;
 using AresPro.WinFormsUi.Views.Booking;
 
-namespace AresPro.WinFormsUi.Presenters;
+namespace AresPro.WinFormsUi.Presenters.Booking;
 
 public class BookACardFormPresenter
 {
